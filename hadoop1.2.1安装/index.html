@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="CodeInterviews">
+    
+    <meta name="description" itemprop="description" content="Hadoop1.2.1本地伪分布式安装">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="CodeInterviews" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hadoop1.2.1本地伪分布式安装 | CodeInterviews</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <meta name="baidu-site-verification" content="Jvgfj1O0oP" />
+    <meta name="360-site-verification" content="902348aeb40d156fb32b748c4071c4bd" />
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://codeinterviews.com" title="CodeInterviews">CodeInterviews</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index"><a href="/">首页</a></li>
+                    
+                    <li id="nav-categories"><a href="/categories">分类</a></li>
+                    
+                    <li id="nav-tags"><a href="/tags">标签</a></li>
+                    
+                    <li id="nav-reading"><a href="/tags/#LeetCode">LeetCode</a></li>
+                    
+                    <li id="nav-labs"><a href="/tags/#Java">Java</a></li>
+                    
+                    <li id="nav-about"><a href="/tags/#Javascript">Javascript</a></li>
+                    
+
+                    <!--<li id="nav-github"><a href="https://github.com/hexo2hexo" target="_blank">GitHub</a></li>-->
+                    <li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "hadoop1.2.1安装/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>Hadoop1.2.1本地伪分布式安装</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/Hadoop/">Hadoop</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/project/">project</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2016-06-30T03:57:53.000Z"
+                       itemprop="datePublished">2016-06-29</time>
+            
+            更新: <time datetime="2016-06-30T03:57:53.000Z"
+                       itemprop="dateModified">2016-06-29</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+
+            <p>##引言<br>由于最近需要大数据的处理，所以需要用到hadoop.因此在这里记录本地伪分布式的安装过程。</p>
+<a id="more"></a>
+<p>##下载jdk以及配置环境变量<br>这里采用jdk1.6 将其拷贝到/usr/jdk下面，执行安装文件后。然后需要配置JAVA_HOME和CLASSPATH.<br>使用vim 进入/etc/profile.在结尾部分添加如下内容：</p>
+<pre><code>JAVA_HOME=/usr/java/jdk1.6.0_45
+PATH=$JAVA_HOME/bin:$PATH
+CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export JAVA_HOME PATH CLASSPATH
+</code></pre><p>保存后，执行以下命令使配置文件生效</p>
+<pre><code>source /etc/profile
+</code></pre><p>检查java是否安装成功</p>
+<pre><code>java -version
+</code></pre><p>##安装hadoop<br>这里使用hadoop1.2.1，解压到/usr/hadoop1.2.1中。<br>然后配置SSH</p>
+<pre><code>1.生成秘钥
+ssh-keygen -t rsa
+2.一直回车即可,然后进入.ssh目录,执行命令
+cd ~/.ssh
+cp id_rsa.pub authorized_keys
+3.检查是否需要密码
+ssh localhost
+</code></pre><p>进入hadoop安装路径，对hadoop进行配置。</p>
+<p>##配置hadoop<br>配置core-site.xml:<br>vi core-site.xml打开core-site.xml文件，然后在configuration标签中加入以下内容：</p>
+<pre><code>&lt;property&gt;
+
+&lt;name&gt;fs.default.name&lt;/name&gt; 
+
+&lt;value&gt;hdfs://localhost:9000&lt;/value&gt;
+
+&lt;/propety&gt;
+
+&lt;!—fs.default.name：用来配置namenode,指定HDFS文件系统的URL，通过该URL我们可以访问文件系统的内容，也可以把localhost换成本机IP地址；如果是完全分布模式，则必须把localhost改为实际namenode机器的IP地址；如果不写端口，则使用默认端口8020。 --&gt;
+
+&lt;property&gt;
+
+&lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
+
+&lt;value&gt;/tmp/hadoop/hadoop_tmp&lt;/value&gt;
+
+&lt;/property&gt;
+
+&lt;!-- hadoop.tmp.dir：Hadoop的默认临时路径，这个最好配置，如果在新增节点或者其他情况下莫名其妙的DataNode启动不了，就删除此文件中的tmp目录即可。不过如果删除了NameNode机器的此目录，那么就需要重新执行NameNode格式化的命令。该目录必须预先手工创建。--&gt;
+</code></pre><p>配置hdfs-site.xml:<br>在configuration标签中加入以下内容，所有不存在的目录都要预先创建：</p>
+<pre><code>&lt;property&gt;
+
+&lt;name&gt;dfs.data.dir&lt;/name&gt;   
+
+&lt;value&gt;/home/hadoop/hadoop_dir/dfs/data&lt;/value&gt;
+
+&lt;/property&gt;
+
+&lt;!--配置HDFS存储目录,数据存放目录,用于datanode存放数据--&gt;
+
+&lt;property&gt;
+
+&lt;name&gt;dfs.name.dir&lt;/name&gt;
+
+&lt;value&gt;/home/hadoop/hadoop_dir/dfs/name&lt;/value&gt;
+
+&lt;/property&gt;
+
+&lt;!—用来存储namenode的文件系统元数据，包括编辑日志和文件系统映像，如果更换地址的话，则需要重新使用hadoop namenode –format命令格式化namenode--&gt;
+
+&lt;property&gt;
+
+&lt;name&gt;dfs.replication&lt;/name&gt;
+
+&lt;value&gt;1&lt;/value&gt; 
+
+&lt;/proerty&gt;
+
+&lt;!—用来设置文件系统冗余备份数量，因为只有一个节点，所有设置为1，系统默认数量为3--&gt;
+</code></pre><p>配置mapred-site.xml:<br>在configuration标签中加入以下内容：</p>
+<pre><code>&lt;property&gt;
+
+&lt;name&gt;mapred.job.tracker&lt;/name&gt;
+
+&lt;value&gt;localhost:9001&lt;/value&gt;     
+
+&lt;/property&gt;
+
+&lt;!—该项配置用来配置jobtracker节点，localhost也可以换成本机的IP地址；真实分布模式下注意更改成实际jobtracker机器的IP地址--&gt;
+</code></pre><p>##运行hadoop</p>
+<p>####1.格式化HDFS文件</p>
+<pre><code>bin/hadoop namenode -format
+</code></pre><p>这里有可能会报“主机找不到错误”，此时需要查看主机名是否有问题，详情见<a href="http://blog.csdn.net/shirdrn/article/details/6562292" target="_blank" rel="external">主机找不到处理</a></p>
+<p>####2.启动hadoop环境</p>
+<pre><code>bin/start-all.sh
+</code></pre><p>####3.查看是否启动完全</p>
+<pre><code>jps
+</code></pre><p>查看是否成功启动SecondaryNamenode，JobTracker，NameNode，DataNode，TraskTracker五个进程，而刚好这五个进程是hadoop所需要的。如果有一个进程没有启动成功，就表示整个集群没有正常工作，我们可以进入/data/software/hadoop/hadoop-1.2.1/libexec/../logs/目录下查看失败日记</p>
+<p>####4.从浏览器查看hadoop信息:<br>我们可以从本机或者其他机器的浏览器访问hadoop。（<strong>ip地址自己修改成自己的</strong>）</p>
+<p>查看jobtracker信息：</p>
+<p><a href="http://192.168.0.107:50030/jobtracker.jsp" target="_blank" rel="external">http://192.168.0.107:50030/jobtracker.jsp</a></p>
+<p>查看namenode信息：</p>
+<p><a href="http://192.168.0.107:50070/dfshealth.jsp" target="_blank" rel="external">http://192.168.0.107:50070/dfshealth.jsp</a></p>
+<p>查看trasktracker信息：</p>
+<p><a href="http://192.168.0.107:50060/tasktracker.jsp" target="_blank" rel="external">http://192.168.0.107:50060/tasktracker.jsp</a></p>
+<p>##WordCount测试<br>1.我们创建一个input文件夹，并且创建3个文件，给每个文件写一些内容：</p>
+<pre><code>mkdir input
+
+echo “hello hadoop” &gt;input/f1.txt
+
+echo “hello word” &gt;input/f2.txt
+
+echo “hello java” &gt;input/f3.txt
+</code></pre><p>2.使用以下命令在hadoop中创建文件夹：</p>
+<pre><code>bin/hadoop fs –mkdir input
+</code></pre><p>3.我们查看在hadoop中是否已经创建该文件夹：</p>
+<pre><code>bin/hadoop fs –ls /user/root
+</code></pre><p>4.使用以下命令把文件从Linux中复制到hadoop中：</p>
+<pre><code>bin/hadoop fs –put input/* input
+</code></pre><p>5.查看文件是否在hadoop中：</p>
+<pre><code>bin/hadoop fs –ls input
+</code></pre><p>6.查看文件内容是否一致：</p>
+<pre><code>bin/hadoop fs –cat input/f1.txt
+</code></pre><p>7.执行wordcount示例程序</p>
+<pre><code>bin/hadoop jar hadoop-examples-1.2.1.jar wordcount /user/root/input /user/root/output (注：这里的root为hadoop运行时的用户名，根据需要换成自己的实际用户名)
+</code></pre><p>8.从hdfs中取回文件到本地</p>
+<pre><code>bin/hadoop fs -get /user/root/output /root (这样，就把运算结果output中的文件放到本地root目录下了)
+</code></pre>
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://www.codeinterviews.com">@codeinterviews</a>.</p>
+    <p class="link">本文链接：<a href="http://codeinterviews.com/hadoop1.2.1安装/">http://codeinterviews.com/hadoop1.2.1安装/</a></p>
+    <div class="share">
+        分享本文：
+        <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+</div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    </div>
+</div>
+
+
+            
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'disqus_username';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            CodeInterviews
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2016 <a href="http://codeinterviews.com" target="_blank">CodeInterviews</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

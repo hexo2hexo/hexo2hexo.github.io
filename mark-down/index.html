@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="CodeInterviews">
+    
+    <meta name="description" itemprop="description" content="use markdown">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="CodeInterviews" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MarkDown使用 | CodeInterviews</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <meta name="baidu-site-verification" content="Jvgfj1O0oP" />
+    <meta name="360-site-verification" content="902348aeb40d156fb32b748c4071c4bd" />
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://codeinterviews.com" title="CodeInterviews">CodeInterviews</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index"><a href="/">首页</a></li>
+                    
+                    <li id="nav-categories"><a href="/categories">分类</a></li>
+                    
+                    <li id="nav-tags"><a href="/tags">标签</a></li>
+                    
+                    <li id="nav-reading"><a href="/tags/#LeetCode">LeetCode</a></li>
+                    
+                    <li id="nav-labs"><a href="/tags/#Java">Java</a></li>
+                    
+                    <li id="nav-about"><a href="/tags/#Javascript">Javascript</a></li>
+                    
+
+                    <!--<li id="nav-github"><a href="https://github.com/hexo2hexo" target="_blank">GitHub</a></li>-->
+                    <li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "mark-down/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>MarkDown使用</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/markdown/">markdown</a>&nbsp;<a href="/tags/edit/">edit</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/markdown/">markdown</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2016-06-30T03:57:53.000Z"
+                       itemprop="datePublished">2016-06-29</time>
+            
+            更新: <time datetime="2016-06-30T03:57:53.000Z"
+                       itemprop="dateModified">2016-06-29</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+
+            <p>##引言<br>MarkDown的目标是实现<code>易读易写</code>。它用来作为一种网络内容的写作语言。但是我们不是要用它来取代HTML，而是它能让文档更容易阅读、编写。</p>
+<p>参考图灵社区<a href="http://www.ituring.com.cn/article/504" target="_blank" rel="external">MarkDown语言说明（详解版）</a>。<br><a id="more"></a></p>
+<p>##标题<br>MarkDown支持的标语语法有以下两种：<code>Setext</code>和<code>Atx</code>  </p>
+<p>####Setext形式<br>主要采用底线的形式表示，利用<code>=</code>(一级标题)和<code>-</code>(二级标题)，例如：  </p>
+<pre><code>一级标题
+=======
+
+二级标题
+-------
+</code></pre><p>任何数量的<code>=</code>和<code>-</code>都有效果。</p>
+<p>####Atx形式<br>Atx形式是通过在前端加入1到6个<code>#</code>，从而对应到标题<code>h1</code>到<code>h6</code>，井字的数量决定了标题的级别，例如：</p>
+<pre><code>#这是h1标题
+
+##这是h2标题
+
+####这是h4标题
+</code></pre><p>##段落、换行和首行缩进<br><strong>段落</strong>是有一个以上相连接的行句组成，段落之间是以空行来进行切分（若一行只包含空白和tab,该行也被视为空行）</p>
+<p><strong>换行</strong>在html中是采用<code>&lt;br /&gt;</code>标签，在此是通过<strong>行尾加上两个以上的空白构成</strong></p>
+<p><strong>首行缩进</strong>是在行的最前端插入两个<code>$emsp;</code>,从而实现缩进两字。</p>
+<p>##区块引言<br>MarkDown中的区块引言采用email形式，通过在每行前面添加<code>&gt;</code>，例子：</p>
+<pre><code>&gt;这是一个区块引言事例
+&gt;通过&gt;符号来达到引言的效果。
+
+&gt;而且也允许只在整个段落的第一行
+最前面加上&gt;。
+</code></pre><p>当然，在区块中也存在级别的划分，即<strong>引言的引言</strong>，只要根据级别添加不同数量的<code>&gt;</code>即可，例子：</p>
+<pre><code>&gt;这里是第一级别
+&gt;
+&gt;&gt;这里是第二级别，内嵌的引言
+&gt;
+&gt;返回第一级别
+</code></pre><p>在区块引言中也可以使用其他的MarkDown语法，包括标题，列表等，例子：</p>
+<pre><code>&gt;##这是标题
+&gt;
+&gt;1.这是列表第一项
+&gt;2.这是列表第二项
+</code></pre><p>##列表<br>在MarkDowm中支持有序列表和无序列表。</p>
+<p>####无序列表<br>无序列表采用<code>*</code>,<code>+</code>或是<code>-</code>作为列表标记：</p>
+<pre><code>* 红
+* 绿
+* 蓝
+</code></pre><p>等价于：</p>
+<pre><code>+ 红
++ 绿
++ 蓝
+</code></pre><p>也等价于：</p>
+<pre><code>- 红
+- 绿
+- 蓝
+</code></pre><p>####有序列表<br>有序列表采用数字后面接着一个英文句号<code>.</code>来表示：</p>
+<pre><code>1. 红
+2. 绿
+3. 蓝
+</code></pre><p>##程序代码区块<br>和程序相关的写作或是语言原始代码通常会有排版好的程序代码区块，一般不希望采用文本的方式去排版，而是照原有的样子去显示。</p>
+<p>在MarkDown中建立程序代码区块很简单，只要简单地<strong>缩进4个空白或是1个tab</strong>即可，例子：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span>  </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span><br><span class="line"></span>&#123;  </span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"hello world"</span>&lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>##分隔线<br>可以在一行中使用<strong>三个或以上的<code>*</code>,<code>-</code>或是<code>_</code></strong>来建立一个分割线，行内不能有其他东西，一下写法都可以建立分隔符：</p>
+<pre><code>***
+
+******
+
+---
+
+________
+</code></pre><p>##链接<br>MarkDown支持两种形式的链接语法，分别为<strong>行内</strong>和<strong>参考</strong>两种。</p>
+<p>####行内链接<br>行内形式的链接，是在方块括号后面马上接着括号并插入网址链接，如果你还想要加上链接的title文字，只要在网址后面，用双引号把title文字包起来即可，例子，创建google的链接：</p>
+<pre><code>这里是搜索引擎[google](https://www.google.com)
+
+这里是搜索引擎[google](https://www.google.com &quot;Title&quot;)
+</code></pre><p>当然在上面的链接中可以使用本地的相对路径。</p>
+<p>####参考链接<br>参考链接是使用另一个方括号接在链接文字的括号后面，在第二个方括号里面要填入用以辨识链接的标签：</p>
+<pre><code>这里是搜索引擎[google][1]
+[1]:https://www.google.com 
+
+这里是搜索引擎[google][1]
+[1]:https://www.google.com &quot;Title&quot;
+</code></pre><p>默认的链接标签功能可以省略指定链接标签，在这种情况下，<strong>链接标签和链接文字会视为相同</strong>，例子：</p>
+<pre><code>这里是搜索引擎[google][]
+[google]:https://www.google.com 
+</code></pre><p>链接的定义可以放在文档中的任何一个地方，可以直接放在链接出现段落的后面，也可以把它放在文档最后面，就像是批注一样。</p>
+<pre><code>I get 10 times more traffic from [Google] [1] than from
+[Yahoo] [2] or [MSN] [3].
+
+  [1]: http://google.com/        &quot;Google&quot;
+ [2]: http://search.yahoo.com/  &quot;Yahoo Search&quot;
+  [3]: http://search.msn.com/    &quot;MSN Search&quot;
+</code></pre><p>##自动链接<br>MarkDown也支持比较简短的自动链接形式来处理网址和电子邮件信箱，只需要使用<strong>方括号</strong>包起来，例如：</p>
+<pre><code>&lt;http://www.google.com&gt;
+
+MarkDown会转换成下面的html代码：
+&lt;a href=&quot;http://www.google.com&quot;&gt;http://www.google.com&lt;/a&gt;
+</code></pre><p>##强调<br>MarkDown中使用<code>*</code>和<code>_</code>作为标记强调字词的符号，主要分为<strong><em>倾斜</em></strong>和<strong>加粗</strong>。</p>
+<p>####倾斜<br>用一个<code>*</code>或<code>_</code>包围的字词会被变成倾斜，从而在html中被<code>&lt;em&gt;</code>标签包围，例子：</p>
+<pre><code>*倾斜*
+
+_倾斜_
+</code></pre><p>####加粗<br>用两个<code>*</code>或<code>_</code>包围的字词会被加粗，从而在html中被<code>&lt;strong&gt;</code>标签包围，例子：</p>
+<pre><code>**加粗**
+
+__加粗__
+</code></pre><p>如果要在文字前后直接插入普通的星号或底线，可以用反斜杠：</p>
+<pre><code>\*普通的文本\*
+</code></pre><p>##图片引用<br>MarkDown中采用和链接相似的语法来标记图片，同样也允许两种样式：<strong>行内</strong>和<strong>参考</strong>。</p>
+<p>####行内<br>行内的语法和链接很相似，只是在最前端加上了一个<code>!</code>符号，例子：</p>
+<pre><code>![Alt text](/path/img/test.jpg)
+
+![Alt text](/path/img/test.jpg &quot;title&quot;)
+</code></pre><p>####参考<br>参考的语法如下所示：</p>
+<pre><code>![Alt text][1]
+[1]:/path/img/test.jpg
+
+![Alt text][1]
+[1]:/path/img/test.jpg &quot;title&quot;
+</code></pre><p>但是，到目前为止，在MarkDown中无法指定图片的宽和高，如果需要的话，可以使用普通的<code>&lt;img&gt;</code>标签。</p>
+<p>##转义字符<br>如果想在MarkDown中插入以下的普通的符号，需要使用<code>\</code>进行转义:</p>
+<pre><code>\   反斜杠  --&gt; \\
+`   反引号  --&gt; \`
+*   星号    --&gt; \*
+_   底线    --&gt; \_
+{}  大括号  --&gt; \{  \}
+[]  方括号  --&gt; \[  \]
+()  括号    --&gt; \(  \)
+#   井字号  --&gt; \#
++   加号    --&gt; \+
+-   减号    --&gt; \-
+.   英文句点 --&gt; \.
+!   惊叹号  --&gt; \!
+</code></pre><p>##MarkDown编辑器</p>
+<p>####在线编辑器<br><a href="http://www.zybuluo.com/mdeditor" target="_blank" rel="external">Cmd Markdown</a><br><a href="http://stackedit.io/" target="_blank" rel="external">Stackedit</a></p>
+<p>####本地编辑器<br><a href="http://markdownpad.com/" target="_blank" rel="external">MarkdownPad</a></p>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://www.codeinterviews.com">@codeinterviews</a>.</p>
+    <p class="link">本文链接：<a href="http://codeinterviews.com/mark-down/">http://codeinterviews.com/mark-down/</a></p>
+    <div class="share">
+        分享本文：
+        <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+</div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    </div>
+</div>
+
+
+            
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'disqus_username';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            CodeInterviews
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2016 <a href="http://codeinterviews.com" target="_blank">CodeInterviews</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

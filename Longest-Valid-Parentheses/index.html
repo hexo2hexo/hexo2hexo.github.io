@@ -1,0 +1,237 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="CodeInterviews">
+    
+    <meta name="description" itemprop="description" content="Longest Valid Parentheses">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="CodeInterviews" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LeetCode-Longest Valid Parentheses | CodeInterviews</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <meta name="baidu-site-verification" content="Jvgfj1O0oP" />
+    <meta name="360-site-verification" content="902348aeb40d156fb32b748c4071c4bd" />
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://codeinterviews.com" title="CodeInterviews">CodeInterviews</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index"><a href="/">首页</a></li>
+                    
+                    <li id="nav-categories"><a href="/categories">分类</a></li>
+                    
+                    <li id="nav-tags"><a href="/tags">标签</a></li>
+                    
+                    <li id="nav-reading"><a href="/tags/#LeetCode">LeetCode</a></li>
+                    
+                    <li id="nav-labs"><a href="/tags/#Java">Java</a></li>
+                    
+                    <li id="nav-about"><a href="/tags/#Javascript">Javascript</a></li>
+                    
+
+                    <!--<li id="nav-github"><a href="https://github.com/hexo2hexo" target="_blank">GitHub</a></li>-->
+                    <li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "Longest-Valid-Parentheses/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>LeetCode-Longest Valid Parentheses</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/String/">String</a>&nbsp;<a href="/tags/Dynamic-Programming/">Dynamic Programming</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2016-06-30T03:57:53.000Z"
+                       itemprop="datePublished">2016-06-29</time>
+            
+            更新: <time datetime="2016-06-30T03:57:53.000Z"
+                       itemprop="dateModified">2016-06-29</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+
+            <p>##题目</p>
+<p>####Longest Valid Parentheses </p>
+<blockquote>
+<p>Given a string containing just the characters <code>&#39;(&#39;</code> and <code>&#39;)&#39;</code>, find the length of the longest valid (well-formed) parentheses substring.</p>
+<p>For <code>&quot;(()&quot;</code>, the longest valid parentheses substring is <code>&quot;()&quot;</code>, which has length = 2.</p>
+<p>Another example is <code>&quot;)()())&quot;</code>, where the longest valid parentheses substring is <code>&quot;()()&quot;</code>, which has length = 4.</p>
+</blockquote>
+<a id="more"></a>
+<p>##解题思路<br>这道题是求最长的括号序列，比较容易想到用栈这个数据结构。<br>基本思路就是维护一个栈，遇到左括号就进栈，遇到右括号则出栈，并且判断当前合法序列是否为最长序列。不过这道题看似思路简单，但是有许多比较刁钻的测试集。具体来说，主要问题就是遇到右括号时如何判断当前的合法序列的长度。 </p>
+<pre><code>比较健壮的方式如下：
+(1) 如果当前栈为空，则说明加上当前右括号没有合法序列（有也是之前判断过的）；
+(2) 否则弹出栈顶元素，如果弹出后栈为空，则说明当前括号匹配，我们会维护一个合法开始的起点start，合法序列的长度即为当前元素的位置-start+1；否则如果栈内仍有元素，则当前合法序列的长度为当前栈顶元素的位置下一位到当前元素的距离，因为栈顶元素后面的括号对肯定是合法的，而且左括号出过栈了。
+</code></pre><p>因为只需要一遍扫描，算法的时间复杂度是O(n)，空间复杂度是栈的空间，最坏情况是都是左括号，所以是O(n)。</p>
+<p>当然使用DP也可以解答，不过时间复杂度略高，解题如下：</p>
+<pre><code>用longestValid[i][j]表示从S串中的字符i到j的最长well-formed表达式的长度；isValid[i][j]表示从i到j是否是一个valid的表达式。
+如何判断longestValid[i][j]的取值呢？有下面几种情况：
+假定有一个maxlength变量。
+1. 如果i=&apos;(&apos; 并且 j=&apos;)&apos;，
+    a. 如果j = i+1,那这是一个valid的表达式；
+      b. 如果isValid[i+1][j-1]为真，那这也是一个valid表达式；
+    c. 对所有在i到j之间的k，如果isValid[i,k]&amp;&amp;isValid[k+1,j]为真，那么这是一个valid表达式，这三种情况maxlength都是i到j的距离；
+    d.其他情况，maxlength = longestValid[i][j-1]和 longestValid[i+1][j]比较大的那个。
+2. 如果i=&apos;(&apos; 并且 j=&apos;(&apos;, maxlength等于longestValid[i][j-1]。
+3. 如果i=&apos;)&apos; 并且 j=&apos;)&apos;, maxlength等于longestValid[i+1][j]。
+4. 如果i=&apos;)‘ 并且 j=&apos;(&apos;, maxlength等于longestValid[i+1][j-1].
+判断完成后，longestValid[i][j]赋值于maxlength。
+</code></pre><p>##算法代码<br>代码采用JAVA实现：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">longestValidParentheses</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span>[] c=s.toCharArray();</span><br><span class="line">        <span class="keyword">int</span> start=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> max=<span class="number">0</span>;</span><br><span class="line">        LinkedList&lt;Integer&gt; stack=<span class="keyword">new</span> LinkedList&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;c.length;i++)</span><br><span class="line">        &#123;</span><br><span class="line">        	<span class="keyword">if</span>(c[i]==<span class="string">'('</span>)</span><br><span class="line">        	&#123;</span><br><span class="line">        		stack.push(i);</span><br><span class="line">        	&#125;<span class="keyword">else</span></span><br><span class="line">        	&#123;</span><br><span class="line">        		<span class="keyword">if</span>(stack.size()==<span class="number">0</span>)</span><br><span class="line">        			start=i+<span class="number">1</span>;</span><br><span class="line">        		<span class="keyword">else</span>&#123;</span><br><span class="line">        			stack.pop();</span><br><span class="line">        			max=stack.size()==<span class="number">0</span>?Math.max(max,i-start+<span class="number">1</span>):Math.max(max,i-stack.peek());</span><br><span class="line">        		&#125;</span><br><span class="line">        	&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://www.codeinterviews.com">@codeinterviews</a>.</p>
+    <p class="link">本文链接：<a href="http://codeinterviews.com/Longest-Valid-Parentheses/">http://codeinterviews.com/Longest-Valid-Parentheses/</a></p>
+    <div class="share">
+        分享本文：
+        <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+</div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    </div>
+</div>
+
+
+            
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'disqus_username';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            CodeInterviews
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2016 <a href="http://codeinterviews.com" target="_blank">CodeInterviews</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

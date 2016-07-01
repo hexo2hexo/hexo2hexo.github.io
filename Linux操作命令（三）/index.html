@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="CodeInterviews">
+    
+    <meta name="description" itemprop="description" content="Linux操作命令（三）">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="CodeInterviews" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Linux操作命令（三） | CodeInterviews</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <meta name="baidu-site-verification" content="Jvgfj1O0oP" />
+    <meta name="360-site-verification" content="902348aeb40d156fb32b748c4071c4bd" />
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://codeinterviews.com" title="CodeInterviews">CodeInterviews</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index"><a href="/">首页</a></li>
+                    
+                    <li id="nav-categories"><a href="/categories">分类</a></li>
+                    
+                    <li id="nav-tags"><a href="/tags">标签</a></li>
+                    
+                    <li id="nav-reading"><a href="/tags/#LeetCode">LeetCode</a></li>
+                    
+                    <li id="nav-labs"><a href="/tags/#Java">Java</a></li>
+                    
+                    <li id="nav-about"><a href="/tags/#Javascript">Javascript</a></li>
+                    
+
+                    <!--<li id="nav-github"><a href="https://github.com/hexo2hexo" target="_blank">GitHub</a></li>-->
+                    <li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "Linux操作命令（三）/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>Linux操作命令（三）</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/Linux/">Linux</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/project/">project</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2016-06-30T03:57:53.000Z"
+                       itemprop="datePublished">2016-06-29</time>
+            
+            更新: <time datetime="2016-06-30T03:57:53.000Z"
+                       itemprop="dateModified">2016-06-29</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+
+            <p>该节主要讲解<strong>more</strong>,<strong>less</strong>,<strong>head</strong>,<strong>tail</strong> 命令。</p>
+<p>这里对linux常用的命令进行整理，以便日后查看。<br>–来自实验楼。</p>
+<a id="more"></a>
+<p>##more命令<br>more命令，功能类似 cat ，cat命令是将整个文件的内容从上到下显示在屏幕上。 more命令会一页一页的显示，方便使用者逐页阅读，而最基本的指令就是按空白键（space）往下一页显示，按 b 键就会往回（back）一页显示，而且还有搜寻字串的功能 。more命令从前向后读取文件，因此在启动时就加载整个文件。</p>
+<p>###命令格式：<br>more [选项] 文件</p>
+<p>###常用参数：</p>
+<pre><code>+n          从笫n行开始显示
+-n           定义屏幕大小为n行
++/pattern     在每个档案显示前搜寻该字串（pattern），然后从该字串前两行之后开                始显示  
+-c           从顶部清屏，然后显示
+-d          提示“Press space to continue，’q’ to quit”，禁用响铃功能
+-p          通过清除窗口而不是滚屏来对文件进行换页，与-c选项相似
+-s           把连续的多个空行显示为一行
+-u          把文件内容中的下画线去掉
+常用操作：
+=            输出当前行的行号
+q        退出more 
+空格键      向下滚动一屏
+b              返回上一屏
+</code></pre><p>###常用范例：<br>下面示例中用到的shiyanlou.log文件内容如下：</p>
+<p><strong>例一：</strong>从第五行开始显示shiyanlou.log文件中的内容，可以使用如下命令：</p>
+<pre><code>more +5 shiyanlou.log 
+</code></pre><p><img src="http://anything-about-doc.qiniudn.com/linux31.png" alt="Alt text"></p>
+<p><strong>例二：</strong>从shiyanlou.log文件中查找第一个出现&#34;g&#34;字符串的行，并从该处前两行开始显示输出，可以使用如下命令：</p>
+<pre><code>more +/g shiyanlou.log 
+</code></pre><p><img src="http://anything-about-doc.qiniudn.com/linux32.png" alt="Alt text"></p>
+<p><strong>例三：</strong>设定每屏行数为5，可以使用如下命令：</p>
+<pre><code>more -5 shiyanlou.log 
+</code></pre><p><img src="http://anything-about-doc.qiniudn.com/linux33.png" alt="Alt text"></p>
+<p><strong>例四：</strong>使用ll和more命令显示/etc目录信息，可以使用如下命令：</p>
+<pre><code>ll /etc | more -10
+</code></pre><p><img src="http://anything-about-doc.qiniudn.com/linux34.png" alt="Alt text"></p>
+<p>每页显示10个文件信息，按 Ctrl+F 或者 空格键 将会显示下10条文件信息。</p>
+<p>##less 命令</p>
+<p>less 工具也是对文件或其它输出进行分页显示的工具，应该说是linux正统查看文件内容的工具，功能极其强大。</p>
+<p>###命令格式：<br>less [选项] 文件</p>
+<p>###常用参数：</p>
+<pre><code>-e              当文件显示结束后，自动离开
+-f              强迫打开特殊文件，例如外围设备代号、目录和二进制文件
+-i              忽略搜索时的大小写
+-m              显示类似more命令的百分比
+-N              显示每行的行号
+-s              显示连续空行为一行
+</code></pre><p>###常用操作：</p>
+<pre><code>/字符串            向下搜索“字符串”的功能
+?字符串            向上搜索“字符串”的功能
+n                重复前一个搜索（与 / 或 ? 有关）
+N                反向重复前一个搜索（与 / 或 ? 有关）
+b                  向前翻一页
+d                  向后翻半页
+q                  退出less 命令
+空格键             向后翻一页
+向上键            向上翻动一行
+向下键            向下翻动一行
+</code></pre><p>###常用范例：<br><strong>例一：</strong>显示shiyanlou.log文件中的内容，并显示行号，可以使用如下命令：</p>
+<pre><code>less -N shiyanlou.log 
+</code></pre><p><img src="http://anything-about-doc.qiniudn.com/linux35.png" alt="Alt text"></p>
+<p><strong>例二：</strong>显示shiyanlou.log文件中的内容，搜索字符串”shiyanlou”，可以使用如下命令：</p>
+<pre><code>less  shiyanlou.log
+/shiyanlou
+</code></pre><p><img src="http://anything-about-doc.qiniudn.com/linux226.png" alt="Alt text"></p>
+<p><img src="http://anything-about-doc.qiniudn.com/linux37.png" alt="Alt text"></p>
+<p><strong>例三：</strong>ps查看进程信息并通过less分页显示 ，可以使用如下命令： </p>
+<pre><code>ps -f | less
+</code></pre><p><img src="http://anything-about-doc.qiniudn.com/linux38.png" alt="Alt text"></p>
+<p>###less与cat和more的区别：<br>cat命令功能用于显示整个文件的内容，单独使用没有翻页功能。因此经常和more命令搭配使用，cat命令还有就是可以将数个文件合并成一个文件的功能。    more命令功能：让画面在显示满一页时暂停，此时可按空格健继续显示下一个画面，或按q键停止显示。</p>
+<p>less命令功能：less命令的用法与more命令类似，也可以用来浏览超过一页的文件。所不同的是less命令除了可以按空格键向下显示文件外，还可以利用上下键来卷动文件。当要结束浏览时，只要在less命令的提示符“：”下按q键即可。    其实这三个命令除了cat命令有合并文件的功能，其余功能上相近，只是从浏览习惯和显示方式上有所不同。</p>
+<p>##head 命令<br>head命令就像它的名字一样浅显易懂，主要是用来显示档案的开头至标准输出中，默认head命令打印其相应文件的开头10行。</p>
+<p>###命令格式：<br>head [选项]  [文件]</p>
+<p>###常用参数：</p>
+<pre><code>-q                 隐藏文件名
+-v                 显示文件名
+-c&lt;字节&gt;;        显示字节数
+-n&lt;行数&gt;;         显示的行数
+</code></pre><p>###常用范例：<br><strong>例一：</strong>显示shiyanlou.log文件中的前5行内容，可以使用如下命令：<br>head -n 5 shiyanlou.log<br><img src="http://anything-about-doc.qiniudn.com/linux39.png" alt="Alt text"></p>
+<p><strong>例二：</strong>显示shiyanlou.log和zhou.log文件中的前5行内容，可以使用如下命令：<br>head -n 5 shiyanlou.log  zhou.log<br><img src="http://anything-about-doc.qiniudn.com/linux40.png" alt="Alt text"></p>
+<p><strong>例三：</strong>显示shiyanlou.log文件中除了最后5行的内容，可以使用如下命令：<br>head -n -5 shiyanlou.log<br><img src="http://anything-about-doc.qiniudn.com/linux41.png" alt="Alt text"></p>
+<p>##tail 命令<br>tail 命令主要用于显示指定文件末尾内容。常用查看日志文件。</p>
+<p>###命令格式：<br>tail  [选项]  [文件]</p>
+<p>###常用参数：</p>
+<pre><code>-f             循环读取
+-q             不显示处理信息
+-v             显示详细的处理信息
+-c&lt;字节&gt;     显示的字节数
+-n&lt;行数&gt;     显示行数
+</code></pre><p>###常用范例：<br><strong>例一：</strong>显示shiyanlou.log文件中的最后5行内容，可以使用如下命令：</p>
+<pre><code>tail -n 5 shiyanlou.log 
+</code></pre><p><img src="http://anything-about-doc.qiniudn.com/linux50.png" alt="Alt text"></p>
+<p><strong>例二：</strong>显示shiyanlou.log文件中的最后5行内容，当shiyanlou.log文件有新内容增加，自动更新显示。可以使用如下命令：</p>
+<pre><code>tail -n 5 -f shiyanlou.log 
+</code></pre><p><img src="http://anything-about-doc.qiniudn.com/linux51.png" alt="Alt text"></p>
+<p>ping www.shiyanlou.com &gt;&gt; shiyanlou.log 这条命令作用是，ping远程主机，并将信息追加到shyanlou.log文件中。&amp; 的作用是将这条命令放在后台执行，这样shiyanlou.log文件就会一直有内容增加。说明一下，linux下执行ping命令会一直执行，必须手动停止才行。而windows下执行ping命令时，发送一定请求后会自动停止。</p>
+<p><img src="http://anything-about-doc.qiniudn.com/linux52.png" alt="Alt text"></p>
+<p>使用tail命令的-f选项可以即时输出文件变化后追加的内容，tail -f filename会把filename里最尾部的内容显示在屏幕上，并且不但刷新，使你看到最新的文件内容。<br>另外顺便说一下怎么查看后台正在运行的任务，及怎么停止任务。<br>jobs命令可以查看正在后台运行的任务。kill命令可以杀死一个任务，但要使用任务的id。任务的id可以通过ps命令查看获得。</p>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://www.codeinterviews.com">@codeinterviews</a>.</p>
+    <p class="link">本文链接：<a href="http://codeinterviews.com/Linux操作命令（三）/">http://codeinterviews.com/Linux操作命令（三）/</a></p>
+    <div class="share">
+        分享本文：
+        <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+</div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    </div>
+</div>
+
+
+            
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'disqus_username';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            CodeInterviews
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2016 <a href="http://codeinterviews.com" target="_blank">CodeInterviews</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

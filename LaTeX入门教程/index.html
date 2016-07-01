@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="CodeInterviews">
+    
+    <meta name="description" itemprop="description" content="LaTeX入门教程">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="CodeInterviews" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LaTeX入门教程 | CodeInterviews</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <meta name="baidu-site-verification" content="Jvgfj1O0oP" />
+    <meta name="360-site-verification" content="902348aeb40d156fb32b748c4071c4bd" />
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://codeinterviews.com" title="CodeInterviews">CodeInterviews</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index"><a href="/">首页</a></li>
+                    
+                    <li id="nav-categories"><a href="/categories">分类</a></li>
+                    
+                    <li id="nav-tags"><a href="/tags">标签</a></li>
+                    
+                    <li id="nav-reading"><a href="/tags/#LeetCode">LeetCode</a></li>
+                    
+                    <li id="nav-labs"><a href="/tags/#Java">Java</a></li>
+                    
+                    <li id="nav-about"><a href="/tags/#Javascript">Javascript</a></li>
+                    
+
+                    <!--<li id="nav-github"><a href="https://github.com/hexo2hexo" target="_blank">GitHub</a></li>-->
+                    <li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "LaTeX入门教程/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>LaTeX入门教程</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/LaTeX/">LaTeX</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/project/">project</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2016-06-30T03:57:53.000Z"
+                       itemprop="datePublished">2016-06-29</time>
+            
+            更新: <time datetime="2016-06-30T03:57:53.000Z"
+                       itemprop="dateModified">2016-06-29</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+
+            <p>##引言<br>由于国外的很多会议都使用LaTeX进行排版，例如自然语言处理顶级会议ACL。因此，为了投国外的期刊与会议，我也开始学习LaTeX。  </p>
+<p>但是遗憾的是，现有的LaTeX入门教材都太长了，导致我这个想半天搞定它开始写论文的想法付之东流。因此，在这里，只为了能够快速入门LaTeX,本人写了这一篇入门教程，其中只涉及到写论文的基本知识点，让您能够半天搞定LaTeX。</p>
+<p>当涉及到高级知识的方面，请自行找“谷哥”和“度娘”。</p>
+<a id="more"></a>
+<p>##LaTeX简介<br>LaTeX的介绍主要是以下三点：  </p>
+<ol>
+<li>LaTeX是一类用于编辑和排版的软件，用于生成PDF文档。     </li>
+<li>LaTeX编辑和排版的核心思想在于，通过\section和\paragraph等语句，规定了每一句话在文章中所从属的层次，从而极大方便了对各个层次批量处理。    </li>
+<li>LaTeX在使用体验方面，最不易被Word替代的有四个方面：方便美观的数学公式编辑、不会乱动的退格对齐、非所见即所得因此可以在编辑的时候用退格和换行整理思路但生成PDF出来不影响美观、部分导师和刊物不接受Word排版的文章。  </li>
+</ol>
+<p>##LaTeX软件的安装<br>由于国内的CTeX非常流行，因此这里可以在<a href="http://www.ctex.org/HomePage" target="_blank" rel="external">cTeX.org</a>下载ctex套装，其中包含MikTeX和WinEit。一键安装即可。</p>
+<p>##建立第一个文档<br>打开<code>WinEdt</code>,建立一个新文档,在其中输入以下内容：</p>
+<pre><code>\documentclass{article}
+\begin{document}
+    hello world!!!
+\end{document}
+</code></pre><p>然后进行保存，保存格式为<code>UTF-8</code>.接着在<code>WinEdt</code>的工具栏中找到编译按钮<img src="/img/LaTeX/1.png" alt="">,在下拉菜单中选择<code>LeTeX</code>,并点击进行编译。<br>如果成功的话，就会得到一个PDF文件，点击工具栏中的放大镜按钮就可以快速查看。</p>
+<p>##标题、作者和注释<br>建立一个新文档，输入以下内容：</p>
+<pre><code>\documentclass{article} 
+    \author{My Name} 
+    \title{The Title} 
+\begin{document} 
+      \maketitle 
+      hello, world % This is comment 
+\end{document} 
+</code></pre><p>并保存为<code>UTF-8</code>格式，然后编译查看结果。</p>
+<p>##章节和段落<br>建立一个新文档，输入以下内容：</p>
+<pre><code>\documentclass{article}
+  \title{Hello World}
+\begin{document}
+  \maketitle
+  \section{Hello China} China is in East Asia.
+    \subsection{Hello Beijing} Beijing is the capital of China.
+      \subsubsection{Hello Dongcheng District}
+        \paragraph{Tian&apos;anmen Square}is in the center of Beijing
+          \subparagraph{Chairman Mao} is in the center of Tian&apos;anmen Square
+      \subsection{Hello Guangzhou}
+        \paragraph{Sun Yat-sen University} is the best university in Guangzhou.
+\end{document}  
+</code></pre><p>其实每一行前面的空格不影响编译生成的PDF的排版结果。因此，是否退格只是个人的爱好。</p>
+<p>##加入目录<br>建立一个新文档，输入以下内容，编译并观察结果：</p>
+<pre><code>\documentclass{article} 
+\begin{document} 
+  \tableofcontents  %生成目录
+  \section{Hello China} China is in East Asia. 
+    \subsection{Hello Beijing} Beijing is the capital of China. 
+      \subsubsection{Hello Dongcheng District} 
+        \paragraph{Hello Tian&apos;anmen Square}is in the center of Beijing 
+          \subparagraph{Hello Chairman Mao} is in the center of Tian&apos;anmen Square 
+\end{document}
+</code></pre><p>##换行<br>建立一个新文档，输入以下内容，编译并观察结果：</p>
+<pre><code>\documentclass{article}
+\begin{document}
+  Beijing is
+  the capital
+  of China.
+
+  New York is
+
+  the capital
+
+  of America.
+
+  Amsterdam is \\ the capital \\
+  of Netherlands.
+\end{document}
+</code></pre><p>##数学公式<br>建立一个新文档，输入以下内容，保存并进行编译，然后观察结果：</p>
+<pre><code>\documentclass{article}
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+\begin{document}
+  The Newton&apos;s second law is F=ma.
+
+  The Newton&apos;s second law is $F=ma$.
+
+  The Newton&apos;s second law is
+  $$F=ma$$
+
+  The Newton&apos;s second law is
+  \[F=ma\]
+
+  Greek Letters $\eta$ and $\mu$
+
+  Fraction $\frac{a}{b}$
+
+  Power $a^b$
+
+  Subscript $a_b$
+
+  Derivate $\frac{\partial y}{\partial t} $
+
+  Vector $\vec{n}$
+
+  Bold $\mathbf{n}$
+
+  To time differential $\dot{F}$
+
+  Matrix (lcr here means left, center or right for each column)
+  \[
+    \left[
+      \begin{array}{lcr}
+        a1 &amp; b22 &amp; c333 \\
+        d444 &amp; e555555 &amp; f6
+      \end{array}
+    \right]
+  \]
+
+Equations(here \&amp; is the symbol for aligning different rows)
+\begin{align}
+  a+b=c\\
+  d=e+f+g
+\end{align}
+
+\[
+  \left\{
+    \begin{aligned}
+      &amp;a+b=c\\
+      &amp;d=e+f+g
+    \end{aligned}
+  \right.
+\]
+
+\end{document}
+</code></pre><p>具体细节需要查看LaTeX的数学符号表。</p>
+<p>公式中的空格设定如下：</p>
+<pre><code>两个quad空格    a \qquad b    a \qquad b    两个m的宽度
+quad空格    a \quad b    a \quad b    一个m的宽度
+大空格    a\ b    a\ b    1/3m宽度
+中等空格    a\;b    a\;b    2/7m宽度
+小空格    a\,b    a\,b    1/6m宽度
+没有空格    ab    ab\,    
+紧贴    a\!b    a\!b    缩进1/6m宽度
+</code></pre><p><a href="http://www.codecogs.com/latex/eqneditor.php" target="_blank" rel="external">LaTeX在线公式编辑器</a>;</p>
+<p>##插入图片<br>首先先要搜索一个将图片转成<code>eps</code>文件的软件，很容易找到，然后要将图片保存为一个名字如figure1.eps。<br>建立一个新文档，输入以下内容，保存到和图片文件同一个文件夹里，编译并观察现象。</p>
+<pre><code>\documentclass{article} 
+  \usepackage{graphicx} 
+\begin{document} 
+  \includegraphics[width=4.00in,height=3.00in]{figure1.eps} 
+\end{document}
+</code></pre><p>##简单表格<br>建立一个新文档，输入以下内容，进行保存编译并观察结果：</p>
+<pre><code>\documentclass{article}
+\begin{document}
+  \begin{tabular}{|c|c|}
+    a &amp; b \\
+    c &amp; d\\
+  \end{tabular}
+
+  \begin{tabular}{|c|c|}
+    \hline
+    a &amp; b \\
+    \hline
+    c &amp; d\\
+    \hline
+  \end{tabular}
+
+  \begin{center}
+    \begin{tabular}{|c|c|}
+      \hline
+      a &amp; b \\ \hline
+      c &amp; d\\
+      \hline
+    \end{tabular}
+  \end{center}
+\end{document} 
+</code></pre><p>##总结<br>到目前为止，你已经可以用LaTeX自带的article模板来书写一篇基本的论文框架了，至少你已经能够用得起来LaTeX了。<br>在论文从框架到完整的过程中，必然还存在许多的细节问题，比如字体字号，比如图片拼合，比如复杂的表格等等。<br>那些问题，就请咨询google吧。</p>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://www.codeinterviews.com">@codeinterviews</a>.</p>
+    <p class="link">本文链接：<a href="http://codeinterviews.com/LaTeX入门教程/">http://codeinterviews.com/LaTeX入门教程/</a></p>
+    <div class="share">
+        分享本文：
+        <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+</div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    </div>
+</div>
+
+
+            
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'disqus_username';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            CodeInterviews
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2016 <a href="http://codeinterviews.com" target="_blank">CodeInterviews</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

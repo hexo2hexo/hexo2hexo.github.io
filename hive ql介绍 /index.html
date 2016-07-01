@@ -1,0 +1,499 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="CodeInterviews">
+    
+    <meta name="description" itemprop="description" content=" Hive QL 介绍">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="CodeInterviews" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hive QL 介绍 | CodeInterviews</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <meta name="baidu-site-verification" content="Jvgfj1O0oP" />
+    <meta name="360-site-verification" content="902348aeb40d156fb32b748c4071c4bd" />
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://codeinterviews.com" title="CodeInterviews">CodeInterviews</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index"><a href="/">首页</a></li>
+                    
+                    <li id="nav-categories"><a href="/categories">分类</a></li>
+                    
+                    <li id="nav-tags"><a href="/tags">标签</a></li>
+                    
+                    <li id="nav-reading"><a href="/tags/#LeetCode">LeetCode</a></li>
+                    
+                    <li id="nav-labs"><a href="/tags/#Java">Java</a></li>
+                    
+                    <li id="nav-about"><a href="/tags/#Javascript">Javascript</a></li>
+                    
+
+                    <!--<li id="nav-github"><a href="https://github.com/hexo2hexo" target="_blank">GitHub</a></li>-->
+                    <li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "hive ql介绍 /";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>Hive QL 介绍</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/Hadoop/">Hadoop</a>&nbsp;<a href="/tags/Hive/">Hive</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/project/">project</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2016-06-30T03:57:53.000Z"
+                       itemprop="datePublished">2016-06-29</time>
+            
+            更新: <time datetime="2016-06-30T03:57:53.000Z"
+                       itemprop="dateModified">2016-06-29</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+                <div id="toc" class="toc-article well">
+                    <strong class="toc-title">大纲</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#三、数据定义操作-DDL"><span class="toc-number">1.</span> <span class="toc-text">三、数据定义操作 - DDL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、数据操作-DML"><span class="toc-number">2.</span> <span class="toc-text">四、数据操作 - DML</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、Hive-QL-查询操作"><span class="toc-number">3.</span> <span class="toc-text">五、Hive QL 查询操作</span></a></li></ol>
+                </div>
+            
+
+            <p>主要对hive ql进行介绍。<br><a id="more"></a></p>
+<p>##二、本节目标</p>
+<p>本次讲解 Hive QL 分为以下几个要点：</p>
+<blockquote>
+<p><strong>1. 数据定义操作 - DDL</strong></p>
+<p><strong>2. 数据操作 - DML</strong></p>
+<p><strong>3. Hive QL 查询操作</strong></p>
+</blockquote>
+<h2 id="三、数据定义操作-DDL"><a href="#三、数据定义操作-DDL" class="headerlink" title="三、数据定义操作 - DDL"></a>三、数据定义操作 - DDL</h2><p><strong>（1）建表（CREATE）的语法如下：</strong></p>
+<pre><code>CREATE [EXTERNAL] TABLE [IF NOT EXISTS] table_name 
+  [(col_name data_type [COMMENT col_comment], ...)] 
+  [COMMENT table_comment] 
+  [PARTITIONED BY (col_name data_type [COMMENT col_comment], ...)] 
+  [CLUSTERED BY (col_name, col_name, ...) 
+  [SORTED BY (col_name [ASC|DESC], ...)] INTO num_buckets BUCKETS] 
+  [ROW FORMAT row_format] 
+  [STORED AS file_format] 
+  [LOCATION hdfs_path]
+</code></pre><p>上面的一些关键字解释：</p>
+<ul>
+<li><strong>CREATE TABLE</strong> 创建一个指定名字的表。如果相同名字的表已经存在，则抛出异常；用户可以用 IF NOT EXIST 选项来忽略这个异常</li>
+<li><strong>EXTERNAL</strong> 关键字可以让用户创建一个外部表，在建表的同时指定一个指向实际数据的路径（LOCATION）</li>
+<li><strong>LIKE</strong> 允许用户复制现有的表结构，但是不复制数据</li>
+<li><strong>COMMENT</strong> 可以为表与字段增加描述</li>
+<li><strong>ROW FORMAT</strong> <blockquote>
+<p>DELIMITED [FIELDS TERMINATED BY char] [COLLECTION ITEMS TERMINATED BY char] [MAP KEYS TERMINATED BY char] [LINES TERMINATED BY char] | SERDE serde_name [WITH SERDEPROPERTIES (property_name=property_value, property_name=property_value, …)]</p>
+<pre><code>用户在建表的时候可以自定义 SerDe 或者使用自带的 SerDe。如果没有指定 ROW FORMAT 或者 ROW FORMAT DELIMITED，将会使用自带的 SerDe。在建表的时候，用户还需要为表指定列，用户在指定表的列的同时也会指定自定义的 SerDe，Hive 通过 SerDe 确定表的具体的列的数据。
+</code></pre></blockquote>
+</li>
+<li><strong>STORED AS</strong><pre><code>     SEQUENCEFILE
+     | TEXTFILE
+     | RCFILE    
+     | INPUTFORMAT input_format_classname OUTPUTFORMAT             output_format_classname
+如果文件数据是纯文本，可以使用 STORED AS TEXTFILE。如果数据需要压缩，使用 STORED AS SEQUENCE 。
+</code></pre></li>
+</ul>
+<p><strong>（2）建表（CREATE）</strong></p>
+<ul>
+<li>创建普通表</li>
+<li>创建外部表</li>
+<li>创建分区表</li>
+<li>创建 Bucket 表</li>
+</ul>
+<ul>
+<li><p>创建普通表</p>
+<pre><code>CREATE TABLE page_view(viewTime INT, userid BIGINT,
+     page_url STRING, referrer_url STRING,
+     ip STRING COMMENT &apos;IP Address of the User&apos;,
+     country STRING COMMENT &apos;country of origination&apos;)
+ COMMENT &apos;This is the staging page view table&apos;;
+</code></pre></li>
+</ul>
+<ul>
+<li>创建外部表：</li>
+</ul>
+<pre><code>CREATE EXTERNAL TABLE page_view(viewTime INT, userid BIGINT,
+     page_url STRING, referrer_url STRING,
+     ip STRING COMMENT &apos;IP Address of the User&apos;,
+     country STRING COMMENT &apos;country of origination&apos;)
+ COMMENT &apos;This is the staging page view table&apos;
+ ROW FORMAT DELIMITED FIELDS TERMINATED BY &apos;\054&apos;
+ STORED AS TEXTFILE
+ LOCATION &apos;&lt;hdfs_location&gt;&apos;;
+</code></pre><ul>
+<li>创建分区表：</li>
+</ul>
+<pre><code>CREATE TABLE par_table(viewTime INT, userid BIGINT,
+     page_url STRING, referrer_url STRING,
+     ip STRING COMMENT &apos;IP Address of the User&apos;)
+ COMMENT &apos;This is the page view table&apos;
+ PARTITIONED BY(date STRING, pos STRING)
+ROW FORMAT DELIMITED ‘\t’
+   FIELDS TERMINATED BY &apos;\n&apos;
+STORED AS SEQUENCEFILE;
+</code></pre><ul>
+<li><p>创建 Bucket 表：</p>
+<pre><code>CREATE TABLE par_table(viewTime INT, userid BIGINT,
+     page_url STRING, referrer_url STRING,
+     ip STRING COMMENT &apos;IP Address of the User&apos;)
+ COMMENT &apos;This is the page view table&apos;
+ PARTITIONED BY(date STRING, pos STRING)
+ CLUSTERED BY(userid) SORTED BY(viewTime) INTO 32 BUCKETS
+ ROW FORMAT DELIMITED ‘\t’
+   FIELDS TERMINATED BY &apos;\n&apos;
+STORED AS SEQUENCEFILE;
+</code></pre></li>
+</ul>
+<p><strong>（3）修改表结构</strong></p>
+<ul>
+<li>重命名表<ul>
+<li>增加、删除分区</li>
+<li>增加、更新列</li>
+<li>修改列的名字、类型、位置、注释</li>
+<li>增加表的元数据信息</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>复制一个空表</li>
+</ul>
+<pre><code>CREATE TABLE empty_key_value_store
+LIKE key_value_store;
+</code></pre><ul>
+<li>删除表</li>
+</ul>
+<pre><code>DROP TABLE table_name
+</code></pre><ul>
+<li>重命名表</li>
+</ul>
+<pre><code>ALTER TABLE table_name RENAME TO new_table_name 
+</code></pre><ul>
+<li>增加、删除分区</li>
+</ul>
+<pre><code>增加   
+ALTER TABLE table_name ADD [IF NOT EXISTS] partition_spec [ LOCATION &apos;location1&apos; ] partition_spec [ LOCATION &apos;location2&apos; ] ...
+partition_spec:
+  : PARTITION (partition_col = partition_col_value, partition_col = partiton_col_value, ...)
+
+删除   
+ALTER TABLE table_name DROP
+    partition_spec, partition_spec,...
+</code></pre><ul>
+<li>增加、更新列</li>
+</ul>
+<pre><code>ADD 是代表新增一字段，字段位置在所有列后面(partition列前)      
+REPLACE 则是表示替换表中所有字段。      
+ALTER TABLE table_name ADD|REPLACE COLUMNS (col_name data_type [COMMENT col_comment], ...)
+</code></pre><ul>
+<li>修改列的名字、类型、位置、注释</li>
+</ul>
+<pre><code>这个命令可以允许改变列名、数据类型、注释、列位置或者它们的任意组合      
+ALTER TABLE table_name CHANGE [COLUMN]
+col_old_name col_new_name column_type
+[COMMENT col_comment]
+[FIRST|AFTER column_name]
+</code></pre><ul>
+<li>增加表的元数据信息</li>
+</ul>
+<pre><code>用户可以用这个命令向表中增加元数据信息 metadata      
+ALTER TABLE table_name SET TBLPROPERTIES table_properties table_properties:
+    : (property_name = property_value, ...)
+</code></pre><ul>
+<li>改变文件格式和组织</li>
+</ul>
+<pre><code>ALTER TABLE table_name SET FILEFORMAT file_format
+ALTER TABLE table_name CLUSTERED BY(col_name, col_name, ...) 
+    [SORTED BY(col_name, ...)] INTO num_buckets BUCKETS
+</code></pre><ul>
+<li>创建、删除视图</li>
+</ul>
+<pre><code># 创建视图
+CREATE VIEW [IF NOT EXISTS] view_name [ (column_name [COMMENT column_comment], ...) ][COMMENT view_comment][TBLPROPERTIES (property_name = property_value, ...)]
+AS SELECT ...
+
+# 删除视图
+DROP VIEW view_name
+</code></pre><ul>
+<li>创建、删除函数</li>
+</ul>
+<pre><code># 创建函数
+CREATE TEMPORARY FUNCTION function_name AS class_name
+
+# 删除函数
+DROP TEMPORARY FUNCTION function_name
+</code></pre><ul>
+<li><p>展示/描述 语句</p>
+<pre><code># 显示 表
+show tables;
+
+# 显示 数据库
+show databases;
+
+# 显示 分区
+show partitions;
+
+# 显示 函数
+show functions;
+
+# 描述 表/列
+describe [EXTENDED] table_name[DOT col_name]
+</code></pre></li>
+</ul>
+<h2 id="四、数据操作-DML"><a href="#四、数据操作-DML" class="headerlink" title="四、数据操作 - DML"></a>四、数据操作 - DML</h2><p>Hive 不支持使用 insert 语句一条一条的进行插入操作，也不支持 update 操作。数据是以 load 的方式加载到建立好的表中，数据一旦导入就不可以修改。</p>
+<p><strong>（1）向数据表内加载文件</strong></p>
+<pre><code>LOAD DATA [LOCAL] INPATH &apos;filepath&apos; [OVERWRITE]
+    INTO TABLE tablename
+    [PARTITION (partcol1=val1, partcol2=val2 ...)]
+</code></pre><blockquote>
+<ul>
+<li><p><strong>Load</strong> </p>
+<p>操作只是单纯的复制/移动操作，将数据文件移动到 Hive 表对应的位置。</p>
+</li>
+<li><p><strong>filepath</strong></p>
+<ul>
+<li>相对路径，例如：project/data1</li>
+<li>绝对路径，例如： /user/hive/project/data1</li>
+<li>包含模式的完整 URI，例如：hdfs://namenode:9000/user/hive/project/data1</li>
+</ul>
+</li>
+<li><p><strong>LOCAL 关键字</strong></p>
+<ul>
+<li>指定了LOCAL<br>即本地 load 命令会去查找本地文件系统中的 filepath. 如果发现是相对路径，则路径会被解释为相对于当前用户的当前路径。用户也可以为本地文件指定一个完整的 URI，比如：file:///user/hive/project/data. 此时 load 命令会将 filepath 中的文件复制到目标文件系统中。目标文件系统由表的位置属性决定。被复制的数据文件移动到表的数据对应的位置。</li>
+<li>没有指定LOCAL<br>如果 filepath 指向的是一个完整的 URI，hive 会直接使用这个 URI. 否则如果没有指定 schema 或者 authority，Hive 会使用在 hadoop 配置文件中定义的 schema 和 authority，fs.default.name 指定了 Namenode 的 URI. 如果路径不是绝对的，Hive 相对于 /user/ 进行解释。 Hive 会将 filepath 中指定的文件内容移动到 table （或者 partition）所指定的路径中。</li>
+</ul>
+</li>
+<li><p><strong>OVERWRITE</strong></p>
+<p>使用 OVERWRITE 关键字，目标表（或者分区）中的内容（如果有）会被删除，然后再将 filepath 指向的文件/目录中的内容添加到表/分区中。如果目标表（分区）已经有一个文件，并且文件名和 filepath 中的文件名冲突，那么现有的文件会被新文件所替代。</p>
+</li>
+</ul>
+</blockquote>
+<p>例如：</p>
+<pre><code>hive&gt; LOAD DATA LOCAL INPATH &apos;./examples/files/kv1.txt&apos; OVERWRITE INTO TABLE pokes;
+</code></pre><p><strong>（2）将查询结果插入Hive表</strong></p>
+<pre><code>INSERT OVERWRITE TABLE tablename1 [PARTITION (partcol1=val1, partcol2=val2 ...)] select_statement1 FROM from_statement
+</code></pre><ul>
+<li>多插入模式</li>
+</ul>
+<pre><code>FROM from_statement
+INSERT OVERWRITE TABLE tablename1 [PARTITION (partcol1=val1, partcol2=val2 ...)] select_statement1
+[INSERT OVERWRITE TABLE tablename2 [PARTITION ...] select_statement2] ...
+</code></pre><ul>
+<li>自动分区模式</li>
+</ul>
+<pre><code>INSERT OVERWRITE TABLE tablename PARTITION (partcol1[=val1], partcol2[=val2] ...) select_statement FROM from_statement
+</code></pre><p><strong>（3）将查询结果写入HDFS文件系统</strong></p>
+<pre><code>INSERT OVERWRITE [LOCAL] DIRECTORY directory1 SELECT ... FROM ...
+FROM from_statement
+INSERT OVERWRITE [LOCAL] DIRECTORY directory1 select_statement1
+[INSERT OVERWRITE [LOCAL] DIRECTORY directory2 select_statement2] ...
+</code></pre><p>数据写入文件系统时会进行文本序列化，且每列用 <code>^A</code> 来区分，<code>\n</code> 换行。如果任何一列不是原始类型，那么这些将会被序列化为 JSON 格式。</p>
+<h2 id="五、Hive-QL-查询操作"><a href="#五、Hive-QL-查询操作" class="headerlink" title="五、Hive QL 查询操作"></a>五、Hive QL 查询操作</h2><p><strong>SQL操作：</strong></p>
+<blockquote>
+<ul>
+<li>基本的 Select 操作</li>
+<li>基于 Partition 的查询</li>
+<li>Join</li>
+</ul>
+</blockquote>
+<p><strong>（1）基本的 Select 操作</strong></p>
+<pre><code>SELECT [ALL | DISTINCT] select_expr, select_expr, ...
+FROM table_reference
+[WHERE where_condition]
+[GROUP BY col_list]
+[   CLUSTER BY col_list
+  | [DISTRIBUTE BY col_list] [SORT BY| ORDER BY col_list]
+]
+[LIMIT number]
+</code></pre><blockquote>
+<p>使用 <strong>ALL</strong> 和 <strong>DISTINCT</strong> 选项区分对重复记录的处理。默认是 ALL，表示查询所有记录。DISTINCT 表示去掉重复的记录；</p>
+<p><strong>Limit</strong> 可以限制查询输出的记录数；</p>
+</blockquote>
+<p><strong>（2）基于 Partition 的查询</strong></p>
+<p>一般 SELECT 查询会扫描整个表，使用 PARTITIONED BY 子句建表，查询就可以利用分区剪枝（input pruning）的特性。</p>
+<p>Hive 当前的分区剪枝，只有分区断言出现在离 FROM 子句最近的那个 WHERE 子句中，才会启用分区剪枝。</p>
+<p>例如，一个表 page_view 按照 date 列的值进行了分区，那么下面的查询就可以检索出日期为 2010-03-01 的行记录：</p>
+<pre><code>SELECT page_view
+    FROM page_view
+    WHERE page_view.date &gt;= &apos;2010-03-01&apos; ADN page_views.date &lt;= &apos;2010-03-31&apos;
+</code></pre><p><strong>（3）Join</strong></p>
+<p>Join 的语法如下：</p>
+<pre><code>join_table:
+    table_reference JOIN table_factor [join_condition]
+  | table_reference {LEFT|RIGHT|FULL} [OUTER] JOIN table_reference join_condition
+  | table_reference LEFT SEMI JOIN table_reference join_condition
+  | table_reference CROSS JOIN table_reference [join_condition] (as of Hive 0.10)
+
+table_reference:
+    table_factor
+  | join_table
+
+table_factor:
+    tbl_name [alias]
+  | table_subquery alias
+  | ( table_references )
+
+join_condition:
+    ON equality_expression ( AND equality_expression )*
+
+equality_expression:
+    expression = expression
+</code></pre><blockquote>
+<p>hive 只支持等连接（equality joins）、外连接（outer joins）、左半连接（left semi joins）。hive 不支持非相等的 join 条件，因为它很难在 map/reduce job 中实现这样的条件。而且，hive 可以 join 两个以上的表。</p>
+</blockquote>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://www.codeinterviews.com">@codeinterviews</a>.</p>
+    <p class="link">本文链接：<a href="http://codeinterviews.com/hive ql介绍 /">http://codeinterviews.com/hive ql介绍 /</a></p>
+    <div class="share">
+        分享本文：
+        <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+</div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    </div>
+</div>
+
+
+            
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'disqus_username';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            CodeInterviews
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2016 <a href="http://codeinterviews.com" target="_blank">CodeInterviews</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,244 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="CodeInterviews">
+    
+    <meta name="description" itemprop="description" content="Map和Reduce阶段内部细节和调节参数">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="CodeInterviews" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Map和Reduce阶段内部细节和调节参数 | CodeInterviews</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <meta name="baidu-site-verification" content="Jvgfj1O0oP" />
+    <meta name="360-site-verification" content="902348aeb40d156fb32b748c4071c4bd" />
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://codeinterviews.com" title="CodeInterviews">CodeInterviews</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index"><a href="/">首页</a></li>
+                    
+                    <li id="nav-categories"><a href="/categories">分类</a></li>
+                    
+                    <li id="nav-tags"><a href="/tags">标签</a></li>
+                    
+                    <li id="nav-reading"><a href="/tags/#LeetCode">LeetCode</a></li>
+                    
+                    <li id="nav-labs"><a href="/tags/#Java">Java</a></li>
+                    
+                    <li id="nav-about"><a href="/tags/#Javascript">Javascript</a></li>
+                    
+
+                    <!--<li id="nav-github"><a href="https://github.com/hexo2hexo" target="_blank">GitHub</a></li>-->
+                    <li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "Map和Reduce阶段内部细节和调节参数/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>Map和Reduce阶段内部细节和调节参数</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/Hadoop/">Hadoop</a>&nbsp;<a href="/tags/Mapreduce/">Mapreduce</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/project/">project</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2016-06-30T03:57:53.000Z"
+                       itemprop="datePublished">2016-06-29</time>
+            
+            更新: <time datetime="2016-06-30T03:57:53.000Z"
+                       itemprop="dateModified">2016-06-29</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+                <div id="toc" class="toc-article well">
+                    <strong class="toc-title">大纲</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#三、结合"><span class="toc-number">1.</span> <span class="toc-text">三、结合</span></a></li></ol>
+                </div>
+            
+
+            <p>##一、实验内容<br>本节介绍Map和Reduce阶段内部细节和调节参数.</p>
+<a id="more"></a>
+<p>##二、Map阶段内部细节和调节参数</p>
+<ul>
+<li>Map计算阶段</li>
+</ul>
+<ol>
+<li>如果Reduce number设置为0, Map阶段会直接将结果写入HDFS中。</li>
+<li>一般情况下，map包括以下几个阶段：<br>a. read阶段<br>从一个或者多个输入目录中读取输入文件，通过RecordReader，从InputSplit中解析出一个个的&lt; key,value&gt;。<br>b. map阶段<br>执行用户编写的map函数，产生新的&lt; key,value&gt;<br>c. collect阶段<br>OutputCollection.collect函数一般在map函数内部调用，接受新的&lt; key,value&gt;，然后它的内部会调用Partitioner对数据分组，最后数据&lt; key,value,partition&gt;会被写入缓冲区（一般是环形缓冲区)MapOutputBuffer中。<br>d. spill阶段（包含combiner)<br>如果缓冲区写满到一定程度，就会进入spill阶段往本地磁盘上写临时文件。<br>首先会将需要spill的数据按照partition排序，每个partition的数据又按照key进行排序。<br>然后按照partition的增序写到本地磁盘临时output/spillN.out， N表示spill的次数。如果自定义了combiner，就在这个阶段被调用用来对数据再做一次聚集操作。<br>e. merge阶段<br>将所有临时文件合并成一个文件，供reduce阶段使用。</li>
+</ol>
+<ul>
+<li>MapOutputBuffer<br>对于每一个Map，都有一个环形内存buffer用来缓存中间结果，这不仅可以缓存，而且还可以用来排序，被称为MapOutputBuffer, 设置这个buffer大小的配置是<br>io.sort.mb<br>默认值是100MB.<br>一般当buffer被使用到一定比例，就会将Map的中间结果往磁盘上写，这个比例的配置是：<br>io.sort.spill.percent<br>默认值是80%或者0.8.<br>在内存中排序缓存的过程叫做sort，而当超过上面的比例在磁盘上写入中间结果的过程称之为spill.<br>如果能够追踪到sort和spill的状态，就可以通过调整上面两个参数对Map进行优化。<br>MapOutputBuffer内部有二级索引，第一级是对partition在二级索引中的位置建立索引，第二级是对partition内部的key,value在缓存中的位置建立索引。<br>这两级索引所占用的内存大小在整个缓存大小的比例由一个参数来控制：<br>io.sort.record.percent，默认是0.05.</li>
+<li>Merge<br>Map的输出结果在combine阶段，最后会将多个spill临时文件合并成一个文件<br>每次并行merge多少个spill文件，有一个配置参数：io.sort.factor。这个参数名称特别奇怪，很容易理解成是collect或者spill阶段的调优。<br>默认为100, 如果文件很多，影响到了merge阶段完成的速度，可以适当调大以减少磁盘I/O。</li>
+<li>压缩<br>设置mapred.output.compress为true或者false，可以控制map的输出结果文件变为压缩或者不压缩。<br>同时可以指定压缩格式，用参数mapred.output.compression.codec，可选值为：zipCodec，LzoCodec，BZip2Codec，LzmaCodec<br>选择压缩主要的时机是当磁盘I/O成了瓶颈，而不是CPU计算成瓶颈时。<br>压缩格式的选择也是在压缩时间，CPU利用率和磁盘空间三者间做平衡。</li>
+</ul>
+<p>其他参数参考官方文档：<br><a href="https://hadoop.apache.org/docs/r1.0.4/mapred-default.html" target="_blank" rel="external">https://hadoop.apache.org/docs/r1.0.4/mapred-default.html</a></p>
+<p>##三、Reduce阶段内部细节和调节参数</p>
+<ul>
+<li>Reduce计算分为若干阶段</li>
+</ul>
+<ol>
+<li>copy(或者叫shuffle)阶段和merge阶段并行<br>之前Map产生的结果被存放在本地磁盘上，这时需要从reduce节点将数据从map节点复制过来。放得下进内存，比较大的则写到本地磁盘。<br>同时，有两个线程对已经获得的内存中和磁盘上的数据进行merge操作。<br>具体细节是：<br>通过RPC调用询问task tracker已经完成的map task列表，shuffle（洗牌）是对所有的task tracker host的洗牌操作，这样可以打乱copy数据的顺序，防止出现网络热点（大量进程读取一个task tracker节点的数据）。<br>可以复制的任务被存放在scheduledCopies中。<br>一旦有了要复制到数据，会启动多个MapOutputCopier线程，通过HTTP GET请求复制数据，如果数据较大，存入磁盘，否则存入缓存。<br>对于缓存中，有线程InMemoryFSMerge线程负责merge，对文件，有LocalFSMerger线程负责merge。<br>因此观察jobtracker会看到map操作还没有完全结束，reduce操作已经开始了，就是进入了copy阶段。</li>
+<li>sort阶段和调用reducer的reduce函数的并行<br>sort对Map阶段传来的&lt; key,value&gt; 数据针对key执行归并排序，产生&lt; key, values&gt;<br>用户编写的reduce将上面的&lt; key, values&gt;传递进ruduce函数处理<br>并行的算法提高了程序性能，具体算法以后再探讨。</li>
+<li>write<br>将结果写到HDFS上。</li>
+</ol>
+<ul>
+<li>Reduce的调优参数<br>mapred.reduce.parallel.copies 默认是5，表示有多少个并发线程去从task tracker节点复制数据<br>io.sort.factor 又出现了，默认10,仍然指的是并行合并文件的数目<br>mapred.job.shuffle.merge.percent 默认是0.66, 超过66%，就会将开始合并，然后往磁盘上写数据<br>mapred.inmem.merge.threshold 默认是1000，超过这个临界值，就会将开始合并，然后往磁盘上写数据</li>
+</ul>
+<h2 id="三、结合"><a href="#三、结合" class="headerlink" title="三、结合"></a>三、结合</h2><p>MapReduce中Map阶段主要可分为read阶段、map阶段、collect阶段、spill阶段、merge阶段，Reduce阶段主要可分为copy阶段和merge阶段并行、sort阶段和调用reducer的reduce函数的并行、write阶段，我们可以通过修改一些参数来进行调优。</p>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://www.codeinterviews.com">@codeinterviews</a>.</p>
+    <p class="link">本文链接：<a href="http://codeinterviews.com/Map和Reduce阶段内部细节和调节参数/">http://codeinterviews.com/Map和Reduce阶段内部细节和调节参数/</a></p>
+    <div class="share">
+        分享本文：
+        <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+</div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    </div>
+</div>
+
+
+            
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'disqus_username';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            CodeInterviews
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2016 <a href="http://codeinterviews.com" target="_blank">CodeInterviews</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

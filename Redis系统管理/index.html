@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="CodeInterviews">
+    
+    <meta name="description" itemprop="description" content="Redis系统管理">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="CodeInterviews" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Redis系统管理 | CodeInterviews</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <meta name="baidu-site-verification" content="Jvgfj1O0oP" />
+    <meta name="360-site-verification" content="902348aeb40d156fb32b748c4071c4bd" />
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://codeinterviews.com" title="CodeInterviews">CodeInterviews</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index"><a href="/">首页</a></li>
+                    
+                    <li id="nav-categories"><a href="/categories">分类</a></li>
+                    
+                    <li id="nav-tags"><a href="/tags">标签</a></li>
+                    
+                    <li id="nav-reading"><a href="/tags/#LeetCode">LeetCode</a></li>
+                    
+                    <li id="nav-labs"><a href="/tags/#Java">Java</a></li>
+                    
+                    <li id="nav-about"><a href="/tags/#Javascript">Javascript</a></li>
+                    
+
+                    <!--<li id="nav-github"><a href="https://github.com/hexo2hexo" target="_blank">GitHub</a></li>-->
+                    <li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "Redis系统管理/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>Redis系统管理</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/NoSql/">NoSql</a>&nbsp;<a href="/tags/Redis/">Redis</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/project/">project</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2016-06-30T03:57:53.000Z"
+                       itemprop="datePublished">2016-06-29</time>
+            
+            更新: <time datetime="2016-06-30T03:57:53.000Z"
+                       itemprop="dateModified">2016-06-29</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+
+            <p>本文主要对Redis系统管理进行介绍。（来自实验楼）<br><a id="more"></a></p>
+<p>上一节实验讲述了Redis的基本数据类型，本实验继续讲解Redis相关命令及管理操作。</p>
+<p>在Redis中，命令大小写不敏感。</p>
+<p>##一、适合全体类型的常用命令</p>
+<p>启动redis服务和redis-cli命令界面继续后续实验：</p>
+<pre><code>$ sudo service redis-server start
+$ redis-cli
+</code></pre><p>###（1）EXIT and DEL<br>EXISTS key 判断一个key是否存在;存在返回 1;否则返回0;<br>DEL key  删除某个key,或是一系列key;DEL key1 key2 key3 key4。成功返回1，失败返回0（key值不存在）。</p>
+<pre><code>&gt; set mykey hello
+
+&gt; exists mykey
+
+&gt; del mykey
+
+&gt; exists mykey
+</code></pre><p>操作截图：</p>
+<p><img src="https://dn-anything-about-doc.qbox.me/userid42227labid911time1429498813713?watermark/1/image/aHR0cDovL3N5bC1zdGF0aWMucWluaXVkbi5jb20vaW1nL3dhdGVybWFyay5wbmc=/dissolve/60/gravity/SouthEast/dx/0/dy/10" alt="图片描述信息"></p>
+<p>###（2）TYPE and KEYS </p>
+<p>TYPE key：返回某个key元素的数据类型 ( none:不存在,string:字符,list,set,zset,hash)，key不存在返回空。<br>KEYS key—pattern ：返回匹配的key列表 (KEYS foo*:查找foo开头的keys)</p>
+<pre><code>&gt; set mykey x
+
+&gt; type mykey
+
+&gt;keys my*
+
+&gt; del mykey
+
+&gt;keys my*
+
+&gt; type mykey
+</code></pre><p>操作截图：</p>
+<p><img src="https://dn-anything-about-doc.qbox.me/userid42227labid913time1429516992936?watermark/1/image/aHR0cDovL3N5bC1zdGF0aWMucWluaXVkbi5jb20vaW1nL3dhdGVybWFyay5wbmc=/dissolve/60/gravity/SouthEast/dx/0/dy/10" alt="图片描述信息"></p>
+<p>###（3）RANDOMKEY and CLEAR<br>RANDOMKEY ： 随机获得一个已经存在的key，如果当前数据库为空，则返回空字符串</p>
+<pre><code>&gt; randomkey
+</code></pre><p>操作截图：</p>
+<p><img src="https://dn-anything-about-doc.qbox.me/userid42227labid913time1429515047669?watermark/1/image/aHR0cDovL3N5bC1zdGF0aWMucWluaXVkbi5jb20vaW1nL3dhdGVybWFyay5wbmc=/dissolve/60/gravity/SouthEast/dx/0/dy/10" alt="图片描述信息"></p>
+<p>CLEAR ：清除界面。</p>
+<pre><code>&gt; clear
+</code></pre><p>###（4）RENAME  and  RENAMENX </p>
+<p>RENAME oldname newname：改key的名字，新键如果存在将被覆盖<br>RENAMENX oldname newname：更改key的名字，如果名字存在则更改失败</p>
+<p>笔者randomkey结果为mylist，将此key值更名为newlist。</p>
+<pre><code>&gt; randomkey
+
+&gt; rename mylist newlist
+
+&gt; exists mylist
+
+&gt; exists newlist
+</code></pre><p>操作截图：</p>
+<p><img src="https://dn-anything-about-doc.qbox.me/userid42227labid913time1429515503329?watermark/1/image/aHR0cDovL3N5bC1zdGF0aWMucWluaXVkbi5jb20vaW1nL3dhdGVybWFyay5wbmc=/dissolve/60/gravity/SouthEast/dx/0/dy/10" alt="图片描述信息"></p>
+<p>###（5） DBSIZE<br>DBSIZE ：返回当前数据库的key的总数</p>
+<pre><code>&gt; dbsize
+</code></pre><p>操作截图：</p>
+<p><img src="https://dn-anything-about-doc.qbox.me/userid42227labid913time1429515622274?watermark/1/image/aHR0cDovL3N5bC1zdGF0aWMucWluaXVkbi5jb20vaW1nL3dhdGVybWFyay5wbmc=/dissolve/60/gravity/SouthEast/dx/0/dy/10" alt="图片描述信息"></p>
+<p>##二、Redis 时间相关命令</p>
+<p>###（1）限定key生存时间<br>这同样是一个无视数据类型的命令，对于临时存储很有用处。避免进行大量的DEL操作。</p>
+<p>EXPIRE：设置某个key的过期时间（秒）,(EXPIRE bruce 1000：设置bruce这个key1000秒后系统自动删除)注意：如果在还没有过期的时候，对值进行了改变，那么那个值会被清除。</p>
+<pre><code>&gt; set key some-value
+
+&gt; expire key 10
+
+&gt; get key       (马上执行此命令)
+
+&gt; get key       (10s后执行此命令)
+</code></pre><p>操作截图：</p>
+<p><img src="https://dn-anything-about-doc.qbox.me/userid42227labid911time1429499147841?watermark/1/image/aHR0cDovL3N5bC1zdGF0aWMucWluaXVkbi5jb20vaW1nL3dhdGVybWFyay5wbmc=/dissolve/60/gravity/SouthEast/dx/0/dy/10" alt="图片描述信息"></p>
+<p>结果显示，执行EXPIRE命令后，马上GET，显示key存在。10秒后再GET时，key 已经被自动删除。</p>
+<p>###（2）查询key剩余生存时间</p>
+<p>限时操作可以再SET命令中实现，并且可用TTL命令查询key剩余生存时间。<br>TTL：查找某个key还有多长时间过期,返回时间秒</p>
+<pre><code>&gt; set key 100 ex 30
+
+&gt; ttl key
+
+&gt; ttl key
+</code></pre><p>操作截图：</p>
+<p><img src="https://dn-anything-about-doc.qbox.me/userid42227labid911time1429499622388?watermark/1/image/aHR0cDovL3N5bC1zdGF0aWMucWluaXVkbi5jb20vaW1nL3dhdGVybWFyay5wbmc=/dissolve/60/gravity/SouthEast/dx/0/dy/10" alt="图片描述信息"></p>
+<p>###（3）清除key</p>
+<p>FLUSHDB：清空当前数据库中的所有键</p>
+<p>FLUSHALL：清空所有数据库中的所有键</p>
+<pre><code>&gt;flushdb
+
+&gt;flushall
+</code></pre><p>##三、Redis设置相关命令</p>
+<p>Redis有其配置文件，可以通过client-command窗口查看或者更改相关配置。相关命令介绍如下：</p>
+<p>###（1）CONFIG GET and CONFIG SET</p>
+<p>CONFIG GET：用来读取运行Redis服务器的配置参数。<br>CONFIG SET：用于更改运行Redis服务器的配置参数。<br>AUTH : 认证密码<br>下面针对Redis密码的示例：</p>
+<pre><code>&gt; config get requirepass （查看密码）
+
+&gt; config set requirepass test123 （设置密码为test123 ）
+
+&gt; config get requirepass  （报错，没有认证）
+
+&gt; auth test123
+
+&gt; config get requirepass
+</code></pre><p>操作截图：</p>
+<p><img src="https://dn-anything-about-doc.qbox.me/userid42227labid913time1429520598484?watermark/1/image/aHR0cDovL3N5bC1zdGF0aWMucWluaXVkbi5jb20vaW1nL3dhdGVybWFyay5wbmc=/dissolve/60/gravity/SouthEast/dx/0/dy/10" alt="图片描述信息"></p>
+<p>由结果可知，刚开始时Reids并未设置密码，密码查询结果为空。然后设置密码为test123，再次查询报错。经过auth命令认证后，可正常查询。</p>
+<p>可以经过修改Redis的配置文件redis.conf修改密码。</p>
+<p>CONFIG GET命令是以list的key-value对显示的，如查询数据类型的最大条目：</p>
+<pre><code>&gt; config get *max-*-entries* 
+</code></pre><p>操作截图：</p>
+<p><img src="https://dn-anything-about-doc.qbox.me/userid42227labid913time1429521073401?watermark/1/image/aHR0cDovL3N5bC1zdGF0aWMucWluaXVkbi5jb20vaW1nL3dhdGVybWFyay5wbmc=/dissolve/60/gravity/SouthEast/dx/0/dy/10" alt="图片描述信息"></p>
+<p>###（2）重置报告</p>
+<p>CONFIG RESETSTAT：重置数据统计报告，通常返回值为&#39;OK&#34;。</p>
+<pre><code>&gt; CONFIG RESETSTAT
+</code></pre><p>操作截图：</p>
+<p><img src="https://dn-anything-about-doc.qbox.me/userid42227labid913time1429521447546?watermark/1/image/aHR0cDovL3N5bC1zdGF0aWMucWluaXVkbi5jb20vaW1nL3dhdGVybWFyay5wbmc=/dissolve/60/gravity/SouthEast/dx/0/dy/10" alt="图片描述信息"></p>
+<p>##四、查询信息</p>
+<p> INFO [section] ：查询Redis相关信息。<br> INFO命令可以查询Redis几乎所有的信息，其命令选项有如下：</p>
+<pre><code>1.  server: Redis server的常规信息
+2.   clients: Client的连接选项
+3.  memory: 存储占用相关信息
+4. persistence: RDB and AOF 相关信息
+5.   stats: 常规统计
+6.  replication: Master/slave请求信息
+7.  cpu: CPU 占用信息统计
+8.  cluster: Redis 集群信息
+9. keyspace: 数据库信息统计
+10. all: 返回所有信息
+11. default: 返回常规设置信息
+</code></pre><p>若命令参数为空，info命令返回所有信息。</p>
+<pre><code>&gt; info keyspace
+
+&gt; info server
+</code></pre><p>操作截图：</p>
+<p><img src="https://dn-anything-about-doc.qbox.me/userid42227labid913time1429581133525?watermark/1/image/aHR0cDovL3N5bC1zdGF0aWMucWluaXVkbi5jb20vaW1nL3dhdGVybWFyay5wbmc=/dissolve/60/gravity/SouthEast/dx/0/dy/10" alt="图片描述信息"></p>
+<p><img src="https://dn-anything-about-doc.qbox.me/userid42227labid913time1429581162348?watermark/1/image/aHR0cDovL3N5bC1zdGF0aWMucWluaXVkbi5jb20vaW1nL3dhdGVybWFyay5wbmc=/dissolve/60/gravity/SouthEast/dx/0/dy/10" alt="图片描述信息"></p>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://www.codeinterviews.com">@codeinterviews</a>.</p>
+    <p class="link">本文链接：<a href="http://codeinterviews.com/Redis系统管理/">http://codeinterviews.com/Redis系统管理/</a></p>
+    <div class="share">
+        分享本文：
+        <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+</div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    </div>
+</div>
+
+
+            
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'disqus_username';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            CodeInterviews
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2016 <a href="http://codeinterviews.com" target="_blank">CodeInterviews</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

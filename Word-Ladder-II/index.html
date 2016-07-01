@@ -1,0 +1,232 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="CodeInterviews">
+    
+    <meta name="description" itemprop="description" content="Word Ladder II">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="CodeInterviews" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LeetCode-Word Ladder II | CodeInterviews</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <meta name="baidu-site-verification" content="Jvgfj1O0oP" />
+    <meta name="360-site-verification" content="902348aeb40d156fb32b748c4071c4bd" />
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://codeinterviews.com" title="CodeInterviews">CodeInterviews</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index"><a href="/">首页</a></li>
+                    
+                    <li id="nav-categories"><a href="/categories">分类</a></li>
+                    
+                    <li id="nav-tags"><a href="/tags">标签</a></li>
+                    
+                    <li id="nav-reading"><a href="/tags/#LeetCode">LeetCode</a></li>
+                    
+                    <li id="nav-labs"><a href="/tags/#Java">Java</a></li>
+                    
+                    <li id="nav-about"><a href="/tags/#Javascript">Javascript</a></li>
+                    
+
+                    <!--<li id="nav-github"><a href="https://github.com/hexo2hexo" target="_blank">GitHub</a></li>-->
+                    <li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "Word-Ladder-II/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>LeetCode-Word Ladder II</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;<a href="/tags/String/">String</a>&nbsp;<a href="/tags/Backtracking/">Backtracking</a>&nbsp;<a href="/tags/Breadth-first-Search/">Breadth-first Search</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2016-06-30T03:57:53.000Z"
+                       itemprop="datePublished">2016-06-29</time>
+            
+            更新: <time datetime="2016-06-30T03:57:53.000Z"
+                       itemprop="dateModified">2016-06-29</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+
+            <p>##题目</p>
+<p>####Word Ladder II</p>
+<blockquote>
+<p>Given two words (start and end), and a dictionary, find all shortest transformation sequence(s) from start to end, such that:</p>
+<ol>
+<li>Only one letter can be changed at a time</li>
+<li>Each intermediate word must exist in the dictionary<br>For example, </li>
+</ol>
+<p>Given:<br>start = <code>&quot;hit&quot;</code><br>end = <code>&quot;cog&quot;</code><br>dict = <code>[&quot;hot&quot;,&quot;dot&quot;,&quot;dog&quot;,&quot;lot&quot;,&quot;log&quot;]</code><br>Return</p>
+<pre><code>[
+  [&quot;hit&quot;,&quot;hot&quot;,&quot;dot&quot;,&quot;dog&quot;,&quot;cog&quot;],
+  [&quot;hit&quot;,&quot;hot&quot;,&quot;lot&quot;,&quot;log&quot;,&quot;cog&quot;]
+]
+</code></pre><p>####Note:</p>
+<ul>
+<li>All words have the same length.</li>
+<li>All words contain only lowercase alphabetic characters.</li>
+</ul>
+</blockquote>
+<a id="more"></a>
+<p>##解题思路<br>这道题是LeetCode中AC率最低的题目，确实是比较难。一方面是因为对时间有比较严格的要求（容易超时），另一方面是它有很多细节需要实现。思路上和Word Ladder是比较类似的，但是因为是要求出所有路径，仅仅保存路径长度是不够的，而且这里还有更多的问题，那就是为了得到所有路径，不是每个结点访问一次就可以标记为visited了，因为有些访问过的结点也会是别的路径上的结点，所以访问的集合要进行回溯（也就是标记回未访问）。所以时间上不再是一次广度优先搜索的复杂度了，取决于结果路径的数量。同样空间上也是相当高的复杂度，因为我们要保存过程中满足的中间路径到某个数据结构中，以便最后可以获取路径，这里我们维护一个HashMap，把一个结点前驱结点都进行保存。<br>在LeetCode中用Java实现上述算法非常容易超时。为了提高算法效率，需要注意一下两点：<br>1）在替换String的某一位的字符时，先转换成char数组再操作；<br>2）如果按照正常的方法从start找end，然后根据这个来构造路径，代价会比较高，因为保存前驱结点容易，而保存后驱结点则比较困难。所以我们在广度优先搜索时反过来先从end找start，最后再根据生成的前驱结点映射从start往end构造路径，这样算法效率会有明显提高。    </p>
+<p>##算法代码<br>代码采用JAVA实现：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">StringWithLevel</span> </span>&#123;</span><br><span class="line">   String str;</span><br><span class="line">   <span class="keyword">int</span> level;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">StringWithLevel</span><span class="params">(String str, <span class="keyword">int</span> level)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.str = str;</span><br><span class="line">      <span class="keyword">this</span>.level = level;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> ArrayList&lt;ArrayList&lt;String&gt;&gt; findLadders(String start, String end, HashSet&lt;String&gt; dict) &#123;</span><br><span class="line">   ArrayList&lt;ArrayList&lt;String&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;ArrayList&lt;String&gt;&gt;();</span><br><span class="line">   HashSet&lt;String&gt; unvisitedSet = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">   unvisitedSet.addAll(dict);</span><br><span class="line">   unvisitedSet.add(start);</span><br><span class="line">   unvisitedSet.remove(end);</span><br><span class="line">   Map&lt;String, List&lt;String&gt;&gt; nextMap = <span class="keyword">new</span> HashMap&lt;String, List&lt;String&gt;&gt;();</span><br><span class="line">   <span class="keyword">for</span> (String e : unvisitedSet) &#123;</span><br><span class="line">      nextMap.put(e, <span class="keyword">new</span> ArrayList&lt;String&gt;());</span><br><span class="line">   &#125;</span><br><span class="line">   LinkedList&lt;StringWithLevel&gt; queue = <span class="keyword">new</span> LinkedList&lt;StringWithLevel&gt;();</span><br><span class="line">   queue.add(<span class="keyword">new</span> StringWithLevel(end, <span class="number">0</span>));</span><br><span class="line">   <span class="keyword">boolean</span> found = <span class="keyword">false</span>;</span><br><span class="line">   <span class="keyword">int</span> finalLevel = Integer.MAX_VALUE;</span><br><span class="line">   <span class="keyword">int</span> curLevel = <span class="number">0</span>;</span><br><span class="line">   <span class="keyword">int</span> preLevel = <span class="number">0</span>;</span><br><span class="line">   HashSet&lt;String&gt; visitedCurLevel = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">   <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">      StringWithLevel cur = queue.poll();</span><br><span class="line">      String curStr = cur.str;</span><br><span class="line">      curLevel = cur.level;</span><br><span class="line">      <span class="keyword">if</span>(found &amp;&amp; curLevel &gt; finalLevel) &#123;</span><br><span class="line">         <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (curLevel &gt; preLevel) &#123;</span><br><span class="line">         unvisitedSet.removeAll(visitedCurLevel);</span><br><span class="line">      &#125;</span><br><span class="line">      preLevel = curLevel;</span><br><span class="line">      <span class="keyword">char</span>[] curStrCharArray = curStr.toCharArray();</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; curStr.length(); ++i) &#123;</span><br><span class="line">         <span class="keyword">char</span> originalChar = curStrCharArray[i];</span><br><span class="line">         <span class="keyword">boolean</span> foundCurCycle = <span class="keyword">false</span>;</span><br><span class="line">         <span class="keyword">for</span> (<span class="keyword">char</span> c = <span class="string">'a'</span>; c &lt;= <span class="string">'z'</span>; ++c) &#123;</span><br><span class="line">            curStrCharArray[i] = c;</span><br><span class="line">            String newStr = <span class="keyword">new</span> String(curStrCharArray);</span><br><span class="line">            <span class="keyword">if</span>(c != originalChar &amp;&amp; unvisitedSet.contains(newStr)) &#123;</span><br><span class="line">               nextMap.get(newStr).add(curStr);</span><br><span class="line">               <span class="keyword">if</span>(newStr.equals(start)) &#123;</span><br><span class="line">                  found = <span class="keyword">true</span>;</span><br><span class="line">                  finalLevel = curLevel;</span><br><span class="line">                  foundCurCycle = <span class="keyword">true</span>;</span><br><span class="line">                  <span class="keyword">break</span>;</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">if</span>(visitedCurLevel.add(newStr)) &#123;</span><br><span class="line">                  queue.add(<span class="keyword">new</span> StringWithLevel(newStr, curLevel + <span class="number">1</span>));</span><br><span class="line">               &#125;</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">if</span>(foundCurCycle) &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">         &#125;</span><br><span class="line">         curStrCharArray[i] = originalChar;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">if</span>(found) &#123;</span><br><span class="line">       ArrayList&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">       list.add(start);</span><br><span class="line">       getPaths(start, end, list, finalLevel + <span class="number">1</span>, nextMap, res);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">getPaths</span><span class="params">(String cur, String end, ArrayList&lt;String&gt; list, <span class="keyword">int</span> level, Map&lt;String, List&lt;String&gt;&gt; nextMap, ArrayList&lt;ArrayList&lt;String&gt;&gt; res)</span> </span>&#123;</span><br><span class="line">   <span class="keyword">if</span>(cur.equals(end))&#123;</span><br><span class="line">      res.add(<span class="keyword">new</span> ArrayList&lt;String&gt;(list));</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">else</span> <span class="keyword">if</span>(level &gt; <span class="number">0</span>)&#123;</span><br><span class="line">      List&lt;String&gt; parentsSet = nextMap.get(cur);</span><br><span class="line">      <span class="keyword">for</span> (String parent : parentsSet) &#123;</span><br><span class="line">         list.add(parent);</span><br><span class="line">         getPaths(parent, end, list, level - <span class="number">1</span>, nextMap, res);</span><br><span class="line">         list.remove(list.size() - <span class="number">1</span>);</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://www.codeinterviews.com">@codeinterviews</a>.</p>
+    <p class="link">本文链接：<a href="http://codeinterviews.com/Word-Ladder-II/">http://codeinterviews.com/Word-Ladder-II/</a></p>
+    <div class="share">
+        分享本文：
+        <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+</div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    </div>
+</div>
+
+
+            
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'disqus_username';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            CodeInterviews
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2016 <a href="http://codeinterviews.com" target="_blank">CodeInterviews</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

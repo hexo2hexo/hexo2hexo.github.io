@@ -1,0 +1,286 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="CodeInterviews">
+    
+    <meta name="description" itemprop="description" content="Linux操作命令（四）">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="CodeInterviews" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Linux操作命令（四） | CodeInterviews</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <meta name="baidu-site-verification" content="Jvgfj1O0oP" />
+    <meta name="360-site-verification" content="902348aeb40d156fb32b748c4071c4bd" />
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://codeinterviews.com" title="CodeInterviews">CodeInterviews</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index"><a href="/">首页</a></li>
+                    
+                    <li id="nav-categories"><a href="/categories">分类</a></li>
+                    
+                    <li id="nav-tags"><a href="/tags">标签</a></li>
+                    
+                    <li id="nav-reading"><a href="/tags/#LeetCode">LeetCode</a></li>
+                    
+                    <li id="nav-labs"><a href="/tags/#Java">Java</a></li>
+                    
+                    <li id="nav-about"><a href="/tags/#Javascript">Javascript</a></li>
+                    
+
+                    <!--<li id="nav-github"><a href="https://github.com/hexo2hexo" target="_blank">GitHub</a></li>-->
+                    <li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "Linux操作命令（四）/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>Linux操作命令（四）</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/Linux/">Linux</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/project/">project</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2016-06-30T03:57:53.000Z"
+                       itemprop="datePublished">2016-06-29</time>
+            
+            更新: <time datetime="2016-06-30T03:57:53.000Z"
+                       itemprop="dateModified">2016-06-29</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+
+            <p>该节主要讲解<strong>which</strong>,<strong>whereis</strong>,<strong>locate</strong> 命令。</p>
+<p>这里对linux常用的命令进行整理，以便日后查看。<br>–来自实验楼。</p>
+<a id="more"></a>
+<p>##which命令<br>which命令的作用是，在PATH变量指定的路径中搜索可执行文件的所在位置。它一般用来确认系统中是否安装了指定的软件。</p>
+<p>###命令格式：<br>which  可执行文件名称</p>
+<p>###常用范例：</p>
+<p><strong>例一：</strong>确认是否安装了gcc，可以使用如下命令：</p>
+<pre><code>which gcc 
+</code></pre><p><img src="http://anything-about-doc.qiniudn.com/linuxcommand/which1.png" alt="Alt text"></p>
+<p><strong>例二：</strong>查看cd命令的位置路径，可以使用如下命令：</p>
+<pre><code>which cd
+</code></pre><p><img src="http://anything-about-doc.qiniudn.com/linuxcommand/which2.png" alt="Alt text"></p>
+<p>从上面的显示信息可以看到在实验楼的系统中cd是一个shell函数。</p>
+<p>再来在我本地linux系统上执行which cd命令，显示的结果如下：</p>
+<p><img src="http://anything-about-doc.qiniudn.com/linuxcommand/which3.png" alt="Alt text"></p>
+<p>显示在PATH变量指定的路径下没有cd命令。为什么显示没有呢？这是因为cd是shell内建命令，而which 默认是找 PATH 内所指定的目录，内建命令不在其指定的目录中，所以当然一定找不到。</p>
+<p>那么就有个问题，为什么实验楼环境中cd是一个shell函数，而其他linux环境中cd是内建命令呢？这跟所使用的bash有关。</p>
+<p><img src="http://anything-about-doc.qiniudn.com/linuxcommand/which4.png" alt="Alt text"></p>
+<p><img src="http://anything-about-doc.qiniudn.com/linuxcommand/which5.png" alt="Alt text"></p>
+<p>echo $SHELL命令查看当前使用的shell。</p>
+<p>###补充知识<br>到底什么是命令？</p>
+<p>命令可以是下面四种形式之一：</p>
+<ol>
+<li><p>是一个可执行程序，就像我们所看到的位于目录/usr/bin 中的文件一样。 属于这一类的程序，可以编译成二进制文件，诸如用 C 和 C++语言写成的程序, 也可以是由脚本语言写成的程序，比如说 shell，perl，python，ruby，等等。</p>
+</li>
+<li><p>是一个内建于 shell 自身的命令。bash 支持若干命令，内部叫做 shell 内部命令 (builtins)。例如，上面我本地环境中的cd命令，就是一个 shell 内部命令。</p>
+</li>
+<li><p>是一个 shell 函数。这些是小规模的 shell 脚本，它们混合到环境变量中。 比如上面讲到的cd命令，在实验楼环境中就是一个shell函数。</p>
+</li>
+<li><p>是一个命令别名。我们可以定义自己的命令，建立在其它命令之上。</p>
+</li>
+</ol>
+<p>##whereis命令<br>whereis命令主要用于定位可执行文件、源代码文件、帮助文件在文件系统中的位置。whereis 命令还具有搜索源代码、指定备用搜索路径和搜索不寻常项的能力。</p>
+<p>whereis命令查找速度非常快，这是因为它根本不是在磁盘中漫无目的乱找，而是在一个数据库中（/var/lib/mlocate/）查询。这个数据库是Linux系统自动创建的，包含有本地所有文件的信息，并且每天通过自动执行updatedb命令更新一次。也正是因为这个数据库要每天才更新一次，就会使得whereis命令的搜索结果有时候会不准确，比如刚添加的文件可能搜不到。</p>
+<p>###命令格式：<br>whereis [选项] 文件</p>
+<p>###常用参数：</p>
+<ul>
+<li><p>-b   定位可执行文件</p>
+</li>
+<li><p>-m   定位帮助文件</p>
+</li>
+<li><p>-s   定位源代码文件</p>
+</li>
+<li><p>-u   搜索默认路径下除可执行文件、源代码文件、帮助文件以外的其它文件</p>
+</li>
+<li><p>-B   指定搜索可执行文件的路径</p>
+</li>
+<li><p>-M   指定搜索帮助文件的路径</p>
+</li>
+<li><p>-S   指定搜索源代码文件的路径</p>
+</li>
+</ul>
+<p>###常用范例：<br><strong>例一：</strong>搜索gcc可执行文件的路径，可以使用如下命令：</p>
+<pre><code>whereis -b gcc
+</code></pre><p><strong>例二：</strong>搜索gcc帮助文件的路径，可以使用如下命令：</p>
+<pre><code>whereis -m gcc 
+</code></pre><p><strong>例三：</strong>搜索gcc源代码的路径，可以使用如下命令：</p>
+<pre><code>whereis -s gcc 
+</code></pre><p><img src="http://anything-about-doc.qiniudn.com/linuxcommand/whereis1.png" alt="Alt text"></p>
+<p>##locate命令<br>locate 命令跟whereis命令类似，且它们使用的是相同的数据库。但whereis命令只能搜索可执行文件、联机帮助文件盒源代码文件，如果要获得更全面的搜索结果，可以使用locate命令。</p>
+<p>locate命令使用了十分复杂的匹配语法，可以使用特殊字元（如’*’和’?’）来指定需要查找的样本。</p>
+<p>###命令格式：<br>locate [选项] [搜索字符串]</p>
+<p>###常用参数：</p>
+<ul>
+<li>-q      安静模式，不会显示任何错误讯息</li>
+<li>-n     至多显示n个输出</li>
+<li>-r     使用正规表达式做寻找的条件</li>
+<li>-V     显示版本讯息</li>
+</ul>
+<p>###常用范例：<br><strong>例一：</strong>搜索etc目录下所有以sh开头的文件，可以使用如下命令：</p>
+<pre><code>locate /etc/sh
+</code></pre><p><img src="http://anything-about-doc.qiniudn.com/linuxcommand/locate1.png" alt="Alt text"></p>
+<p>注意在实验楼环境中一开始执行这个命令会报错：locate 无法执行 <code>stat() ‘/var/lib/mlocate/mlocate.db’</code>：没有那个文件或目录。解决办法是执行<code>sudo updatedb</code>命令。</p>
+<p><strong>例二：</strong>搜索etc目录下文件名包含lou的文件，可以使用如下命令：</p>
+<pre><code>locate /etc/*lou*
+</code></pre><p><img src="http://anything-about-doc.qiniudn.com/linuxcommand/locate2.png" alt="Alt text"></p>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://www.codeinterviews.com">@codeinterviews</a>.</p>
+    <p class="link">本文链接：<a href="http://codeinterviews.com/Linux操作命令（四）/">http://codeinterviews.com/Linux操作命令（四）/</a></p>
+    <div class="share">
+        分享本文：
+        <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+</div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    </div>
+</div>
+
+
+            
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'disqus_username';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            CodeInterviews
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2016 <a href="http://codeinterviews.com" target="_blank">CodeInterviews</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+
