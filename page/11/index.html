@@ -1,642 +1,1288 @@
-
-
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!DOCTYPE HTML>
+<html>
 <head>
-    
-    <meta name="author" content="CodeInterviews">
-    
-    
-
-    
-    <link rel="alternative" href="atom.xml" title="CodeInterviews" type="application/atom+xml">
-    
-    
-    
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CodeInterviews</title>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Javascript -->
-    <script src="/js/jquery-2.1.0.min.js"></script>
-    <script src="/js/jquery.backstretch.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/js/headroom.min.js"></script>
-    <script src="/js/jquery.headroom.min.js"></script>
-    <script src="/js/common.js"></script>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <meta name="baidu-site-verification" content="Jvgfj1O0oP" />
-    <meta name="360-site-verification" content="902348aeb40d156fb32b748c4071c4bd" />
-</head>
-<body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="http://codeinterviews.com" title="CodeInterviews">CodeInterviews</a>
-            </div>
-
-            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
-                
-
-                <ul class="nav navbar-nav">
-                    
-                    <li id="nav-index"><a href="/">首页</a></li>
-                    
-                    <li id="nav-categories"><a href="/categories">分类</a></li>
-                    
-                    <li id="nav-tags"><a href="/tags">标签</a></li>
-                    
-                    <li id="nav-reading"><a href="/tags/#LeetCode">LeetCode</a></li>
-                    
-                    <li id="nav-labs"><a href="/tags/#Java">Java</a></li>
-                    
-                    <li id="nav-about"><a href="/tags/#Javascript">Javascript</a></li>
-                    
-
-                    <!--<li id="nav-github"><a href="https://github.com/hexo2hexo" target="_blank">GitHub</a></li>-->
-                    <li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>
-                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <script>
-    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
-    var bgLength = "74";
-    var bgRandom = false;
-    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
-
-    $(function() {
-        // page-id...
-        var pageId = "page/11/index.html";
-        pageId = pageId.substr(0, pageId.indexOf("/"));
-        if(pageId === "") pageId = "index";
-
-        $("#nav-" + pageId).addClass("active");
-    });
-    </script>
-
-    
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Redis的介绍与安装/" title="Redis简介与安装">Redis简介与安装</a></h1>
-
-        
-        <p class="summary">Redis简介与安装</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/NoSql/">NoSql</a>&nbsp;<a href="/tags/Redis/">Redis</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/project/">project</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Redis系统管理/" title="Redis系统管理">Redis系统管理</a></h1>
-
-        
-        <p class="summary">Redis系统管理</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/NoSql/">NoSql</a>&nbsp;<a href="/tags/Redis/">Redis</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/project/">project</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Remove-Duplicates-from-Sorted-Array-II/" title="LeetCode-Remove Duplicates from Sorted Array II">LeetCode-Remove Duplicates from Sorted Array II</a></h1>
-
-        
-        <p class="summary">Remove Duplicates from Sorted Array II</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;<a href="/tags/Two-Pointers/">Two Pointers</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Remove-Duplicates-from-Sorted-List-II/" title="LeetCode-Remove Duplicates from Sorted List II">LeetCode-Remove Duplicates from Sorted List II</a></h1>
-
-        
-        <p class="summary">Remove Duplicates from Sorted List II</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Linked-List/">Linked List</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Remove-Duplicates-from-Sorted-Array/" title="LeetCode-Remove Duplicates from Sorted Array">LeetCode-Remove Duplicates from Sorted Array</a></h1>
-
-        
-        <p class="summary">Remove Duplicates from Sorted Array</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;<a href="/tags/Two-Pointers/">Two Pointers</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Remove-Duplicates-from-Sorted-List/" title="LeetCode-Remove Duplicates from Sorted List">LeetCode-Remove Duplicates from Sorted List</a></h1>
-
-        
-        <p class="summary">Remove Duplicates from Sorted List</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Linked-List/">Linked List</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Remove-Linked-List-Elements/" title="LeetCode-Remove Linked List Elements">LeetCode-Remove Linked List Elements</a></h1>
-
-        
-        <p class="summary">Remove Linked List Elements</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Linked-List/">Linked List</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Remove-Element/" title="LeetCode-Remove Element">LeetCode-Remove Element</a></h1>
-
-        
-        <p class="summary">Remove Element</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;<a href="/tags/Two-Pointers/">Two Pointers</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Add-Binary/" title="LeetCode-Add Binary">LeetCode-Add Binary</a></h1>
-
-        
-        <p class="summary">Add Binary</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Math，String/">Math，String</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Remove-Nth-Node-From-End-of-List/" title="LeetCode-Remove Nth Node From End of List">LeetCode-Remove Nth Node From End of List</a></h1>
-
-        
-        <p class="summary">Remove Nth Node From End of List</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Two-Pointers/">Two Pointers</a>&nbsp;<a href="/tags/Linked-List/">Linked List</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Reorder-List/" title="LeetCode-Reorder List">LeetCode-Reorder List</a></h1>
-
-        
-        <p class="summary">Reorder List</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Linked-List/">Linked List</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Repeated-DNA-Sequences/" title="LeetCode-Repeated DNA Sequences">LeetCode-Repeated DNA Sequences</a></h1>
-
-        
-        <p class="summary">Repeated DNA Sequences</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Hash-Table/">Hash Table</a>&nbsp;<a href="/tags/Bit-Manipulation/">Bit Manipulation</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Reverse-Linked-List-II/" title="LeetCode-Reverse Linked List II">LeetCode-Reverse Linked List II</a></h1>
-
-        
-        <p class="summary">Reverse Linked List II</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Linked-List/">Linked List</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Reverse-Linked-List/" title="LeetCode-Reverse Linked List">LeetCode-Reverse Linked List</a></h1>
-
-        
-        <p class="summary">Reverse Linked List</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Linked-List/">Linked List</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Restore-IP-Addresses/" title="LeetCode-Restore IP Addresses">LeetCode-Restore IP Addresses</a></h1>
-
-        
-        <p class="summary">Restore IP Addresses</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/String/">String</a>&nbsp;<a href="/tags/BackTracking/">BackTracking</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-
-<div class="container pagination-div">
-    <div class="well">
-        <a class="extend prev" rel="prev" href="/page/10/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/12/">Next &raquo;</a>
-    </div>
-</div>
-
-
+  <meta charset="utf-8">
+  
+  <title>Page 11 | CodeInterviews</title>
+  <meta name="author" content="CodeInterviews">
+  
+  <meta name="description" content="程序员的世界,编程,技术,程序员,java,.Net,c++,c语言,python,ruby">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="CodeInterviews"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/bootstrap.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
 <script>
-    $(function () {
-        $("article:first").addClass("first-post");
-    });
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-80198899-1', 'auto');
+  ga('send', 'pageview');
 </script>
 
-    <footer id="footer">
-        <div id="bottom-tip">
-            CodeInterviews
-        </div>
-        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
-        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
-        <small>&copy; 2016 <a href="http://codeinterviews.com" target="_blank">CodeInterviews</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
-    </footer>
-    
+
+
 <script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
-  var s = document.getElementsByTagName("script")[0];
+  hm.src = "//hm.baidu.com/hm.js?9a9d27181903a355a8d95344f23682b0";
+  var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
 
 
+</head>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-51347904-1', 'auto');
-  ga('send', 'pageview');
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">CodeInterviews</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>所有文章
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the articles.">
+			  <i class="fa fa-archive"></i>分类
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Java/" title="All about java.">
+			  <i class="fa fa-codepen"></i>Java
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Javascript/" title="All about javascript.">
+			  <i class="fa fa-empire"></i>Javascript
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/python/" title="All about Python.">
+			  <i class="fa fa-cog"></i>Python
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Leetcode/" title="All about leetcode.">
+			  <i class="fa fa-thumbs-o-up"></i>Leetcode
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-info-circle"></i>关于本站
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 <div class="page-header page-header-inverse ">
+  <h1 class="title title-inverse ">Programming interview questions, tips and knowledge, system design, big data.</h1>
+</div>
+
+<div class="row page">
+
+	
+	<div class="col-md-9">
+	
+
+		<div class="slogan">
+      <i class="fa fa-heart"></i>
+      程序员的世界, 为程序员服务
+</div>    
+		<div id="top_search"></div>
+		<div class="mypage">
+		
+		<!-- title and entry -->
+        <!-- render top articles firstly -->
+        
+        <!-- render other articles -->
+        
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/The-Skyline-Problem/" title="The Skyline Problem">LeetCode-The Skyline Problem</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####The Skyline Problem</p>
+<blockquote>
+<p>A city’s skyline is the outer contour of the silhouette formed by all the buildings in that city when viewed from a distance. Now suppose you are <strong>given the locations and height of all the buildings</strong> as shown on a cityscape photo (Figure A), write a program to <strong>output the skyline</strong> formed by these buildings collectively (Figure B).<br>![][1]<br>![][2]<br>The geometric information of each building is represented by a triplet of integers <code>[Li, Ri, Hi]</code>, where <code>Li</code> and <code>Ri</code> are the x coordinates of the left and right edge of the ith building, respectively, and Hi is its height. It is guaranteed that <code>0 ≤ Li, Ri ≤ INT_MAX</code>, <code>0 &lt; Hi ≤ INT_MAX</code>, and <code>Ri - Li &gt; 0</code>. You may assume all buildings are perfect rectangles grounded on an absolutely flat surface at height 0.</p>
+<p>For instance, the dimensions of all buildings in Figure A are recorded as: <code>[ [2 9 10], [3 7 15], [5 12 12], [15 20 10], [19 24 8] ]</code>.</p>
+<p>The output is a list of <strong>“key points”</strong> (red dots in Figure B) in the format of<code>[ [x1,y1], [x2, y2], [x3, y3], ... ]</code>that uniquely defines a skyline. <strong>A key point is the left endpoint of a horizontal line segment</strong>. Note that the last key point, where the rightmost building ends, is merely used to mark the termination of the skyline, and always has zero height. Also, the ground in between any two adjacent buildings should be considered part of the skyline contour.</p>
+</blockquote>
+<p>For instance, the skyline in Figure B should be represented as:<code>[ [2 10], [3 15], [7 12], [12 0], [15 10], [20 8], [24, 0] ]</code>.</p>
+<blockquote>
+<p>####Notes:</p>
+<ul>
+<li>The number of buildings in any input list is guaranteed to be in the range <code>[0, 10000]</code>.</li>
+<li>The input list is already sorted in ascending order by the left x position <code>Li</code>.</li>
+<li>The output list must be sorted by the x position.</li>
+<li>There must be no consecutive horizontal lines of equal height in the output skyline. For instance, <code>[...[2 3], [4 5], [7 5], [11 5], [12 7]...]</code> is not acceptable; the three lines of height 5 should be merged into one in the final output as such: <code>[...[2 3], [4 5], [12 7], ...]</code></li>
+</ul>
+<p>####Credits:<br>Special thanks to @stellari for adding this problem, creating these two awesome images and all test cases.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####The Skyline Problem
+
+A city’s skyline is the outer contour of the silhouette formed by all the buildings in that city when viewed from a distance. Now suppose you are given the locations and height of all the buildings as shown on a cityscape photo (Figure A), write a program to output the </p>
+			  
+	</div>
+  <a type="button" href="/The-Skyline-Problem/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Trapping-Rain-Water/" title="Trapping Rain Water">LeetCode-Trapping Rain Water</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Trapping Rain Water </p>
+<blockquote>
+<p>Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.</p>
+<p>For example,<br>Given <code>[0,1,0,2,1,0,1,3,2,1,2,1]</code>, return <code>6</code>.</p>
+<p><img src="/img/Trapping-Rain-Water/1.png" alt=""></p>
+<p>The above elevation map is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) are being trapped. Thanks Marcos for contributing this image!</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Trapping Rain Water 
+
+Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
+For example,Given [0,1,0,2,1,0,1,3,2,1,2,1], return 6.
+
+The above elevation map is represented by array [0,1,0,2,1,0,1</p>
+			  
+	</div>
+  <a type="button" href="/Trapping-Rain-Water/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Add-and-Search-Word - Data-structure-design/" title="Add and Search Word - Data structure design">LeetCode-Add and Search Word - Data structure design</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Add and Search Word - Data structure design</p>
+<blockquote>
+<p>Design a data structure that supports the following two operations:</p>
+<pre><code>void addWord(word)
+bool search(word)
+</code></pre><p>search(word) can search a literal word or a regular expression string containing only letters a-z or .. A . means it can represent any one letter.</p>
+<p>For example:</p>
+<pre><code>addWord(&quot;bad&quot;)
+addWord(&quot;dad&quot;)
+addWord(&quot;mad&quot;)
+search(&quot;pad&quot;) -&gt; false
+search(&quot;bad&quot;) -&gt; true
+search(&quot;.ad&quot;) -&gt; true
+search(&quot;b..&quot;) -&gt; true
+</code></pre><p>######Note:<br>You may assume that all words are consist of lowercase letters a-z.</p>
+<p>click to show hint.<br>You should be familiar with how a Trie works. If not, please work on this problem: Implement Trie (Prefix Tree) first.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Add and Search Word - Data structure design
+
+Design a data structure that supports the following two operations:
+void addWord(word)
+bool search(word)
+search(word) can search a literal word or a regular expression string containing only letters a-z or .. A . means it can represent any one le</p>
+			  
+	</div>
+  <a type="button" href="/Add-and-Search-Word - Data-structure-design/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Triangle/" title="Triangle">LeetCode-Triangle</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Triangle</p>
+<blockquote>
+<p>Given a triangle, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.</p>
+<p>For example, given the following triangle  </p>
+<pre><code>[
+     [2],
+    [3,4],
+   [6,5,7],
+  [4,1,8,3]
+]
+</code></pre><p>The minimum path sum from top to bottom is <code>11 (i.e., 2 + 3 + 5 + 1 = 11)</code>.</p>
+<p>####Note:<br>Bonus point if you are able to do this using only O(n) extra space, where n is the total number of rows in the triangle.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Triangle
+
+Given a triangle, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.
+For example, given the following triangle  
+[
+     [2],
+    [3,4],
+   [6,5,7],
+  [4,1,8,3]
+]
+The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 </p>
+			  
+	</div>
+  <a type="button" href="/Triangle/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Unique-Binary-Search-Trees-II/" title="Unique Binary Search Trees II">LeetCode-Unique Binary Search Trees II</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Unique Binary Search Trees II</p>
+<blockquote>
+<p>Given n, generate all structurally unique BST’s (binary search trees) that store values 1…n.</p>
+<p>For example,<br>Given n = 3, your program should return all 5 unique BST’s shown below.</p>
+<pre><code>1         3     3      2      1
+ \       /     /      / \      \
+  3     2     1      1   3      2
+ /     /       \                 \
+2     1         2                 3
+</code></pre><p>confused what <code>&quot;{1,#,2,3}&quot;</code> means? &gt; read more on how binary tree is serialized on OJ.</p>
+</blockquote>
+<p>####OJ’s Binary Tree Serialization:</p>
+<blockquote>
+<p>The serialization of a binary tree follows a level order traversal, where ‘#’ signifies a path terminator where no node exists below.</p>
+<p>Here’s an example:</p>
+<pre><code>  1
+ / \
+2   3
+   /
+  4
+   \
+    5
+</code></pre><p>The above binary tree is serialized as <code>&quot;{1,2,3,#,#,4,#,#,5}&quot;</code>.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Unique Binary Search Trees II
+
+Given n, generate all structurally unique BST’s (binary search trees) that store values 1…n.
+For example,Given n = 3, your program should return all 5 unique BST’s shown below.
+1         3     3      2      1
+ \       /     /      / \      \
+  3     2     1   </p>
+			  
+	</div>
+  <a type="button" href="/Unique-Binary-Search-Trees-II/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Unique-Binary-Search-Trees/" title="Unique Binary Search Trees">LeetCode-Unique Binary Search Trees</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Unique Binary Search Trees</p>
+<blockquote>
+<p>Given n, how many structurally unique BST’s (binary search trees) that store values 1…n?</p>
+<p>For example,<br>Given n = 3, there are a total of 5 unique BST’s.</p>
+</blockquote>
+<pre><code>1         3     3      2      1
+ \       /     /      / \      \
+  3     2     1      1   3      2
+ /     /       \                 \
+2     1         2                 3
+</code></pre>
+	-->
+			  
+			  <p class="summary">##题目
+####Unique Binary Search Trees
+
+Given n, how many structurally unique BST’s (binary search trees) that store values 1…n?
+For example,Given n = 3, there are a total of 5 unique BST’s.
+
+1         3     3      2      1
+ \       /     /      / \      \
+  3     2     1      1   3      2
+ /     /    </p>
+			  
+	</div>
+  <a type="button" href="/Unique-Binary-Search-Trees/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Unique-Paths-II/" title="Unique Paths II">LeetCode-Unique Paths II</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Unique Paths II</p>
+<blockquote>
+<p>Follow up for “Unique Paths”:</p>
+<p>Now consider if some obstacles are added to the grids. How many unique paths would there be?</p>
+<p>An obstacle and empty space is marked as <code>1</code> and <code>0</code> respectively in the grid.</p>
+<p>For example,<br>There is one obstacle in the middle of a 3x3 grid as illustrated below.   </p>
+<pre><code>[
+  [0,0,0],
+  [0,1,0],
+  [0,0,0]
+]
+</code></pre><p>The total number of unique paths is <code>2</code>.</p>
+</blockquote>
+<p>Note: m and n will be at most 100.</p>
+	-->
+			  
+			  <p class="summary">##题目
+####Unique Paths II
+
+Follow up for “Unique Paths”:
+Now consider if some obstacles are added to the grids. How many unique paths would there be?
+An obstacle and empty space is marked as 1 and 0 respectively in the grid.
+For example,There is one obstacle in the middle of a 3x3 grid as illustrated</p>
+			  
+	</div>
+  <a type="button" href="/Unique-Paths-II/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Unique-Paths/" title="Unique Paths">LeetCode-Unique Paths</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Unique Paths</p>
+<blockquote>
+<p>A robot is located at the top-left corner of a m x n grid (marked ‘Start’ in the diagram below).</p>
+<p>The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked ‘Finish’ in the diagram below).</p>
+<p>How many possible unique paths are there?<br><img src="/img/Unique-Paths/1.png" alt=""></p>
+<p>Above is a <code>3 x 7</code> grid. How many possible unique paths are there?</p>
+<p><strong>Note</strong>: <code>m</code> and <code>n</code> will be at most 100.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Unique Paths
+
+A robot is located at the top-left corner of a m x n grid (marked ‘Start’ in the diagram below).
+The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked ‘Finish’ in the diagram below).
+How many</p>
+			  
+	</div>
+  <a type="button" href="/Unique-Paths/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Use-Docker-To-Build-Spark-Env/" title="利用Docker搭载本地的spark环境">利用Docker搭载本地的spark环境</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>最近换了新电脑，需要配置一下本地的spark环境，为了方便一次配置，到处运行，本文采用docker的容器机制来搭建本地的spark环境。</p>
+<p>本人涉及docker不深，如有错误，希望大家多多包涵指教！么么哒，大家！</p>
+	-->
+			  
+			  <p class="summary">最近换了新电脑，需要配置一下本地的spark环境，为了方便一次配置，到处运行，本文采用docker的容器机制来搭建本地的spark环境。
+本人涉及docker不深，如有错误，希望大家多多包涵指教！么么哒，大家！</p>
+			  
+	</div>
+  <a type="button" href="/Use-Docker-To-Build-Spark-Env/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Valid-Number/" title="Valid Number">LeetCode-Valid Number</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Valid Number</p>
+<blockquote>
+<p>Validate if a given string is numeric.</p>
+<p>Some examples:<br><code>&quot;0&quot;</code> =&gt; <code>true</code><br><code>&quot; 0.1 &quot;</code> =&gt; <code>true</code><br><code>&quot;abc&quot;</code> =&gt; <code>false</code><br><code>&quot;1 a&quot;</code> =&gt; <code>false</code><br><code>&quot;2e10&quot;</code> =&gt; <code>true</code>   </p>
+<p><strong>Note</strong>: It is intended for the problem statement to be ambiguous. You should gather all requirements up front before implementing one.</p>
+<p>Update (2014-12-06):<br>New test cases had been added. Thanks unfounder’s contribution.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Valid Number
+
+Validate if a given string is numeric.
+Some examples:&amp;quot;0&amp;quot; =&amp;gt; true&amp;quot; 0.1 &amp;quot; =&amp;gt; true&amp;quot;abc&amp;quot; =&amp;gt; false&amp;quot;1 a&amp;quot; =&amp;gt; false&amp;quot;2e10&amp;quot; =&amp;gt; true   
+Note: It is intended for the problem statement to be ambiguous. You should gather all r</p>
+			  
+	</div>
+  <a type="button" href="/Valid-Number/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Valid-Palindrome/" title="Valid Palindrome">LeetCode-Valid Palindrome</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Valid Palindrome</p>
+<blockquote>
+<p>Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.</p>
+<p>For example,<br><code>&quot;A man, a plan, a canal: Panama&quot;</code> is a palindrome.<br><code>&quot;race a car&quot;</code> is not a palindrome.</p>
+<p>####Note:<br>Have you consider that the string might be empty? This is a good question to ask during an interview.</p>
+<p>For the purpose of this problem, we define empty string as valid palindrome.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Valid Palindrome
+
+Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+For example,&amp;quot;A man, a plan, a canal: Panama&amp;quot; is a palindrome.&amp;quot;race a car&amp;quot; is not a palindrome.
+####Note:Have you consider that the string might</p>
+			  
+	</div>
+  <a type="button" href="/Valid-Palindrome/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Valid-Parentheses/" title="Valid Parentheses">LeetCode-Valid Parentheses</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####RValid Parentheses</p>
+<blockquote>
+<p>Given a string containing just the characters <code>&#39;(&#39;</code>, <code>&#39;)&#39;</code>, <code>&#39;{&#39;</code>, <code>&#39;}&#39;</code>, <code>&#39;[&#39;</code> and <code>&#39;]&#39;</code>, determine if the input string is valid.</p>
+<p>The brackets must close in the correct order, <code>&quot;()&quot;</code> and <code>&quot;()[]{}&quot;</code> are all valid but <code>&quot;(]&quot;</code> and <code>&quot;([)]&quot;</code> are not.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####RValid Parentheses
+
+Given a string containing just the characters &amp;#39;(&amp;#39;, &amp;#39;)&amp;#39;, &amp;#39;{&amp;#39;, &amp;#39;}&amp;#39;, &amp;#39;[&amp;#39; and &amp;#39;]&amp;#39;, determine if the input string is valid.
+The brackets must close in the correct order, &amp;quot;()&amp;quot; and &amp;quot;()[]{}&amp;quot; are all valid but &amp;q</p>
+			  
+	</div>
+  <a type="button" href="/Valid-Parentheses/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Valid-Sudoku/" title="SValid Sudoku">LeetCode-Valid Sudoku</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Valid Sudoku</p>
+<blockquote>
+<p>Determine if a Sudoku is valid, according to:<br><a href="http://sudoku.com.au/TheRules.aspx">Sudoku Puzzles - The Rules</a>.</p>
+<p>The Sudoku board could be partially filled, where empty cells are filled with the character ‘.’.</p>
+<p><img src="/img/SuDoKu/1.png" alt=""></p>
+<p>A partially filled sudoku which is valid.</p>
+<p>####Note:</p>
+<p>A valid Sudoku board (partially filled) is not necessarily solvable. Only the filled cells need to be validated.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Valid Sudoku
+
+Determine if a Sudoku is valid, according to:Sudoku Puzzles - The Rules.
+The Sudoku board could be partially filled, where empty cells are filled with the character ‘.’.
+
+A partially filled sudoku which is valid.
+####Note:
+A valid Sudoku board (partially filled) is not necessa</p>
+			  
+	</div>
+  <a type="button" href="/Valid-Sudoku/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Validate-Binary-Search-Tree/" title="Validate Binary Search Tree">LeetCode-Validate Binary Search Tree</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Validate Binary Search Tree</p>
+<blockquote>
+<p>Given a binary tree, determine if it is a valid binary search tree (BST).</p>
+<p>Assume a BST is defined as follows:</p>
+<ul>
+<li>The left subtree of a node contains only nodes with keys less than the node’s key.   </li>
+<li>The right subtree of a node contains only nodes with keys greater than the node’s key.   </li>
+<li>Both the left and right subtrees must also be binary search trees.</li>
+</ul>
+<p>confused what <code>&quot;{1,#,2,3}&quot;</code> means? &gt; read more on how binary tree is serialized on OJ.</p>
+<p>####OJ’s Binary Tree Serialization:<br>The serialization of a binary tree follows a level order traversal, where ‘#’ signifies a path terminator where no node exists below.</p>
+<p>Here’s an example:</p>
+<pre><code>  1
+ / \
+2   3
+   /
+  4
+   \
+    5
+</code></pre><p>The above binary tree is serialized as <code>&quot;{1,2,3,#,#,4,#,#,5}&quot;</code>.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Validate Binary Search Tree
+
+Given a binary tree, determine if it is a valid binary search tree (BST).
+Assume a BST is defined as follows:
+
+The left subtree of a node contains only nodes with keys less than the node’s key.   
+The right subtree of a node contains only nodes with keys greater</p>
+			  
+	</div>
+  <a type="button" href="/Validate-Binary-Search-Tree/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Surrounded-Regions/" title="Surrounded Regions">LeetCode-Surrounded Regions</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Surrounded Regions</p>
+<blockquote>
+<p>Given a 2D board containing ‘X’ and ‘O’, capture all regions surrounded by ‘X’.</p>
+<p>A region is captured by flipping all ‘O’s into ‘X’s in that surrounded region.</p>
+<p>For example,</p>
+<pre><code>X X X X
+X O O X
+X X O X
+X O X X
+</code></pre><p>After running your function, the board should be:</p>
+<pre><code>X X X X
+X X X X
+X X X X
+X O X X
+</code></pre></blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Surrounded Regions
+
+Given a 2D board containing ‘X’ and ‘O’, capture all regions surrounded by ‘X’.
+A region is captured by flipping all ‘O’s into ‘X’s in that surrounded region.
+For example,
+X X X X
+X O O X
+X X O X
+X O X X
+After running your function, the board should be:
+X X X X
+X X X X
+X</p>
+			  
+	</div>
+  <a type="button" href="/Surrounded-Regions/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Wildcard-Matching/" title="Wildcard Matching">LeetCode-Wildcard Matching</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Wildcard Matching</p>
+<blockquote>
+<p>Implement wildcard pattern matching with support for <code>&#39;?&#39;</code> and <code>&#39;*&#39;</code>.</p>
+<pre><code>&apos;?&apos; Matches any single character.
+&apos;*&apos; Matches any sequence of characters (including the empty sequence).
+
+The matching should cover the entire input string (not partial).
+
+The function prototype should be:
+bool isMatch(const char *s, const char *p)
+
+Some examples:
+isMatch(&quot;aa&quot;,&quot;a&quot;) → false
+isMatch(&quot;aa&quot;,&quot;aa&quot;) → true
+isMatch(&quot;aaa&quot;,&quot;aa&quot;) → false
+isMatch(&quot;aa&quot;, &quot;*&quot;) → true
+isMatch(&quot;aa&quot;, &quot;a*&quot;) → true
+isMatch(&quot;ab&quot;, &quot;?*&quot;) → true
+isMatch(&quot;aab&quot;, &quot;c*a*b&quot;) → false
+</code></pre></blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Wildcard Matching
+
+Implement wildcard pattern matching with support for &amp;#39;?&amp;#39; and &amp;#39;*&amp;#39;.
+&amp;apos;?&amp;apos; Matches any single character.
+&amp;apos;*&amp;apos; Matches any sequence of characters (including the empty sequence).
+
+The matching should cover the entire input string (not partial).</p>
+			  
+	</div>
+  <a type="button" href="/Wildcard-Matching/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Word-Break-II/" title="Word Break II">LeetCode-Word Break II</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Word Break II</p>
+<blockquote>
+<p>Given a string s and a dictionary of words dict, add spaces in s to construct a sentence where each word is a valid dictionary word.</p>
+<p>Return all such possible sentences.</p>
+<p>For example, given<br>s = <code>&quot;catsanddog&quot;</code>,<br>dict = <code>[&quot;cat&quot;, &quot;cats&quot;, &quot;and&quot;, &quot;sand&quot;, &quot;dog&quot;]</code>.          </p>
+<p>A solution is <code>[&quot;cats and dog&quot;, &quot;cat sand dog&quot;]</code>.    </p>
+	-->
+			  
+			  <p class="summary">##题目
+####Word Break II
+
+Given a string s and a dictionary of words dict, add spaces in s to construct a sentence where each word is a valid dictionary word.
+Return all such possible sentences.
+For example, givens = &amp;quot;catsanddog&amp;quot;,dict = [&amp;quot;cat&amp;quot;, &amp;quot;cats&amp;quot;, &amp;quot;and&amp;quot;, &amp;q</p>
+			  
+	</div>
+  <a type="button" href="/Word-Break-II/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Word-Ladder/" title="Word Ladder">LeetCode-Word Ladder</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Word Ladder</p>
+<blockquote>
+<p>Given two words (start and end), and a dictionary, find the length of shortest transformation sequence from start to end, such that:</p>
+<p>1.Only one letter can be changed at a time<br>2.Each intermediate word must exist in the dictionary<br>For example,</p>
+<p>Given:<br>start = <code>&quot;hit&quot;</code><br>end = <code>&quot;cog&quot;</code><br>dict = <code>[&quot;hot&quot;,&quot;dot&quot;,&quot;dog&quot;,&quot;lot&quot;,&quot;log&quot;]</code><br>As one shortest transformation is <code>&quot;hit&quot; -&gt; &quot;hot&quot; -&gt; &quot;dot&quot; -&gt; &quot;dog&quot; -&gt; &quot;cog&quot;</code>,<br>return its length <code>5</code>.    </p>
+<p>####Note:</p>
+<ul>
+<li>Return 0 if there is no such transformation sequence.</li>
+<li>All words have the same length.</li>
+<li>All words contain only lowercase alphabetic characters.</li>
+</ul>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Word Ladder
+
+Given two words (start and end), and a dictionary, find the length of shortest transformation sequence from start to end, such that:
+1.Only one letter can be changed at a time2.Each intermediate word must exist in the dictionaryFor example,
+Given:start = &amp;quot;hit&amp;quot;end = &amp;q</p>
+			  
+	</div>
+  <a type="button" href="/Word-Ladder/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Word-Ladder-II/" title="Word Ladder II">LeetCode-Word Ladder II</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Word Ladder II</p>
+<blockquote>
+<p>Given two words (start and end), and a dictionary, find all shortest transformation sequence(s) from start to end, such that:</p>
+<ol>
+<li>Only one letter can be changed at a time</li>
+<li>Each intermediate word must exist in the dictionary<br>For example, </li>
+</ol>
+<p>Given:<br>start = <code>&quot;hit&quot;</code><br>end = <code>&quot;cog&quot;</code><br>dict = <code>[&quot;hot&quot;,&quot;dot&quot;,&quot;dog&quot;,&quot;lot&quot;,&quot;log&quot;]</code><br>Return</p>
+<pre><code>[
+  [&quot;hit&quot;,&quot;hot&quot;,&quot;dot&quot;,&quot;dog&quot;,&quot;cog&quot;],
+  [&quot;hit&quot;,&quot;hot&quot;,&quot;lot&quot;,&quot;log&quot;,&quot;cog&quot;]
+]
+</code></pre><p>####Note:</p>
+<ul>
+<li>All words have the same length.</li>
+<li>All words contain only lowercase alphabetic characters.</li>
+</ul>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Word Ladder II
+
+Given two words (start and end), and a dictionary, find all shortest transformation sequence(s) from start to end, such that:
+
+Only one letter can be changed at a time
+Each intermediate word must exist in the dictionaryFor example, 
+
+Given:start = &amp;quot;hit&amp;quot;end = &amp;quot;</p>
+			  
+	</div>
+  <a type="button" href="/Word-Ladder-II/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Word-Break/" title="Word Break">LeetCode-Word Break</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Word Break</p>
+<blockquote>
+<p>Given a string s and a dictionary of words dict, determine if s can be segmented into a space-separated sequence of one or more dictionary words.</p>
+<p>For example, given<br>s = <code>&quot;leetcode&quot;</code>,<br>dict = <code>[&quot;leet&quot;, &quot;code&quot;]</code>.        </p>
+<p>Return true because <code>&quot;leetcode&quot;</code> can be segmented as <code>&quot;leet code&quot;</code>.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Word Break
+
+Given a string s and a dictionary of words dict, determine if s can be segmented into a space-separated sequence of one or more dictionary words.
+For example, givens = &amp;quot;leetcode&amp;quot;,dict = [&amp;quot;leet&amp;quot;, &amp;quot;code&amp;quot;].        
+Return true because &amp;quot;leetcode&amp;qu</p>
+			  
+	</div>
+  <a type="button" href="/Word-Break/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+
+		</div>
+
+		<!-- pagination -->
+		<div>
+  		<center>
+		<div class="pagination">
+<ul class="pagination">
+	 
+		
+    	<li class="prev"><a href="/page/10/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i> Prev</a></li>
+  		
+
+        <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+
+		
+		   <li class="next"> <a href="/page/12/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a> </li>          
+        
+	
+</ul>
+</div>
+
+  		</center>
+		</div>
+
+		
+		
+	</div> <!-- col-md-9 -->
+
+	
+		<div class="col-md-3">
+	<div id="sidebar">
+	
+			
+  <div id="site_search">
+   <div class="form-group">
+    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search" class="st-search-input st-default-search-input form-control"/>
+   </div>  
+  <div id="local-search-result"></div>
+  </div>
+
+
+		
+			
+	<div class="widget">
+		<h4>Categories</h4>
+		<ul class="tag_box inline list-unstyled">
+		
+			<li><a href="/categories/Angular-js/">Angular.js<span>1</span></a></li>
+		
+			<li><a href="/categories/Database/">Database<span>1</span></a></li>
+		
+			<li><a href="/categories/IT杂谈/">IT杂谈<span>20</span></a></li>
+		
+			<li><a href="/categories/Mac/">Mac<span>4</span></a></li>
+		
+			<li><a href="/categories/Ruby/">Ruby<span>2</span></a></li>
+		
+			<li><a href="/categories/System-Design/">System Design<span>1</span></a></li>
+		
+			<li><a href="/categories/algorithm/">algorithm<span>197</span></a></li>
+		
+			<li><a href="/categories/hexo/">hexo<span>18</span></a></li>
+		
+			<li><a href="/categories/linux/">linux<span>3</span></a></li>
+		
+			<li><a href="/categories/markdown/">markdown<span>1</span></a></li>
+		
+			<li><a href="/categories/node-js/">node.js<span>1</span></a></li>
+		
+			<li><a href="/categories/nodejs/">nodejs<span>1</span></a></li>
+		
+			<li><a href="/categories/project/">project<span>50</span></a></li>
+		
+			<li><a href="/categories/python/">python<span>11</span></a></li>
+		
+			<li><a href="/categories/前端/">前端<span>4</span></a></li>
+		
+			<li><a href="/categories/推荐/">推荐<span>1</span></a></li>
+		
+			<li><a href="/categories/机器学习/">机器学习<span>23</span></a></li>
+		
+			<li><a href="/categories/生活/">生活<span>1</span></a></li>
+		
+			<li><a href="/categories/读书笔记/">读书笔记<span>1</span></a></li>
+		
+		</ul>
+	</div>
+
+		
+			
+	<div class="widget">
+		<h4>Tag Cloud</h4>
+		<ul class="tag_box inline list-unstyled">		
+		
+			<li><a href="/tags/Spark/">Spark<span>2</span></a></li>
+		
+			<li><a href="/tags/Angular-js/">Angular.js<span>1</span></a></li>
+		
+			<li><a href="/tags/System-Design/">System Design<span>1</span></a></li>
+		
+			<li><a href="/tags/Graph/">Graph<span>3</span></a></li>
+		
+			<li><a href="/tags/node-js/">node.js<span>2</span></a></li>
+		
+			<li><a href="/tags/Data-Structure/">Data Structure<span>4</span></a></li>
+		
+			<li><a href="/tags/rails/">rails<span>1</span></a></li>
+		
+			<li><a href="/tags/爬虫/">爬虫<span>4</span></a></li>
+		
+			<li><a href="/tags/Docker/">Docker<span>6</span></a></li>
+		
+			<li><a href="/tags/Sort/">Sort<span>7</span></a></li>
+		
+			<li><a href="/tags/Tree/">Tree<span>22</span></a></li>
+		
+			<li><a href="/tags/stack/">stack<span>1</span></a></li>
+		
+			<li><a href="/tags/bae/">bae<span>1</span></a></li>
+		
+			<li><a href="/tags/Resevior-Sampling/">Resevior Sampling<span>1</span></a></li>
+		
+			<li><a href="/tags/Two-Pointers/">Two Pointers<span>19</span></a></li>
+		
+			<li><a href="/tags/Binary-Search-Tree/">Binary Search Tree<span>1</span></a></li>
+		
+			<li><a href="/tags/手机/">手机<span>1</span></a></li>
+		
+			<li><a href="/tags/Ruby/">Ruby<span>1</span></a></li>
+		
+			<li><a href="/tags/jQuery/">jQuery<span>1</span></a></li>
+		
+			<li><a href="/tags/BackTracking/">BackTracking<span>1</span></a></li>
+		
+		
+		   <li><a href="/tags">...<span>92</span></a></li>
+		 
+		</ul>
+	</div>
+
+
+		
+			
+<div class="widget">
+  <h4>Recent Posts</h4>
+  <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/python系统性能信息模块-pstuil/"  title="python系统性能信息模块-psutil" ><i class="fa fa-file-o"></i>python系统性能信息模块-psutil</a>
+      </li>
+    
+      <li>
+        <a href="/System Design Preparation/"  title="系统设计准备" ><i class="fa fa-file-o"></i>System Design Preparation</a>
+      </li>
+    
+      <li>
+        <a href="/Resevior Sampling/"  title="Resevior Sampling 蓄水池算法java实现" ><i class="fa fa-file-o"></i>Resevior Sampling蓄水池算法java实现</a>
+      </li>
+    
+      <li>
+        <a href="/Top 25 Angular.js Interview Questions/"  title="Top 25 Angular.js Interview Questions" ><i class="fa fa-file-o"></i>Top 25 Angular.js Interview...</a>
+      </li>
+    
+      <li>
+        <a href="/NodeJS-Learning/"  title="NodeJS 学习资料汇总" ><i class="fa fa-file-o"></i>NodeJS 学习资料</a>
+      </li>
+    
+      <li>
+        <a href="/Rotate-List/"  title="Rotate List" ><i class="fa fa-file-o"></i>LeetCode-Rotate List</a>
+      </li>
+    
+      <li>
+        <a href="/Best-Time-to-Buy-and-Sell-Stock-II/"  title="Best Time to Buy and Sell Stock II" ><i class="fa fa-file-o"></i>LeetCode-Best Time to Buy a...</a>
+      </li>
+    
+      <li>
+        <a href="/Best-Time-to-Buy-and-Sell-Stock-IV/"  title="Best Time to Buy and Sell Stock IV" ><i class="fa fa-file-o"></i>LeetCode-Best Time to Buy a...</a>
+      </li>
+    
+      <li>
+        <a href="/Best-Time-to-Buy-and-Sell-Stock/"  title="Best Time to Buy and Sell Stock" ><i class="fa fa-file-o"></i>LeetCode-Best Time to Buy a...</a>
+      </li>
+    
+      <li>
+        <a href="/Binary-Search-Tree-Iterator /"  title="Binary Search Tree Iterator" ><i class="fa fa-file-o"></i>LeetCode-Binary Search Tree...</a>
+      </li>
+    
+  </ul>
+</div>
+
+		
+			
+<div class="widget">
+	<h4>Links</h4>
+	<ul class="blogroll list-unstyled">
+	
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
+	
+	</ul>
+</div>
+
+
+		
+	</div> <!-- sidebar -->
+</div> <!-- col-md-3 -->
+
+	
+	
+</div> <!-- row-fluid -->
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2016 CodeInterviews
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
 </script>
 
 
-</body>
-</html>
 
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

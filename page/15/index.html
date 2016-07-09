@@ -1,642 +1,1107 @@
-
-
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!DOCTYPE HTML>
+<html>
 <head>
-    
-    <meta name="author" content="CodeInterviews">
-    
-    
-
-    
-    <link rel="alternative" href="atom.xml" title="CodeInterviews" type="application/atom+xml">
-    
-    
-    
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CodeInterviews</title>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Javascript -->
-    <script src="/js/jquery-2.1.0.min.js"></script>
-    <script src="/js/jquery.backstretch.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/js/headroom.min.js"></script>
-    <script src="/js/jquery.headroom.min.js"></script>
-    <script src="/js/common.js"></script>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <meta name="baidu-site-verification" content="Jvgfj1O0oP" />
-    <meta name="360-site-verification" content="902348aeb40d156fb32b748c4071c4bd" />
-</head>
-<body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="http://codeinterviews.com" title="CodeInterviews">CodeInterviews</a>
-            </div>
-
-            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
-                
-
-                <ul class="nav navbar-nav">
-                    
-                    <li id="nav-index"><a href="/">首页</a></li>
-                    
-                    <li id="nav-categories"><a href="/categories">分类</a></li>
-                    
-                    <li id="nav-tags"><a href="/tags">标签</a></li>
-                    
-                    <li id="nav-reading"><a href="/tags/#LeetCode">LeetCode</a></li>
-                    
-                    <li id="nav-labs"><a href="/tags/#Java">Java</a></li>
-                    
-                    <li id="nav-about"><a href="/tags/#Javascript">Javascript</a></li>
-                    
-
-                    <!--<li id="nav-github"><a href="https://github.com/hexo2hexo" target="_blank">GitHub</a></li>-->
-                    <li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>
-                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <script>
-    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
-    var bgLength = "74";
-    var bgRandom = false;
-    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
-
-    $(function() {
-        // page-id...
-        var pageId = "page/15/index.html";
-        pageId = pageId.substr(0, pageId.indexOf("/"));
-        if(pageId === "") pageId = "index";
-
-        $("#nav-" + pageId).addClass("active");
-    });
-    </script>
-
-    
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Valid-Number/" title="LeetCode-Valid Number">LeetCode-Valid Number</a></h1>
-
-        
-        <p class="summary">Valid Number</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/String/">String</a>&nbsp;<a href="/tags/Math/">Math</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Valid-Palindrome/" title="LeetCode-Valid Palindrome">LeetCode-Valid Palindrome</a></h1>
-
-        
-        <p class="summary">Valid Palindrome</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Two-Pointers/">Two Pointers</a>&nbsp;<a href="/tags/String/">String</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Valid-Parentheses/" title="LeetCode-Valid Parentheses">LeetCode-Valid Parentheses</a></h1>
-
-        
-        <p class="summary">Valid Parentheses</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/String/">String</a>&nbsp;<a href="/tags/Stack/">Stack</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Valid-Sudoku/" title="LeetCode-Valid Sudoku">LeetCode-Valid Sudoku</a></h1>
-
-        
-        <p class="summary">SValid Sudoku</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Hash-Table/">Hash Table</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Validate-Binary-Search-Tree/" title="LeetCode-Validate Binary Search Tree">LeetCode-Validate Binary Search Tree</a></h1>
-
-        
-        <p class="summary">Validate Binary Search Tree</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Tree/">Tree</a>&nbsp;<a href="/tags/Depth-first-Search/">Depth-first Search</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Word-Break-II/" title="LeetCode-Word Break II">LeetCode-Word Break II</a></h1>
-
-        
-        <p class="summary">Word Break II</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Dynamic-Programming/">Dynamic Programming</a>&nbsp;<a href="/tags/Backtracking/">Backtracking</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Wildcard-Matching/" title="LeetCode-Wildcard Matching">LeetCode-Wildcard Matching</a></h1>
-
-        
-        <p class="summary">Wildcard Matching</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/String/">String</a>&nbsp;<a href="/tags/Dynamic-Programming/">Dynamic Programming</a>&nbsp;<a href="/tags/Backtracking/">Backtracking</a>&nbsp;<a href="/tags/Greedy/">Greedy</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Word-Break/" title="LeetCode-Word Break">LeetCode-Word Break</a></h1>
-
-        
-        <p class="summary">Word Break</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Dynamic-Programming/">Dynamic Programming</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Word-Ladder-II/" title="LeetCode-Word Ladder II">LeetCode-Word Ladder II</a></h1>
-
-        
-        <p class="summary">Word Ladder II</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;<a href="/tags/String/">String</a>&nbsp;<a href="/tags/Backtracking/">Backtracking</a>&nbsp;<a href="/tags/Breadth-first-Search/">Breadth-first Search</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Word-Search-II/" title="LeetCode-Word Search II">LeetCode-Word Search II</a></h1>
-
-        
-        <p class="summary">Word Search II</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Backtracking/">Backtracking</a>&nbsp;<a href="/tags/Trie/">Trie</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Word-Search/" title="LeetCode-Word Search">LeetCode-Word Search</a></h1>
-
-        
-        <p class="summary">Word Search</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;<a href="/tags/Backtracking/">Backtracking</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Word-Ladder/" title="LeetCode-Word Ladder">LeetCode-Word Ladder</a></h1>
-
-        
-        <p class="summary">Word Ladder</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Breadth-first-Search/">Breadth-first Search</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/hadoop1.2.1安装/" title="Hadoop1.2.1本地伪分布式安装">Hadoop1.2.1本地伪分布式安装</a></h1>
-
-        
-        <p class="summary">Hadoop1.2.1本地伪分布式安装</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/Hadoop/">Hadoop</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/project/">project</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/hadoop2.6.0单机模式安装/" title="Hadoop2.6.0单机版模式安装">Hadoop2.6.0单机版模式安装</a></h1>
-
-        
-        <p class="summary">Hadoop2.6.0单机模式安装</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/apue/">apue</a>&nbsp;<a href="/tags/Hadoop/">Hadoop</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/project/">project</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/hadoop2.6.0伪分布模式配置部署/" title="Hadoop2.6.0伪分布模式配置部署">Hadoop2.6.0伪分布模式配置部署</a></h1>
-
-        
-        <p class="summary">Hadoop2.6.0伪分布模式配置部署</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/apue/">apue</a>&nbsp;<a href="/tags/Hadoop/">Hadoop</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/project/">project</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-
-<div class="container pagination-div">
-    <div class="well">
-        <a class="extend prev" rel="prev" href="/page/14/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/16/">Next &raquo;</a>
-    </div>
-</div>
-
-
+  <meta charset="utf-8">
+  
+  <title>Page 15 | CodeInterviews</title>
+  <meta name="author" content="CodeInterviews">
+  
+  <meta name="description" content="程序员的世界,编程,技术,程序员,java,.Net,c++,c语言,python,ruby">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="CodeInterviews"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/bootstrap.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
 <script>
-    $(function () {
-        $("article:first").addClass("first-post");
-    });
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-80198899-1', 'auto');
+  ga('send', 'pageview');
 </script>
 
-    <footer id="footer">
-        <div id="bottom-tip">
-            CodeInterviews
-        </div>
-        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
-        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
-        <small>&copy; 2016 <a href="http://codeinterviews.com" target="_blank">CodeInterviews</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
-    </footer>
-    
+
+
 <script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
-  var s = document.getElementsByTagName("script")[0];
+  hm.src = "//hm.baidu.com/hm.js?9a9d27181903a355a8d95344f23682b0";
+  var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
 
 
+</head>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-51347904-1', 'auto');
-  ga('send', 'pageview');
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">CodeInterviews</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>所有文章
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the articles.">
+			  <i class="fa fa-archive"></i>分类
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Java/" title="All about java.">
+			  <i class="fa fa-codepen"></i>Java
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Javascript/" title="All about javascript.">
+			  <i class="fa fa-empire"></i>Javascript
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/python/" title="All about Python.">
+			  <i class="fa fa-cog"></i>Python
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Leetcode/" title="All about leetcode.">
+			  <i class="fa fa-thumbs-o-up"></i>Leetcode
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-info-circle"></i>关于本站
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 <div class="page-header page-header-inverse ">
+  <h1 class="title title-inverse ">Programming interview questions, tips and knowledge, system design, big data.</h1>
+</div>
+
+<div class="row page">
+
+	
+	<div class="col-md-9">
+	
+
+		<div class="slogan">
+      <i class="fa fa-heart"></i>
+      程序员的世界, 为程序员服务
+</div>    
+		<div id="top_search"></div>
+		<div class="mypage">
+		
+		<!-- title and entry -->
+        <!-- render top articles firstly -->
+        
+        <!-- render other articles -->
+        
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-11-13 </div>
+			<div class="article-title"><a href="/blog-to-stdyun/" >托管博客到STDYUN</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="http://ww3.sinaimg.cn/large/5e8cb366jw1eajpvdib6hj20t70bcdha.jpg" alt=""></p>
+<p>晚上在<a href="http://yuche.me/">@Ronaldo</a>的指导下，把博客从<em>github</em>迁移到了<em>stdyun</em>。前者不必解释，大家都知道。stdyun 是一家国内的云主机服务提供商，对静态网站提供免费的托管服务（限容量，但可申请扩容）。转而使用 stdyun 主要是考虑到这几点：</p>
+<ul>
+<li>国内主机，速度比 github 快多了。</li>
+<li>配置很简单，注册到搞定比 github 简单。</li>
+<li>多人推荐，比较靠谱。</li>
+<li>虽然只有300M 流量，但对于个人的静态博客够用了，实在不够用的话可以申请免费扩容。</li>
+</ul>
+<p><strong>注意：只能用在mac或linux下！</strong></p>
+	-->
+			  
+			  <p class="summary">晚上在@Ronaldo的指导下，把博客从github迁移到了stdyun。前者不必解释，大家都知道。stdyun 是一家国内的云主机服务提供商，对静态网站提供免费的托管服务（限容量，但可申请扩容）。转而使用 stdyun 主要是考虑到这几点：
+
+国内主机，速度比 github 快多了。
+配置很简单，注册到搞定比 github 简单。
+多人推荐，比较靠谱。
+虽然只有300M 流量，但对于个人的静态博客够用了，实在不够用的话可以申请免费扩容。
+
+注意：只能用在mac或linux下！</p>
+			  
+	</div>
+  <a type="button" href="/blog-to-stdyun/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-10-29 </div>
+			<div class="article-title"><a href="/knn-as-bayes-classifier/" >基于 KNN 算法的贝叶斯分类器</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>在《模式识别》这门课的最初部分，我们学习了设计分类器进行分类决策的理论基础——<strong>贝叶斯决策理论</strong>：</p>
+<p>比较P(ωi|x)。其中ωi为第 i 类，x 为观测到并要分类的一个数据，P(ωi|x)表示在已知这个数据的特征向量的情况下，判断它属于第 i 类的概率是多少，这项也成为后验概率。根据<strong>贝叶斯公式</strong>，可以将其表示为：</p>
+<p><img src="http://ww3.sinaimg.cn/large/5e8cb366jw1ea1uqqglqyj2089018745.jpg" alt=""></p>
+<p>其中，P(x|ωi)称为似然概率或者类条件概率；P(ωi)称为先验概率，因为是与试验无关的，先于试验之前就可以知道的。</p>
+<p>在分类时，给定 x，选择使得后验概率P(ωi|x)最大的那个类别即可。在比较每个类别下P(ωi|x)大小时，ωi是变元，而 x 是固定的；所以可以把 P(x)剔除掉，不加以考虑。</p>
+<p>所以最终归结为计算<code>P(x|ωi)*P(ωi)</code>的问题。</p>
+<p>先验概率 P(ωi)好求，只要统计训练集中每个分类下出现的数据的比例就可以了。</p>
+<p>似然概率P(x|ωi)的计算就要破费周折了，因为这个 x是测试集中的数据，根据训练集没法直接得出。那么我们就需要找出训练集数据的分布规律，然后就可以得到P(x|ωi)。</p>
+	-->
+			  
+			  <p class="summary">在《模式识别》这门课的最初部分，我们学习了设计分类器进行分类决策的理论基础——贝叶斯决策理论：
+比较P(ωi|x)。其中ωi为第 i 类，x 为观测到并要分类的一个数据，P(ωi|x)表示在已知这个数据的特征向量的情况下，判断它属于第 i 类的概率是多少，这项也成为后验概率。根据贝叶斯公式，可以将其表示为：
+
+其中，P(x|ωi)称为似然概率或者类条件概率；P(ωi)称为先验概率，因为是与试验无关的，先于试验之前就可以知道的。
+在分类时，给定 x，选择使得后验概率P(ωi|x)最大的那个类别即可。在比较每个类别下P(ωi|x)大小时，ωi是变元，而 x 是固定的；所以可以把 P(x)剔除掉，不</p>
+			  
+	</div>
+  <a type="button" href="/knn-as-bayes-classifier/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-10-27 </div>
+			<div class="article-title"><a href="/alfred-workflow/" >Mac神器之 Alfred Workflow</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="http://ww2.sinaimg.cn/large/5e8cb366jw1e9zrfp5olcj20l60hkgn3.jpg" alt=""></p>
+<p>今天通过一个网友哥们了解到 workflow 这个东西，准确的说是 Alfred 中的 workflow，当即决定要武断地封它为神奇的神器。</p>
+<p>那么什么是。。Alfred 呢？</p>
+<p>首先要从 Mac 上的 Spotlight 说起。这是 Mac OS X 上自带的全局搜索工具，用<code>control + space</code>呼出，输入关键字，即时显示不同域里的搜索结果。无图无真相，一图见分晓。</p>
+<p><img src="http://ww3.sinaimg.cn/large/5e8cb366jw1e9zrbloknkj20cq0kk40h.jpg" alt=""></p>
+<p>可以看到，Spotlight 已经是个非常好用的神器了。接下来介绍 Alfred。</p>
+	-->
+			  
+			  <p class="summary">今天通过一个网友哥们了解到 workflow 这个东西，准确的说是 Alfred 中的 workflow，当即决定要武断地封它为神奇的神器。
+那么什么是。。Alfred 呢？
+首先要从 Mac 上的 Spotlight 说起。这是 Mac OS X 上自带的全局搜索工具，用control + space呼出，输入关键字，即时显示不同域里的搜索结果。无图无真相，一图见分晓。
+
+可以看到，Spotlight 已经是个非常好用的神器了。接下来介绍 Alfred。</p>
+			  
+	</div>
+  <a type="button" href="/alfred-workflow/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-10-26 </div>
+			<div class="article-title"><a href="/latex-for-math/" >用LaTeX编辑数学公式</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="http://ww3.sinaimg.cn/large/5e8cb366jw1e9yepw30o2j20m809k0t8.jpg" alt=""></p>
+<p>LaTeX 归根到底也是一门用来排版的标记语言，像 Markdown 一样，通过一些符号定义文本的格式。LaTeX 被广泛地使用在图书、论文等文本排版中，功能强大，尤其是在对<strong>复杂表格和数学公式</strong>的支持方面，Markdown 是无法与之比拟的。至于文字排版，我还是喜欢使用比较整洁、简单的 Markdown。对于我们这些需要经常使用数学工具的人，学会在电脑上编辑数学功能几乎是必备的技能，有人说 Word 就可以做到，但它真的没有 LaTeX 强大。那么我们就学一学怎样用 LateX 编辑数学公式。</p>
+	-->
+			  
+			  <p class="summary">LaTeX 归根到底也是一门用来排版的标记语言，像 Markdown 一样，通过一些符号定义文本的格式。LaTeX 被广泛地使用在图书、论文等文本排版中，功能强大，尤其是在对复杂表格和数学公式的支持方面，Markdown 是无法与之比拟的。至于文字排版，我还是喜欢使用比较整洁、简单的 Markdown。对于我们这些需要经常使用数学工具的人，学会在电脑上编辑数学功能几乎是必备的技能，有人说 Word 就可以做到，但它真的没有 LaTeX 强大。那么我们就学一学怎样用 LateX 编辑数学公式。</p>
+			  
+	</div>
+  <a type="button" href="/latex-for-math/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-10-17 </div>
+			<div class="article-title"><a href="/3-problems-in-hmm/" >隐马尔可夫模型三个问题的求解(一)</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>上一篇<a href="http://zipperary.com/2013/10/15/an-introduction-to-hmm/">《隐马尔可夫模型介绍》</a>中讲解了马尔可夫假设和隐马尔可夫模型 HMM，并提到了 HMM 中的三个基本问题，但没有展开讨论其求解。本篇就此做出解答。</p>
+<p>本文主要参考<a href="http://www.52nlp.cn/category/hidden-markov-model/page/4">《HMM 学习最佳范例》</a>。</p>
+<p>先回顾一下，上节我们就硬币的例子提出了三个问题：</p>
+<ol>
+<li>给定上述模型，观察到的结果（硬币的正反面）为O={H，T，H}的概率是多少？</li>
+<li>若给定上述的观察结果，那么最可能的状态序列（硬币序号）是什么？</li>
+<li>A、B、π未知的情况下，如何根据 O 得到它们？</li>
+</ol>
+<p>问题一是个估算问题，P（O|λ），可用向前算法和向后算法解决；</p>
+<p>问题二是根据观察序列反向找出最可能的状态序列，是个解码问题，P（O,q|λ），q 是某状态，最常用的是 Viterbi算法；</p>
+<p>问题三实际上是个参数估计或求解的问题，或者说是个学习问题，通过训练一步步优化参数，找到使得P（O|λ）最大的那个参数，最常用的是 Baum-Welch算法。</p>
+<hr>
+<p>###例子</p>
+<p>这里，我们提出一个更加恰当的例子：</p>
+<p>有一个宅男，不爱出门，也不愿看看窗户外面的世界。但他有个特殊的习惯，通过观察海藻来推测外面的天气情况。天气一共有3种情况 S：（晴天、多云、雨天）；海藻一共有4种情况V：（干、稍干、潮湿、湿润）。海藻的情况是宅男直接观察到的，而天气的情况并没有直接观察到，而是隐藏状态，是他推测出来的。其关系如图所示：</p>
+<p><img src="http://ww3.sinaimg.cn/large/5e8cb366jw1e9nxfm6fm5j20bu07dq3k.jpg" alt=""></p>
+	-->
+			  
+			  <p class="summary">上一篇《隐马尔可夫模型介绍》中讲解了马尔可夫假设和隐马尔可夫模型 HMM，并提到了 HMM 中的三个基本问题，但没有展开讨论其求解。本篇就此做出解答。
+本文主要参考《HMM 学习最佳范例》。
+先回顾一下，上节我们就硬币的例子提出了三个问题：
+
+给定上述模型，观察到的结果（硬币的正反面）为O={H，T，H}的概率是多少？
+若给定上述的观察结果，那么最可能的状态序列（硬币序号）是什么？
+A、B、π未知的情况下，如何根据 O 得到它们？
+
+问题一是个估算问题，P（O|λ），可用向前算法和向后算法解决；
+问题二是根据观察序列反向找出最可能的状态序列，是个解码问题，P（O,q|λ），q 是某状态，最常用</p>
+			  
+	</div>
+  <a type="button" href="/3-problems-in-hmm/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-10-06 </div>
+			<div class="article-title"><a href="/osx-update-and-ipv6-configure/" >Mac升级Lion到Mavericks</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="http://ww3.sinaimg.cn/large/5e8cb366jw1e9bezvg5kij217y0na119.jpg" alt=""></p>
+<p>最近苹果放出了 Mavericks GM，也就是正式版之前的最后一个版本。有开发者提取了系统安装文件，并放在网上分享。目前用的比较多的有两个版本：</p>
+<p> 一个是<a href="http://kuai.xunlei.com/d/IMQfAAIjVgC5UU5Sfc0">全新安装版</a>（迅雷快传）</p>
+<p> 另一个是<a href="http://pan.baidu.com/share/link?shareid=2750006&amp;uk=3658275525">升级安装版</a>（百度网盘）</p>
+<p>我是从10.8.5升级到 Mavericks GM(10.9)，为了升级的方便以及保留所有的数据和程序，我使用了<strong>第二个方案</strong>。</p>
+<p><em>升级之前，请使用 Time machine 进行备份！</em></p>
+<p><em>我没有多少太重要的数据、程序，也怕备份麻烦，所以没有做备份。</em></p>
+	-->
+			  
+			  <p class="summary">最近苹果放出了 Mavericks GM，也就是正式版之前的最后一个版本。有开发者提取了系统安装文件，并放在网上分享。目前用的比较多的有两个版本：
+ 一个是全新安装版（迅雷快传）
+ 另一个是升级安装版（百度网盘）
+我是从10.8.5升级到 Mavericks GM(10.9)，为了升级的方便以及保留所有的数据和程序，我使用了第二个方案。
+升级之前，请使用 Time machine 进行备份！
+我没有多少太重要的数据、程序，也怕备份麻烦，所以没有做备份。</p>
+			  
+	</div>
+  <a type="button" href="/osx-update-and-ipv6-configure/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-10-04 </div>
+			<div class="article-title"><a href="/qq-for-mac-video/" >QQ for Mac无法视频通话的解决办法</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>###问题描述</p>
+<p>OSX 升级到10.8.5之后，QQ 进行视频通话时，总提示「检测不到摄像头…」，自己电脑的摄像头无法打开，但可以看到对方的视频；而 facetime 和 Photobooth 都可以正常使用。</p>
+<p>###腾讯提供的解决方法</p>
+<p>根据腾讯的解释，这是由于新的 OSX 系统里面，摄像头不允许第三方的应用随意调用，所以需要替换一个相关的文件才行。</p>
+<p>以下引用腾讯提供的解决方法：</p>
+<blockquote>
+<p>关于2013款air升级至10.8.5后无法使用摄像头的临时解决办法：1.前往路径 /Library/CoreMediaIO/Plug-Ins/DAL/ ，备份文件AppleCamera.plugin；2.下载并解压链接中文件<a href="http://t.cn/z88nzZt">http://t.cn/z88nzZt</a> ；3.复制该文件到1路径，并覆盖原文件；4.重启电脑。</p>
+</blockquote>
+<p>我按照这个办法设置，然后各种鼓捣始终不行，直接导致我感觉自己「被上帝眷顾了」。今天又换了个方法设置了下，搞定了。下面提供自己的方法（跟上述方法如出一辙）。</p>
+	-->
+			  
+			  <p class="summary">###问题描述
+OSX 升级到10.8.5之后，QQ 进行视频通话时，总提示「检测不到摄像头…」，自己电脑的摄像头无法打开，但可以看到对方的视频；而 facetime 和 Photobooth 都可以正常使用。
+###腾讯提供的解决方法
+根据腾讯的解释，这是由于新的 OSX 系统里面，摄像头不允许第三方的应用随意调用，所以需要替换一个相关的文件才行。
+以下引用腾讯提供的解决方法：
+
+关于2013款air升级至10.8.5后无法使用摄像头的临时解决办法：1.前往路径 /Library/CoreMediaIO/Plug-Ins/DAL/ ，备份文件AppleCamera.plugin；2.下载并解</p>
+			  
+	</div>
+  <a type="button" href="/qq-for-mac-video/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-09-29 </div>
+			<div class="article-title"><a href="/hello,mac/" >Hello,Mac!</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="http://ww1.sinaimg.cn/large/5e8cb366jw1e93mmysx9mj21400p0n7d.jpg" alt=""></p>
+<p>26号在苹果团支付、下单购买了 Macbook Air 13存2013年中标配版，顺丰还算给力，28号的中午就到了学校。要的是香港原封产品，所有费用包括 MBA（6600）、苹果团提利润（180）、顺丰运费（50），共计6830软妹币，比官方的「7988」便宜了大概1000，而且由于苹果是全球联保，所以港货大陆货都无所谓。</p>
+	-->
+			  
+			  <p class="summary">26号在苹果团支付、下单购买了 Macbook Air 13存2013年中标配版，顺丰还算给力，28号的中午就到了学校。要的是香港原封产品，所有费用包括 MBA（6600）、苹果团提利润（180）、顺丰运费（50），共计6830软妹币，比官方的「7988」便宜了大概1000，而且由于苹果是全球联保，所以港货大陆货都无所谓。</p>
+			  
+	</div>
+  <a type="button" href="/hello,mac/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-09-25 </div>
+			<div class="article-title"><a href="/secondary-proxy/" >教你设置二级代理</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>之前在<a href="http://zipperary.com/2013/09/10/qiao-qiao-gao-su-ni/" target="_blank" rel="external">《悄悄告诉你》</a>一文中提到过校园中用代理绕过计费系统上网的方法。这个trick让我窃喜了一阵子，但实际上有个问题没有解决：无法再使用vpn或Goagent代理翻墙。于是这些天我在使用Google时不时地抹眼泪，不翻墙的日子太憋屈了！</p>
+<p>痛定思痛，既然已经尝试过各种可以想到的办法仍旧未果，那么接下来唯一可做的就是请教大神了。大神在哪里？在V2！我便聪明果敢地在这里抛出了<a href="http://www.v2ex.com/t/83331#reply16" target="_blank" rel="external">这个难题</a>，等待大神赐教。陆续收到了一些回答，了解到我需要设置二级代理，但这个概念本身我都是第一次听说，更不会设置了，网上也搜索不出教程，很是苦恼。直到！直到今天下午，@xujialiang图文并茂的回答才给了我生机。虽然他用的是mac，虽然界面跟Proxifier不一样，虽然他用的是shadowsocks，但「添加规则」的方式都是类似的。比照他的设置，我在Proxifier设置了Goagent的过滤规则。然后打开软件，打开浏览器，输入<a href="http://www.youtube.com/" target="_blank" rel="external">http://www.youtube.com/</a>，Bingo！久违的界面映入眼帘！</p>
+<p>废话一箩筐，无图无真相！</p>
+<p><img src="http://ww1.sinaimg.cn/large/5e8cb366jw1e8yvafwr5lj20sd0er77b.jpg" alt=""></p>
+<p>需要设置的地方已经用红框标示，代理服务器地址就不方便透露了。</p>
+<p>从原理上讲，就是让翻墙软件（如Goagent、Shadowsocks）也走代理。我原来一直以为翻墙软件默认是走代理的，所以没有尝试这个设置，看来这就是问题的症结所在。推广开来，任何用代理时无法联网的应用，都可以通过设置代理规则搞定。</p>
+<p>现在呢，有了伟光正的代理服务器，有了彪悍霸气神威的Proxifier，有了自由召唤者Goagent，生活将是另一个面貌！</p>
+
+	-->
+			  
+			  <p class="summary">之前在《悄悄告诉你》一文中提到过校园中用代理绕过计费系统上网的方法。这个trick让我窃喜了一阵子，但实际上有个问题没有解决：无法再使用vpn或Goagent代理翻墙。于是这些天我在使用Google时不时地抹眼泪，不翻墙的日子太憋屈了！
+痛定思痛，既然已经尝试过各种可以想到的办法仍旧未果，那么接下来唯一可做的就是请教大神了。大神在哪里？在V2！我便聪明果敢地在这里抛出了这个难题，等待大神赐教。陆续收到了一些回答，了解到我需要设置二级代理，但这个概念本身我都是第一次听说，更不会设置了，网上也搜索不出教程，很是苦恼。直到！直到今天下午，@xujialiang图文并茂的回答才给了我生机。虽然他用的是</p>
+			  
+	</div>
+  <a type="button" href="/secondary-proxy/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-09-18 </div>
+			<div class="article-title"><a href="/android-apps/" >安卓应用推荐</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="http://ww3.sinaimg.cn/large/5e8cb366jw1e8r0zttw6pj20nl0icdgo.jpg" alt=""></p>
+<p>安卓手机刚刚走进中国市场的时候，我和周围的同学就开始使用，一直到现在，陪伴安卓从2.3走到4.3，看到安卓自身的变化以及给世界带来的巨变，衷心感激安卓拓展了我的认知范围，给我的生活带来了许许多多的便利。这里就推荐（或曰列举）一下我手机里使用的APP。由于大脑容量和质量有限，几乎不会玩游戏，也不装游戏，所以本文只涉及应用，不涉及游戏。</p>
+	-->
+			  
+			  <p class="summary">安卓手机刚刚走进中国市场的时候，我和周围的同学就开始使用，一直到现在，陪伴安卓从2.3走到4.3，看到安卓自身的变化以及给世界带来的巨变，衷心感激安卓拓展了我的认知范围，给我的生活带来了许许多多的便利。这里就推荐（或曰列举）一下我手机里使用的APP。由于大脑容量和质量有限，几乎不会玩游戏，也不装游戏，所以本文只涉及应用，不涉及游戏。</p>
+			  
+	</div>
+  <a type="button" href="/android-apps/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-09-04 </div>
+			<div class="article-title"><a href="/linux-commands/" >linux下常用命令</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="http://ww3.sinaimg.cn/large/5e8cb366jw1e8bd5xw20jj20mm0gwgmy.jpg" alt=""></p>
+<p>linux的强大之处，很大程度上在于其丰富灵活的shell命令，但这一点恰恰也是阻碍初学者的老大难问题。这里是我学习linux命令时的笔记，不求全面，但求有用。先学会最基本最常用的命令，在使用中再逐渐积累。</p>
+<p>###shell命令行格式</p>
+<p><code>命令 -l(选项) 参数</code>   </p>
+<p>没有参数的选项可以合并；命令之间用<code>;</code>隔开，依次执行；长选项用<code>--</code>;管道<code>|</code>可以串联执行。</p>
+	-->
+			  
+			  <p class="summary">linux的强大之处，很大程度上在于其丰富灵活的shell命令，但这一点恰恰也是阻碍初学者的老大难问题。这里是我学习linux命令时的笔记，不求全面，但求有用。先学会最基本最常用的命令，在使用中再逐渐积累。
+###shell命令行格式
+命令 -l(选项) 参数   
+没有参数的选项可以合并；命令之间用;隔开，依次执行；长选项用--;管道|可以串联执行。</p>
+			  
+	</div>
+  <a type="button" href="/linux-commands/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-09-03 </div>
+			<div class="article-title"><a href="/vim-commands/" >VIM常用命令</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="http://ww3.sinaimg.cn/large/5e8cb366jw1e8bd921gscj20j40j4wfy.jpg" alt=""></p>
+<p>之前写过<a href="http://zipperary.com/2013/08/24/vim-tips/">《vim使用中的几个问题》</a>这篇文章，介绍了vim使用中几个疑难杂症和一些tips。现在把我收藏的经常使用的VIM命令在这里列举一下。</p>
+	-->
+			  
+			  <p class="summary">之前写过《vim使用中的几个问题》这篇文章，介绍了vim使用中几个疑难杂症和一些tips。现在把我收藏的经常使用的VIM命令在这里列举一下。</p>
+			  
+	</div>
+  <a type="button" href="/vim-commands/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-09-01 </div>
+			<div class="article-title"><a href="/android-422/" >安卓4.2那些事</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>前几天的博文<a href="http://zipperary.com/2013/08/26/smartisan-share/">《锤子ROM图鉴》</a>和<a href="http://zipperary.com/2013/08/27/gai-shi-san-shua-ji-shou-ji/">《安卓4.3，我来啦！》</a>都提到了最近刷机的事。刷完4.3之后在使用过程中，发现了一个极其严重的问题：ActionBar变黑。这个问题会出现在很多应用中，比如微博、SN、Pocket。去xda-developers求解，发现了CM官方对这个问题的解答。「这东西有版权问题，刚刚着手开发的CM10.2还没有把版权搞定」。看来我的尝鲜有点早了，CM10.2（Android4.3）第一个公开发行的Nightly版本诞生还不足半个月，注定有很多很多的bug，我不知不觉做了一次小白鼠。</p>
+<p>在OTA更新过程中，发现了前天刚刚发布的CM10.1RC。看了下新闻才知道，CM准备停止CM10.1（Android4.2）的开发工作，全面投入到10.3当中去。这个版本是10.1的Candidate Release版本，也就是最终版之前的一个版本，基本稳定，用户可以使用。看到消息后我十分欣喜，决定把ROM刷成这个。首先这个版本非常稳定，其次，安卓4.3和4.2之间的变化微乎其微，上述这个版本甚至把4.3中的一些东西也迁移过来，更佳了。</p>
+<p>于是我就用OTA下载并升级。重启并升级之后，竟然卡在开机界面不动了，卡顿了十来分钟，已经能确定手机变砖了。一身冷汗，我的数据咋办，还没备份。没办法，再刷回4.3吧。回来之后惊喜地发现，所有数据都还保留着。感谢苍天和大地！</p>
+<p>google一下才发现，CM警告过，不要用OTA刷回到4.2。</p>
+<p>只有一个办法了：备份数据、刷4.2。</p>
+<p>我愚蠢地再次使用了钛备份。双清刷4.2很快。开机之后要恢复数据傻眼了，钛备份根本不能识别它备份过的数据！欲哭无泪。几十个应用，重新安装吧。顺便把账号和密码都复习一遍。</p>
+<p>在各种应用各种设置中进行测试，几乎没有什么bug了，不愧是稳定版。Except one:链接wifi后打开QQ，总是需要延迟好长时间才能登录，用GPRS就没有这个问题。在网上搜了一下，发现好多人遇到过这种问题，而且问题所在应该是QQ使用特殊的网络协议造成的。</p>
+<p>CM对原生安卓所做的改变主要是功能上的增强和人性化上的提升，UI很好的保留了原生安卓的样式。对于这个ROM我的感受是：轻、快、灵活、简洁、漂亮。（谷歌风格的漂亮，而不是小米风格的华丽丽）</p>
+<p>还有一个优点是省电。前提是不要开启「自动同步」和「Google服务框架」。否则最耗电的不是屏幕了，而是google服务。</p>
+<p>分享几个截图，用微博图床，不会挂了:)</p>
+	-->
+			  
+			  <p class="summary">前几天的博文《锤子ROM图鉴》和《安卓4.3，我来啦！》都提到了最近刷机的事。刷完4.3之后在使用过程中，发现了一个极其严重的问题：ActionBar变黑。这个问题会出现在很多应用中，比如微博、SN、Pocket。去xda-developers求解，发现了CM官方对这个问题的解答。「这东西有版权问题，刚刚着手开发的CM10.2还没有把版权搞定」。看来我的尝鲜有点早了，CM10.2（Android4.3）第一个公开发行的Nightly版本诞生还不足半个月，注定有很多很多的bug，我不知不觉做了一次小白鼠。
+在OTA更新过程中，发现了前天刚刚发布的CM10.1RC。看了下新闻才知道，CM准备停止C</p>
+			  
+	</div>
+  <a type="button" href="/android-422/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-08-31 </div>
+			<div class="article-title"><a href="/easy-markdown/" >轻松搞定Markdown</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="http://ww2.sinaimg.cn/large/5e8cb366jw1e85r40u55hj20b40b4q2x.jpg" alt=""></p>
+<p>之前写过<a href="http://localhost:4000/2013/05/22/introduction-to-markdown/">《Markdown指南》</a>和<a href="http://localhost:4000/2013/06/06/markdown-extras/">《markdown 番外篇》</a>用来介绍Markdown，前者是入门资料索引，后者是几个稍微高级的用法，都只是介绍了片面，不太好。</p>
+<p>使用Markdown写博客已经三个月了，对这个标记语言很是喜欢。现在流行的教程，要么就是太复杂太难以理解，要么就是太简单太肤浅，稍微高级点的用法没有提及。本文的初衷就是用最容易理解的方式，把Markdown入门到高级用法一一介绍给读者。看完之后，你不仅可以开始使用Markdown写东西，在日常使用中也随时可以打开这篇博客参考各种用法。</p>
+	-->
+			  
+			  <p class="summary">之前写过《Markdown指南》和《markdown 番外篇》用来介绍Markdown，前者是入门资料索引，后者是几个稍微高级的用法，都只是介绍了片面，不太好。
+使用Markdown写博客已经三个月了，对这个标记语言很是喜欢。现在流行的教程，要么就是太复杂太难以理解，要么就是太简单太肤浅，稍微高级点的用法没有提及。本文的初衷就是用最容易理解的方式，把Markdown入门到高级用法一一介绍给读者。看完之后，你不仅可以开始使用Markdown写东西，在日常使用中也随时可以打开这篇博客参考各种用法。</p>
+			  
+	</div>
+  <a type="button" href="/easy-markdown/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-08-30 </div>
+			<div class="article-title"><a href="/qiang-da-de-rails/" >强大的rails</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="http://ww1.sinaimg.cn/large/5e8cb366jw1e85o6gmq6cj211y0kq0wa.jpg" alt=""></p>
+<p>Ruby的入门，在<a href="http://zipperary.com/2013/08/28/ruby-on/">Ruby走起</a>一文之前就结束了。这两天各种闲杂之事，断断续续的学习了一些rails的知识。主要参考了地瓜哥的<a href="http://www.diguage.com/archives/tag/ruby">《Agile Web Development with Rails》抄书笔记</a>系列文章。rails的入门教程，首推《Agile Web Development with Rails》这本书。这个系列的博客，是地瓜哥学习这本书的过程，不仅把书中的内容清晰的展示在博客中，同时把他自己遇到过的问题、解决的办法和发现的好资料都分享在这里，干货值非常高。rails的强大之处在于，只需要几个简单的命令，一个网站所需要的结构和文件都会自动创建，立即可以使用。如果需要，仅需修改默认值即可。这里概括一下基本的流程。</p>
+	-->
+			  
+			  <p class="summary">Ruby的入门，在Ruby走起一文之前就结束了。这两天各种闲杂之事，断断续续的学习了一些rails的知识。主要参考了地瓜哥的《Agile Web Development with Rails》抄书笔记系列文章。rails的入门教程，首推《Agile Web Development with Rails》这本书。这个系列的博客，是地瓜哥学习这本书的过程，不仅把书中的内容清晰的展示在博客中，同时把他自己遇到过的问题、解决的办法和发现的好资料都分享在这里，干货值非常高。rails的强大之处在于，只需要几个简单的命令，一个网站所需要的结构和文件都会自动创建，立即可以使用。如果需要，仅需修改默认值即可。</p>
+			  
+	</div>
+  <a type="button" href="/qiang-da-de-rails/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-08-28 </div>
+			<div class="article-title"><a href="/ruby-on/" >Ruby走起！</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="http://ww2.sinaimg.cn/large/5e8cb366jw1e82h1gxsy6j20jf0e8js2.jpg" alt=""></p>
+<p>为了在他们NB闪闪地聊Ruby时我能不跟个傻子似的呆若木鸡，为了回报那条「一月30K」的招聘启事对我的激励，为了不糟蹋收藏夹里面好些个Ruby相关的文章，也为了见识一下ROR（Ruby on Rails）的伟大，我决定以身犯难，拨开迷雾，学习ROR。</p>
+<p>BTW，虽然Ruby的伟大之处十分得益于ROR，但Ruby毕竟是基础，ROR毕竟是框架，所以新开的这个分类叫做Ruby，向<strong>松本行弘</strong>致敬。同时遵循Ruby的命名规范，首字母大写。</p>
+<p>Ruby中文社区的很多前辈在指导我们这些后生学习ROR时都说，没有Ruby基础的也可以直接上手Rails，不过最好稍微了解一点，不必太多，然后在rails中慢慢学习和体会ruby的闪光点。我很听话，照办。</p>
+<p>关于Ruby和Rails的教程，数不胜数，文字和视频都有。我已经在为知笔记造过一次轮子了，不想在这里重复，而且我造出的轮子自用可以，拿出来就略献丑了。因此本文不再写Ruby教程之类的东西（也许以后把轮子打磨的漂亮之后会分享），而是列举一下目前发现的不错的文章、视频资料。</p>
+	-->
+			  
+			  <p class="summary">为了在他们NB闪闪地聊Ruby时我能不跟个傻子似的呆若木鸡，为了回报那条「一月30K」的招聘启事对我的激励，为了不糟蹋收藏夹里面好些个Ruby相关的文章，也为了见识一下ROR（Ruby on Rails）的伟大，我决定以身犯难，拨开迷雾，学习ROR。
+BTW，虽然Ruby的伟大之处十分得益于ROR，但Ruby毕竟是基础，ROR毕竟是框架，所以新开的这个分类叫做Ruby，向松本行弘致敬。同时遵循Ruby的命名规范，首字母大写。
+Ruby中文社区的很多前辈在指导我们这些后生学习ROR时都说，没有Ruby基础的也可以直接上手Rails，不过最好稍微了解一点，不必太多，然后在rails中慢慢学习和体会</p>
+			  
+	</div>
+  <a type="button" href="/ruby-on/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-08-27 </div>
+			<div class="article-title"><a href="/gai-shi-san-shua-ji-shou-ji/" >安卓4.3，我来啦！</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="http://ww3.sinaimg.cn/large/5e8cb366jw1e812xd4ow7j214u104q8i.jpg" alt=""></p>
+<p>这两天折腾手机，把盖世三刷成了CM，随后各种设置各种恢复各种鼓捣。记录一下，以求对得起耽误的这些时间。</p>
+	-->
+			  
+			  <p class="summary">这两天折腾手机，把盖世三刷成了CM，随后各种设置各种恢复各种鼓捣。记录一下，以求对得起耽误的这些时间。</p>
+			  
+	</div>
+  <a type="button" href="/gai-shi-san-shua-ji-shou-ji/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-08-25 </div>
+			<div class="article-title"><a href="/go-to-sublime-text/" >初识Sublime Text</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="http://ww1.sinaimg.cn/large/5e8cb366jw1e7z6jqyv1hj211y0kqwi1.jpg" alt=""></p>
+<p>看到很多人推荐神器<strong>Sublime Text</strong>，我今天也来玩玩。</p>
+<p>官网的一句话广告：</p>
+<blockquote>
+<p>Sublime Text is a sophisticated text editor for code, markup and prose.</p>
+</blockquote>
+<p>维基百科的一句话简介：</p>
+<blockquote>
+<p>Sublime Text 是一套基于 Python 的跨平台文字编辑器。最初设计为 Vim 编辑器的多功能扩充软件。</p>
+</blockquote>
+<p>注意Sublime Text和<strong>python、vim</strong>的渊源，后面我们就会看到了。</p>
+<p><em>声明：以下均为windows下操作，其他系统未测试。</em></p>
+	-->
+			  
+			  <p class="summary">看到很多人推荐神器Sublime Text，我今天也来玩玩。
+官网的一句话广告：
+
+Sublime Text is a sophisticated text editor for code, markup and prose.
+
+维基百科的一句话简介：
+
+Sublime Text 是一套基于 Python 的跨平台文字编辑器。最初设计为 Vim 编辑器的多功能扩充软件。
+
+注意Sublime Text和python、vim的渊源，后面我们就会看到了。
+声明：以下均为windows下操作，其他系统未测试。</p>
+			  
+	</div>
+  <a type="button" href="/go-to-sublime-text/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-08-24 </div>
+			<div class="article-title"><a href="/vim-tips/" >vim使用中的几个问题</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="http://ww4.sinaimg.cn/large/5e8cb366jw1e7y2y7xlk0j20it0ectbi.jpg" alt=""></p>
+<p>使用VIM做主编辑器有一段时间了，快捷键和命令用的越来越熟练。本文将使用过程中遇到的问题、解决方案和一些好用的技巧汇总如下，并不定时更新。</p>
+<p>###查找之后高亮显示的词怎么取消高亮？</p>
+<p>说明：通常我们会用<code>:/bla[Enter]</code>查询文中出现的<em>bla</em>，并以高亮显示。可以通过<code>n</code>和<code>N</code>查找下一个和上一个。查找完之后，高亮显示并不会消失，这样会影响阅读其他的代码或文字。</p>
+<p>解决：使用<code>:noh</code>命令。</p>
+	-->
+			  
+			  <p class="summary">使用VIM做主编辑器有一段时间了，快捷键和命令用的越来越熟练。本文将使用过程中遇到的问题、解决方案和一些好用的技巧汇总如下，并不定时更新。
+###查找之后高亮显示的词怎么取消高亮？
+说明：通常我们会用:/bla[Enter]查询文中出现的bla，并以高亮显示。可以通过n和N查找下一个和上一个。查找完之后，高亮显示并不会消失，这样会影响阅读其他的代码或文字。
+解决：使用:noh命令。</p>
+			  
+	</div>
+  <a type="button" href="/vim-tips/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-08-22 </div>
+			<div class="article-title"><a href="/elementary-os/" >elementary os</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>把Ubuntu系统删除之后，在win7上装了虚拟机运行elementary os，一个设计出色的类ubuntu的linux发行版。简要记录一下过程，<strong>并分享几张截图</strong>。</p>
+<p>###安装Vmvare</p>
+<p>首先安装虚拟机。我的笔记本是win7 32位系统。</p>
+<ol>
+<li><p>下载<a href="http://pan.baidu.com/share/link?shareid=2928125003&amp;uk=1661888259">VMware9-workstation_官方原版+完美稳定的汉化补丁+VMware9注册机.rar</a>，并解压。</p>
+</li>
+<li><p>根据文件夹里的说明进行安装。</p>
+</li>
+</ol>
+<p>安装过程可能遇到一个图示的问题：</p>
+<p><img src="http://ww1.sinaimg.cn/large/5e8cb366jw1e7vn5a0rgxj209w05cjrj.jpg" alt=""></p>
+<p>解决办法是：</p>
+<ol>
+<li>在运行中键入 “regedit” 获取注册表</li>
+<li>删除 HKEY_LOCAL_MACHINE\SOFTWARE\VMware, Inc.</li>
+<li>重新安装VMware即可。</li>
+</ol>
+	-->
+			  
+			  <p class="summary">把Ubuntu系统删除之后，在win7上装了虚拟机运行elementary os，一个设计出色的类ubuntu的linux发行版。简要记录一下过程，并分享几张截图。
+###安装Vmvare
+首先安装虚拟机。我的笔记本是win7 32位系统。
+
+下载VMware9-workstation_官方原版+完美稳定的汉化补丁+VMware9注册机.rar，并解压。
+
+根据文件夹里的说明进行安装。
+
+
+安装过程可能遇到一个图示的问题：
+
+解决办法是：
+
+在运行中键入 “regedit” 获取注册表
+删除 HKEY_LOCAL_MACHINE\SOFTWARE\VMware, Inc.
+重新安装VMware</p>
+			  
+	</div>
+  <a type="button" href="/elementary-os/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+
+		</div>
+
+		<!-- pagination -->
+		<div>
+  		<center>
+		<div class="pagination">
+<ul class="pagination">
+	 
+		
+    	<li class="prev"><a href="/page/14/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i> Prev</a></li>
+  		
+
+        <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+
+		
+		   <li class="next"> <a href="/page/16/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a> </li>          
+        
+	
+</ul>
+</div>
+
+  		</center>
+		</div>
+
+		
+		
+	</div> <!-- col-md-9 -->
+
+	
+		<div class="col-md-3">
+	<div id="sidebar">
+	
+			
+  <div id="site_search">
+   <div class="form-group">
+    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search" class="st-search-input st-default-search-input form-control"/>
+   </div>  
+  <div id="local-search-result"></div>
+  </div>
+
+
+		
+			
+	<div class="widget">
+		<h4>Categories</h4>
+		<ul class="tag_box inline list-unstyled">
+		
+			<li><a href="/categories/Angular-js/">Angular.js<span>1</span></a></li>
+		
+			<li><a href="/categories/Database/">Database<span>1</span></a></li>
+		
+			<li><a href="/categories/IT杂谈/">IT杂谈<span>20</span></a></li>
+		
+			<li><a href="/categories/Mac/">Mac<span>4</span></a></li>
+		
+			<li><a href="/categories/Ruby/">Ruby<span>2</span></a></li>
+		
+			<li><a href="/categories/System-Design/">System Design<span>1</span></a></li>
+		
+			<li><a href="/categories/algorithm/">algorithm<span>197</span></a></li>
+		
+			<li><a href="/categories/hexo/">hexo<span>18</span></a></li>
+		
+			<li><a href="/categories/linux/">linux<span>3</span></a></li>
+		
+			<li><a href="/categories/markdown/">markdown<span>1</span></a></li>
+		
+			<li><a href="/categories/node-js/">node.js<span>1</span></a></li>
+		
+			<li><a href="/categories/nodejs/">nodejs<span>1</span></a></li>
+		
+			<li><a href="/categories/project/">project<span>50</span></a></li>
+		
+			<li><a href="/categories/python/">python<span>11</span></a></li>
+		
+			<li><a href="/categories/前端/">前端<span>4</span></a></li>
+		
+			<li><a href="/categories/推荐/">推荐<span>1</span></a></li>
+		
+			<li><a href="/categories/机器学习/">机器学习<span>23</span></a></li>
+		
+			<li><a href="/categories/生活/">生活<span>1</span></a></li>
+		
+			<li><a href="/categories/读书笔记/">读书笔记<span>1</span></a></li>
+		
+		</ul>
+	</div>
+
+		
+			
+	<div class="widget">
+		<h4>Tag Cloud</h4>
+		<ul class="tag_box inline list-unstyled">		
+		
+			<li><a href="/tags/windows/">windows<span>1</span></a></li>
+		
+			<li><a href="/tags/Sort/">Sort<span>7</span></a></li>
+		
+			<li><a href="/tags/爬虫/">爬虫<span>4</span></a></li>
+		
+			<li><a href="/tags/Binary-Search/">Binary Search<span>13</span></a></li>
+		
+			<li><a href="/tags/node-js/">node.js<span>2</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>1</span></a></li>
+		
+			<li><a href="/tags/github/">github<span>1</span></a></li>
+		
+			<li><a href="/tags/sublime2/">sublime2<span>1</span></a></li>
+		
+			<li><a href="/tags/mac/">mac<span>2</span></a></li>
+		
+			<li><a href="/tags/Heap/">Heap<span>3</span></a></li>
+		
+			<li><a href="/tags/大数据/">大数据<span>1</span></a></li>
+		
+			<li><a href="/tags/加密/">加密<span>1</span></a></li>
+		
+			<li><a href="/tags/LaTeX/">LaTeX<span>1</span></a></li>
+		
+			<li><a href="/tags/Spring/">Spring<span>1</span></a></li>
+		
+			<li><a href="/tags/Math/">Math<span>19</span></a></li>
+		
+			<li><a href="/tags/javascript/">javascript<span>5</span></a></li>
+		
+			<li><a href="/tags/flickr/">flickr<span>1</span></a></li>
+		
+			<li><a href="/tags/Ruby/">Ruby<span>1</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>1</span></a></li>
+		
+			<li><a href="/tags/System-Design/">System Design<span>1</span></a></li>
+		
+		
+		   <li><a href="/tags">...<span>92</span></a></li>
+		 
+		</ul>
+	</div>
+
+
+		
+			
+<div class="widget">
+  <h4>Recent Posts</h4>
+  <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/python系统性能信息模块-pstuil/"  title="python系统性能信息模块-psutil" ><i class="fa fa-file-o"></i>python系统性能信息模块-psutil</a>
+      </li>
+    
+      <li>
+        <a href="/System Design Preparation/"  title="系统设计准备" ><i class="fa fa-file-o"></i>System Design Preparation</a>
+      </li>
+    
+      <li>
+        <a href="/Resevior Sampling/"  title="Resevior Sampling 蓄水池算法java实现" ><i class="fa fa-file-o"></i>Resevior Sampling蓄水池算法java实现</a>
+      </li>
+    
+      <li>
+        <a href="/Top 25 Angular.js Interview Questions/"  title="Top 25 Angular.js Interview Questions" ><i class="fa fa-file-o"></i>Top 25 Angular.js Interview...</a>
+      </li>
+    
+      <li>
+        <a href="/NodeJS-Learning/"  title="NodeJS 学习资料汇总" ><i class="fa fa-file-o"></i>NodeJS 学习资料</a>
+      </li>
+    
+      <li>
+        <a href="/Rotate-List/"  title="Rotate List" ><i class="fa fa-file-o"></i>LeetCode-Rotate List</a>
+      </li>
+    
+      <li>
+        <a href="/Best-Time-to-Buy-and-Sell-Stock-II/"  title="Best Time to Buy and Sell Stock II" ><i class="fa fa-file-o"></i>LeetCode-Best Time to Buy a...</a>
+      </li>
+    
+      <li>
+        <a href="/Best-Time-to-Buy-and-Sell-Stock-IV/"  title="Best Time to Buy and Sell Stock IV" ><i class="fa fa-file-o"></i>LeetCode-Best Time to Buy a...</a>
+      </li>
+    
+      <li>
+        <a href="/Best-Time-to-Buy-and-Sell-Stock/"  title="Best Time to Buy and Sell Stock" ><i class="fa fa-file-o"></i>LeetCode-Best Time to Buy a...</a>
+      </li>
+    
+      <li>
+        <a href="/Binary-Search-Tree-Iterator /"  title="Binary Search Tree Iterator" ><i class="fa fa-file-o"></i>LeetCode-Binary Search Tree...</a>
+      </li>
+    
+  </ul>
+</div>
+
+		
+			
+<div class="widget">
+	<h4>Links</h4>
+	<ul class="blogroll list-unstyled">
+	
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
+	
+	</ul>
+</div>
+
+
+		
+	</div> <!-- sidebar -->
+</div> <!-- col-md-3 -->
+
+	
+	
+</div> <!-- row-fluid -->
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2016 CodeInterviews
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
 </script>
 
 
-</body>
-</html>
 
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

@@ -1,0 +1,361 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Anomaly Detection | CodeInterviews</title>
+  <meta name="author" content="CodeInterviews">
+  
+  <meta name="description" content="程序员的世界,编程,技术,程序员,java,.Net,c++,c语言,python,ruby">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Anomaly Detection"/>
+  <meta property="og:site_name" content="CodeInterviews"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/bootstrap.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-80198899-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?9a9d27181903a355a8d95344f23682b0";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">CodeInterviews</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>所有文章
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the articles.">
+			  <i class="fa fa-archive"></i>分类
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Java/" title="All about java.">
+			  <i class="fa fa-codepen"></i>Java
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Javascript/" title="All about javascript.">
+			  <i class="fa fa-empire"></i>Javascript
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/python/" title="All about Python.">
+			  <i class="fa fa-cog"></i>Python
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Leetcode/" title="All about leetcode.">
+			  <i class="fa fa-thumbs-o-up"></i>Leetcode
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-info-circle"></i>关于本站
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header page-header-inverse ">		
+			<h1 class="title title-inverse "> Anomaly Detection</h1>
+		</div>		
+	
+
+
+
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p>『异常检测』是无监督学习中的又一类算法，其目的是根据训练集中一堆无标记的数据，判断出要测试的数据是否异常。Andrew Ng给出的三个应用例子是plane engine、fraud detection和monitoring computers in a data center.结合下图说明一下什么是『异常检测』。</p>
+<p><img src="/img/add1.png" alt=""></p>
+<p>图中红色标记的是训练集中的飞机引擎，横纵坐标是飞机引擎的两个特征（feature）。对于一个新的飞机引擎（绿色标志），观测其特征，若落在上面那个位置，我们很容易判断这个引擎是正常的，若落在下面的位置，则有足够的理由将其标记为异常。</p>
+<p><strong>『异常检测』的原理</strong>：这一类的数据一般呈正态分布（又叫高斯分布），根据数据的特征向量，容易得出其概率大小，然后跟某个事前约定好的数值进行比较，如果概率比这个值还小，我们就判断这个数据检测出了异常。</p>
+<a id="more"></a>
+<p>###高斯分布</p>
+<p>通过下图回顾一下高斯分布的概念。</p>
+<p><img src="/img/add2.png" alt=""></p>
+<p>从上图可以看出，根据红色标记的数据的分布情况，我们可以大致画出其分布曲线，形态类似正态分布，那么我们不妨就假设数据是服从正态分布的。现在的任务是，根据训练集中的数据，估计参数 μ、σ2。上图底部给出了参数估计的两个公式。</p>
+<p>参数 μ、σ2估计出来之后，根据正态分布的公式，便得到了数据分布式。对于新给的测试数据，输入其特征向量，便得到概率的大小了。</p>
+<p>###算法</p>
+<p>训练集中有m个数据，特征向量为n维。假设每个特征Xi都服从正态分布。那么该特征向量出现的概率为<code>P(x)=P(x1;μ1,σ21)*P(x2;μ2,σ22)...P(xi;μi,σ2i)...P(xm;μm,σ2m)</code>。 在这里，我们假设“各特征之间是相互独立的”。</p>
+<p>总结一下，「anomaly detection」的算法大概三个步骤：</p>
+<ol>
+<li>选择进行『异常检测』要使用的特征，下面会介绍。</li>
+<li>计算每个特征的μ、σ2。</li>
+<li>对于新的数据，求出P(x)，与约定好的数据进行比较，若是大于，则OK，否则异常。</li>
+</ol>
+<p>###选择特征</p>
+<p>不是所有的特征都能够用来进行异常检测，我们要使用的特征应该明显服从正态分布的特征，异常数据的数量要远低于正常数据。有时需要create new features，例如，x1可能不服从正态分布，但log(x)服从正态分布，那么我们使用log(x)作为要使用的特征。</p>
+<p>###异常检测和有监督学习的区别</p>
+<p>异常检测，实际上也是一种有标记的学习，标记就是数据是否异常。那么是否可以直接使用有监督学习中的算法呢？不能！两者有些区别：</p>
+<ol>
+<li>异常检测中，（y=1）的数据远少于（y=0）的数据。而有监督学习中，两者数量都很大。</li>
+<li>异常检测中，异常的种类很多，而数量很少，无法通过学习获得model。而有监督学习中，异常的种类少数量多，足够用来学得一个有效的model。</li>
+</ol>
+<p>###多元正态分布</p>
+<p>在上面的异常检测算法中，我们假设各特征值相互独立，并拆开来分别计算μ和σ。在大多数情况下这么做是完全可以的，也有少数情况会出现问题，如下图。</p>
+<p><img src="/img/add5.png" alt=""></p>
+<p>图中绿色标记的数据，单独按照特征x1和x2来计算，都是正常数据。但事实上，这是一个异常的数据。这种情况下，我们需要使用多元正态分布来做异常检测。</p>
+<p><img src="/img/add7.png" alt=""></p>
+<p>多元正态分布的公式上图已给出，图中底部时是参数估计的公式。使用多元正态分布进行异常检测，方法和使用正态分布时（original model）类似，不做介绍了。</p>
+<p>需要指出的是，original model是多元正态分布的一个特例。此时，Σ是一个对角阵，对角线上的数据是σ1…σn的平方。</p>
+<p>###when to use which</p>
+<ol>
+<li>original model 有时需要 manually create features，而多元正态分布中直接使用全部特征。</li>
+<li>前者 computationally cheaper。</li>
+<li>前者 m 可以很小，而后者中，m&gt;n，否则Σ有可能不存在逆矩阵。</li>
+<li>前者更常用一些。</li>
+</ol>
+<hr>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+<ul class="pagination">
+	 
+				
+    	<li class="prev"><a href="/recommender-system/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+  		
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
+
+		
+		   <li class="next"><a href="/pca/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+        
+	
+</ul>
+</div>
+
+    </center>
+	</div>
+
+    <!-- share -->
+    
+        
+    <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+        <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+        <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+    </div>
+    <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+
+
+        
+
+    
+	
+	<!-- comment -->
+	
+<section id="comment">
+  <h2 class="title">Comments</h2>
+
+  
+  	 <div class="ds-thread" data-thread-key="anomaly-detection/" data-title="Anomaly Detection" data-url="http://codeinterviews.com/anomaly-detection/"></div>  
+  
+</section>
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2013-06-13 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/机器学习/">机器学习<span>23</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/coursera/">coursera<span>2</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'codeinterviews' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2016 CodeInterviews
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

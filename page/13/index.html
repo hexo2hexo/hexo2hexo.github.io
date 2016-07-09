@@ -1,642 +1,1133 @@
-
-
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!DOCTYPE HTML>
+<html>
 <head>
-    
-    <meta name="author" content="CodeInterviews">
-    
-    
-
-    
-    <link rel="alternative" href="atom.xml" title="CodeInterviews" type="application/atom+xml">
-    
-    
-    
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CodeInterviews</title>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Javascript -->
-    <script src="/js/jquery-2.1.0.min.js"></script>
-    <script src="/js/jquery.backstretch.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/js/headroom.min.js"></script>
-    <script src="/js/jquery.headroom.min.js"></script>
-    <script src="/js/common.js"></script>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <meta name="baidu-site-verification" content="Jvgfj1O0oP" />
-    <meta name="360-site-verification" content="902348aeb40d156fb32b748c4071c4bd" />
-</head>
-<body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="http://codeinterviews.com" title="CodeInterviews">CodeInterviews</a>
-            </div>
-
-            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
-                
-
-                <ul class="nav navbar-nav">
-                    
-                    <li id="nav-index"><a href="/">首页</a></li>
-                    
-                    <li id="nav-categories"><a href="/categories">分类</a></li>
-                    
-                    <li id="nav-tags"><a href="/tags">标签</a></li>
-                    
-                    <li id="nav-reading"><a href="/tags/#LeetCode">LeetCode</a></li>
-                    
-                    <li id="nav-labs"><a href="/tags/#Java">Java</a></li>
-                    
-                    <li id="nav-about"><a href="/tags/#Javascript">Javascript</a></li>
-                    
-
-                    <!--<li id="nav-github"><a href="https://github.com/hexo2hexo" target="_blank">GitHub</a></li>-->
-                    <li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>
-                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <script>
-    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
-    var bgLength = "74";
-    var bgRandom = false;
-    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
-
-    $(function() {
-        // page-id...
-        var pageId = "page/13/index.html";
-        pageId = pageId.substr(0, pageId.indexOf("/"));
-        if(pageId === "") pageId = "index";
-
-        $("#nav-" + pageId).addClass("active");
-    });
-    </script>
-
-    
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Simplify-Path/" title="LeetCode-Simplify Path">LeetCode-Simplify Path</a></h1>
-
-        
-        <p class="summary">Simplify Path</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/String/">String</a>&nbsp;<a href="/tags/Stack/">Stack</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Shortest-Palindrome/" title="LeetCode-Shortest Palindrome">LeetCode-Shortest Palindrome</a></h1>
-
-        
-        <p class="summary">Shortest Palindrome</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Single-Number-II/" title="LeetCode-Single Number II">LeetCode-Single Number II</a></h1>
-
-        
-        <p class="summary">Single Number II</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Bit-Manipulation/">Bit Manipulation</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Single-Number/" title="LeetCode-Single Number">LeetCode-Single Number</a></h1>
-
-        
-        <p class="summary">Single Number</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Hash-Table/">Hash Table</a>&nbsp;<a href="/tags/Bit-Manipulation/">Bit Manipulation</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Sort-Colors/" title="LeetCode-Sort Colors">LeetCode-Sort Colors</a></h1>
-
-        
-        <p class="summary">Sort Colors</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;<a href="/tags/Two-Pointers/">Two Pointers</a>&nbsp;<a href="/tags/Sort/">Sort</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Sort-List/" title="LeetCode-Sort List">LeetCode-Sort List</a></h1>
-
-        
-        <p class="summary">Sort List</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Linked-List/">Linked List</a>&nbsp;<a href="/tags/Sort/">Sort</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Spiral-Matrix-II/" title="LeetCode-Spiral Matrix II">LeetCode-Spiral Matrix II</a></h1>
-
-        
-        <p class="summary">Spiral Matrix II</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Spiral-Matrix/" title="LeetCode-Spiral Matrix">LeetCode-Spiral Matrix</a></h1>
-
-        
-        <p class="summary">Spiral Matrix</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Spring介绍/" title="Spring概述">Spring概述</a></h1>
-
-        
-        <p class="summary">Spring概述</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/Java/">Java</a>&nbsp;<a href="/tags/Spring/">Spring</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/project/">project</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Subsets-II/" title="LeetCode-Subsets II">LeetCode-Subsets II</a></h1>
-
-        
-        <p class="summary">Subsets II</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;<a href="/tags/Backtracking/">Backtracking</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Sqrt(x)/" title="LeetCode-Sqrt(x)">LeetCode-Sqrt(x)</a></h1>
-
-        
-        <p class="summary">Sqrt(x)</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Binary-Search/">Binary Search</a>&nbsp;<a href="/tags/Math/">Math</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Substring-with-Concatenation-of-All-Words/" title="LeetCode-Substring with Concatenation of All Words">LeetCode-Substring with Concatenation of All Words</a></h1>
-
-        
-        <p class="summary">Substring with Concatenation of All Words</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Hash-Table/">Hash Table</a>&nbsp;<a href="/tags/Two-Pointers/">Two Pointers</a>&nbsp;<a href="/tags/String/">String</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Subsets/" title="LeetCode-Subsets">LeetCode-Subsets</a></h1>
-
-        
-        <p class="summary">Subsets</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;<a href="/tags/Backtracking/">Backtracking</a>&nbsp;<a href="/tags/Bit-Manipulation/">Bit Manipulation</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Sudoku-Solver/" title="LeetCode-Sudoku Solver">LeetCode-Sudoku Solver</a></h1>
-
-        
-        <p class="summary">Sudoku Solver</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Hash-Table/">Hash Table</a>&nbsp;<a href="/tags/Backtracking/">Backtracking</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Sum-Root-To-Leaf-Numbers/" title="LeetCode-Sum Root to Leaf Numbers">LeetCode-Sum Root to Leaf Numbers</a></h1>
-
-        
-        <p class="summary">Sum Root to Leaf Numbers</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Tree/">Tree</a>&nbsp;<a href="/tags/Depth-first-Search/">Depth-first Search</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-
-<div class="container pagination-div">
-    <div class="well">
-        <a class="extend prev" rel="prev" href="/page/12/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/14/">Next &raquo;</a>
-    </div>
-</div>
-
-
+  <meta charset="utf-8">
+  
+  <title>Page 13 | CodeInterviews</title>
+  <meta name="author" content="CodeInterviews">
+  
+  <meta name="description" content="程序员的世界,编程,技术,程序员,java,.Net,c++,c语言,python,ruby">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="CodeInterviews"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/bootstrap.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
 <script>
-    $(function () {
-        $("article:first").addClass("first-post");
-    });
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-80198899-1', 'auto');
+  ga('send', 'pageview');
 </script>
 
-    <footer id="footer">
-        <div id="bottom-tip">
-            CodeInterviews
-        </div>
-        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
-        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
-        <small>&copy; 2016 <a href="http://codeinterviews.com" target="_blank">CodeInterviews</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
-    </footer>
-    
+
+
 <script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
-  var s = document.getElementsByTagName("script")[0];
+  hm.src = "//hm.baidu.com/hm.js?9a9d27181903a355a8d95344f23682b0";
+  var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
 
 
+</head>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-51347904-1', 'auto');
-  ga('send', 'pageview');
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">CodeInterviews</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>所有文章
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the articles.">
+			  <i class="fa fa-archive"></i>分类
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Java/" title="All about java.">
+			  <i class="fa fa-codepen"></i>Java
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Javascript/" title="All about javascript.">
+			  <i class="fa fa-empire"></i>Javascript
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/python/" title="All about Python.">
+			  <i class="fa fa-cog"></i>Python
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Leetcode/" title="All about leetcode.">
+			  <i class="fa fa-thumbs-o-up"></i>Leetcode
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-info-circle"></i>关于本站
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 <div class="page-header page-header-inverse ">
+  <h1 class="title title-inverse ">Programming interview questions, tips and knowledge, system design, big data.</h1>
+</div>
+
+<div class="row page">
+
+	
+	<div class="col-md-9">
+	
+
+		<div class="slogan">
+      <i class="fa fa-heart"></i>
+      程序员的世界, 为程序员服务
+</div>    
+		<div id="top_search"></div>
+		<div class="mypage">
+		
+		<!-- title and entry -->
+        <!-- render top articles firstly -->
+        
+        <!-- render other articles -->
+        
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/leetcode-Add-Two-Numbers/" title="Add Two Numbers">LeetCode-Add Two Numbers</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Add Two Numbers</p>
+<blockquote>
+<p>You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
+<p>Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>Output: 7 -&gt; 0 -&gt; 8</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Add Two Numbers
+
+You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
+Input: (2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4)Output: 7 -&amp;gt; 0</p>
+			  
+	</div>
+  <a type="button" href="/leetcode-Add-Two-Numbers/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/leetcode-Container-With-Most-Water/" title="Container With Most Water">LeetCode-Container With Most Water</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Container With Most Water</p>
+<blockquote>
+<p>Given n non-negative integers a1, a2, …, an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.</p>
+<p>Note: You may not slant the container.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Container With Most Water
+
+Given n non-negative integers a1, a2, …, an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the</p>
+			  
+	</div>
+  <a type="button" href="/leetcode-Container-With-Most-Water/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/hive ql介绍 /" title=" Hive QL 介绍">Hive QL 介绍</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>主要对hive ql进行介绍。<br>
+	-->
+			  
+			  <p class="summary">主要对hive ql进行介绍。</p>
+			  
+	</div>
+  <a type="button" href="/hive ql介绍 /#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/install-git-in-CentOS6.5/" title="CentOS6.5 安装git">CentOS6.5 安装git</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##引言<br>Git是目前世界上最先进的分布式版本控制系统，它能够对你的代码进行版本管理与控制，使你不再需要担心代码版本过多而造成发布时版本的混乱。</p>
+<p>本文是在CentOS6.5上安装git，使得在linux上也可以使用git进行代码的版本控制。</p>
+	-->
+			  
+			  <p class="summary">##引言Git是目前世界上最先进的分布式版本控制系统，它能够对你的代码进行版本管理与控制，使你不再需要担心代码版本过多而造成发布时版本的混乱。
+本文是在CentOS6.5上安装git，使得在linux上也可以使用git进行代码的版本控制。</p>
+			  
+	</div>
+  <a type="button" href="/install-git-in-CentOS6.5/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/insert-xiami-to-blog/" title="在博客中插入虾米播放器">如何在博客中插入虾米播放器</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<blockquote>
+<p>在博客中插入虾米播放器简单的方法主要分为以下三步:<br><br>1.搜索要插入的音乐<br><br>2.获取音乐播放器的flash代码<br><br>3.插入到指定的html文件中<br></p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">在博客中插入虾米播放器简单的方法主要分为以下三步:1.搜索要插入的音乐2.获取音乐播放器的flash代码3.插入到指定的html文件中</p>
+			  
+	</div>
+  <a type="button" href="/insert-xiami-to-blog/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/idea-快捷键/" title="IntelliJ IDEA 常用快捷键">IntelliJ IDEA 常用快捷键</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>该文主要对IntelliJ IDEA 常用快捷键进行概括。<br>
+	-->
+			  
+			  <p class="summary">该文主要对IntelliJ IDEA 常用快捷键进行概括。</p>
+			  
+	</div>
+  <a type="button" href="/idea-快捷键/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/hive安装配置/" title=" Hive 安装配置">Hive 安装配置</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>主要对Hive 安装配置进行介绍。<br>
+	-->
+			  
+			  <p class="summary">主要对Hive 安装配置进行介绍。</p>
+			  
+	</div>
+  <a type="button" href="/hive安装配置/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/hive简介/" title="Hive 简介">Hive 简介</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>主要介绍 Hive 的相关知识，将会涉及以下内容：</p>
+<ul>
+<li>Hive 的定义  </li>
+<li>Hive 的体系结构   </li>
+<li>Hive 与关系数据库的区别   </li>
+<li>Hive 的应用场景  </li>
+<li>Hive 的存储
+	-->
+			  
+			  <p class="summary">主要介绍 Hive 的相关知识，将会涉及以下内容：
+
+Hive 的定义  
+Hive 的体系结构   
+Hive 与关系数据库的区别   
+Hive 的应用场景  
+Hive 的存储</p>
+			  
+	</div>
+  <a type="button" href="/hive简介/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/hadoop介绍/" title="Hadoop介绍">Hadoop介绍</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>###1. Hadoop是什么？<br>Apache Hadoop是一款支持数据密集型分布式应用并以Apache 2.0许可协议发布的开源软件框架。它支持在商品硬件构建的大型集群上运行的应用程序。Hadoop是根据Google公司发表的MapReduce和Google档案系统的论文自行实作而成。</p>
+<p>Hadoop框架透明地为应用提供可靠性和数据移动。它实现了名为MapReduce的编程范式：应用程序被分割成许多小部分，而每个部分都能在集群中的任意节点上执行或重新执行。此外，Hadoop还提供了分布式文件系统，用以存储所有计算节点的数据，这为整个集群带来了非常高的带宽。MapReduce和分布式文件系统的设计，使得整个框架能够自动处理节点故障。它使应用程序与成千上万的独立计算的电脑和PB级的数据。现在普遍认为整个Apache Hadoop“平台”包括Hadoop内核、MapReduce、Hadoop分布式文件系统（HDFS）以及一些相关项目，有Apache Hive和Apache HBase等等。</p>
+<p>Hadoop的框架最核心的设计就是：HDFS和MapReduce.HDFS为海量的数据提供了存储，则MapReduce为海量的数据提供了计算。</p>
+	-->
+			  
+			  <p class="summary">###1. Hadoop是什么？Apache Hadoop是一款支持数据密集型分布式应用并以Apache 2.0许可协议发布的开源软件框架。它支持在商品硬件构建的大型集群上运行的应用程序。Hadoop是根据Google公司发表的MapReduce和Google档案系统的论文自行实作而成。
+Hadoop框架透明地为应用提供可靠性和数据移动。它实现了名为MapReduce的编程范式：应用程序被分割成许多小部分，而每个部分都能在集群中的任意节点上执行或重新执行。此外，Hadoop还提供了分布式文件系统，用以存储所有计算节点的数据，这为整个集群带来了非常高的带宽。MapReduce和分布式文件系统的设</p>
+			  
+	</div>
+  <a type="button" href="/hadoop介绍/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/hadoop2.6.0伪分布模式配置部署/" title="Hadoop2.6.0伪分布模式配置部署">Hadoop2.6.0伪分布模式配置部署</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<h2 id="二、Hadoop伪分布式模式配置"><a href="#二、Hadoop伪分布式模式配置" class="headerlink" title="二、Hadoop伪分布式模式配置"></a>二、Hadoop伪分布式模式配置</h2><h3 id="1-配置core-site-xml-hdfs-site-xml，mapred-site-xml及yarn-site-xml"><a href="#1-配置core-site-xml-hdfs-site-xml，mapred-site-xml及yarn-site-xml" class="headerlink" title="1. 配置core-site.xml, hdfs-site.xml，mapred-site.xml及yarn-site.xml"></a>1. 配置core-site.xml, hdfs-site.xml，mapred-site.xml及yarn-site.xml</h3><h4 id="1-修改core-site-xml"><a href="#1-修改core-site-xml" class="headerlink" title="1).修改core-site.xml:"></a>1).修改<code>core-site.xml</code>:</h4><pre><code>$ sudo gvim /usr/local/hadoop/etc/hadoop/core-site.xml
+</code></pre><p>&gt;</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;configuration.xsl&quot;?&gt;
+
+&lt;!-- Put site-specific property overrides in this file. --&gt;
+
+&lt;configuration&gt;
+    &lt;property&gt;
+        &lt;name&gt;fs.default.name&lt;/name&gt;
+        &lt;value&gt;hdfs://localhost:9000&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
+        &lt;value&gt;/home/hadoop/tmp&lt;/value&gt;
+   &lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre>
+	-->
+			  
+			  <p class="summary">二、Hadoop伪分布式模式配置1. 配置core-site.xml, hdfs-site.xml，mapred-site.xml及yarn-site.xml1).修改core-site.xml:$ sudo gvim /usr/local/hadoop/etc/hadoop/core-site.xml
+&amp;gt;
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt;
+&amp;lt;?xml-stylesheet type=&amp;quot;text/xsl&amp;quot; href=&amp;quot;configuration.xsl&amp;quot;?&amp;gt;
+
+&amp;lt;!-- Put site-</p>
+			  
+	</div>
+  <a type="button" href="/hadoop2.6.0伪分布模式配置部署/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/hadoop2.6.0单机模式安装/" title="Hadoop2.6.0单机模式安装">Hadoop2.6.0单机版模式安装</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##一、Hadoop启动模式</p>
+<p>Hadoop集群有三种启动模式：</p>
+<ul>
+<li>单机模式：默认情况下运行为一个单独机器上的独立Java进程，主要用于调试环境</li>
+<li>伪分布模式：在单个机器上模拟成分布式多节点环境，每一个Hadoop守护进程都作为一个独立的Java进程运行</li>
+<li>完全分布式模式：真实的生产环境，搭建在完全分布式的集群环境</li>
+</ul>
+	-->
+			  
+			  <p class="summary">##一、Hadoop启动模式
+Hadoop集群有三种启动模式：
+
+单机模式：默认情况下运行为一个单独机器上的独立Java进程，主要用于调试环境
+伪分布模式：在单个机器上模拟成分布式多节点环境，每一个Hadoop守护进程都作为一个独立的Java进程运行
+完全分布式模式：真实的生产环境，搭建在完全分布式的集群环境</p>
+			  
+	</div>
+  <a type="button" href="/hadoop2.6.0单机模式安装/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/hadoop1.2.1安装/" title="Hadoop1.2.1本地伪分布式安装">Hadoop1.2.1本地伪分布式安装</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##引言<br>由于最近需要大数据的处理，所以需要用到hadoop.因此在这里记录本地伪分布式的安装过程。</p>
+	-->
+			  
+			  <p class="summary">##引言由于最近需要大数据的处理，所以需要用到hadoop.因此在这里记录本地伪分布式的安装过程。</p>
+			  
+	</div>
+  <a type="button" href="/hadoop1.2.1安装/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2014-06-24 </div>
+			<div class="article-title"><a href="/dependence-in-bn/" >贝叶斯网络中的依赖关系</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>贝叶斯网络（Bayesian Network，简称 BN）是机器学习中最重要的工具之一，它以贝叶斯规则（Bayesian Rule）为基础，并为马尔可夫模型奠定了基础。</p>
+<p>简单来说，贝叶斯网络就是一个有向无环图。节点 node 表示变量，弧 arc 表示依赖关系。比如下图：</p>
+<p><img src="http://ww1.sinaimg.cn/large/5e8cb366jw1ehple2py1lj206u03kdft.jpg" alt=""></p>
+<p>「Sprinkler」是洒水器的意思。这三个变量代表三种事件。下雨和洒水器都能影响草地湿度，而下雨又可以影响洒水器是否洒水。三个变量的依赖关系如图所示。</p>
+<p>在 BN 中，有些 node 是可以观察到的observable，有些是无法观察到的 hidden。比如下雨和草地湿可以观察到，洒水器是否洒水了是无法观测得到的。对于一个 BN，我们可以求所有变量的联合概率，也可以求某个隐节点的后验概率。前提是我们已经得到了这个 BN 所需要的参数：每个 arc 所代表的条件概率。</p>
+<p>不过我今天要讲的东西并不是这些，而是条件依赖关系，这类概念让我颇费脑子。</p>
+	-->
+			  
+			  <p class="summary">贝叶斯网络（Bayesian Network，简称 BN）是机器学习中最重要的工具之一，它以贝叶斯规则（Bayesian Rule）为基础，并为马尔可夫模型奠定了基础。
+简单来说，贝叶斯网络就是一个有向无环图。节点 node 表示变量，弧 arc 表示依赖关系。比如下图：
+
+「Sprinkler」是洒水器的意思。这三个变量代表三种事件。下雨和洒水器都能影响草地湿度，而下雨又可以影响洒水器是否洒水。三个变量的依赖关系如图所示。
+在 BN 中，有些 node 是可以观察到的observable，有些是无法观察到的 hidden。比如下雨和草地湿可以观察到，洒水器是否洒水了是无法观测得到的。对于一个</p>
+			  
+	</div>
+  <a type="button" href="/dependence-in-bn/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2014-06-10 </div>
+			<div class="article-title"><a href="/google-blocked/" >聊聊 Google 被封锁这件事</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>老实说，Google 这次被封锁对我的影响不是特别大，它在中国的服务本来就已经被 ZF「政府，下同」 搞的支离破碎，早已不稳定，像我等 Google 重度用户几乎都常备科学上网工具的。不过区别还是挺明显的，之前的时候常常不必打开那些工具，直接使用 Google 即可，方便；现在却一点都不能用了。科学上网的工具由于其机制问题，对于某些服务如谷歌图片、谷歌学术，常常会有网址重定向的问题，很麻烦，这时候多么幻想 free Internet.</p>
+<p>####Google 为何被封？</p>
+<p>Google 的原则是几乎不对用户搜索的结果进行过滤，这是为保障网络信息自由。而我国由于特殊原因，有大量的信息是敏感的，ZF不愿让民众接触到；或者 ZF 不自信，怕民众接触到。这样的信息一般来说有政治、色情、恐怖暴力这几个方面。对于第一项，ZF 似乎忌惮着什么。对于第二项，我实在不理解「两性解放」为何还不到来。对于第三项，我支持。这次的封锁似乎比以往更彻底、更持久，据说是因为64才封锁的，可64已经过了，封锁还没有解除。私以为可能与近来国内严重的恐怖暴力事件有关。可能 ZF 现在的原则是「安全、维稳大于一切」，而 Google 是一个经常被恐怖分子利用的工具，如此看来，ZF 的因噎废食就可以理解了。在他们眼里，关键时期，以阻碍国家的经济社会发展为代价换取国家社会的安全是值得的。</p>
+<p>####Google 被封有何影响？</p>
+<p>据我所知，Google 应该是科技从业人士离不开的利器，尤其广大的 IT 人，使用的密度特别大。以我个人为例，Google 搜索是我知识的重要来源，Google 学术是读论文不可缺少的工具，Google 图片是我图片素材的重要来源，Gmail 是我的主邮箱，每天都会使用，Google calendar 是我计划日程不可或缺的工具，Youtube 有大量优质的公开课、教育视频。。。</p>
+<p>此外，全世界的网站大多在使用 Google 提供的 cdn 服务，比如 google font, jquery 等等，这次封锁导致很多网站打开缓慢，因为这些 cdn 被封锁了。</p>
+<p>不过，对于不同的人，影响的大小是不一样的。</p>
+<p>程序员：作为重度使用者，其实所受影响差不多最小，因为我们知道怎么 counter block，除了吐槽ZF几句，该怎么用 Google 还是怎么用。</p>
+<p>恐怖分子： 我想ZF 此次加大封锁力度主要是针对这些有碍国家安全的人吧。但他们是有组织、有科技、有训练的，科学上网都不会他们还怎么做恐怖分子，所以我觉得对他们的影响也很小。</p>
+<p>「政治爱好者」：这里特指通过国外信息了解国内政治的人，这样的人一直都有。我的观点是，当你的信息足够充分时，你就不太会一叶障目做出偏激的事情来。国外并不只有批评中国 ZF 的声音，其他声音也有，我想他们是不至于只看到一家之言就开始反 ZF 的。如果 ZF 的目的是防止他们接触西方的思想，防止走资，防止意识形态渗透，那你封就封吧。</p>
+<p>「色情爱好者」：从中国互联网诞生到现在，色情内容一直是被过滤的，这类人早就熟知怎么翻过去，所以影响很小。</p>
+<p>普通大众： 我认为中国大多数的人是不用 Google 的，一来 ZF 已经把它赶了出去，Google 服务很不稳定；二来 Google 的本土化做的没有百度好，在生活、娱乐这些受众面最大的服务上，Google 不如百度。那么对于他们的影响自然不大了。</p>
+<p>综上，ZF 封锁 Google 除了徒然浪费民众很多时间、精力外，其实并不能阻止人们做本打算做的事情。从这个意义上讲，这样一刀切式的封锁得不偿失。而且，我相信会有比一刀切更好的办法，ZF 这样做，显然是一种懒政。</p>
+<p>####怎么破？</p>
+<p>据说 Goagent、免费 VPN 什么的都不好使了， 付费 VPN 一直很稳定，Shadowsocks 还可以。</p>
+<p>如果只需要使用 Google Search，那么最简单方便，甚至最好的办法是直接用 IP <a href="http://203.208.46.148/">http://203.208.46.148/</a>。当然，IP 不限这一个，有兴趣的同学可以通过下面的方式得到需要的 IP：</p>
+<p>在 shell 中输入<code>ping google.cn</code>。</p>
+<p>或在 cmd 中输入<code>ping -4 google.cn</code>。</p>
+<p>如果还需要使用其他的 Google 服务，那最好是学习一下科学上网。</p>
+<p>还有一种方式是在 Chrome://flag 中修改某些东西，我试过，挺慢的，不如 IP 的方式好。</p>
+	-->
+			  
+			  <p class="summary">老实说，Google 这次被封锁对我的影响不是特别大，它在中国的服务本来就已经被 ZF「政府，下同」 搞的支离破碎，早已不稳定，像我等 Google 重度用户几乎都常备科学上网工具的。不过区别还是挺明显的，之前的时候常常不必打开那些工具，直接使用 Google 即可，方便；现在却一点都不能用了。科学上网的工具由于其机制问题，对于某些服务如谷歌图片、谷歌学术，常常会有网址重定向的问题，很麻烦，这时候多么幻想 free Internet.
+####Google 为何被封？
+Google 的原则是几乎不对用户搜索的结果进行过滤，这是为保障网络信息自由。而我国由于特殊原因，有大量的信息是敏感的，ZF不</p>
+			  
+	</div>
+  <a type="button" href="/google-blocked/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2014-05-26 </div>
+			<div class="article-title"><a href="/chrome-addons/" >Chrome Extensions I Use</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>Chrome 最强大的一个地方就是丰富的扩展插件了，在它的商店里寻找，只有你想不到的，很难有找不到的。Chrome 也是我的默认浏览器，一边使用一边优化体验，现在来说说我都用了哪些插件吧。</p>
+<p>首先介绍我平时一直在使用的：</p>
+<ol>
+<li>AdBlock。 还有一个叫 AdBlock Plus 也不错，但最近 Plus 这个插件导致我的 pdf 无法在浏览器打开，于是换成 AdBlock 了，没差。装上这个插件之后，浏览器里的整个世界都清爽了，那些恼人的 Flash 广告一一自动清除了。</li>
+<li>Copy as Markdown。用 Markdown 写作时经常需要一些图片或文字的链接，这个小插件使得 Markdown 中插入图片、链接轻而易举，一直在用。</li>
+<li>Flashcontrol。Chrome 的使用很容易导致 Mac 发烫，经了解，是 Flash 所致，而 Flash 大部分都是无用的广告。这个插件是的那些 Flash 无法自动加载，如果需要看 Flash 的视频，只需要点击一下就行了，非常方便。BTW,貌似 Safari 没有发热的问题，不过这货太难用了，我顺便安装了 Firefox 来做备用浏览器，装上一些好用的插件后，FF 也是相当不错的选择。</li>
+<li>Halo Word Dictionary。查字典用。</li>
+<li>Proxy SwitchySharp。科学上网，You know.</li>
+<li>Send to Kindle。有什么好文章了，用这个发到 Kindle 中看。这里面还有个小窍门，由于选中的文字可以编辑，我完全可以把任何文字、图片拷贝过去发到 Kindle。</li>
+<li>Session Buddy。查找某个问题时打开了一浏览器的 Tab，乱糟糟的，今天不想看了，改天再看这些东西，咋办？用这个。它可以把浏览器打开的 Tab 都保存下来。</li>
+<li>Vimium。神器，用 Vim 的方式操作 Chrome，效率的提升是惊人的，我现在已经离不开它了。</li>
+<li>印象笔记·剪藏。方便地把页面内容保存到 Evernote 中。</li>
+<li>围脖是个好图床。用 Markdown 写作必备的图床。</li>
+</ol>
+<p>下面要说的是挺不错，但偶尔才用用的：</p>
+<ol>
+<li>Chrome YouTube Downloader。安装好后，在 Youtube 的视频下边会出现一个下载按钮，可以选择下载哪种分辨率的视频或者下载音频。</li>
+<li>FaWave(发微)。如果有多个社交帐号，比如微博、人人、twitter、facebook，用这个可以将一条状态发送到所有这些 SNS 中。</li>
+<li>Pervasive GRE。显示当前页面所有的 GRE 词汇。</li>
+<li>Pocket。好用的收藏管理，如果不习惯用 Chrome 的 Bookmark，Pocket 将是一个绝佳的选择。</li>
+<li>隐藏帖自动回复 (AutoReply 纯净版)。很多BBS 的内容需要回复可见，这个插件就解决这个烦人的问题。</li>
+</ol>
+<p>至于主题，在 Mac 下，默认的主题最干净。</p>
+
+	-->
+			  
+			  <p class="summary">Chrome 最强大的一个地方就是丰富的扩展插件了，在它的商店里寻找，只有你想不到的，很难有找不到的。Chrome 也是我的默认浏览器，一边使用一边优化体验，现在来说说我都用了哪些插件吧。
+首先介绍我平时一直在使用的：
+
+AdBlock。 还有一个叫 AdBlock Plus 也不错，但最近 Plus 这个插件导致我的 pdf 无法在浏览器打开，于是换成 AdBlock 了，没差。装上这个插件之后，浏览器里的整个世界都清爽了，那些恼人的 Flash 广告一一自动清除了。
+Copy as Markdown。用 Markdown 写作时经常需要一些图片或文字的链接，这个小插件使得 Markdown</p>
+			  
+	</div>
+  <a type="button" href="/chrome-addons/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2014-05-15 </div>
+			<div class="article-title"><a href="/vim-tips-2/" >Vim Tips 2</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>此前写过一篇<a href="http://zipperary.com/2013/09/03/vim-commands/">VIM常用命令</a>。Vim 学习曲线还是比较陡峭的，很多教程都是直接给出一个Vim 命令或快捷键的参考列表，求全，这反而把有心学习的潜在用户吓跑了。我在学习使用 Vim 的时候尽量先总结最常用的，并按照操作类型归类，符合自己的认知结构。由此总结出该文中所记述的笔记。写作该文时比较急促，直接把 Evernote 中的 notes 拿过来，没有调整格式，也没有写注解。</p>
+<p>有了基础，并能基本使用 vim 编程，以后就是问题驱动型的学习了，aka，coding 中遇到什么不方便的地方，就 google 一下有没有对应的命令、快捷键、插件之类。不久后写了一篇<a href="http://zipperary.com/2013/08/24/vim-tips/">vim使用中的几个问题</a>。</p>
+<p>时间已经过去很久。去年入手 Mac 后，编程几乎都是在 Vim 中，之前用 terminal 的，现在已经习惯使用 Macvim 了。同样基于问题驱动，又 get 了一些技能，在此呈上。</p>
+<ol>
+<li>插件管理用<code>pathogen</code>，安装插件非常简单，也比<code>vundle</code>灵活。</li>
+<li><code>Normal</code>模式下，寻找上次光标所在位置为<code>ctrl + o</code>，下次的为<code>ctrl + i</code>，跳到某行修改并返回的时候非常方便。</li>
+<li>用<code>:!command</code>可以在 Vim 中写 shell 命令，自动转入 shell 执行。不过，我现在一般用<code>iTerm</code> + <code>Macvim</code>，不再需要用这个命令了。</li>
+<li>查看缓存文件<code>:ls</code>，是不是很像 shell 中的那个。切换到其中一个用<code>:buffer n</code>。</li>
+<li>File browser 自然使用大名鼎鼎的<strong>NERDTREE</strong>，在 nerdtree 中新建文件的方式是<code>m-a</code>并写出文件名称。刷新用<code>r</code>。忘记快捷键了，要习惯使用<code>?</code>打开和关闭帮助。<code>Bookmarks</code>功能刚开始用，赞！</li>
+<li>分屏之后切换窗口，用<code>ctrl + w + h</code>是切换到左边的窗口，自然，其他方向的分别是<code>j, k, l</code>。另外还有两个非常重要，吐血推荐，<code>t, b</code>，分别是直接切换到最左或最右，如果你用过<code>Taglist</code>并打开了多个窗口，你就知道这东西多重要了。</li>
+<li>交换两个窗口的位置，或者说移动窗口，用<code>ctrl + w + r/x</code>，试试就知道了，很多时候需要这东西。</li>
+<li>窗口大小调整，宽度和高度分别用<code>ctrl + w + &lt;/&gt;</code>和<code>ctrl + w + +/-</code>，或者使用更加灵活的<code>:res +n</code>，<code>:vertical res +n</code>。自动分割的窗口未必好用，所以很多时候是需要自己调整的。</li>
+<li>把鸡肋的 Caps Lock 键换成了 Esc，太爽了。</li>
+<li>粘贴到 vim 中时由于 indent 的原因，经常会导致格式乱掉。在<code>.vimrc</code>中添加<code>set pastetoggle=&lt;F9&gt;</code>，插入模式下按下 F9即可进入粘贴模式，之后再次通过 F9返回即可。</li>
+</ol>
+	-->
+			  
+			  <p class="summary">此前写过一篇VIM常用命令。Vim 学习曲线还是比较陡峭的，很多教程都是直接给出一个Vim 命令或快捷键的参考列表，求全，这反而把有心学习的潜在用户吓跑了。我在学习使用 Vim 的时候尽量先总结最常用的，并按照操作类型归类，符合自己的认知结构。由此总结出该文中所记述的笔记。写作该文时比较急促，直接把 Evernote 中的 notes 拿过来，没有调整格式，也没有写注解。
+有了基础，并能基本使用 vim 编程，以后就是问题驱动型的学习了，aka，coding 中遇到什么不方便的地方，就 google 一下有没有对应的命令、快捷键、插件之类。不久后写了一篇vim使用中的几个问题。
+时间已经过去很</p>
+			  
+	</div>
+  <a type="button" href="/vim-tips-2/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2014-05-08 </div>
+			<div class="article-title"><a href="/ali-data-mining/" >阿里数据挖掘</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>前段时间阿里巴巴组织了一个大数据的竞赛，全国高校积极响应，报名者、参与者、提交者众多，最好成绩也一直在刷新当中。初赛选出 Top500 进入复赛，其他人就炮灰了。</p>
+<p>虽然是搞图像的，但念在未来图像不太好就业，而大数据是现在及未来的热门，正巧在修习一门《数据挖掘》课程，就把阿里这个题目作为大作业的题目了。</p>
+<p>###题目介绍</p>
+<p>题目大意是这样的：</p>
+<blockquote>
+<p>给定 4.15-7.15 这四个月的用户数据作为训练数据，大概18万条。然后预测下一个月哪些用户会购买哪些品牌。数据提交到阿里的竞赛平台，阿里会给出准确率、召回率和 F1值。</p>
+</blockquote>
+<p>数据的说明如图：</p>
+<p><img src="http://ww4.sinaimg.cn/large/5e8cb366jw1eg6xzalotrj20j805jjs2.jpg" alt=""></p>
+<p>准确率、召回率就不解释了，大多数预测性的实验都以此作为评价指标。阿里用这两个值计算一个综合的评价指标 F1 作为排名依据。</p>
+<p><img src="http://ww1.sinaimg.cn/large/5e8cb366jw1eg6y25tsnij204601jt8j.jpg" alt=""></p>
+	-->
+			  
+			  <p class="summary">前段时间阿里巴巴组织了一个大数据的竞赛，全国高校积极响应，报名者、参与者、提交者众多，最好成绩也一直在刷新当中。初赛选出 Top500 进入复赛，其他人就炮灰了。
+虽然是搞图像的，但念在未来图像不太好就业，而大数据是现在及未来的热门，正巧在修习一门《数据挖掘》课程，就把阿里这个题目作为大作业的题目了。
+###题目介绍
+题目大意是这样的：
+
+给定 4.15-7.15 这四个月的用户数据作为训练数据，大概18万条。然后预测下一个月哪些用户会购买哪些品牌。数据提交到阿里的竞赛平台，阿里会给出准确率、召回率和 F1值。
+
+数据的说明如图：
+
+准确率、召回率就不解释了，大多数预测性的实验都以此作为评价指</p>
+			  
+	</div>
+  <a type="button" href="/ali-data-mining/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2014-04-21 </div>
+			<div class="article-title"><a href="/js-callback/" >理解 javascript 回调函数</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>最近在看 express,满眼看去，到处是以函数作为参数的回调函数的使用。如果这个概念理解不了，nodejs、express 的代码就会看得一塌糊涂。比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> err = <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Not Found'</span>);</span><br><span class="line">    err.status = <span class="number">404</span>;</span><br><span class="line">    next(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>app</code>是对象，<code>use</code>是方法，方法的参数是一个带参的匿名函数，函数体直接在后面给出了。这段代码怎么理解呢？我们先来了解<em>回调函数</em>这个概念。</p>
+<p>首先要了解，在 js 中，函数也是对象，可以赋值给变量，可以作为参数放在函数的参数列表中。比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> doSomething = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段代码的意思是定义一个匿名函数，这个匿名函数除了没有名字之外，其他跟普通的函数没有什么两样。然后把匿名函数赋值给变量<code>doSomething</code>。接下来我们调用：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(doSomething(<span class="number">2</span>,<span class="number">3</span>));</span><br></pre></td></tr></table></figure>
+<p>这样会输出<code>5</code>。</p>
+	-->
+			  
+			  <p class="summary">最近在看 express,满眼看去，到处是以函数作为参数的回调函数的使用。如果这个概念理解不了，nodejs、express 的代码就会看得一塌糊涂。比如：
+12345app.use(function(req, res, next) &amp;#123;    var err = new Error(&#39;Not Found&#39;);    err.status = 404;    next(err);&amp;#125;);
+app是对象，use是方法，方法的参数是一个带参的匿名函数，函数体直接在后面给出了。这段代码怎么理解呢？我们先来了解回调函数这个概念。
+首先要了解，在 js 中，函数也是对象，可以赋值给变量，</p>
+			  
+	</div>
+  <a type="button" href="/js-callback/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2014-04-13 </div>
+			<div class="article-title"><a href="/wiz-to-evernote/" >wiz to evernote</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>Evernote 刚刚诞生不久我就成为了它的用户，后来中国有趋势成为用户第二多的国家，于是印象笔记诞生，同步的速度快了不知道多少倍。由于对它的依赖，我的笔记数量迅速增加。当时用的是 windows，印象笔记的优化可能还没做好，随着笔记量增大，笔记经常会卡顿到无法忍受。开始考虑其他的笔记应用。</p>
+<p><strong>印象笔记当初让我很难忍受的另外两个原因：</strong></p>
+<ul>
+<li>流量限额，只有60M，几乎没办法保存图片和附件。</li>
+<li>没有格式刷功能，非常不便。关于这个问题我咨询过印象笔记的官方微博，回应说，印象笔记是基于 html 的，技术上做格式刷的难度太大。于是我就不抱期望了。</li>
+</ul>
+<p>经过各种寻找、尝试、推荐，最后确定用国内的「为知笔记」。由于是国内的，其安全性是我最大的担心，不过在网上看到很多貌似靠谱的人推荐，我也就不消怀疑了。</p>
+<p><strong>为知笔记好用的地方：</strong></p>
+<ul>
+<li>方便的格式刷功能。</li>
+<li>个人用户流量不限。</li>
+<li>windows 上非常流畅。</li>
+<li>支持各种小插件，比如 markdown 写作。</li>
+<li>与社交账户的结合。</li>
+</ul>
+<p>于是我就下定决心转过来。当时印象笔记转到为知笔记是没有很好支持的，需要太多的手工劳动，必须要坚定的决心和顽强的意志才行。</p>
+	-->
+			  
+			  <p class="summary">Evernote 刚刚诞生不久我就成为了它的用户，后来中国有趋势成为用户第二多的国家，于是印象笔记诞生，同步的速度快了不知道多少倍。由于对它的依赖，我的笔记数量迅速增加。当时用的是 windows，印象笔记的优化可能还没做好，随着笔记量增大，笔记经常会卡顿到无法忍受。开始考虑其他的笔记应用。
+印象笔记当初让我很难忍受的另外两个原因：
+
+流量限额，只有60M，几乎没办法保存图片和附件。
+没有格式刷功能，非常不便。关于这个问题我咨询过印象笔记的官方微博，回应说，印象笔记是基于 html 的，技术上做格式刷的难度太大。于是我就不抱期望了。
+
+经过各种寻找、尝试、推荐，最后确定用国内的「为知笔记」。由</p>
+			  
+	</div>
+  <a type="button" href="/wiz-to-evernote/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2014-04-01 </div>
+			<div class="article-title"><a href="/lsh/" >An Intuition to Locality Sensitive Hashing</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>在 Stackoverflow 的「Machine Learning」标签下随便看，看到一个<a href="http://stackoverflow.com/questions/12952729/how-to-understand-locality-sensitive-hashing">How to understand Locality Sensitive Hashing?</a>的问题，刚好看视频跟踪时看到有一个 Coherency Sensitive Hashing，莫非两者有不可告人的联系。。索性就学习一下。</p>
+<p>先用例子直观地说明一下，请看下图：</p>
+<p><img src="http://ww1.sinaimg.cn/large/5e8cb366jw1ef0c2v4ps1j20nf0ddt9l.jpg" alt=""></p>
+<p>上图是一个平面，其中有一个红点和一个黄点，都是二维向量。我们的目的是通过 LSH 方法近似求得这两个点的余弦相似度。</p>
+<p>余弦相似度是求向量相似度的一种方法，在图像匹配中很常用。</p>
+<p>怎么求呢？</p>
+<p>现在，在这个平面上，随记产生 n 条过坐标零点的线，这里 n 取6.</p>
+<p>分别给红点和黄点一个 hash 表，实际就是一个二值数组，每个元素取0或1，如左上图所示。白色代表0，黑色代表1.这个 hash 表叫做signature。</p>
+<p>先看红点，分别看看这6条线在红点的上方还是下方，并分别标注为0/1，填写在signature 中。需要注意的是，这两个 signature 对应元素代表同一条线。</p>
+<p>映射完后，计算这两个 signature 中对应元素不同的个数（hamming distance），比如这里是1个，即最后一个。这有什么意义呢？看图，两个点中只有一条线。由于向量的夹角在[0,PI]之间，有6个线，两个点中只插入了1条，那么两点之间的夹角就可以近似为<code>PI * 1/6</code>。</p>
+<p>如图所示：</p>
+<p><img src="http://ww4.sinaimg.cn/large/5e8cb366jw1ef0ccvna1dj20of0de405.jpg" alt=""></p>
+	-->
+			  
+			  <p class="summary">在 Stackoverflow 的「Machine Learning」标签下随便看，看到一个How to understand Locality Sensitive Hashing?的问题，刚好看视频跟踪时看到有一个 Coherency Sensitive Hashing，莫非两者有不可告人的联系。。索性就学习一下。
+先用例子直观地说明一下，请看下图：
+
+上图是一个平面，其中有一个红点和一个黄点，都是二维向量。我们的目的是通过 LSH 方法近似求得这两个点的余弦相似度。
+余弦相似度是求向量相似度的一种方法，在图像匹配中很常用。
+怎么求呢？
+现在，在这个平面上，随记产生 n 条过坐标零点的线，这</p>
+			  
+	</div>
+  <a type="button" href="/lsh/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+
+		</div>
+
+		<!-- pagination -->
+		<div>
+  		<center>
+		<div class="pagination">
+<ul class="pagination">
+	 
+		
+    	<li class="prev"><a href="/page/12/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i> Prev</a></li>
+  		
+
+        <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+
+		
+		   <li class="next"> <a href="/page/14/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a> </li>          
+        
+	
+</ul>
+</div>
+
+  		</center>
+		</div>
+
+		
+		
+	</div> <!-- col-md-9 -->
+
+	
+		<div class="col-md-3">
+	<div id="sidebar">
+	
+			
+  <div id="site_search">
+   <div class="form-group">
+    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search" class="st-search-input st-default-search-input form-control"/>
+   </div>  
+  <div id="local-search-result"></div>
+  </div>
+
+
+		
+			
+	<div class="widget">
+		<h4>Categories</h4>
+		<ul class="tag_box inline list-unstyled">
+		
+			<li><a href="/categories/Angular-js/">Angular.js<span>1</span></a></li>
+		
+			<li><a href="/categories/Database/">Database<span>1</span></a></li>
+		
+			<li><a href="/categories/IT杂谈/">IT杂谈<span>20</span></a></li>
+		
+			<li><a href="/categories/Mac/">Mac<span>4</span></a></li>
+		
+			<li><a href="/categories/Ruby/">Ruby<span>2</span></a></li>
+		
+			<li><a href="/categories/System-Design/">System Design<span>1</span></a></li>
+		
+			<li><a href="/categories/algorithm/">algorithm<span>197</span></a></li>
+		
+			<li><a href="/categories/hexo/">hexo<span>18</span></a></li>
+		
+			<li><a href="/categories/linux/">linux<span>3</span></a></li>
+		
+			<li><a href="/categories/markdown/">markdown<span>1</span></a></li>
+		
+			<li><a href="/categories/node-js/">node.js<span>1</span></a></li>
+		
+			<li><a href="/categories/nodejs/">nodejs<span>1</span></a></li>
+		
+			<li><a href="/categories/project/">project<span>50</span></a></li>
+		
+			<li><a href="/categories/python/">python<span>11</span></a></li>
+		
+			<li><a href="/categories/前端/">前端<span>4</span></a></li>
+		
+			<li><a href="/categories/推荐/">推荐<span>1</span></a></li>
+		
+			<li><a href="/categories/机器学习/">机器学习<span>23</span></a></li>
+		
+			<li><a href="/categories/生活/">生活<span>1</span></a></li>
+		
+			<li><a href="/categories/读书笔记/">读书笔记<span>1</span></a></li>
+		
+		</ul>
+	</div>
+
+		
+			
+	<div class="widget">
+		<h4>Tag Cloud</h4>
+		<ul class="tag_box inline list-unstyled">		
+		
+			<li><a href="/tags/大数据/">大数据<span>1</span></a></li>
+		
+			<li><a href="/tags/机器学习/">机器学习<span>24</span></a></li>
+		
+			<li><a href="/tags/flickr/">flickr<span>1</span></a></li>
+		
+			<li><a href="/tags/Heap/">Heap<span>3</span></a></li>
+		
+			<li><a href="/tags/运维/">运维<span>1</span></a></li>
+		
+			<li><a href="/tags/python/">python<span>10</span></a></li>
+		
+			<li><a href="/tags/Breadth-first-Search/">Breadth-first Search<span>11</span></a></li>
+		
+			<li><a href="/tags/NoSql/">NoSql<span>5</span></a></li>
+		
+			<li><a href="/tags/vim/">vim<span>4</span></a></li>
+		
+			<li><a href="/tags/Depth-first-Search/">Depth-first Search<span>23</span></a></li>
+		
+			<li><a href="/tags/google/">google<span>1</span></a></li>
+		
+			<li><a href="/tags/教程/">教程<span>5</span></a></li>
+		
+			<li><a href="/tags/Array/">Array<span>55</span></a></li>
+		
+			<li><a href="/tags/github/">github<span>1</span></a></li>
+		
+			<li><a href="/tags/Mac/">Mac<span>2</span></a></li>
+		
+			<li><a href="/tags/node-js/">node.js<span>2</span></a></li>
+		
+			<li><a href="/tags/Backtracking/">Backtracking<span>23</span></a></li>
+		
+			<li><a href="/tags/OS/">OS<span>1</span></a></li>
+		
+			<li><a href="/tags/Android/">Android<span>2</span></a></li>
+		
+			<li><a href="/tags/CentOS/">CentOS<span>5</span></a></li>
+		
+		
+		   <li><a href="/tags">...<span>92</span></a></li>
+		 
+		</ul>
+	</div>
+
+
+		
+			
+<div class="widget">
+  <h4>Recent Posts</h4>
+  <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/python系统性能信息模块-pstuil/"  title="python系统性能信息模块-psutil" ><i class="fa fa-file-o"></i>python系统性能信息模块-psutil</a>
+      </li>
+    
+      <li>
+        <a href="/System Design Preparation/"  title="系统设计准备" ><i class="fa fa-file-o"></i>System Design Preparation</a>
+      </li>
+    
+      <li>
+        <a href="/Resevior Sampling/"  title="Resevior Sampling 蓄水池算法java实现" ><i class="fa fa-file-o"></i>Resevior Sampling蓄水池算法java实现</a>
+      </li>
+    
+      <li>
+        <a href="/Top 25 Angular.js Interview Questions/"  title="Top 25 Angular.js Interview Questions" ><i class="fa fa-file-o"></i>Top 25 Angular.js Interview...</a>
+      </li>
+    
+      <li>
+        <a href="/NodeJS-Learning/"  title="NodeJS 学习资料汇总" ><i class="fa fa-file-o"></i>NodeJS 学习资料</a>
+      </li>
+    
+      <li>
+        <a href="/Rotate-List/"  title="Rotate List" ><i class="fa fa-file-o"></i>LeetCode-Rotate List</a>
+      </li>
+    
+      <li>
+        <a href="/Best-Time-to-Buy-and-Sell-Stock-II/"  title="Best Time to Buy and Sell Stock II" ><i class="fa fa-file-o"></i>LeetCode-Best Time to Buy a...</a>
+      </li>
+    
+      <li>
+        <a href="/Best-Time-to-Buy-and-Sell-Stock-IV/"  title="Best Time to Buy and Sell Stock IV" ><i class="fa fa-file-o"></i>LeetCode-Best Time to Buy a...</a>
+      </li>
+    
+      <li>
+        <a href="/Best-Time-to-Buy-and-Sell-Stock/"  title="Best Time to Buy and Sell Stock" ><i class="fa fa-file-o"></i>LeetCode-Best Time to Buy a...</a>
+      </li>
+    
+      <li>
+        <a href="/Binary-Search-Tree-Iterator /"  title="Binary Search Tree Iterator" ><i class="fa fa-file-o"></i>LeetCode-Binary Search Tree...</a>
+      </li>
+    
+  </ul>
+</div>
+
+		
+			
+<div class="widget">
+	<h4>Links</h4>
+	<ul class="blogroll list-unstyled">
+	
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
+	
+	</ul>
+</div>
+
+
+		
+	</div> <!-- sidebar -->
+</div> <!-- col-md-3 -->
+
+	
+	
+</div> <!-- row-fluid -->
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2016 CodeInterviews
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
 </script>
 
 
-</body>
-</html>
 
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

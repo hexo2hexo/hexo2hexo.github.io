@@ -1,642 +1,1183 @@
-
-
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!DOCTYPE HTML>
+<html>
 <head>
-    
-    <meta name="author" content="CodeInterviews">
-    
-    
-
-    
-    <link rel="alternative" href="atom.xml" title="CodeInterviews" type="application/atom+xml">
-    
-    
-    
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CodeInterviews</title>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Javascript -->
-    <script src="/js/jquery-2.1.0.min.js"></script>
-    <script src="/js/jquery.backstretch.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/js/headroom.min.js"></script>
-    <script src="/js/jquery.headroom.min.js"></script>
-    <script src="/js/common.js"></script>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <meta name="baidu-site-verification" content="Jvgfj1O0oP" />
-    <meta name="360-site-verification" content="902348aeb40d156fb32b748c4071c4bd" />
-</head>
-<body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="http://codeinterviews.com" title="CodeInterviews">CodeInterviews</a>
-            </div>
-
-            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
-                
-
-                <ul class="nav navbar-nav">
-                    
-                    <li id="nav-index"><a href="/">首页</a></li>
-                    
-                    <li id="nav-categories"><a href="/categories">分类</a></li>
-                    
-                    <li id="nav-tags"><a href="/tags">标签</a></li>
-                    
-                    <li id="nav-reading"><a href="/tags/#LeetCode">LeetCode</a></li>
-                    
-                    <li id="nav-labs"><a href="/tags/#Java">Java</a></li>
-                    
-                    <li id="nav-about"><a href="/tags/#Javascript">Javascript</a></li>
-                    
-
-                    <!--<li id="nav-github"><a href="https://github.com/hexo2hexo" target="_blank">GitHub</a></li>-->
-                    <li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>
-                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <script>
-    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
-    var bgLength = "74";
-    var bgRandom = false;
-    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
-
-    $(function() {
-        // page-id...
-        var pageId = "page/12/index.html";
-        pageId = pageId.substr(0, pageId.indexOf("/"));
-        if(pageId === "") pageId = "index";
-
-        $("#nav-" + pageId).addClass("active");
-    });
-    </script>
-
-    
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Reverse-Bits/" title="LeetCode-Reverse Bits">LeetCode-Reverse Bits</a></h1>
-
-        
-        <p class="summary">Reverse Bits</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Bit-Manipulation/">Bit Manipulation</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Reverse-Words-in-a-String/" title="LeetCode-Reverse Words in a String">LeetCode-Reverse Words in a String</a></h1>
-
-        
-        <p class="summary">Reverse Words in a String</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/String/">String</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Reverse-Nodes-in-k-Group/" title="LeetCode-Reverse Nodes in k-Group">LeetCode-Reverse Nodes in k-Group</a></h1>
-
-        
-        <p class="summary">Reverse Nodes in k-Group</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Linked-List/">Linked List</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Rotate-Array/" title="LeetCode-Rotate Array">LeetCode-Rotate Array</a></h1>
-
-        
-        <p class="summary">BRotate Array</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Rotate-Image/" title="LeetCode-Rotate Image">LeetCode-Rotate Image</a></h1>
-
-        
-        <p class="summary">Rotate Image</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Rotate-List/" title="LeetCode-Rotate List">LeetCode-Rotate List</a></h1>
-
-        
-        <p class="summary">Rotate List</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Two-Pointers/">Two Pointers</a>&nbsp;<a href="/tags/Linked-List/">Linked List</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Same-Tree/" title="LeetCode-Same Tree">LeetCode-Same Tree</a></h1>
-
-        
-        <p class="summary">Same Tree</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Tree/">Tree</a>&nbsp;<a href="/tags/Depth-first-Search/">Depth-first Search</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Search-Insert-Position/" title="LeetCode-Search Insert Position">LeetCode-Search Insert Position</a></h1>
-
-        
-        <p class="summary">Search Insert Position</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;<a href="/tags/Binary-Search/">Binary Search</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Scramble-String/" title="LeetCode-Scramble String">LeetCode-Scramble String</a></h1>
-
-        
-        <p class="summary">Scramble String</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/String/">String</a>&nbsp;<a href="/tags/Dynamic-Programming/">Dynamic Programming</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Search-a-2D-Matrix/" title="LeetCode-Search a 2D Matrix">LeetCode-Search a 2D Matrix</a></h1>
-
-        
-        <p class="summary">Search a 2D Matrix</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;<a href="/tags/Binary-Search/">Binary Search</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Search-for-a-Range/" title="LeetCode-Search for a Range">LeetCode-Search for a Range</a></h1>
-
-        
-        <p class="summary">Search for a Range</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Binary-Search/">Binary Search</a>&nbsp;<a href="/tags/Arrays/">Arrays</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Second Highest Salary/" title="LeetCode-Second Highest Salary">LeetCode-Second Highest Salary</a></h1>
-
-        
-        <p class="summary">Second Highest Salary</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Database/">Database</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Search-in-Rotated-Sorted-Array-II/" title="LeetCode-Search in Rotated Sorted Array II">LeetCode-Search in Rotated Sorted Array II</a></h1>
-
-        
-        <p class="summary">Search in Rotated Sorted Array II</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;<a href="/tags/Binary-Search/">Binary Search</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Set-Matrix-Zeroes/" title="LeetCode-Set Matrix Zeroes">LeetCode-Set Matrix Zeroes</a></h1>
-
-        
-        <p class="summary">Set Matrix Zeroes</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Search-in-Rotated-Sorted-Array/" title="LeetCode-Search in Rotated Sorted Array">LeetCode-Search in Rotated Sorted Array</a></h1>
-
-        
-        <p class="summary">Search in Rotated Sorted Array</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Binary-Search/">Binary Search</a>&nbsp;<a href="/tags/Arrays/">Arrays</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-
-<div class="container pagination-div">
-    <div class="well">
-        <a class="extend prev" rel="prev" href="/page/11/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/13/">Next &raquo;</a>
-    </div>
-</div>
-
-
+  <meta charset="utf-8">
+  
+  <title>Page 12 | CodeInterviews</title>
+  <meta name="author" content="CodeInterviews">
+  
+  <meta name="description" content="程序员的世界,编程,技术,程序员,java,.Net,c++,c语言,python,ruby">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="CodeInterviews"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/bootstrap.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
 <script>
-    $(function () {
-        $("article:first").addClass("first-post");
-    });
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-80198899-1', 'auto');
+  ga('send', 'pageview');
 </script>
 
-    <footer id="footer">
-        <div id="bottom-tip">
-            CodeInterviews
-        </div>
-        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
-        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
-        <small>&copy; 2016 <a href="http://codeinterviews.com" target="_blank">CodeInterviews</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
-    </footer>
-    
+
+
 <script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
-  var s = document.getElementsByTagName("script")[0];
+  hm.src = "//hm.baidu.com/hm.js?9a9d27181903a355a8d95344f23682b0";
+  var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
 
 
+</head>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-51347904-1', 'auto');
-  ga('send', 'pageview');
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">CodeInterviews</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>所有文章
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the articles.">
+			  <i class="fa fa-archive"></i>分类
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Java/" title="All about java.">
+			  <i class="fa fa-codepen"></i>Java
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Javascript/" title="All about javascript.">
+			  <i class="fa fa-empire"></i>Javascript
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/python/" title="All about Python.">
+			  <i class="fa fa-cog"></i>Python
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Leetcode/" title="All about leetcode.">
+			  <i class="fa fa-thumbs-o-up"></i>Leetcode
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-info-circle"></i>关于本站
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 <div class="page-header page-header-inverse ">
+  <h1 class="title title-inverse ">Programming interview questions, tips and knowledge, system design, big data.</h1>
+</div>
+
+<div class="row page">
+
+	
+	<div class="col-md-9">
+	
+
+		<div class="slogan">
+      <i class="fa fa-heart"></i>
+      程序员的世界, 为程序员服务
+</div>    
+		<div id="top_search"></div>
+		<div class="mypage">
+		
+		<!-- title and entry -->
+        <!-- render top articles firstly -->
+        
+        <!-- render other articles -->
+        
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Word-Search-II/" title="Word Search II">LeetCode-Word Search II</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Word Search II</p>
+<blockquote>
+<p> Given a 2D board and a list of words from the dictionary, find all words in the board.</p>
+<p>Each word must be constructed from letters of sequentially adjacent cell, where “adjacent” cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once in a word.</p>
+<p>For example,<br>Given words = <code>[&quot;oath&quot;,&quot;pea&quot;,&quot;eat&quot;,&quot;rain&quot;]</code> and board =</p>
+<pre><code>[
+  [&apos;o&apos;,&apos;a&apos;,&apos;a&apos;,&apos;n&apos;],
+  [&apos;e&apos;,&apos;t&apos;,&apos;a&apos;,&apos;e&apos;],
+  [&apos;i&apos;,&apos;h&apos;,&apos;k&apos;,&apos;r&apos;],
+  [&apos;i&apos;,&apos;f&apos;,&apos;l&apos;,&apos;v&apos;]
+]
+</code></pre><p>Return [“eat”,”oath”].</p>
+<p>######Note:<br>You may assume that all inputs are consist of lowercase letters a-z.</p>
+<p>######click to show hint.</p>
+<p>You would need to optimize your backtracking to pass the larger test. Could you stop backtracking earlier?</p>
+<p>If the current candidate does not exist in all words’ prefix, you could stop backtracking immediately. What kind of data structure could answer such query efficiently? Does a hash table work? Why or why not? How about a Trie? If you would like to learn how to implement a basic trie, please work on this problem: Implement Trie (Prefix Tree) first.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Word Search II
+
+ Given a 2D board and a list of words from the dictionary, find all words in the board.
+Each word must be constructed from letters of sequentially adjacent cell, where “adjacent” cells are those horizontally or vertically neighboring. The same letter cell may not be used mor</p>
+			  
+	</div>
+  <a type="button" href="/Word-Search-II/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Word-Search/" title="Word Search">LeetCode-Word Search</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Word Search</p>
+<blockquote>
+<p>Given a 2D board and a word, find if the word exists in the grid.</p>
+<p>The word can be constructed from letters of sequentially adjacent cell, where “adjacent” cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.</p>
+<p>For example,<br>Given <strong>board</strong> =</p>
+<pre><code>[
+  [&quot;ABCE&quot;],
+  [&quot;SFCS&quot;],
+  [&quot;ADEE&quot;]
+]
+</code></pre><p><strong>word</strong> = <code>&quot;ABCCED&quot;</code>, -&gt; returns <code>true</code>,<br><strong>word</strong> = <code>&quot;SEE&quot;</code>, -&gt; returns <code>true</code>,<br><strong>word</strong> = <code>&quot;ABCB&quot;</code>, -&gt; returns <code>false</code>.   </p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Word Search
+
+Given a 2D board and a word, find if the word exists in the grid.
+The word can be constructed from letters of sequentially adjacent cell, where “adjacent” cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.
+For example,Gi</p>
+			  
+	</div>
+  <a type="button" href="/Word-Search/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/根据输入路径产生输出路径和清除HDFS目录/" title="根据输入路径产生输出路径和清除HDFS目录">根据输入路径产生输出路径和清除HDFS目录</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##一、实验内容<br>对HDFS输入目录的路径解析出来，组成输出路径，这在业务上是十分常用的。这里其实是没有多文件名输出，仅仅是调用了MultipleOutputs的addNamedOutput方法一次，设置文件名为result.</p>
+<p>同时为了保证计算的可重入性，每次都需要将已经存在的输出目录删除。</p>
+	-->
+			  
+			  <p class="summary">##一、实验内容对HDFS输入目录的路径解析出来，组成输出路径，这在业务上是十分常用的。这里其实是没有多文件名输出，仅仅是调用了MultipleOutputs的addNamedOutput方法一次，设置文件名为result.
+同时为了保证计算的可重入性，每次都需要将已经存在的输出目录删除。</p>
+			  
+	</div>
+  <a type="button" href="/根据输入路径产生输出路径和清除HDFS目录/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/使用HashPartitioner来调节Reducer的计算负载/" title="使用HashPartitioner来调节Reducer的计算负载">使用HashPartitioner来调节Reducer的计算负载</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##一、实验内容<br>本节介绍如何使用HashPartitioner将Mapper的输出按照key进行分组后交给Reducer来处理。合理的分组策略将使得每个Reducer获得的计算负载差距不大，从而整体reduce的性能更加均衡。</p>
+	-->
+			  
+			  <p class="summary">##一、实验内容本节介绍如何使用HashPartitioner将Mapper的输出按照key进行分组后交给Reducer来处理。合理的分组策略将使得每个Reducer获得的计算负载差距不大，从而整体reduce的性能更加均衡。</p>
+			  
+	</div>
+  <a type="button" href="/使用HashPartitioner来调节Reducer的计算负载/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Symmetric-Tree/" title="Symmetric Tree">LeetCode-Symmetric Tree</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Symmetric Tree</p>
+<blockquote>
+<p>Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).</p>
+<p>For example, this binary tree is symmetric:</p>
+<pre><code>    1
+   / \
+  2   2
+ / \ / \
+3  4 4  3
+</code></pre><p>But the following is not:</p>
+<pre><code>  1
+ / \
+2   2
+ \   \
+ 3    3
+</code></pre><p>####Note:<br>Bonus points if you could solve it both recursively and iteratively.</p>
+<p>confused what <code>&quot;{1,#,2,3}&quot;</code> means? &gt; read more on how binary tree is serialized on OJ.</p>
+<p>####OJ’s Binary Tree Serialization:<br>The serialization of a binary tree follows a level order traversal, where ‘#’ signifies a path terminator where no node exists below.</p>
+<p>Here’s an example:</p>
+<pre><code>  1
+ / \
+2   3
+   /
+  4
+   \
+    5
+</code></pre><p>The above binary tree is serialized as <code>&quot;{1,2,3,#,#,4,#,#,5}&quot;</code>.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Symmetric Tree
+
+Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
+For example, this binary tree is symmetric:
+    1
+   / \
+  2   2
+ / \ / \
+3  4 4  3
+But the following is not:
+  1
+ / \
+2   2
+ \   \
+ 3    3
+####Note:Bonus points if you could solve</p>
+			  
+	</div>
+  <a type="button" href="/Symmetric-Tree/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/从《琅琊榜》来看大数据/" title="从《琅琊榜》来看大数据">从《琅琊榜》来看大数据</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>最近看完《琅琊榜》这不热播剧后，真心感觉其是一部国产的良心之作，完美的剧情，外加杠杠的特效，使得我这个不经常看电视剧的人也能追着看完。</p>
+<p>通过整个剧的回顾，我们可以惊奇的发现：人称麒麟才子的梅长苏就是一个大数据的专家先驱有木有，琅琊阁就是一个数据中心有木有！</p>
+<p><img src="/img/琅琊榜/1.png" alt=""></p>
+	-->
+			  
+			  <p class="summary">最近看完《琅琊榜》这不热播剧后，真心感觉其是一部国产的良心之作，完美的剧情，外加杠杠的特效，使得我这个不经常看电视剧的人也能追着看完。
+通过整个剧的回顾，我们可以惊奇的发现：人称麒麟才子的梅长苏就是一个大数据的专家先驱有木有，琅琊阁就是一个数据中心有木有！</p>
+			  
+	</div>
+  <a type="button" href="/从《琅琊榜》来看大数据/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/4Sum/" title="4Sum">LeetCode-4Sum</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####4Sum</p>
+<blockquote>
+<p>Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.</p>
+</blockquote>
+<p>####Note:</p>
+<ul>
+<li>Elements in a quadruplet (a,b,c,d) must be in non-descending order. (ie, a ≤ b ≤ c ≤ d)</li>
+<li>The solution set must not contain duplicate quadruplets.   </li>
+</ul>
+<blockquote>
+<pre><code>For example, given array S = {1 0 -1 0 -2 2}, and target = 0.
+
+A solution set is:
+(-1,  0, 0, 1)
+(-2, -1, 1, 2)
+(-2,  0, 0, 2)
+</code></pre></blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####4Sum
+
+Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.
+
+####Note:
+
+Elements in a quadruplet (a,b,c,d) must be in non-descending order. (ie, a ≤ b ≤ c ≤ d)
+The solu</p>
+			  
+	</div>
+  <a type="button" href="/4Sum/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/mark-down/" title="use markdown">MarkDown使用</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##引言<br>MarkDown的目标是实现<code>易读易写</code>。它用来作为一种网络内容的写作语言。但是我们不是要用它来取代HTML，而是它能让文档更容易阅读、编写。</p>
+<p>参考图灵社区<a href="http://www.ituring.com.cn/article/504">MarkDown语言说明（详解版）</a>。<br>
+	-->
+			  
+			  <p class="summary">##引言MarkDown的目标是实现易读易写。它用来作为一种网络内容的写作语言。但是我们不是要用它来取代HTML，而是它能让文档更容易阅读、编写。
+参考图灵社区MarkDown语言说明（详解版）。</p>
+			  
+	</div>
+  <a type="button" href="/mark-down/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/leetcode-two-sum/" title="two sum">LeetCode-TwoSum</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h4 id="Two-Sum"><a href="#Two-Sum" class="headerlink" title="Two Sum"></a>Two Sum</h4><blockquote>
+<p>   Given an array of integers, find two numbers such that they add up to a specific target number.</p>
+<p>   The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2.<br>   Please note that your returned answers (both index1 and index2) are not zero-based.</p>
+<p>   You may assume that each input would have exactly one solution.</p>
+<p>   Input: numbers={2, 7, 11, 15}, target=9<br>   Output: index1=1, index2=2</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">题目Two Sum
+   Given an array of integers, find two numbers such that they add up to a specific target number.
+   The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2.   Please note that your returned answers (both inde</p>
+			  
+	</div>
+  <a type="button" href="/leetcode-two-sum/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/leetcode-String-to-Integer/" title="String to Integer (atoi) ">LeetCode-String to Integer (atoi)</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####String to Integer (atoi) </p>
+<blockquote>
+<p>Implement atoi to convert a string to an integer.</p>
+<p>Hint: Carefully consider all possible input cases. If you want a challenge, please do not see below and ask yourself what are the possible input cases.</p>
+<p>Notes: It is intended for this problem to be specified vaguely (ie, no given input specs). You are responsible to gather all the input requirements up front.</p>
+<p>####Requirements for atoi:<br>The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value.</p>
+<p>The string can contain additional characters after those that form the integral number, which are ignored and have no effect on the behavior of this function.</p>
+<p>If the first sequence of non-whitespace characters in str is not a valid integral number, or if no such sequence exists because either str is empty or it contains only whitespace characters, no conversion is performed.</p>
+<p>If no valid conversion could be performed, a zero value is returned. If the correct value is out of the range of representable values, INT_MAX (2147483647) or INT_MIN (-2147483648) is returned.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####String to Integer (atoi) 
+
+Implement atoi to convert a string to an integer.
+Hint: Carefully consider all possible input cases. If you want a challenge, please do not see below and ask yourself what are the possible input cases.
+Notes: It is intended for this problem to be specified vaguely</p>
+			  
+	</div>
+  <a type="button" href="/leetcode-String-to-Integer/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/leetcode-ZigZag-Conversion/" title="ZigZag Conversion">LeetCode-ZigZag Conversion</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####ZigZag Conversion</p>
+<blockquote>
+<p>The string <code>PAYPALISHIRING</code> is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)  </p>
+<pre><code>P   A   H   N  
+A P L S I I G  
+Y   I   R    
+</code></pre><p>And then read line by line: <code>PAHNAPLSIIGYIR</code><br>Write the code that will take a string and make this conversion given a number of rows:</p>
+<pre><code>string convert(string text, int nRows);
+</code></pre><p>convert(“PAYPALISHIRING”, 3) should return <code>PAHNAPLSIIGYIR</code>.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####ZigZag Conversion
+
+The string PAYPALISHIRING is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)  
+P   A   H   N  
+A P L S I I G  
+Y   I   R    
+And then read line by line: PAHNAPLSIIGYIRWrite the c</p>
+			  
+	</div>
+  <a type="button" href="/leetcode-ZigZag-Conversion/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/leetcode-Reverse-Integer/" title="Reverse Integer">LeetCode-Reverse Integer</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Reverse Integer</p>
+<blockquote>
+<p>Reverse digits of an integer.</p>
+<p>Example1: x = 123, return 321</p>
+<p>Example2: x = -123, return -321</p>
+<p>####Have you thought about this?<br>Here are some good questions to ask before coding. Bonus points for you if you have already thought through this!</p>
+<p>If the integer’s last digit is 0, what should the output be? ie, cases such as 10, 100.</p>
+<p>Did you notice that the reversed integer might overflow? Assume the input is a 32-bit integer, then the reverse of 1000000003 overflows. How should you handle such cases?</p>
+<p>For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Reverse Integer
+
+Reverse digits of an integer.
+Example1: x = 123, return 321
+Example2: x = -123, return -321
+####Have you thought about this?Here are some good questions to ask before coding. Bonus points for you if you have already thought through this!
+If the integer’s last digit is 0, wh</p>
+			  
+	</div>
+  <a type="button" href="/leetcode-Reverse-Integer/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/leetcode-Median-of-Two-Sorted-Arrays/" title="Median of Two Sorted Arrays">LeetCode-Median of Two Sorted Arrays</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Median of Two Sorted Arrays</p>
+<blockquote>
+<p>There are two sorted arrays A and B of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log(m+n)).</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Median of Two Sorted Arrays
+
+There are two sorted arrays A and B of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log(m+n)).</p>
+			  
+	</div>
+  <a type="button" href="/leetcode-Median-of-Two-Sorted-Arrays/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/leetcode-Palindrome-Number/" title="Palindrome Number">LeetCode-Palindrome Number</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Palindrome Number</p>
+<blockquote>
+<p>Determine whether an integer is a palindrome. Do this without extra space.</p>
+<p>####Some hints:<br>Could negative integers be palindromes? (ie, -1)</p>
+<p>If you are thinking of converting the integer to string, note the restriction of using extra space.</p>
+<p>You could also try reversing an integer. However, if you have solved the problem “Reverse Integer”, you know that the reversed integer might overflow. How would you handle such case?</p>
+<p>There is a more generic way of solving this problem.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Palindrome Number
+
+Determine whether an integer is a palindrome. Do this without extra space.
+####Some hints:Could negative integers be palindromes? (ie, -1)
+If you are thinking of converting the integer to string, note the restriction of using extra space.
+You could also try reversing an i</p>
+			  
+	</div>
+  <a type="button" href="/leetcode-Palindrome-Number/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/leetcode-Roman-to-Integer/" title="Roman to Integer">LeetCode-Roman to Integer</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Roman to Integer</p>
+<blockquote>
+<p>Given a roman numeral, convert it to an integer.</p>
+<p>Input is guaranteed to be within the range from 1 to 3999.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Roman to Integer
+
+Given a roman numeral, convert it to an integer.
+Input is guaranteed to be within the range from 1 to 3999.</p>
+			  
+	</div>
+  <a type="button" href="/leetcode-Roman-to-Integer/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/leetcode-Regular-Expression-Matching/" title="Regular Expression Matching">LeetCode-Regular Expression Matching</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Regular Expression Matching</p>
+<blockquote>
+<p>Implement regular expression matching with support for ‘.’ and ‘*’.</p>
+<pre><code>&apos;.&apos; Matches any single character.
+&apos;*&apos; Matches zero or more of the preceding element.
+
+The matching should cover the entire input string (not partial).
+
+The function prototype should be:
+bool isMatch(const char *s, const char *p)
+
+Some examples:
+isMatch(&quot;aa&quot;,&quot;a&quot;) → false
+isMatch(&quot;aa&quot;,&quot;aa&quot;) → true
+isMatch(&quot;aaa&quot;,&quot;aa&quot;) → false
+isMatch(&quot;aa&quot;, &quot;a*&quot;) → true
+isMatch(&quot;aa&quot;, &quot;.*&quot;) → true
+isMatch(&quot;ab&quot;, &quot;.*&quot;) → true
+isMatch(&quot;aab&quot;, &quot;c*a*b&quot;) → true
+</code></pre></blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Regular Expression Matching
+
+Implement regular expression matching with support for ‘.’ and ‘*’.
+&amp;apos;.&amp;apos; Matches any single character.
+&amp;apos;*&amp;apos; Matches zero or more of the preceding element.
+
+The matching should cover the entire input string (not partial).
+
+The function prototype</p>
+			  
+	</div>
+  <a type="button" href="/leetcode-Regular-Expression-Matching/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/leetcode-Longest-Substring-Without-Repeating-Characters/" title="Longest Substring Without Repeating Characters">LeetCode-Longest Substring Without Repeating Characters</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Longest Substring Without Repeating Characters</p>
+<blockquote>
+<p>Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for “abcabcbb” is “abc”, which the length is 3. For “bbbbb” the longest substring is “b”, with the length of 1.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Longest Substring Without Repeating Characters
+
+Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for “abcabcbb” is “abc”, which the length is 3. For “bbbbb” the longest substring is “b”, with </p>
+			  
+	</div>
+  <a type="button" href="/leetcode-Longest-Substring-Without-Repeating-Characters/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/leetcode-Longest-Palindromic-Substring/" title="Longest Palindromic Substring">LeetCode-Longest Palindromic Substring</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Longest Palindromic Substring</p>
+<blockquote>
+<p>Given a string S, find the longest palindromic substring in S. You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Longest Palindromic Substring
+
+Given a string S, find the longest palindromic substring in S. You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.</p>
+			  
+	</div>
+  <a type="button" href="/leetcode-Longest-Palindromic-Substring/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/leetcode-Longest-Common-Prefix /" title="Longest Common Prefix">LeetCode-Longest Common Prefix</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Longest Common Prefix</p>
+<blockquote>
+<p>Write a function to find the longest common prefix string amongst an array of strings.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Longest Common Prefix
+
+Write a function to find the longest common prefix string amongst an array of strings.</p>
+			  
+	</div>
+  <a type="button" href="/leetcode-Longest-Common-Prefix /#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/leetcode-Integer-to-Roman/" title="Integer to Roman">LeetCode-Integer to Roman</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Integer to Roman</p>
+<blockquote>
+<p>Given an integer, convert it to a roman numeral.</p>
+<p>Input is guaranteed to be within the range from 1 to 3999.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Integer to Roman
+
+Given an integer, convert it to a roman numeral.
+Input is guaranteed to be within the range from 1 to 3999.</p>
+			  
+	</div>
+  <a type="button" href="/leetcode-Integer-to-Roman/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+
+		</div>
+
+		<!-- pagination -->
+		<div>
+  		<center>
+		<div class="pagination">
+<ul class="pagination">
+	 
+		
+    	<li class="prev"><a href="/page/11/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i> Prev</a></li>
+  		
+
+        <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+
+		
+		   <li class="next"> <a href="/page/13/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a> </li>          
+        
+	
+</ul>
+</div>
+
+  		</center>
+		</div>
+
+		
+		
+	</div> <!-- col-md-9 -->
+
+	
+		<div class="col-md-3">
+	<div id="sidebar">
+	
+			
+  <div id="site_search">
+   <div class="form-group">
+    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search" class="st-search-input st-default-search-input form-control"/>
+   </div>  
+  <div id="local-search-result"></div>
+  </div>
+
+
+		
+			
+	<div class="widget">
+		<h4>Categories</h4>
+		<ul class="tag_box inline list-unstyled">
+		
+			<li><a href="/categories/Angular-js/">Angular.js<span>1</span></a></li>
+		
+			<li><a href="/categories/Database/">Database<span>1</span></a></li>
+		
+			<li><a href="/categories/IT杂谈/">IT杂谈<span>20</span></a></li>
+		
+			<li><a href="/categories/Mac/">Mac<span>4</span></a></li>
+		
+			<li><a href="/categories/Ruby/">Ruby<span>2</span></a></li>
+		
+			<li><a href="/categories/System-Design/">System Design<span>1</span></a></li>
+		
+			<li><a href="/categories/algorithm/">algorithm<span>197</span></a></li>
+		
+			<li><a href="/categories/hexo/">hexo<span>18</span></a></li>
+		
+			<li><a href="/categories/linux/">linux<span>3</span></a></li>
+		
+			<li><a href="/categories/markdown/">markdown<span>1</span></a></li>
+		
+			<li><a href="/categories/node-js/">node.js<span>1</span></a></li>
+		
+			<li><a href="/categories/nodejs/">nodejs<span>1</span></a></li>
+		
+			<li><a href="/categories/project/">project<span>50</span></a></li>
+		
+			<li><a href="/categories/python/">python<span>11</span></a></li>
+		
+			<li><a href="/categories/前端/">前端<span>4</span></a></li>
+		
+			<li><a href="/categories/推荐/">推荐<span>1</span></a></li>
+		
+			<li><a href="/categories/机器学习/">机器学习<span>23</span></a></li>
+		
+			<li><a href="/categories/生活/">生活<span>1</span></a></li>
+		
+			<li><a href="/categories/读书笔记/">读书笔记<span>1</span></a></li>
+		
+		</ul>
+	</div>
+
+		
+			
+	<div class="widget">
+		<h4>Tag Cloud</h4>
+		<ul class="tag_box inline list-unstyled">		
+		
+			<li><a href="/tags/Hive/">Hive<span>4</span></a></li>
+		
+			<li><a href="/tags/Linked-List/">Linked List<span>21</span></a></li>
+		
+			<li><a href="/tags/Divide-and-Conquer/">Divide and Conquer<span>6</span></a></li>
+		
+			<li><a href="/tags/Two-Pointer/">Two Pointer<span>2</span></a></li>
+		
+			<li><a href="/tags/Spark/">Spark<span>2</span></a></li>
+		
+			<li><a href="/tags/Dynamic-Programming/">Dynamic Programming<span>27</span></a></li>
+		
+			<li><a href="/tags/bae/">bae<span>1</span></a></li>
+		
+			<li><a href="/tags/Trie/">Trie<span>3</span></a></li>
+		
+			<li><a href="/tags/rails/">rails<span>1</span></a></li>
+		
+			<li><a href="/tags/Depth-first-Search/">Depth-first Search<span>23</span></a></li>
+		
+			<li><a href="/tags/教程/">教程<span>5</span></a></li>
+		
+			<li><a href="/tags/Binary-Search/">Binary Search<span>13</span></a></li>
+		
+			<li><a href="/tags/Tachyon/">Tachyon<span>1</span></a></li>
+		
+			<li><a href="/tags/BackTracking/">BackTracking<span>1</span></a></li>
+		
+			<li><a href="/tags/Tree/">Tree<span>22</span></a></li>
+		
+			<li><a href="/tags/Graph/">Graph<span>3</span></a></li>
+		
+			<li><a href="/tags/Heap/">Heap<span>3</span></a></li>
+		
+			<li><a href="/tags/Mapreduce/">Mapreduce<span>6</span></a></li>
+		
+			<li><a href="/tags/Backtracking/">Backtracking<span>23</span></a></li>
+		
+			<li><a href="/tags/前端/">前端<span>1</span></a></li>
+		
+		
+		   <li><a href="/tags">...<span>92</span></a></li>
+		 
+		</ul>
+	</div>
+
+
+		
+			
+<div class="widget">
+  <h4>Recent Posts</h4>
+  <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/python系统性能信息模块-pstuil/"  title="python系统性能信息模块-psutil" ><i class="fa fa-file-o"></i>python系统性能信息模块-psutil</a>
+      </li>
+    
+      <li>
+        <a href="/System Design Preparation/"  title="系统设计准备" ><i class="fa fa-file-o"></i>System Design Preparation</a>
+      </li>
+    
+      <li>
+        <a href="/Resevior Sampling/"  title="Resevior Sampling 蓄水池算法java实现" ><i class="fa fa-file-o"></i>Resevior Sampling蓄水池算法java实现</a>
+      </li>
+    
+      <li>
+        <a href="/Top 25 Angular.js Interview Questions/"  title="Top 25 Angular.js Interview Questions" ><i class="fa fa-file-o"></i>Top 25 Angular.js Interview...</a>
+      </li>
+    
+      <li>
+        <a href="/NodeJS-Learning/"  title="NodeJS 学习资料汇总" ><i class="fa fa-file-o"></i>NodeJS 学习资料</a>
+      </li>
+    
+      <li>
+        <a href="/Rotate-List/"  title="Rotate List" ><i class="fa fa-file-o"></i>LeetCode-Rotate List</a>
+      </li>
+    
+      <li>
+        <a href="/Best-Time-to-Buy-and-Sell-Stock-II/"  title="Best Time to Buy and Sell Stock II" ><i class="fa fa-file-o"></i>LeetCode-Best Time to Buy a...</a>
+      </li>
+    
+      <li>
+        <a href="/Best-Time-to-Buy-and-Sell-Stock-IV/"  title="Best Time to Buy and Sell Stock IV" ><i class="fa fa-file-o"></i>LeetCode-Best Time to Buy a...</a>
+      </li>
+    
+      <li>
+        <a href="/Best-Time-to-Buy-and-Sell-Stock/"  title="Best Time to Buy and Sell Stock" ><i class="fa fa-file-o"></i>LeetCode-Best Time to Buy a...</a>
+      </li>
+    
+      <li>
+        <a href="/Binary-Search-Tree-Iterator /"  title="Binary Search Tree Iterator" ><i class="fa fa-file-o"></i>LeetCode-Binary Search Tree...</a>
+      </li>
+    
+  </ul>
+</div>
+
+		
+			
+<div class="widget">
+	<h4>Links</h4>
+	<ul class="blogroll list-unstyled">
+	
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
+	
+	</ul>
+</div>
+
+
+		
+	</div> <!-- sidebar -->
+</div> <!-- col-md-3 -->
+
+	
+	
+</div> <!-- row-fluid -->
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2016 CodeInterviews
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
 </script>
 
 
-</body>
-</html>
 
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

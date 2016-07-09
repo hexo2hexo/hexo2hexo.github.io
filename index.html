@@ -1,642 +1,2414 @@
-
-
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!DOCTYPE HTML>
+<html>
 <head>
-    
-    <meta name="author" content="CodeInterviews">
-    
-    
-
-    
-    <link rel="alternative" href="atom.xml" title="CodeInterviews" type="application/atom+xml">
-    
-    
-    
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CodeInterviews</title>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Javascript -->
-    <script src="/js/jquery-2.1.0.min.js"></script>
-    <script src="/js/jquery.backstretch.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/js/headroom.min.js"></script>
-    <script src="/js/jquery.headroom.min.js"></script>
-    <script src="/js/common.js"></script>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <meta name="baidu-site-verification" content="Jvgfj1O0oP" />
-    <meta name="360-site-verification" content="902348aeb40d156fb32b748c4071c4bd" />
-</head>
-<body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="http://codeinterviews.com" title="CodeInterviews">CodeInterviews</a>
-            </div>
-
-            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
-                
-
-                <ul class="nav navbar-nav">
-                    
-                    <li id="nav-index"><a href="/">首页</a></li>
-                    
-                    <li id="nav-categories"><a href="/categories">分类</a></li>
-                    
-                    <li id="nav-tags"><a href="/tags">标签</a></li>
-                    
-                    <li id="nav-reading"><a href="/tags/#LeetCode">LeetCode</a></li>
-                    
-                    <li id="nav-labs"><a href="/tags/#Java">Java</a></li>
-                    
-                    <li id="nav-about"><a href="/tags/#Javascript">Javascript</a></li>
-                    
-
-                    <!--<li id="nav-github"><a href="https://github.com/hexo2hexo" target="_blank">GitHub</a></li>-->
-                    <li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>
-                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <script>
-    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
-    var bgLength = "74";
-    var bgRandom = false;
-    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
-
-    $(function() {
-        // page-id...
-        var pageId = "index.html";
-        pageId = pageId.substr(0, pageId.indexOf("/"));
-        if(pageId === "") pageId = "index";
-
-        $("#nav-" + pageId).addClass("active");
-    });
-    </script>
-
-    
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Resevior Sampling/" title="Resevior Sampling蓄水池算法java实现">Resevior Sampling蓄水池算法java实现</a></h1>
-
-        
-        <p class="summary">Resevior Sampling 蓄水池算法java实现</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/Interview/">Interview</a>&nbsp;<a href="/tags/Algorithm/">Algorithm</a>&nbsp;<a href="/tags/Resevior-Sampling/">Resevior Sampling</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-30创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/System Design Preparation/" title="System Design Preparation">System Design Preparation</a></h1>
-
-        
-        <p class="summary">系统设计准备</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/Interview/">Interview</a>&nbsp;<a href="/tags/System-Design/">System Design</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Top 25 Angular.js Interview Questions/" title="Top 25 Angular.js Interview Questions">Top 25 Angular.js Interview Questions</a></h1>
-
-        
-        <p class="summary">Top 25 Angular.js Interview Questions</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/javascript/">javascript</a>&nbsp;<a href="/tags/Angular-js/">Angular.js</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/Angular-js/">Angular.js</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/NodeJS-Learning/" title="NodeJS 学习资料">NodeJS 学习资料</a></h1>
-
-        
-        <p class="summary">NodeJS 学习资料汇总</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/javascript/">javascript</a>&nbsp;<a href="/tags/node-js/">node.js</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/node-js/">node.js</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/python系统性能信息模块-pstuil/" title="python系统性能信息模块-psutil">python系统性能信息模块-psutil</a></h1>
-
-        
-        <p class="summary">python系统性能信息模块-psutil</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/运维/">运维</a>&nbsp;<a href="/tags/Python/">Python</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/project/">project</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/N-Queens-II/" title="LeetCode-N-Queens II">LeetCode-N-Queens II</a></h1>
-
-        
-        <p class="summary">N-Queens II</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Backtracking/">Backtracking</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/4Sum/" title="LeetCode-4Sum">LeetCode-4Sum</a></h1>
-
-        
-        <p class="summary">4Sum</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;<a href="/tags/Hash-Table/">Hash Table</a>&nbsp;<a href="/tags/Two-Pointers/">Two Pointers</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Best-Time-to-Buy-and-Sell-Stock-III/" title="LeetCode-Best Time to Buy and Sell Stock III">LeetCode-Best Time to Buy and Sell Stock III</a></h1>
-
-        
-        <p class="summary">Best Time to Buy and Sell Stock III</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;<a href="/tags/Dynamic-Programming/">Dynamic Programming</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Best-Time-to-Buy-and-Sell-Stock/" title="LeetCode-Best Time to Buy and Sell Stock">LeetCode-Best Time to Buy and Sell Stock</a></h1>
-
-        
-        <p class="summary">Best Time to Buy and Sell Stock</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;<a href="/tags/Dynamic-Programming/">Dynamic Programming</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Best-Time-to-Buy-and-Sell-Stock-II/" title="LeetCode-Best Time to Buy and Sell Stock II">LeetCode-Best Time to Buy and Sell Stock II</a></h1>
-
-        
-        <p class="summary">Best Time to Buy and Sell Stock II</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;<a href="/tags/Greedy/">Greedy</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Best-Time-to-Buy-and-Sell-Stock-IV/" title="LeetCode-Best Time to Buy and Sell Stock IV">LeetCode-Best Time to Buy and Sell Stock IV</a></h1>
-
-        
-        <p class="summary">Best Time to Buy and Sell Stock IV</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Dynamic-Programming/">Dynamic Programming</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Binary-Tree-Level-Order-Traversal-II/" title="LeetCode-Binary Tree Level Order Traversal II">LeetCode-Binary Tree Level Order Traversal II</a></h1>
-
-        
-        <p class="summary">Binary Tree Level Order Traversal II</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Tree/">Tree</a>&nbsp;<a href="/tags/Breadth-first-Search/">Breadth-first Search</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Binary-Tree-Level-Order-Traversal/" title="LeetCode-Binary Tree Level Order Traversal">LeetCode-Binary Tree Level Order Traversal</a></h1>
-
-        
-        <p class="summary">Binary Tree Level Order Traversal</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Tree/">Tree</a>&nbsp;<a href="/tags/Breadth-first-Search/">Breadth-first Search</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Binary-Tree-Inorder-Traversal/" title="LeetCode-Binary Tree Inorder Traversal">LeetCode-Binary Tree Inorder Traversal</a></h1>
-
-        
-        <p class="summary">Binary Tree Inorder Traversal</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Hash-Table/">Hash Table</a>&nbsp;<a href="/tags/Stack/">Stack</a>&nbsp;<a href="/tags/Tree/">Tree</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Binary-Search-Tree-Iterator /" title="LeetCode-Binary Search Tree Iterator">LeetCode-Binary Search Tree Iterator</a></h1>
-
-        
-        <p class="summary">Binary Search Tree Iterator</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Stack/">Stack</a>&nbsp;<a href="/tags/Tree/">Tree</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-
-<div class="container pagination-div">
-    <div class="well">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </div>
-</div>
-
-
+  <meta charset="utf-8">
+  
+  <title>CodeInterviews</title>
+  <meta name="author" content="CodeInterviews">
+  
+  <meta name="description" content="程序员的世界,编程,技术,程序员,java,.Net,c++,c语言,python,ruby">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="CodeInterviews"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/bootstrap.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
 <script>
-    $(function () {
-        $("article:first").addClass("first-post");
-    });
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-80198899-1', 'auto');
+  ga('send', 'pageview');
 </script>
 
-    <footer id="footer">
-        <div id="bottom-tip">
-            CodeInterviews
-        </div>
-        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
-        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
-        <small>&copy; 2016 <a href="http://codeinterviews.com" target="_blank">CodeInterviews</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
-    </footer>
-    
+
+
 <script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
-  var s = document.getElementsByTagName("script")[0];
+  hm.src = "//hm.baidu.com/hm.js?9a9d27181903a355a8d95344f23682b0";
+  var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
 
 
+</head>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-51347904-1', 'auto');
-  ga('send', 'pageview');
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">CodeInterviews</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>所有文章
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the articles.">
+			  <i class="fa fa-archive"></i>分类
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Java/" title="All about java.">
+			  <i class="fa fa-codepen"></i>Java
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Javascript/" title="All about javascript.">
+			  <i class="fa fa-empire"></i>Javascript
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/python/" title="All about Python.">
+			  <i class="fa fa-cog"></i>Python
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Leetcode/" title="All about leetcode.">
+			  <i class="fa fa-thumbs-o-up"></i>Leetcode
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-info-circle"></i>关于本站
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 <div class="page-header page-header-inverse ">
+  <h1 class="title title-inverse ">Programming interview questions, tips and knowledge, system design, big data.</h1>
+</div>
+
+<div class="row page">
+
+	
+	<div class="col-md-9">
+	
+
+		<div class="slogan">
+      <i class="fa fa-heart"></i>
+      程序员的世界, 为程序员服务
+</div>    
+		<div id="top_search"></div>
+		<div class="mypage">
+		
+		<!-- title and entry -->
+        <!-- render top articles firstly -->
+        
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+            
+		
+        
+        <!-- render other articles -->
+        
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-07-09 </div>
+			<div class="article-title"><a href="/python系统性能信息模块-pstuil/" title="python系统性能信息模块-psutil">python系统性能信息模块-psutil</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>psutil模块能够轻松获取系统能够运行的进程和系统利用率（包括CPU、内存、磁盘、网络等）信息。主要用于系统监控，分析和限制系统资源及进程的管理。</p>
+<p>它实现了很多同等命令行工具提供的功能，如ps、top、df等。</p>
+	-->
+			  
+			  <p class="summary">psutil模块能够轻松获取系统能够运行的进程和系统利用率（包括CPU、内存、磁盘、网络等）信息。主要用于系统监控，分析和限制系统资源及进程的管理。
+它实现了很多同等命令行工具提供的功能，如ps、top、df等。</p>
+			  
+	</div>
+  <a type="button" href="/python系统性能信息模块-pstuil/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-07-09 </div>
+			<div class="article-title"><a href="/System Design Preparation/" title="系统设计准备">System Design Preparation</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<ul>
+<li><a href="https://www.hackerrank.com/domains" target="_blank" rel="external">https://www.hackerrank.com/domains</a></li>
+<li><a href="https://oj.leetcode.com/problemset/algorithms/" target="_blank" rel="external">https://oj.leetcode.com/problemset/algorithms/</a> LeetCode至少要刷三遍，付费部分的题建议花点钱看一下，舍不得孩子套不着狼</li>
+<li><a href="http://lintcode.com/" target="_blank" rel="external">http://lintcode.com/</a></li>
+<li><a href="http://new.ninechapter.com/solutions/" target="_blank" rel="external">http://new.ninechapter.com/solutions/</a></li>
+<li><a href="http://www.geeksforgeeks.org/about/interview-corner/" target="_blank" rel="external">http://www.geeksforgeeks.org/about/interview-corner/</a></li>
+<li>TopCoder Algorithm Tutorial: <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/" target="_blank" rel="external">http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/</a> 其中几何算法的教程要仔细看，Google特爱出几何题</li>
+<li>CC150: Cracking the Code Interview: <a href="http://www.valleytalk.org/wp-content/uploads/2012/10/CrackCode.pdf" target="_blank" rel="external">http://www.valleytalk.org/wp-content/uploads/2012/10/CrackCode.pdf</a></li>
+<li>CareerCup: <a href="http://www.careercup.com/page" target="_blank" rel="external">http://www.careercup.com/page</a></li>
+<li>Glassdoor: <a href="http://www.glassdoor.com/Interview/index.htm" target="_blank" rel="external">http://www.glassdoor.com/Interview/index.htm</a></li>
+</ul>
+<p><a href="http://blog.csdn.net/longyulu/article/details/9159589" target="_blank" rel="external">http://blog.csdn.net/longyulu/article/details/9159589</a></p>
+<p>Here are some articles about system design related topics.</p>
+<ul>
+<li>How to Rock a Systems Design Interview</li>
+<li>System Interview</li>
+<li>Scalability for Dummies</li>
+<li>Scalable Web Architecture and Distributed Systems</li>
+<li>Numbers Everyone Should Know</li>
+<li>Scalable System Design Patterns</li>
+<li>Introduction to Architecting Systems for Scale</li>
+<li>Transactions Across Datacenters</li>
+<li>A Plain English Introduction to CAP Theorem</li>
+<li>The CAP FAQ</li>
+<li>Paxos Made Simple</li>
+<li>Consistent Hashing</li>
+<li>NOSQL Patterns</li>
+<li>Scalability, Availability &amp; Stability Patterns</li>
+</ul>
+<p>There are some good references for each question. The references here are slides and articles.</p>
+<ul>
+<li><p><strong>Design a CDN network </strong><br>Reference:<br>Globally Distributed Content Delivery.</p>
+</li>
+<li><p><strong>Design a Google document system</strong><br>Reference:<br>google-mobwrite<br>Differential Synchronization.</p>
+</li>
+<li><p><strong>Design a random ID generation system  </strong><br>Reference:<br>Announcing Snowflake<br>snowflake.</p>
+</li>
+<li><p><strong>Design a key-value database  </strong><br>Reference:<br>Introduction to Redis.</p>
+</li>
+<li><p><strong>Design the Facebook news seed function  </strong><br>Reference:<br>What are best practices for building something like a News Feed?<br>[<a href="http://www.weiming.info/zhuti/JobHunting/32463885/][11" target="_blank" rel="external">http://www.weiming.info/zhuti/JobHunting/32463885/][11</a>]<br>What are the scaling issues to keep in mind while developing a social network feed?<br>Activity Feeds Architecture<br><a href="http://www.weiming.info/zhuti/JobHunting/32463885/" target="_blank" rel="external">http://www.weiming.info/zhuti/JobHunting/32463885/</a></p>
+</li>
+<li><p><strong>Design the Facebook timeline function   </strong><br>Reference:<br>Building Timeline<br>Facebook Timeline.</p>
+</li>
+<li><p><strong>Design a function to return the top k requests during past time interval   </strong><br>Reference:<br>Efficient Computation of Frequent and Top-k Elements in Data Streams<br>An Optimal Strategy for Monitoring Top-k Queries in Streaming Windows</p>
+</li>
+<li><p><strong>Design an online multiplayer card game   </strong><br>Reference:<br>How to Create an Asynchronous Multiplayer Game<br>How to Create an Asynchronous Multiplayer Game Part 2: Saving the Game State to Online Database<br>How to Create an Asynchronous Multiplayer Game Part 3: Loading Games from the Database<br>How to Create an Asynchronous Multiplayer Game Part 4: Matchmaking<br>Real Time Multiplayer in HTML5</p>
+</li>
+<li><p><strong>Design a graph search function   </strong><br>Reference:<br>Building out the infrastructure for Graph Search<br>Indexing and ranking in Graph Search<br>The natural language interface of Graph Search and Erlang at Facebook.</p>
+</li>
+<li><p><strong>Design a picture sharing system  </strong><br>Reference:<br>Flickr Architecture<br>Instagram Architecture.</p>
+</li>
+<li><p><strong>Design a search engine   </strong><br>Reference:<br>How would you implement Google Search?<br>Implementing Search Engines</p>
+</li>
+<li><p><strong>Design a recommendation system   </strong><br>Reference:<br>Hulu’s Recommendation System<br>Recommender Systems</p>
+</li>
+<li><p><strong>Design a tiny url system   </strong><br>Reference:<br>System Design for Big Data-tinyurl<br>URL Shortener API.</p>
+</li>
+<li><p><strong>Design a garbage collection system   </strong><br>Reference:<br>Baby’s First Garbage Collector.</p>
+</li>
+<li><p><strong>Design a scalable web crawling system  </strong><br>Reference:<br>Design and Implementation of a High-Performance Distributed Web Crawler</p>
+</li>
+<li><p><strong>Design the Facebook chat function   </strong><br>Reference:<br>Erlang at Facebook<br>Facebook Chat<br><a href="http://www.cnblogs.com/piaoger/archive/2012/08/19/2646530.html" target="_blank" rel="external">http://www.cnblogs.com/piaoger/archive/2012/08/19/2646530.html</a></p>
+</li>
+<li><p><strong>Design a trending topic system   </strong><br>Reference:<br>Implementing Real-Time Trending Topics With a Distributed Rolling Count Algorithm in Storm<br>Early detection of Twitter trends explained</p>
+</li>
+<li><p><strong>Design a cache system   </strong><br>Reference:<br>Introduction to Memcached<br><a href="https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/" target="_blank" rel="external">https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/</a><br><a href="http://www.careercup.com/question?id=16835665" target="_blank" rel="external">http://www.careercup.com/question?id=16835665</a></p>
+</li>
+<li><p><strong>Design a typeahead search/search suggestion  </strong><br>Reference:<br><a href="https://www.facebook.com/notes/facebook-engineering/the-life-of-a-typeahead-query/389105248919" target="_blank" rel="external">https://www.facebook.com/notes/facebook-engineering/the-life-of-a-typeahead-query/389105248919</a></p>
+</li>
+<li><p><strong>Design a system to return POI within 5 miles  </strong><br>Reference:<br><a href="http://blog.sina.com.cn/s/blog_ae33b83901017921.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_ae33b83901017921.html</a><br><a href="http://www.cnblogs.com/LBSer/p/3310455.html" target="_blank" rel="external">http://www.cnblogs.com/LBSer/p/3310455.html</a></p>
+</li>
+<li><p><strong>Copy one file to multiple servers  </strong><br>Reference:<br><a href="https://vimeo.com/11280885" target="_blank" rel="external">https://vimeo.com/11280885</a><br><a href="https://blog.twitter.com/2010/murder-fast-datacenter-code-deploys-using-bittorrent" target="_blank" rel="external">https://blog.twitter.com/2010/murder-fast-datacenter-code-deploys-using-bittorrent</a></p>
+</li>
+</ul>
+
+	-->
+			  
+			  <p class="summary">https://www.hackerrank.com/domains
+https://oj.leetcode.com/problemset/algorithms/ LeetCode至少要刷三遍，付费部分的题建议花点钱看一下，舍不得孩子套不着狼
+http://lintcode.com/
+http://new.ninechapter.com/solutions/
+http://www.geeksforgeeks.org/about/interview-corner/
+TopCoder Algorithm Tutorial: http://help.topcoder.com/data-science</p>
+			  
+	</div>
+  <a type="button" href="/System Design Preparation/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-30 </div>
+			<div class="article-title"><a href="/Resevior Sampling/" title="Resevior Sampling 蓄水池算法java实现">Resevior Sampling蓄水池算法java实现</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<h1 id="Resevior-Sampling"><a href="#Resevior-Sampling" class="headerlink" title="Resevior Sampling"></a>Resevior Sampling</h1><blockquote>
+<p>Randomly return the index of maximal elements in the array.<br>follow up: 要求linear time 和constant space</p>
+</blockquote>
+<p>先把前k个数放入蓄水池，对第k+1，我们以k/(k+1)概率决定是否要把它换入蓄水池，换入时随机的选取一个作为替换项，这样一直做下去，对于任意的样本空间n，对每个数的选取概率都为k/n。也就是说对每个数选取概率相等。</p>
+<ul>
+<li>Create an array reservoir[0..k-1] and copy first k items of stream[] to it.</li>
+<li>Now one by one consider all items from (k+1)th item to nth item.</li>
+<li>Generate a random number from 0 to i where i is index of current item in stream[]. Let the generated random number is j.</li>
+<li>If j is in range 0 to k-1, replace reservoir[j] with arr[i]</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMax</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt; &amp;arr)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> len = arr.length();</span><br><span class="line">	<span class="keyword">int</span> ret =-<span class="number">1</span>, max = INT_MIN;</span><br><span class="line">	<span class="keyword">int</span> count=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;len; i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(arr[i]==max)&#123;</span><br><span class="line">			count++;</span><br><span class="line">			srand(time(NULL));</span><br><span class="line">			<span class="keyword">int</span> judge = rand()%count;</span><br><span class="line">			<span class="keyword">if</span>(judge==<span class="number">0</span>)&#123;</span><br><span class="line">				ret = i;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(max==INT_MIN || arr[i]&gt;max)&#123;</span><br><span class="line">			max = arr[i];</span><br><span class="line">			ret = i;</span><br><span class="line">			count=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+	-->
+			  
+			  <p class="summary">Resevior Sampling
+Randomly return the index of maximal elements in the array.follow up: 要求linear time 和constant space
+
+先把前k个数放入蓄水池，对第k+1，我们以k/(k+1)概率决定是否要把它换入蓄水池，换入时随机的选取一个作为替换项，这样一直做下去，对于任意的样本空间n，对每个数的选取概率都为k/n。也就是说对每个数选取概率相等。
+
+Create an array reservoir[0..k-1] and copy first k items of stream[] to</p>
+			  
+	</div>
+  <a type="button" href="/Resevior Sampling/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Top 25 Angular.js Interview Questions/" title="Top 25 Angular.js Interview Questions">Top 25 Angular.js Interview Questions</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<blockquote>
+<p>1) What is Angular.js? </p>
+</blockquote>
+<p>AngularJS is a javascript framework used for creating single web page applications. It allows you to use HTML as your template language and enables you to extend HTML’s syntax to express your application’s components clearly </p>
+<blockquote>
+<p>2) Explain what are the key features of Angular.js ? </p>
+</blockquote>
+<p>The key features of angular.js are:<br>Scope<br>Controller<br>Model<br>View<br>Services<br>Data Binding<br>Directives<br>Filters<br>Testable </p>
+<blockquote>
+<p>3) Explain what is scope in Angular.js ? </p>
+</blockquote>
+<p>Scope refers to the application model, it acts like glue between application controller and the view. Scopes are arranged in hierarchical structure and impersonate the DOM ( Document Object Model) structure of the application. It can watch expressions and propagate events. </p>
+<blockquote>
+<p>4) Explain what is services in Angular.js ? </p>
+</blockquote>
+<p>In angular.js services are the singleton objects or functions that are used for carrying out specific tasks. It holds some business logic and these function can be called as controllers, directive, filters and so on. </p>
+<blockquote>
+<p>5) Explain what is Angular Expression? Explain what is key difference between angular expressions and JavaScript expressions? </p>
+</blockquote>
+<p>Like JavaScript, Angular expressions are code snippets that are usually placed in binding such as </p>
+<p>The key difference between the JavaScript expressions and Angular expressions </p>
+<p>Context : In Angular, the expressions are evaluated against a scope object, while the Javascript expressions are evaluated against the global window<br>Forgiving: In Angular expression evaluation is forgiving to null and undefined, while in Javascript undefined properties generates TypeError or ReferenceError<br>No Control Flow Statements: Loops, conditionals or exceptions cannot be used in an angular expression </p>
+<blockquote>
+<p>6) With options on page load how you can initialize a select box ? </p>
+</blockquote>
+<p>You can initialize a select box with options on page load by using ng-init directive </p>
+<blockquote>
+<p>7) Explain what are directives ? Mention some of the most commonly used directives in Angular.js application ? </p>
+</blockquote>
+<p>A directive is something that introduces new syntax, they are like markers on DOM element which attaches a special behavior to it. In any Angular.js application, directives are the most important components. </p>
+<p>Some of the commonly used directives are ng-model, ng-App, ng-bind, ng-repeat , ng-show etc. </p>
+<blockquote>
+<p>8) Mention what are the advantages of using Angular.js ? </p>
+</blockquote>
+<p>Angular.js has several advantages in web development. </p>
+<p>Angular.js supports MVS pattern<br>Can do two ways data binding using Angular.js<br>It has per-defined form validations<br>It supports both client server communication<br>It supports animations </p>
+<blockquote>
+<p>9) Explain what Angular JS routes does ? </p>
+</blockquote>
+<p>Angular js routes enable you to create different URLs for different content in your application. Different URLs for different content enables user to bookmark URLs to specific content. Each such bookmark able URL in Angular.js is called a route </p>
+<p>A value in Angular JS is a simple object. It can be a number, string or JavaScript object. Values are typically used as configuration injected into factories, services or controllers. A value should be belong to an Angular.js module. </p>
+<p>Injecting a value into an Angular.js controller function is done by adding a parameter with the same name as the value </p>
+<blockquote>
+<p>10) Explain what is data binding in Angular.js ? </p>
+</blockquote>
+<p>Automatic synchronization of data between the model and view components is referred as data binding in Angular.js. There are two ways for data binding </p>
+<p>Data mining in classical template systems<br>Data binding in angular templates </p>
+<blockquote>
+<p>11) What makes angular.js better ? </p>
+</blockquote>
+<p>Registering Callbacks: There is no need to register callbacks . This makes your code simple and easy to debug.<br>Control HTML DOM programmatically: All the application that are created using Angular never have to manipulate the DOM although it can be done if it is required<br>Transfer data to and from the UI: Angular.js helps to eliminate almost all of the boiler plate like validating the form, displaying validation errors, returning to an internal model and so on which occurs due to flow of marshaling data<br>No initialization code: With angular.js you can bootstrap your app easily using services, which auto-injected into your application in Guice like dependency injection style </p>
+<blockquote>
+<p>12) Explain what is string interpolation in angular.js ? </p>
+</blockquote>
+<p>In angular.js the compiler during the compilation process matches text and attributes using interpolate service to see if they contains embedded expressions. As part of normal digest cycle these expressions are updated and registered as watches. </p>
+<blockquote>
+<p>13) Mention the steps for the compilation process of HTML happens? </p>
+</blockquote>
+<p>Compilation of HTML process occurs in following ways </p>
+<p>Using the standard browser API, first the HTML is parsed into DOM<br>By using the call to the $compile () method, compilation of the DOM is performed. The method traverses the DOM and matches the directives.<br>Link the template with scope by calling the linking function returned from the previous step </p>
+<blockquote>
+<p>14) Explain what is directive and Mention what are the different types of Directive? </p>
+</blockquote>
+<p>During compilation process when specific HTML constructs are encountered a behavior or function is triggered, this function is referred as directive. It is executed when the compiler encounters it in the DOM. </p>
+<p>Different types of directives are </p>
+<p>Element directives<br>Attribute directives<br>CSS class directives<br>Comment directives </p>
+<blockquote>
+<p>15) Explain what is linking function and type of linking function? </p>
+</blockquote>
+<p>Link combines the directives with a scope and produce a live view. For registering DOM listeners as well as updating the DOM, link function is responsible. After the template is cloned it is executed. </p>
+<p>Pre-linking function: Pre-linking function is executed before the child elements are linked. It is not considered as the safe way for DOM transformation.<br>Post linking function: Post linking function is executed after the child elements are linked. It is safe to do DOM transformation by post-linking function </p>
+<blockquote>
+<p>16) Explain what is injector? </p>
+</blockquote>
+<p>An injector is a service locator. It is used to retrieve object instances as defined by provider, instantiate types, invoke methods and load modules. There is a single injector per Angular application, it helps to look up an object instance by its name. </p>
+<blockquote>
+<p>17) Explain what is the difference between link and compile in angular.js? </p>
+</blockquote>
+<p>Compile function: It is used for template DOM Manipulation and collect all of the directives.<br>Link function: It is used for registering DOM listeners as well as instance DOM manipulation. It is executed once the template has been cloned. </p>
+<blockquote>
+<p>18) Explain what is factory method in angular.js? </p>
+</blockquote>
+<p>For creating the directive, factory method is used. It is invoked only once, when compiler matches the directive for the first time. By using $injector.invoke the factory method is invoked. </p>
+<blockquote>
+<p>19) Mention what are the styling form that ngModel adds to CSS classes ? </p>
+</blockquote>
+<p>ngModel adds these CSS classes to allow styling of form as well as control </p>
+<p>ng- valid<br>ng- invalid<br>ng-pristine<br>ng-dirty </p>
+<blockquote>
+<p>20) Mention what are the characteristics of “Scope”? </p>
+</blockquote>
+<p>To observer model mutations scopes provide APIs ($watch)<br>To propagate any model changes through the system into the view from outside of the Angular realm<br>A scope inherits properties from its parent scope, while providing access to shared model properties, scopes can be nested to isolate application components<br>Scope provides context against which expressions are evaluated </p>
+<blockquote>
+<p>21) Explain what is DI (Dependency Injection ) and how an object or function can get a hold of its dependencies ? </p>
+</blockquote>
+<p>DI or Dependency Injection is a software design pattern that deals with how code gets hold of its dependencies. In order to retrieve elements of the application which is required to be configured when module gets loaded , the operation “config” uses dependency injection. </p>
+<p>These are the ways that object uses to hold of its dependencies </p>
+<p>Typically using the new operator, dependency can be created<br>By referring to a global variable, dependency can be looked up<br>Dependency can be passed into where it is required </p>
+<blockquote>
+<p>22) Mention what are the advantages of using Angular.js framework ? </p>
+</blockquote>
+<p>Advantages of using Angular.js as framework are </p>
+<p>Supports two way data-binding<br>Supports MVC pattern<br>Support static template and angular template<br>Can add custom directive<br>Supports REST full services<br>Supports form validations<br>Support both client and server communication<br>Support dependency injection<br>Applying Animations<br>Event Handlers </p>
+<blockquote>
+<p>23) Explain the concept of scope hierarchy? How many scope can an application have? </p>
+</blockquote>
+<p>Each angular application consist of one root scope but may have several child scopes. As child controllers and some directives create new child scopes, application can have multiple scopes. When new scopes are formed or created they are added as a children of their parent scope. Similar to DOM, they also creates a hierarchical structure. </p>
+<blockquote>
+<p>24) Explain what is the difference between angular.js and backbone.js? </p>
+</blockquote>
+<p>Angular.js combines the functionalities of most of the 3rd party libraries, it supports individual functionalities required to develop HTML5 Apps. While Backbone.js do their jobs individually. </p>
+<blockquote>
+<p>25) Who created Angular JS ? </p>
+</blockquote>
+<p>Intially it was developed by Misko Hevery and Adam Abrons. Currently it is being developed by Google. </p>
+
+	-->
+			  
+			  <p class="summary">1) What is Angular.js? 
+
+AngularJS is a javascript framework used for creating single web page applications. It allows you to use HTML as your template language and enables you to extend HTML’s syntax to express your application’s components clearly 
+
+2) Explain what are the key features of Angular.</p>
+			  
+	</div>
+  <a type="button" href="/Top 25 Angular.js Interview Questions/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/NodeJS-Learning/" title="NodeJS 学习资料汇总">NodeJS 学习资料</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>Go to <a href="http://nodejs.org/" target="_blank" rel="external">http://nodejs.org/</a>, download node.js installer and follow instructions. Mac OS, Windows, and Linux are supported. </p>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p>To use Node.js you need to have a decent understanding of JavaScript language. </p>
+<ul>
+<li><a href="http://www.codecademy.com/tracks/javascript" target="_blank" rel="external">Codecademy - JS</a> - Good for practicing and learning syntax.</li>
+<li><a href="http://yuiblog.com/crockford/" target="_blank" rel="external">Crockford’s videos</a></li>
+<li><a href="http://eloquentjavascript.net/" target="_blank" rel="external">Eloquent JavaScript</a></li>
+<li><a href="http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/" target="_blank" rel="external">Essential JavaScript Design Patterns For Beginners</a></li>
+<li><a href="http://blog.buymeasoda.com/advanced-javascript-fundamentals/" target="_blank" rel="external">Advanced JavaScript Fundamentals</a></li>
+<li><a href="http://javascriptissexy.com/understand-javascript-closures-with-ease/" target="_blank" rel="external">Understand JavaScript Closures With Ease</a></li>
+<li><a href="http://bonsaiden.github.com/JavaScript-Garden/" target="_blank" rel="external">JavaScript garden</a></li>
+<li><a href="http://oreilly.com/catalog/9780596806767" target="_blank" rel="external">JavaScript Patterns Book</a></li>
+<li><a href="http://oreilly.com/catalog/9780596517748/" target="_blank" rel="external">JavaScript: The Good Parts Book</a></li>
+<li><a href="http://www.html5rocks.com/en/tutorials/es6/promises/" target="_blank" rel="external">JavaScript Promises</a></li>
+</ul>
+<h2 id="Development-Tools-IDEs"><a href="#Development-Tools-IDEs" class="headerlink" title="Development Tools/IDEs"></a>Development Tools/IDEs</h2><ul>
+<li><a href="http://yeoman.io/" target="_blank" rel="external">Yeoman</a> - Project and modules generator</li>
+<li><a href="http://gulpjs.com/" target="_blank" rel="external">Gulp</a> - Task runner/build system</li>
+<li><a href="http://eric-xujun.github.io/sergtitov/NodeJS-Learning/blob/master" target="_blank" rel="external">Grunt</a> - Task runner/build system</li>
+<li><a href="http://www.jetbrains.com/webstorm/" target="_blank" rel="external">WebStorm/PHPStorm</a> - popular and extremely powerful IDE for coding web applications. Paid but you can get it for free , if you are an open-source developer (required an application approval).</li>
+<li><a href="https://nodejstools.codeplex.com/" target="_blank" rel="external">Node.js Tools for Visual Studio</a> - see <a href="http://www.hanselman.com/blog/IntroducingNodejsToolsForVisualStudio.aspx" target="_blank" rel="external">blog post</a> from team member Scott Hanselman.</li>
+<li>NetBeans with <a href="http://plugins.netbeans.org/plugin/36653/nodejs" target="_blank" rel="external">Node.js plugin</a></li>
+<li><a href="https://github.com/tanepiper/SublimeText-Nodejs" target="_blank" rel="external">Nodejs Sublime Text 2 Package</a> - a set of code completion, scripts and tools to work with Node.js.</li>
+<li><a href="http://www.microsoft.com/web/webmatrix/" target="_blank" rel="external">WebMatrix</a> - is a free, lightweight, cloud-connected web development tool from Microsoft.</li>
+<li><a href="http://krillapps.com/coderunner/" target="_blank" rel="external">CodeRunner</a> - Mac only paid IDE.</li>
+<li><a href="http://www.activestate.com/komodo-ide/features" target="_blank" rel="external">Komodo</a> - full-featured IDE from ActiveState is paid but there is also lean free version <a href="http://www.activestate.com/komodo-edit" target="_blank" rel="external">Komodo Edit</a>.</li>
+<li><a href="http://coreh.github.io/nide/" target="_blank" rel="external">Nide</a> - is a web-based IDE for Node.JS that can run locally or on a remote server. Available both as a command-line tool and as a standalone Mac app.</li>
+<li><a href="http://www.nodeclipse.org/" target="_blank" rel="external">Nodeclipse &amp; Enide</a> - is free open-source IDE based on Eclipse.</li>
+<li><a href="http://www.aptana.com/" target="_blank" rel="external">Aptana Studio</a></li>
+<li><a href="https://github.com/scripted-editor/scripted" target="_blank" rel="external">Scripted</a></li>
+<li><a href="http://brackets.io/" target="_blank" rel="external">Brackets</a></li>
+</ul>
+<h3 id="Online"><a href="#Online" class="headerlink" title="Online"></a>Online</h3><ul>
+<li><a href="https://c9.io/" target="_blank" rel="external">Cloud9</a> - cloud-based IDE with native support for development of Node.js applications including debugging and other features. Note that you can also <a href="http://www.cambus.net/setting-up-a-node-js-development-environment-with-npm-and-cloud9-ide-installed-locally/" target="_blank" rel="external">install it locally</a>.</li>
+<li><a href="https://www.nitrous.io/" target="_blank" rel="external">Nitrous.io</a> - is both an IDE and environment in the cloud. Has both online and desktop versions. Paid.</li>
+<li><a href="https://koding.com" target="_blank" rel="external">Koding</a> - offers you a free bootable VM with Node. Also you can work on the same code with your friends.</li>
+<li><a href="https://codenvy.com/" target="_blank" rel="external">Cloud IDE (a.k.a eXo Cloud IDE, a.k.a cod envy)</a> - cloud development IDE and environment with continuous integration and other features. Offers both hosted and on-premises solutions.</li>
+</ul>
+<h2 id="Hosting-Providers"><a href="#Hosting-Providers" class="headerlink" title="Hosting Providers"></a>Hosting Providers</h2><ul>
+<li><a href="https://www.nodejitsu.com/" target="_blank" rel="external">Nodejitsu</a> - hosting, databases and private NPM. Free for Open Source.</li>
+<li><a href="https://www.openshift.com/developers/node-js" target="_blank" rel="external">OpenShift</a></li>
+<li><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs" target="_blank" rel="external">Heroku</a> - Dead simple to use.</li>
+<li><a href="https://modulus.io/" target="_blank" rel="external">Modulus</a> -Scalable application platform (PaaS) for developers, offering Node.js hosting, MongoDB, and performance analytics in the cloud.</li>
+<li><a href="https://codio.com/" target="_blank" rel="external">Codio</a> - Powerful web based IDE, free for public projects</li>
+</ul>
+<h2 id="Fundamentals"><a href="#Fundamentals" class="headerlink" title="Fundamentals"></a>Fundamentals</h2><ul>
+<li><a href="http://webapplog.com/node-js-fundamentals-a-concise-overview-of-the-main-concepts" target="_blank" rel="external">Node.js FUNdamentals: A Concise Overview of The Main Concepts</a></li>
+<li>Why Node.js<ul>
+<li><a href="http://www.toptal.com/nodejs/why-the-hell-would-i-use-node-js" target="_blank" rel="external">Why The Hell Would I Use Node.js? A Case-by-Case Introduction</a></li>
+<li><a href="http://pettergraff.blogspot.com/2013/01/why-node.html" target="_blank" rel="external">Why I use Node.js?</a></li>
+<li><a href="http://webapplog.com/php-vs-node-js/" target="_blank" rel="external">PHP vs. Node.js</a></li>
+</ul>
+</li>
+<li>Migrating to Node.js<ul>
+<li><a href="https://engineering.groupon.com/2013/misc/i-tier-dismantling-the-monoliths/" target="_blank" rel="external">Dismantling the Monoliths</a></li>
+<li><a href="https://www.paypal-engineering.com/2013/11/22/node-js-at-paypal/" target="_blank" rel="external">Node.js at PayPal</a></li>
+</ul>
+</li>
+<li><a href="http://nodejs.org/api/" target="_blank" rel="external">Official Documentation</a></li>
+<li>CommonJS Module System<ul>
+<li><a href="http://docs.nodejitsu.com/articles/getting-started/what-is-require" target="_blank" rel="external">http://docs.nodejitsu.com/articles/getting-started/what-is-require</a>)</li>
+<li><a href="http://pages.citebite.com/i9e9e4d1yxip" target="_blank" rel="external">http://pages.citebite.com/i9e9e4d1yxip</a></li>
+</ul>
+</li>
+<li><a href="http://nodejs.org/api/modules.html" target="_blank" rel="external">Node.js Modules Official Documentation</a></li>
+<li><a href="http://howtonode.org/managing-module-dependencies" target="_blank" rel="external">Managing module dependencies</a></li>
+<li><a href="http://code.tutsplus.com/tutorials/using-nodes-event-module--net-35941" target="_blank" rel="external">Using Node’s Event Module</a></li>
+<li><a href="http://openmymind.net/2012/2/3/Node-Require-and-Exports/" target="_blank" rel="external">Understanding exports vs. module.exports</a></li>
+</ul>
+<h2 id="Asynchronous-Programming"><a href="#Asynchronous-Programming" class="headerlink" title="Asynchronous Programming"></a>Asynchronous Programming</h2><ul>
+<li><a href="http://blog.mixu.net/2011/02/01/understanding-the-node-js-event-loop/" target="_blank" rel="external">Understanding the node.js event loop</a></li>
+</ul>
+<ul>
+<li><a href="http://www.slideshare.net/cacois/avoiding-callback-hell-with-asyncjs" target="_blank" rel="external">Avoiding Callback Hell with Async.js</a></li>
+</ul>
+<ul>
+<li><p>Promises </p>
+<ul>
+<li><a href="http://howtonode.org/promises" target="_blank" rel="external">Asynchronous Control Flow with Promises</a></li>
+<li><a href="http://www.slideshare.net/async_io/javascript-promisesq-library-17206726" target="_blank" rel="external">Promises with Q</a></li>
+</ul>
+</li>
+<li><a href="http://www.sitepoint.com/javascript-generators-preventing-callback-hell/" target="_blank" rel="external">ES6 Generators and Preventing Callback Hell</a></li>
+<li><a href="http://strongloop.com/strongblog/node-js-callback-hell-promises-generators/?utm_source=nodeweekly&amp;utm_medium=email" target="_blank" rel="external">Managing Node.js Callback Hell with Promises, Generators and Other Approaches</a></li>
+</ul>
+<h2 id="Node-Package-Manager-nam"><a href="#Node-Package-Manager-nam" class="headerlink" title="Node Package Manager (nam)"></a>Node Package Manager (nam)</h2><ul>
+<li><a href="http://docs.nodejitsu.com/articles/getting-started/npm/what-is-npm" target="_blank" rel="external">What is nam?</a></li>
+<li><a href="http://howtonode.org/introduction-to-npm" target="_blank" rel="external">Introduction to npm</a></li>
+<li>Explore <a href="https://npmjs.org/" target="_blank" rel="external">registered public nam modules</a></li>
+<li><a href="https://gist.github.com/coolaj86/1318304" target="_blank" rel="external">How to publish your module to nam?</a></li>
+<li>Node.js tips and tricks<ul>
+<li><a href="http://blog.ponyfoo.com/2013/12/14/9-quick-tips-about-npm" target="_blank" rel="external">9 Quick Tips About npm</a></li>
+<li><a href="http://www.devthought.com/2012/02/17/npm-tricks/" target="_blank" rel="external">NPM tricks</a></li>
+<li><a href="http://substack.net/task_automation_with_npm_run" target="_blank" rel="external">Task automation with nam run</a></li>
+</ul>
+</li>
+<li>Private NPM approaches<ul>
+<li><a href="http://clock.co.uk/tech-blogs/how-to-create-a-private-npmjs-repository" target="_blank" rel="external">How to create a private npm.js repository</a></li>
+<li><a href="https://github.com/paypal/kappa" target="_blank" rel="external">A hierarchical nom-registry proxy that allows to support private nam repos without replicating the entire public registry</a></li>
+<li><a href="https://github.com/mixu/npm_lazy" target="_blank" rel="external">A lazy local cache for npm</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Debugging"><a href="#Debugging" class="headerlink" title="Debugging"></a>Debugging</h2><ul>
+<li><a href="http://strongloop.com/strongblog/whats-new-nodejs-v0-12-debugging-clusters/" target="_blank" rel="external">What’s New in Node.js v0.12: Debugging Clustered Apps with Node-Inspector</a></li>
+<li><a href="http://www.youtube.com/watch?v=03qGA-GJXjI" target="_blank" rel="external">Video: Debugging Node.js with node-inspector</a></li>
+<li><a href="https://github.com/node-inspector/node-inspector" target="_blank" rel="external">node-inspector</a></li>
+<li><a href="https://github.com/joyent/node/wiki/Using-Eclipse-as-Node-Applications-Debugger" target="_blank" rel="external">Using Eclipse as Node Applications Debugger</a></li>
+</ul>
+<h2 id="Tutorials"><a href="#Tutorials" class="headerlink" title="Tutorials"></a>Tutorials</h2><ul>
+<li><a href="http://nodeschool.io/" target="_blank" rel="external">http://nodeschool.io/</a></li>
+<li><a href="https://www.codeschool.com/courses/real-time-web-with-nodejs" target="_blank" rel="external">https://www.codeschool.com/courses/real-time-web-with-nodejs</a></li>
+<li><a href="http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/" target="_blank" rel="external">The dead-simple step-by-step guide for front-end developers to getting up and running with node.js, express, jade, and mongodb</a></li>
+<li><a href="http://webapplog.com/todo-app-with-express-jsnode-js-and-mongodb/" target="_blank" rel="external">Make a RESTful todo app</a></li>
+<li><a href="http://scotch.io/tutorials/javascript/easy-node-authentication-setup-and-local" target="_blank" rel="external">Authentication</a> - Goes over local, Facebook &amp; twitter authentication.</li>
+</ul>
+<h3 id="Command-line"><a href="#Command-line" class="headerlink" title="Command line"></a>Command line</h3><ul>
+<li><a href="http://javascriptplayground.com/blog/2012/08/writing-a-command-line-node-tool/" target="_blank" rel="external">Command line tool</a></li>
+</ul>
+<h2 id="Blog-posts-articles"><a href="#Blog-posts-articles" class="headerlink" title="Blog posts/articles"></a>Blog posts/articles</h2><ul>
+<li><a href="http://www.joyent.com/developers/node" target="_blank" rel="external">Node.js Production Practices</a> - fantastic overview of design, deployment and debugging technics from <a href="http://www.joyent.com/" target="_blank" rel="external">Joyent</a>.</li>
+</ul>
+<h2 id="Videos"><a href="#Videos" class="headerlink" title="Videos"></a>Videos</h2><ul>
+<li><a href="http://www.youtube.com/watch?v=jo_B4LTHi3I" target="_blank" rel="external">Introduction to Node.js with Ryan Dahl</a> - Ryan Dahl is a Node.js creator. Must see.</li>
+<li><a href="http://www.youtube.com/watch?v=BN0JlMZCtNU" target="_blank" rel="external">Alex Ford: Node.js &amp; Express 101</a></li>
+<li><a href="http://lanyrd.com/topics/nodejs/video/" target="_blank" rel="external">142 conference presentation Videos</a> from <a href="http://lanyrd.com/" target="_blank" rel="external">Lanyard.com</a></li>
+<li><a href="http://nodetuts.com/" target="_blank" rel="external">Node.js video tutorials by Pedro Teixeira</a></li>
+<li><a href="http://vidinterest.com/playlist/enbeeone3/nodejs-tutorial-videos" target="_blank" rel="external">Collection of node.js video tutorials</a> at <a href="http://eric-xujun.github.io/sergtitov/NodeJS-Learning/blob/master/vidinterest.com" target="_blank" rel="external">vidinterest.com</a></li>
+<li><a href="http://vimeo.com/70603516" target="_blank" rel="external">Node.js has Arrived!</a> - In this video, Node.js core committer Bert Belder discusses some of the new features in Node v0.12 including Streams3, VM improvements, cluster round-robin, execSync and profiling APIs.</li>
+<li><a href="http://channel9.msdn.com/Series/Visual-Studio-Online-Monaco/Getting-started-with-nodejs" target="_blank" rel="external">Getting started with node.js</a> at <a href="http://eric-xujun.github.io/sergtitov/NodeJS-Learning/blob/master/channel9.msdn.com" target="_blank" rel="external">channel9.msdn.com</a> -<a href="http://www.youtube.com/watch?v=eD2I0zAjM5g&amp;list=PLw2e3dFxewkLL73aUzOP-efQnXOTtMLbY" target="_blank" rel="external">Basics of Express and Mongo</a> -<a href="http://irlnathan.github.io/sailscasts/" target="_blank" rel="external">Getting Started with Sails.js</a> -<a href="http://www.youtube.com/watch?v=SAc0vQCC6UQ" target="_blank" rel="external">History of Node.js</a></li>
+</ul>
+<h2 id="Free-Courses"><a href="#Free-Courses" class="headerlink" title="Free Courses"></a>Free Courses</h2><ul>
+<li><a href="https://www.coursera.org/course/startup" target="_blank" rel="external">Startup engineering by Stanford</a></li>
+</ul>
+<h2 id="Paid-Courses"><a href="#Paid-Courses" class="headerlink" title="Paid Courses"></a>Paid Courses</h2><ul>
+<li><a href="https://www.codeschool.com/courses/real-time-web-with-nodejs" target="_blank" rel="external">Real-time Web with Node.js</a> from <a href="https://www.codeschool.com/" target="_blank" rel="external">codeschool.com</a></li>
+<li><a href="http://teamtreehouse.com/library/code-racer/getting-started-with-nodejs-and-the-npm-package-manager" target="_blank" rel="external">Getting Started with Node.js and the NPM Package Manager</a> from <a href="http://teamtreehouse.com/" target="_blank" rel="external">Treehouse</a>.</li>
+<li><a href="http://www.lynda.com/Nodejs-tutorials/Nodejs-First-Look/101554-2.html" target="_blank" rel="external">Node.js First Look</a>(beginner) and <a href="http://www.lynda.com/JavaScript-tutorials/Nodejs-Essential-Training/141132-2.html" target="_blank" rel="external">Node.js Essential Training</a>(advanced) at <a href="http://www.lynda.com/Node-js-training-tutorials/1283-0.html" target="_blank" rel="external">lynda.com</a></li>
+<li><a href="https://peepcode.com/products/nodejs-i" target="_blank" rel="external">Meet Node.js</a> and <a href="https://peepcode.com/products/full-stack-nodejs-i" target="_blank" rel="external">Full-stack Node.js</a> at <a href="http://eric-xujun.github.io/sergtitov/NodeJS-Learning/blob/master/peepcode.com" target="_blank" rel="external">peepcode.com</a></li>
+<li>Node.js courses at Pluralsight<ul>
+<li><a href="http://pluralsight.com/training/courses/TableOfContents?courseName=meet-nodejs" target="_blank" rel="external">Meet Node.js</a></li>
+<li><a href="http://pluralsight.com/training/courses/TableOfContents?courseName=node-intro" target="_blank" rel="external">Introduction to Node.js</a></li>
+<li><a href="http://pluralsight.com/training/courses/TableOfContents?courseName=full-stack-nodejs" target="_blank" rel="external">Full Stack Node.js</a></li>
+<li><a href="http://pluralsight.com/training/courses/TableOfContents?courseName=building-angularjs-nodejs-apps-mean" target="_blank" rel="external">Building AngularJS and Node.js Apps with the MEAN Stack</a></li>
+<li><a href="http://pluralsight.com/training/courses/TableOfContents?courseName=expressjs" target="_blank" rel="external">Web Development with ExpressJS</a></li>
+<li><a href="http://pluralsight.com/training/courses/TableOfContents?courseName=node-on-azure" target="_blank" rel="external">Node on Windows and Azure</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Free-Books"><a href="#Free-Books" class="headerlink" title="Free Books"></a>Free Books</h2><ul>
+<li><a href="http://www.nodebeginner.org/#about" target="_blank" rel="external">The Node Beginner Book</a></li>
+<li><a href="https://github.com/maxogden/art-of-node" target="_blank" rel="external">The Art of Node</a></li>
+<li><a href="https://leanpub.com/jsfun/read" target="_blank" rel="external">JavaScript and Node FUNdamentals</a></li>
+<li><a href="http://book.mixu.net/node/" target="_blank" rel="external">Mixu’s Node book</a></li>
+<li><a href="http://book.rednode.cn/" target="_blank" rel="external">A collection of Node.js books</a></li>
+<li><a href="http://visionmedia.github.io/masteringnode/" target="_blank" rel="external">Mastering Node.js</a></li>
+</ul>
+<h2 id="Paid-Books"><a href="#Paid-Books" class="headerlink" title="Paid Books"></a>Paid Books</h2><ul>
+<li><a href="http://www.amazon.com/Node-js-Action-Mike-Cantelon/dp/1617290572/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1391739265&amp;sr=1-1&amp;keywords=%22node.js%22" target="_blank" rel="external">Node.js in Action</a></li>
+<li><a href="http://www.amazon.com/Learning-Node-js-Hands-On-Applications-JavaScript/dp/0321910575/ref=sr_1_1?ie=UTF8&amp;qid=1394518585&amp;sr=8-1&amp;keywords=learning+node.js" target="_blank" rel="external">Learning Node.js: A Hands-On Guide to Building Web Applications in JavaScript Marc Wandschneide</a></li>
+<li><a href="http://www.amazon.com/JavaScript-Server-Node-js-Express-Development/dp/0956737080/ref=sr_1_20?s=books&amp;ie=UTF8&amp;qid=1391739340&amp;sr=1-20&amp;keywords=%22node.js%22" target="_blank" rel="external">JavaScript on the Server Using Node.js and Express</a></li>
+<li><a href="http://www.amazon.com/Express-js-Guide-Comprehensive-Book/dp/1494269279/ref=sr_1_2?s=books&amp;ie=UTF8&amp;qid=1391740486&amp;sr=1-2&amp;keywords=%22node.js%22+express" target="_blank" rel="external">Express.js Guide</a></li>
+<li><a href="http://www.amazon.com/Node-js-Right-Way-Server-Side-JavaScript/dp/1937785734/ref=sr_1_1?ie=UTF8&amp;qid=1393208626&amp;sr=8-1&amp;keywords=Node+js+The+Right+Way." target="_blank" rel="external">Node js The Right Way</a></li>
+<li><a href="http://learnjs.io/" target="_blank" rel="external">Learn JS</a></li>
+</ul>
+<h2 id="Frameworks"><a href="#Frameworks" class="headerlink" title="Frameworks"></a>Frameworks</h2><ul>
+<li>Sinatra like:<ul>
+<li><a href="https://github.com/senchalabs/connect" target="_blank" rel="external">connect</a> - an extensible HTTP server framework for Node.js using “plugins” known as middleware.</li>
+<li><a href="http://expressjs.com/guide.html" target="_blank" rel="external">express.js</a> - a Sinatra inspired Web development framework for Node.js.</li>
+<li><a href="https://github.com/spumko/hapi" target="_blank" rel="external">hapi</a> - a rich framework for building Web applications and services.</li>
+<li><a href="https://github.com/techpines/express.io" target="_blank" rel="external">express.io</a> = Express + Socket.io.</li>
+<li><a href="https://github.com/koajs/koa" target="_blank" rel="external">koa</a> - an expressive middleware for Node.js using generators.</li>
+<li><a href="https://github.com/flatiron/flatiron" target="_blank" rel="external">Flatiron</a> - framework components for Node.js and a browser.</li>
+<li><a href="https://github.com/totaljs/framework" target="_blank" rel="external">total.js</a> - a Web application framework for creating rich Web sites and Web services.</li>
+</ul>
+</li>
+<li>MVC: </li>
+</ul>
+<pre><code>* [Geddy][129] - a simple, structured Web framework for Node.js.
+* [Sails.js][130] - a realtime MVC Framework for Node.js.
+* [Compound][131] - the compound formula is Express + Structure + Extensions.
+</code></pre><ul>
+<li>Full stack: </li>
+</ul>
+<pre><code>* [meteor.js][132] - Meteor is an ultra-simple environment for building modern Web applications. Built using Node.js, Meteor is a framework on its own. Please see an [amazing list of Meteor resources][133] for more information.
+* [Derby][134] - the MVC framework making it easy to write realtime, collaborative applications that run in both Node.js and browsers.
+* [SocketStream][135] - A fast, modular Node.js Web framework dedicated to building realtime single-page applications.
+</code></pre><p>If you would like to learn more about Node.js frameworks, please visit <a href="http://nodeframework.com/" target="_blank" rel="external">nodeframework.com</a> and <a href="http://nodewebmodules.com" target="_blank" rel="external">nodewebmodules.com</a>. </p>
+<h2 id="CLI-TOOLS"><a href="#CLI-TOOLS" class="headerlink" title="CLI TOOLS"></a>CLI TOOLS</h2><ul>
+<li><a href="http://remysharp.com/2014/01/20/nodemon-1-0/" target="_blank" rel="external">Nodemon</a></li>
+</ul>
+<h2 id="CMS"><a href="#CMS" class="headerlink" title="CMS"></a>CMS</h2><ul>
+<li><a href="https://ghost.org/" target="_blank" rel="external">Ghost</a></li>
+<li><a href="http://keystonejs.com/" target="_blank" rel="external">Keystone</a></li>
+<li><a href="http://calip.so/" target="_blank" rel="external">Calipso</a></li>
+<li><a href="http://hatchjs.com/" target="_blank" rel="external">Hatch</a></li>
+</ul>
+<h2 id="Static-Site-Generators"><a href="#Static-Site-Generators" class="headerlink" title="Static Site Generators"></a>Static Site Generators</h2><ul>
+<li><a href="http://hexo.io/" target="_blank" rel="external">Hexo</a> - fast, simple &amp; powerful blog framework.</li>
+<li><a href="http://www.metalsmith.io/" target="_blank" rel="external">Metalsmith</a> - extremely simple, pluggable static site generator.</li>
+<li><a href="http://harpjs.com/" target="_blank" rel="external">Harp</a> - static web server with built-in preprocessing.</li>
+<li><a href="http://assemble.io/" target="_blank" rel="external">Assemble</a> - static site generator for Grunt.js, Yeoman and Node.js.</li>
+<li><a href="https://github.com/creationix/wheat" target="_blank" rel="external">Wheat</a> - a blog engine for coders written in node.JS.</li>
+<li><a href="https://github.com/laktek/punch" target="_blank" rel="external">Punch</a> - a fun and easy way to build modern websites.</li>
+<li><a href="https://github.com/flatiron/blacksmith" target="_blank" rel="external">Blacksmith</a> - generic static site generator built using flatiron, plates, and marked.</li>
+<li><a href="https://github.com/jsantell/poet" target="_blank" rel="external">Poet</a> - a node.js blog engine.</li>
+</ul>
+<blockquote>
+<p>See extensive collection of Static Site Generators including other languages at <a href="http://www.staticgen.com/" target="_blank" rel="external">http://www.staticgen.com/</a></p>
+</blockquote>
+<h2 id="Libraries"><a href="#Libraries" class="headerlink" title="Libraries"></a>Libraries</h2><ul>
+<li><a href="https://github.com/LearnBoost/socket.io" target="_blank" rel="external">socket.io</a> - a realtime application framework for Node.JS, with HTML5 WebSockets and cross-browser fallbacks support.</li>
+<li><a href="https://github.com/LearnBoost/mongoose" target="_blank" rel="external">mongoose</a> - MongoDB object modeling designed to work in an asynchronous environment.</li>
+<li><a href="http://github.com/flatiron/winston" target="_blank" rel="external">winston</a> - a multi-transport asynchronous logging library for Node.js</li>
+<li><a href="https://github.com/jaredhanson/passport" target="_blank" rel="external">passport</a> - simple, unobtrusive authentication for Node.js.</li>
+<li><a href="https://github.com/caolan/async" target="_blank" rel="external">async</a> - asynchronous utilities for Node and the browser.</li>
+<li><a href="https://github.com/kriskowal/q" target="_blank" rel="external">Q</a> - a tool for making and composing asynchronous promises in JavaScript.</li>
+<li><a href="https://github.com/visionmedia/co" target="_blank" rel="external">co</a> - the ultimate generator based flow-control goodness for nodes;</li>
+<li><a href="https://github.com/visionmedia/jade" target="_blank" rel="external">jade</a> - Jade - a robust, elegant, feature-rich template engine for Node.js.</li>
+<li><a href="https://github.com/visionmedia/ejs" target="_blank" rel="external">ejs</a> - embedded JavaScript templates for Node.js.</li>
+<li><a href="https://github.com/lodash/lodash" target="_blank" rel="external">lodash</a> - a utility library delivering consistency, customization, performance, and extras.</li>
+<li><a href="https://github.com/mikeal/request" target="_blank" rel="external">request</a> - a simplified HTTP request client.</li>
+<li><a href="https://github.com/lorenwest/node-config" target="_blank" rel="external">config</a> - a runtime configuration for Node.js. modules.</li>
+<li><a href="http://passportjs.org/" target="_blank" rel="external">Passport</a> - simple, unobtrusive authentication for Node.js that supports OpenID and OAuth.</li>
+</ul>
+<h2 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h2><p>Read about various approaches to testing Node.js code: </p>
+<ul>
+<li><a href="http://code.tutsplus.com/tutorials/testing-in-nodejs--net-35018" target="_blank" rel="external">Testing in Node.js</a></li>
+<li><a href="http://www.slideshare.net/mlilley/testing-node-js-with-mocha" target="_blank" rel="external">Testing NodeJS with Mocha, Should, Sinon, and JSCoverage</a></li>
+<li><a href="http://www.seejohncode.com/2012/03/13/setting-up-mocha-jscoverage/" target="_blank" rel="external">Setting up Mocha and JSCoverage</a></li>
+<li><a href="http://www.scotchmedia.com/tutorials/express/authentication/2/02" target="_blank" rel="external">Acceptance testing with supertest</a></li>
+<li><a href="http://blog.codeship.io/2013/08/20/testing-tuesday-19-how-to-test-node-js-applications-with-jasmine.html" target="_blank" rel="external">Testing node.js applications with Jasmine</a></li>
+<li><a href="http://howtonode.org/mocking-private-dependencies-using-rewire" target="_blank" rel="external">Mocking Dependencies using [rewire]</a></li>
+</ul>
+<p>Some popular testing frameworks: </p>
+<ul>
+<li><a href="https://github.com/visionmedia/mocha" target="_blank" rel="external">mocha</a> - a simple, flexible JavaScript test framework for Node.js and a browser. (BDD, TDD, QUnit styles via interfaces).</li>
+<li><a href="https://github.com/mhevery/jasmine-node" target="_blank" rel="external">jasmin-node</a> - integration of the Jasmine Spec framework with Node.js.</li>
+<li><a href="https://github.com/cjohansen/Sinon.JS" target="_blank" rel="external">sinon</a> - test spies, stubs, and mocks for JavaScript.</li>
+<li><a href="https://github.com/chaijs/chai" target="_blank" rel="external">chai</a> - a BDD / TDD assertion framework for Node.js and a browser.</li>
+<li><a href="https://github.com/visionmedia/supertest" target="_blank" rel="external">supertest</a> - a super-agent driven library for testing Node.js HTTP servers using a fluent API.</li>
+<li><a href="https://github.com/jhnns/rewire" target="_blank" rel="external">rewire</a> - a dependency injection for Node.js applications.</li>
+<li><a href="https://github.com/visionmedia/node-jscoverage" target="_blank" rel="external">node-jscoverage</a> - JSCoverage for Node.js.</li>
+</ul>
+<h3 id="What-To-Read"><a href="#What-To-Read" class="headerlink" title="What To Read"></a>What To Read</h3><h3 id="Communities-Groups"><a href="#Communities-Groups" class="headerlink" title="Communities/Groups"></a>Communities/Groups</h3><ul>
+<li><a href="https://groups.google.com/forum/#!forum/nodejs" target="_blank" rel="external">Google Node.js Group</a></li>
+<li><a href="https://plus.google.com/communities/115365528781941125390" target="_blank" rel="external">Google+ Node.js Community</a></li>
+<li><a href="http://cnodejs.org/" target="_blank" rel="external">CNode</a> - Node.js professional Chinese community</li>
+<li><a href="http://www.reddit.com/r/node/" target="_blank" rel="external">Node.js on Reddit</a></li>
+<li><a href="http://stackoverflow.com/questions/tagged/node.js" target="_blank" rel="external">Stackoverflow Node.js tag</a></li>
+<li><a href="http://www.nodejsforums.com" target="_blank" rel="external">NodeJsForums.com</a></li>
+<li>IRC - For real-time chat about Node development go to <a href="http://eric-xujun.github.io/sergtitov/NodeJS-Learning/blob/master/irc.freenode.net" target="_blank" rel="external">irc.freenode.net</a> in the <strong>#node.js</strong> channel with an <a href="http://colloquy.info/" target="_blank" rel="external">IRC client</a> or connect in your web browser to the channel using <a href="http://webchat.freenode.net/?channels=node.js" target="_blank" rel="external">freenode’s WebChat</a>.</li>
+</ul>
+<h2 id="Blogs-News"><a href="#Blogs-News" class="headerlink" title="Blogs/News"></a>Blogs/News</h2><ul>
+<li><a href="http://howtonode.org/" target="_blank" rel="external">“How To Node” blog</a></li>
+<li><a href="http://nodeweekly.com/" target="_blank" rel="external">Node.js Weekly</a> - an email list that gathers up the latest events and news from around the Node.js community.</li>
+<li><a href="http://nodeup.com/" target="_blank" rel="external">NodeUp</a> - a podcast covering the latest Node news in the community.</li>
+</ul>
+<h3 id="Who-to-Follow"><a href="#Who-to-Follow" class="headerlink" title="Who to Follow"></a>Who to Follow</h3><ul>
+<li><a href="https://github.com/visionmedia" target="_blank" rel="external">TJ Holowachuk</a> - express, Jade, Mocha, Stylus</li>
+<li><a href="https://github.com/isaacs" target="_blank" rel="external">Isaac Z. Schlueter</a> - maintainer of Node.js / NPM</li>
+<li><a href="https://github.com/mikeal" target="_blank" rel="external">Mikeal Rogers</a> - Request</li>
+<li><a href="https://github.com/substack" target="_blank" rel="external">James Haliday “substack”</a> - Browserify, dnode, Optimist</li>
+<li><a href="https://github.com/guille" target="_blank" rel="external">Guillermo Rauch</a> - Socket.IO</li>
+</ul>
+<h3 id="Node-mavens"><a href="#Node-mavens" class="headerlink" title="Node mavens"></a>Node mavens</h3><p>You can find the most famous Node.js developer at <a href="http://nodemavens.com/" target="_blank" rel="external">Nodemavens</a>. </p>
+<h2 id="Resource"><a href="#Resource" class="headerlink" title="Resource"></a>Resource</h2><ul>
+<li><a href="http://yuan.rednode.cn/resource" target="_blank" rel="external">Rednode garden</a></li>
+<li><a href="http://nodecloud.com" target="_blank" rel="external">Nodecloud</a></li>
+</ul>
+
+	-->
+			  
+			  <p class="summary">InstallationGo to http://nodejs.org/, download node.js installer and follow instructions. Mac OS, Windows, and Linux are supported. 
+JavaScriptTo use Node.js you need to have a decent understanding of JavaScript language. 
+
+Codecademy - JS - Good for practicing and learning syntax.
+Crockford’s video</p>
+			  
+	</div>
+  <a type="button" href="/NodeJS-Learning/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Rotate-List/" title="Rotate List">LeetCode-Rotate List</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Rotate List</p>
+<blockquote>
+<p>Given a list, rotate the list to the right by k places, where k is non-negative.</p>
+<p>For example:<br>Given <code>1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL</code> and <code>k = 2</code>,<br>return <code>4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL</code>.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Rotate List
+
+Given a list, rotate the list to the right by k places, where k is non-negative.
+For example:Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k = 2,return 4-&amp;gt;5-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;NULL.</p>
+			  
+	</div>
+  <a type="button" href="/Rotate-List/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Best-Time-to-Buy-and-Sell-Stock-II/" title="Best Time to Buy and Sell Stock II">LeetCode-Best Time to Buy and Sell Stock II</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Best Time to Buy and Sell Stock II</p>
+<blockquote>
+<p>Say you have an array for which the ith element is the price of a given stock on day i.</p>
+<p>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times). However, you may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Best Time to Buy and Sell Stock II
+
+Say you have an array for which the ith element is the price of a given stock on day i.
+Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times). However</p>
+			  
+	</div>
+  <a type="button" href="/Best-Time-to-Buy-and-Sell-Stock-II/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Best-Time-to-Buy-and-Sell-Stock-IV/" title="Best Time to Buy and Sell Stock IV">LeetCode-Best Time to Buy and Sell Stock IV</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Best Time to Buy and Sell Stock IV</p>
+<blockquote>
+<p>Say you have an array for which the ith element is the price of a given stock on day i.</p>
+<p>Design an algorithm to find the maximum profit. You may complete at most k transactions.</p>
+<p>####Note:<br>You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).</p>
+<p>####Credits:<br>Special thanks to @Freezen for adding this problem and creating all test cases.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Best Time to Buy and Sell Stock IV
+
+Say you have an array for which the ith element is the price of a given stock on day i.
+Design an algorithm to find the maximum profit. You may complete at most k transactions.
+####Note:You may not engage in multiple transactions at the same time (ie, you</p>
+			  
+	</div>
+  <a type="button" href="/Best-Time-to-Buy-and-Sell-Stock-IV/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Best-Time-to-Buy-and-Sell-Stock/" title="Best Time to Buy and Sell Stock">LeetCode-Best Time to Buy and Sell Stock</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Best Time to Buy and Sell Stock</p>
+<blockquote>
+<p>Say you have an array for which the ith element is the price of a given stock on day i.</p>
+<p>If you were only permitted to complete at most one transaction (ie, buy one and sell one share of the stock), design an algorithm to find the maximum profit.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Best Time to Buy and Sell Stock
+
+Say you have an array for which the ith element is the price of a given stock on day i.
+If you were only permitted to complete at most one transaction (ie, buy one and sell one share of the stock), design an algorithm to find the maximum profit.</p>
+			  
+	</div>
+  <a type="button" href="/Best-Time-to-Buy-and-Sell-Stock/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Binary-Search-Tree-Iterator /" title="Binary Search Tree Iterator">LeetCode-Binary Search Tree Iterator</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Binary Search Tree Iterator</p>
+<blockquote>
+<p>Implement an iterator over a binary search tree (BST). Your iterator will be initialized with the root node of a BST.</p>
+<p>Calling next() will return the next smallest number in the BST.</p>
+<p><strong>Note</strong>: next() and hasNext() should run in average O(1) time and uses O(h) memory, where h is the height of the tree.</p>
+<p>####Credits:<br>Special thanks to @ts for adding this problem and creating all test cases.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Binary Search Tree Iterator
+
+Implement an iterator over a binary search tree (BST). Your iterator will be initialized with the root node of a BST.
+Calling next() will return the next smallest number in the BST.
+Note: next() and hasNext() should run in average O(1) time and uses O(h) memory,</p>
+			  
+	</div>
+  <a type="button" href="/Binary-Search-Tree-Iterator /#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Binary-Tree-Inorder-Traversal/" title="Binary Tree Inorder Traversal">LeetCode-Binary Tree Inorder Traversal</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Binary Tree Inorder Traversal</p>
+<blockquote>
+<p>Given a binary tree, return the inorder traversal of its nodes’ values.</p>
+<p>For example:<br>Given binary tree <code>{1,#,2,3}</code>,</p>
+<pre><code>1
+ \
+  2
+ /
+3
+</code></pre><p>return <code>[1,3,2]</code>.</p>
+<p>Note: Recursive solution is trivial, could you do it iteratively?</p>
+<p>confused what <code>&quot;{1,#,2,3}&quot;</code> means? &gt; read more on how binary tree is serialized on OJ.</p>
+<p>####OJ’s Binary Tree Serialization:<br>The serialization of a binary tree follows a level order traversal, where ‘#’ signifies a path terminator where no node exists below.</p>
+<p>Here’s an example:</p>
+<pre><code>  1
+ / \
+2   3
+   /
+  4
+   \
+    5
+</code></pre><p>The above binary tree is serialized as <code>&quot;{1,2,3,#,#,4,#,#,5}&quot;</code>.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Binary Tree Inorder Traversal
+
+Given a binary tree, return the inorder traversal of its nodes’ values.
+For example:Given binary tree {1,#,2,3},
+1
+ \
+  2
+ /
+3
+return [1,3,2].
+Note: Recursive solution is trivial, could you do it iteratively?
+confused what &amp;quot;{1,#,2,3}&amp;quot; means? &amp;gt; rea</p>
+			  
+	</div>
+  <a type="button" href="/Binary-Tree-Inorder-Traversal/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Binary-Tree-Level-Order-Traversal-II/" title="Binary Tree Level Order Traversal II">LeetCode-Binary Tree Level Order Traversal II</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Binary Tree Level Order Traversal II</p>
+<blockquote>
+<p>Given a binary tree, return the bottom-up level order traversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).</p>
+<p>For example:<br>Given binary tree <code>{3,9,20,#,#,15,7}</code>,</p>
+<pre><code>  3
+ / \
+9  20
+  /  \
+ 15   7
+</code></pre><p>return its bottom-up level order traversal as:</p>
+<pre><code>[
+  [15,7],
+  [9,20],
+  [3]
+]
+</code></pre><p>confused what <code>&quot;{1,#,2,3}&quot;</code> means? &gt; read more on how binary tree is serialized on OJ.</p>
+<p>####OJ’s Binary Tree Serialization:<br>The serialization of a binary tree follows a level order traversal, where ‘#’ signifies a path terminator where no node exists below.</p>
+<p>Here’s an example: </p>
+<pre><code>  1
+ / \
+2   3
+   /
+  4
+   \
+    5
+</code></pre><p>The above binary tree is serialized as <code>&quot;{1,2,3,#,#,4,#,#,5}&quot;</code>.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Binary Tree Level Order Traversal II
+
+Given a binary tree, return the bottom-up level order traversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).
+For example:Given binary tree {3,9,20,#,#,15,7},
+  3
+ / \
+9  20
+  /  \
+ 15   7
+return its bottom-up level o</p>
+			  
+	</div>
+  <a type="button" href="/Binary-Tree-Level-Order-Traversal-II/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Binary-Tree-Level-Order-Traversal/" title="Binary Tree Level Order Traversal">LeetCode-Binary Tree Level Order Traversal</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Binary Tree Level Order Traversal</p>
+<blockquote>
+<p>Given a binary tree, return the level order traversal of its nodes’ values. (ie, from left to right, level by level).</p>
+<p>For example:<br>Given binary tree <code>{3,9,20,#,#,15,7}</code>,</p>
+<pre><code>  3
+ / \
+9  20
+  /  \
+ 15   7
+</code></pre><p>return its level order traversal as:</p>
+<pre><code>[
+  [3],
+  [9,20],
+  [15,7]
+]
+</code></pre><p>confused what <code>&quot;{1,#,2,3}&quot;</code> means? &gt; read more on how binary tree is serialized on OJ.</p>
+<p>####OJ’s Binary Tree Serialization:<br>The serialization of a binary tree follows a level order traversal, where ‘#’ signifies a path terminator where no node exists below.</p>
+<p>Here’s an example:</p>
+<pre><code>  1
+ / \
+2   3
+   /
+  4
+   \
+    5
+</code></pre><p>The above binary tree is serialized as <code>&quot;{1,2,3,#,#,4,#,#,5}&quot;</code>.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Binary Tree Level Order Traversal
+
+Given a binary tree, return the level order traversal of its nodes’ values. (ie, from left to right, level by level).
+For example:Given binary tree {3,9,20,#,#,15,7},
+  3
+ / \
+9  20
+  /  \
+ 15   7
+return its level order traversal as:
+[
+  [3],
+  [9,20],
+  [</p>
+			  
+	</div>
+  <a type="button" href="/Binary-Tree-Level-Order-Traversal/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Binary-Tree-Maximum-Path-Sum/" title="Binary Tree Maximum Path Sum">LeetCode-Binary Tree Maximum Path Sum</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Binary Tree Maximum Path Sum</p>
+<blockquote>
+<p>Given a binary tree, find the maximum path sum.</p>
+<p>The path may start and end at any node in the tree.</p>
+<p>For example:<br>Given the below binary tree,   </p>
+<pre><code>  1
+ / \
+2   3
+</code></pre><p>Return <code>6</code>.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Binary Tree Maximum Path Sum
+
+Given a binary tree, find the maximum path sum.
+The path may start and end at any node in the tree.
+For example:Given the below binary tree,   
+  1
+ / \
+2   3
+Return 6.</p>
+			  
+	</div>
+  <a type="button" href="/Binary-Tree-Maximum-Path-Sum/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Binary-Tree-Postorder-Traversal/" title="Binary Tree Postorder Traversal">LeetCode-Binary Tree Postorder Traversal</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Binary Tree Postorder Traversal</p>
+<blockquote>
+<p>Given a binary tree, return the postorder traversal of its nodes’ values.</p>
+<p>For example:<br>Given binary tree <code>{1,#,2,3}</code>,</p>
+<pre><code>1
+ \
+  2
+ /
+3
+</code></pre><p>return <code>[3,2,1]</code>.</p>
+<p><strong>Note</strong>: Recursive solution is trivial, could you do it iteratively?</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Binary Tree Postorder Traversal
+
+Given a binary tree, return the postorder traversal of its nodes’ values.
+For example:Given binary tree {1,#,2,3},
+1
+ \
+  2
+ /
+3
+return [3,2,1].
+Note: Recursive solution is trivial, could you do it iteratively?</p>
+			  
+	</div>
+  <a type="button" href="/Binary-Tree-Postorder-Traversal/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Binary-Tree-Preorder-Traversal/" title="Binary Tree Preorder Traversal">LeetCode-Binary Tree Preorder Traversal</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Binary Tree Preorder Traversal</p>
+<blockquote>
+<p>Given a binary tree, return the preorder traversal of its nodes’ values.</p>
+<p>For example:<br>Given binary tree {1,#,2,3},</p>
+<pre><code>1
+ \
+  2
+ /
+3
+</code></pre><p>return [1,2,3].</p>
+<p><strong>Note</strong>: Recursive solution is trivial, could you do it iteratively?</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Binary Tree Preorder Traversal
+
+Given a binary tree, return the preorder traversal of its nodes’ values.
+For example:Given binary tree {1,#,2,3},
+1
+ \
+  2
+ /
+3
+return [1,2,3].
+Note: Recursive solution is trivial, could you do it iteratively?</p>
+			  
+	</div>
+  <a type="button" href="/Binary-Tree-Preorder-Traversal/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Binary-Tree-Right-Side-View/" title="Binary Tree Right Side View">LeetCode-Binary Tree Right Side View</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Binary Tree Right Side View</p>
+<blockquote>
+<p>Given a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see ordered from top to bottom.</p>
+<p>For example:<br>Given the following binary tree,</p>
+<pre><code>   1            &lt;---
+ /   \
+2     3         &lt;---
+ \     \
+  5     4       &lt;---
+</code></pre><p>You should return [1, 3, 4].</p>
+<p>####Credits:<br>Special thanks to @amrsaqr for adding this problem and creating all test cases.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Binary Tree Right Side View
+
+Given a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see ordered from top to bottom.
+For example:Given the following binary tree,
+   1            &amp;lt;---
+ /   \
+2     3         &amp;lt;---
+ \     \
+  5     4 </p>
+			  
+	</div>
+  <a type="button" href="/Binary-Tree-Right-Side-View/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Binary-Tree-Zigzag-Level-Order-Traversal/" title="Binary Tree Zigzag Level Order Traversal">LeetCode-Binary Tree Zigzag Level Order Traversal</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Binary Tree Zigzag Level Order Traversal</p>
+<blockquote>
+<p>Given a binary tree, return the zigzag level order traversal of its nodes’ values. (ie, from left to right, then right to left for the next level and alternate between).</p>
+<p>For example:<br>Given binary tree <code>{3,9,20,#,#,15,7}</code>,</p>
+<pre><code>  3
+ / \
+9  20
+  /  \
+ 15   7
+</code></pre><p>return its zigzag level order traversal as:</p>
+<pre><code>[
+  [3],
+  [20,9],
+  [15,7]
+]
+</code></pre><p>confused what <code>&quot;{1,#,2,3}&quot;</code> means? &gt; read more on how binary tree is serialized on OJ.</p>
+<p>####OJ’s Binary Tree Serialization:<br>The serialization of a binary tree follows a level order traversal, where ‘#’ signifies a path terminator where no node exists below.</p>
+<p>Here’s an example:</p>
+<pre><code>  1
+ / \
+2   3
+   /
+  4
+   \
+    5
+</code></pre><p>The above binary tree is serialized as <code>&quot;{1,2,3,#,#,4,#,#,5}&quot;</code>.</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Binary Tree Zigzag Level Order Traversal
+
+Given a binary tree, return the zigzag level order traversal of its nodes’ values. (ie, from left to right, then right to left for the next level and alternate between).
+For example:Given binary tree {3,9,20,#,#,15,7},
+  3
+ / \
+9  20
+  /  \
+ 15   7
+</p>
+			  
+	</div>
+  <a type="button" href="/Binary-Tree-Zigzag-Level-Order-Traversal/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Bitwise-AND-of-Numbers-Range/" title="Bitwise AND of Numbers Range">LeetCode-Bitwise AND of Numbers Range</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Bitwise AND of Numbers Range</p>
+<blockquote>
+<p>Given a range [m, n] where 0 &lt;= m &lt;= n &lt;= 2147483647, return the bitwise AND of all numbers in this range, inclusive.</p>
+<p>For example, given the range [5, 7], you should return 4.</p>
+<p>####Credits:<br>Special thanks to @amrsaqr for adding this problem and creating all test cases.<br>
+	-->
+			  
+			  <p class="summary">##题目
+####Bitwise AND of Numbers Range
+
+Given a range [m, n] where 0 &amp;lt;= m &amp;lt;= n &amp;lt;= 2147483647, return the bitwise AND of all numbers in this range, inclusive.
+For example, given the range [5, 7], you should return 4.
+####Credits:Special thanks to @amrsaqr for adding this problem and creating </p>
+			  
+	</div>
+  <a type="button" href="/Bitwise-AND-of-Numbers-Range/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-06-29 </div>
+			<div class="article-title"><a href="/Candy/" title="Candy">LeetCode-Candy</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>##题目</p>
+<p>####Candy</p>
+<blockquote>
+<p>There are N children standing in a line. Each child is assigned a rating value.</p>
+<p>You are giving candies to these children subjected to the following requirements:</p>
+<ul>
+<li>Each child must have at least one candy.   </li>
+<li>Children with a higher rating get more candies than their neighbors.   </li>
+</ul>
+<p>What is the minimum candies you must give?</p>
+</blockquote>
+	-->
+			  
+			  <p class="summary">##题目
+####Candy
+
+There are N children standing in a line. Each child is assigned a rating value.
+You are giving candies to these children subjected to the following requirements:
+
+Each child must have at least one candy.   
+Children with a higher rating get more candies than their neighbors.   
+
+What</p>
+			  
+	</div>
+  <a type="button" href="/Candy/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+
+		</div>
+
+		<!-- pagination -->
+		<div>
+  		<center>
+		<div class="pagination">
+<ul class="pagination">
+	 
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
+
+        <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+
+		
+		   <li class="next"> <a href="/page/2/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a> </li>          
+        
+	
+</ul>
+</div>
+
+  		</center>
+		</div>
+
+		
+		
+	</div> <!-- col-md-9 -->
+
+	
+		<div class="col-md-3">
+	<div id="sidebar">
+	
+			
+  <div id="site_search">
+   <div class="form-group">
+    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search" class="st-search-input st-default-search-input form-control"/>
+   </div>  
+  <div id="local-search-result"></div>
+  </div>
+
+
+		
+			
+	<div class="widget">
+		<h4>Categories</h4>
+		<ul class="tag_box inline list-unstyled">
+		
+			<li><a href="/categories/Angular-js/">Angular.js<span>1</span></a></li>
+		
+			<li><a href="/categories/Database/">Database<span>1</span></a></li>
+		
+			<li><a href="/categories/IT杂谈/">IT杂谈<span>20</span></a></li>
+		
+			<li><a href="/categories/Mac/">Mac<span>4</span></a></li>
+		
+			<li><a href="/categories/Ruby/">Ruby<span>2</span></a></li>
+		
+			<li><a href="/categories/System-Design/">System Design<span>1</span></a></li>
+		
+			<li><a href="/categories/algorithm/">algorithm<span>197</span></a></li>
+		
+			<li><a href="/categories/hexo/">hexo<span>18</span></a></li>
+		
+			<li><a href="/categories/linux/">linux<span>3</span></a></li>
+		
+			<li><a href="/categories/markdown/">markdown<span>1</span></a></li>
+		
+			<li><a href="/categories/node-js/">node.js<span>1</span></a></li>
+		
+			<li><a href="/categories/nodejs/">nodejs<span>1</span></a></li>
+		
+			<li><a href="/categories/project/">project<span>50</span></a></li>
+		
+			<li><a href="/categories/python/">python<span>11</span></a></li>
+		
+			<li><a href="/categories/前端/">前端<span>4</span></a></li>
+		
+			<li><a href="/categories/推荐/">推荐<span>1</span></a></li>
+		
+			<li><a href="/categories/机器学习/">机器学习<span>23</span></a></li>
+		
+			<li><a href="/categories/生活/">生活<span>1</span></a></li>
+		
+			<li><a href="/categories/读书笔记/">读书笔记<span>1</span></a></li>
+		
+		</ul>
+	</div>
+
+		
+			
+	<div class="widget">
+		<h4>Tag Cloud</h4>
+		<ul class="tag_box inline list-unstyled">		
+		
+			<li><a href="/tags/shadowsocks/">shadowsocks<span>1</span></a></li>
+		
+			<li><a href="/tags/coursera/">coursera<span>2</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>1</span></a></li>
+		
+			<li><a href="/tags/爬虫/">爬虫<span>4</span></a></li>
+		
+			<li><a href="/tags/正则表达式/">正则表达式<span>1</span></a></li>
+		
+			<li><a href="/tags/Redis/">Redis<span>5</span></a></li>
+		
+			<li><a href="/tags/CSS/">CSS<span>1</span></a></li>
+		
+			<li><a href="/tags/机器学习/">机器学习<span>24</span></a></li>
+		
+			<li><a href="/tags/前端/">前端<span>1</span></a></li>
+		
+			<li><a href="/tags/edit/">edit<span>1</span></a></li>
+		
+			<li><a href="/tags/google/">google<span>1</span></a></li>
+		
+			<li><a href="/tags/Binary-Search/">Binary Search<span>13</span></a></li>
+		
+			<li><a href="/tags/jQuery/">jQuery<span>1</span></a></li>
+		
+			<li><a href="/tags/hexo/">hexo<span>18</span></a></li>
+		
+			<li><a href="/tags/OS/">OS<span>1</span></a></li>
+		
+			<li><a href="/tags/xiami/">xiami<span>1</span></a></li>
+		
+			<li><a href="/tags/apue/">apue<span>4</span></a></li>
+		
+			<li><a href="/tags/CentOS/">CentOS<span>5</span></a></li>
+		
+			<li><a href="/tags/stack/">stack<span>1</span></a></li>
+		
+			<li><a href="/tags/异常处理/">异常处理<span>1</span></a></li>
+		
+		
+		   <li><a href="/tags">...<span>92</span></a></li>
+		 
+		</ul>
+	</div>
+
+
+		
+			
+<div class="widget">
+  <h4>Recent Posts</h4>
+  <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/python系统性能信息模块-pstuil/"  title="python系统性能信息模块-psutil" ><i class="fa fa-file-o"></i>python系统性能信息模块-psutil</a>
+      </li>
+    
+      <li>
+        <a href="/System Design Preparation/"  title="系统设计准备" ><i class="fa fa-file-o"></i>System Design Preparation</a>
+      </li>
+    
+      <li>
+        <a href="/Resevior Sampling/"  title="Resevior Sampling 蓄水池算法java实现" ><i class="fa fa-file-o"></i>Resevior Sampling蓄水池算法java实现</a>
+      </li>
+    
+      <li>
+        <a href="/Top 25 Angular.js Interview Questions/"  title="Top 25 Angular.js Interview Questions" ><i class="fa fa-file-o"></i>Top 25 Angular.js Interview...</a>
+      </li>
+    
+      <li>
+        <a href="/NodeJS-Learning/"  title="NodeJS 学习资料汇总" ><i class="fa fa-file-o"></i>NodeJS 学习资料</a>
+      </li>
+    
+      <li>
+        <a href="/Rotate-List/"  title="Rotate List" ><i class="fa fa-file-o"></i>LeetCode-Rotate List</a>
+      </li>
+    
+      <li>
+        <a href="/Best-Time-to-Buy-and-Sell-Stock-II/"  title="Best Time to Buy and Sell Stock II" ><i class="fa fa-file-o"></i>LeetCode-Best Time to Buy a...</a>
+      </li>
+    
+      <li>
+        <a href="/Best-Time-to-Buy-and-Sell-Stock-IV/"  title="Best Time to Buy and Sell Stock IV" ><i class="fa fa-file-o"></i>LeetCode-Best Time to Buy a...</a>
+      </li>
+    
+      <li>
+        <a href="/Best-Time-to-Buy-and-Sell-Stock/"  title="Best Time to Buy and Sell Stock" ><i class="fa fa-file-o"></i>LeetCode-Best Time to Buy a...</a>
+      </li>
+    
+      <li>
+        <a href="/Binary-Search-Tree-Iterator /"  title="Binary Search Tree Iterator" ><i class="fa fa-file-o"></i>LeetCode-Binary Search Tree...</a>
+      </li>
+    
+  </ul>
+</div>
+
+		
+			
+<div class="widget">
+	<h4>Links</h4>
+	<ul class="blogroll list-unstyled">
+	
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
+	
+	</ul>
+</div>
+
+
+		
+	</div> <!-- sidebar -->
+</div> <!-- col-md-3 -->
+
+	
+	
+</div> <!-- row-fluid -->
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2016 CodeInterviews
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
 </script>
 
 
-</body>
-</html>
 
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

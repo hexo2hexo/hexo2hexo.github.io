@@ -1,543 +1,1194 @@
-
-
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!DOCTYPE HTML>
+<html>
 <head>
-    
-    <meta name="author" content="CodeInterviews">
-    
-    
-
-    
-    <link rel="alternative" href="atom.xml" title="CodeInterviews" type="application/atom+xml">
-    
-    
-    
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CodeInterviews</title>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Javascript -->
-    <script src="/js/jquery-2.1.0.min.js"></script>
-    <script src="/js/jquery.backstretch.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/js/headroom.min.js"></script>
-    <script src="/js/jquery.headroom.min.js"></script>
-    <script src="/js/common.js"></script>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <meta name="baidu-site-verification" content="Jvgfj1O0oP" />
-    <meta name="360-site-verification" content="902348aeb40d156fb32b748c4071c4bd" />
-</head>
-<body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="http://codeinterviews.com" title="CodeInterviews">CodeInterviews</a>
-            </div>
-
-            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
-                
-
-                <ul class="nav navbar-nav">
-                    
-                    <li id="nav-index"><a href="/">首页</a></li>
-                    
-                    <li id="nav-categories"><a href="/categories">分类</a></li>
-                    
-                    <li id="nav-tags"><a href="/tags">标签</a></li>
-                    
-                    <li id="nav-reading"><a href="/tags/#LeetCode">LeetCode</a></li>
-                    
-                    <li id="nav-labs"><a href="/tags/#Java">Java</a></li>
-                    
-                    <li id="nav-about"><a href="/tags/#Javascript">Javascript</a></li>
-                    
-
-                    <!--<li id="nav-github"><a href="https://github.com/hexo2hexo" target="_blank">GitHub</a></li>-->
-                    <li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>
-                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <script>
-    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
-    var bgLength = "74";
-    var bgRandom = false;
-    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
-
-    $(function() {
-        // page-id...
-        var pageId = "page/17/index.html";
-        pageId = pageId.substr(0, pageId.indexOf("/"));
-        if(pageId === "") pageId = "index";
-
-        $("#nav-" + pageId).addClass("active");
-    });
-    </script>
-
-    
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/leetcode-Palindrome-Number/" title="LeetCode-Palindrome Number">LeetCode-Palindrome Number</a></h1>
-
-        
-        <p class="summary">Palindrome Number</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Math/">Math</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/leetcode-Regular-Expression-Matching/" title="LeetCode-Regular Expression Matching">LeetCode-Regular Expression Matching</a></h1>
-
-        
-        <p class="summary">Regular Expression Matching</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/String/">String</a>&nbsp;<a href="/tags/Dynamic-Programming/">Dynamic Programming</a>&nbsp;<a href="/tags/Backtracking/">Backtracking</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/leetcode-Roman-to-Integer/" title="LeetCode-Roman to Integer">LeetCode-Roman to Integer</a></h1>
-
-        
-        <p class="summary">Roman to Integer</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Math，String/">Math，String</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/leetcode-String-to-Integer/" title="LeetCode-String to Integer (atoi)">LeetCode-String to Integer (atoi)</a></h1>
-
-        
-        <p class="summary">String to Integer (atoi) </p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/String/">String</a>&nbsp;<a href="/tags/Math/">Math</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/leetcode-ZigZag-Conversion/" title="LeetCode-ZigZag Conversion">LeetCode-ZigZag Conversion</a></h1>
-
-        
-        <p class="summary">ZigZag Conversion</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/String/">String</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/mark-down/" title="MarkDown使用">MarkDown使用</a></h1>
-
-        
-        <p class="summary">use markdown</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/markdown/">markdown</a>&nbsp;<a href="/tags/edit/">edit</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/markdown/">markdown</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/leetcode-two-sum/" title="LeetCode-TwoSum">LeetCode-TwoSum</a></h1>
-
-        
-        <p class="summary">two sum</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;<a href="/tags/Hash-Table/">Hash Table</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/Add-and-Search-Word - Data-structure-design/" title="LeetCode-Add and Search Word - Data structure design">LeetCode-Add and Search Word - Data structure design</a></h1>
-
-        
-        <p class="summary">Add and Search Word - Data structure design</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Backtracking/">Backtracking</a>&nbsp;<a href="/tags/Data-Structure/">Data Structure</a>&nbsp;<a href="/tags/Trie/">Trie</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/从《琅琊榜》来看大数据/" title="从《琅琊榜》来看大数据">从《琅琊榜》来看大数据</a></h1>
-
-        
-        <p class="summary">从《琅琊榜》来看大数据</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/大数据/">大数据</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/project/">project</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/根据输入路径产生输出路径和清除HDFS目录/" title="根据输入路径产生输出路径和清除HDFS目录">根据输入路径产生输出路径和清除HDFS目录</a></h1>
-
-        
-        <p class="summary">根据输入路径产生输出路径和清除HDFS目录</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/Hadoop/">Hadoop</a>&nbsp;<a href="/tags/Mapreduce/">Mapreduce</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/project/">project</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/设置Reducer数目/" title="设置Reducer数目">设置Reducer数目</a></h1>
-
-        
-        <p class="summary">设置Reducer数目</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/Hadoop/">Hadoop</a>&nbsp;<a href="/tags/Mapreduce/">Mapreduce</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/project/">project</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/使用HashPartitioner来调节Reducer的计算负载/" title="使用HashPartitioner来调节Reducer的计算负载">使用HashPartitioner来调节Reducer的计算负载</a></h1>
-
-        
-        <p class="summary">使用HashPartitioner来调节Reducer的计算负载</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/Hadoop/">Hadoop</a>&nbsp;<a href="/tags/Mapreduce/">Mapreduce</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/project/">project</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-
-<div class="container pagination-div">
-    <div class="well">
-        <a class="extend prev" rel="prev" href="/page/16/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span>
-    </div>
-</div>
-
-
+  <meta charset="utf-8">
+  
+  <title>Page 17 | CodeInterviews</title>
+  <meta name="author" content="CodeInterviews">
+  
+  <meta name="description" content="程序员的世界,编程,技术,程序员,java,.Net,c++,c语言,python,ruby">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="CodeInterviews"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/bootstrap.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
 <script>
-    $(function () {
-        $("article:first").addClass("first-post");
-    });
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-80198899-1', 'auto');
+  ga('send', 'pageview');
 </script>
 
-    <footer id="footer">
-        <div id="bottom-tip">
-            CodeInterviews
-        </div>
-        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
-        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
-        <small>&copy; 2016 <a href="http://codeinterviews.com" target="_blank">CodeInterviews</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
-    </footer>
-    
+
+
 <script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
-  var s = document.getElementsByTagName("script")[0];
+  hm.src = "//hm.baidu.com/hm.js?9a9d27181903a355a8d95344f23682b0";
+  var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
 
 
+</head>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-51347904-1', 'auto');
-  ga('send', 'pageview');
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">CodeInterviews</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>所有文章
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the articles.">
+			  <i class="fa fa-archive"></i>分类
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Java/" title="All about java.">
+			  <i class="fa fa-codepen"></i>Java
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Javascript/" title="All about javascript.">
+			  <i class="fa fa-empire"></i>Javascript
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/python/" title="All about Python.">
+			  <i class="fa fa-cog"></i>Python
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Leetcode/" title="All about leetcode.">
+			  <i class="fa fa-thumbs-o-up"></i>Leetcode
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-info-circle"></i>关于本站
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 <div class="page-header page-header-inverse ">
+  <h1 class="title title-inverse ">Programming interview questions, tips and knowledge, system design, big data.</h1>
+</div>
+
+<div class="row page">
+
+	
+	<div class="col-md-9">
+	
+
+		<div class="slogan">
+      <i class="fa fa-heart"></i>
+      程序员的世界, 为程序员服务
+</div>    
+		<div id="top_search"></div>
+		<div class="mypage">
+		
+		<!-- title and entry -->
+        <!-- render top articles firstly -->
+        
+        <!-- render other articles -->
+        
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-07-01 </div>
+			<div class="article-title"><a href="/hexo-on-bae/" >将hexo博客部署到bae</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>我相信很多博主选择使用hexo做为博客程序，一个很重要的原因是可以使用免费、易用的github做为代码托管中心。用过一段时间后我发现，github在国内的速度也不是很理想。于是想到能不能把博客放在百度云BAE上呢，如果成功的话速度应该会有很大的提升。</p>
+<p>和新浪的SAE类似，BAE提供web应用的服务器环境，现在支持Python、Java、PHP。不过，这个我们不用关心，因为我们代码是纯静态的，选择哪个环境都是可以的。SAE目前收费了。而BAE，不仅提供无限量的免费存储空间和1G的免费数据库空间，而且速度好像比SAE要快些，操作也十分方便。</p>
+<p>就像github，我们可以使用git、svn这样的版本控制工具提交代码。hexo目前默认支持的部署环境为github、heroku，并通过github.js和heroku.js脚本把git命令简化为几个简单的hexo命令，使用起来更加方便高效。按理说我应该类似做一个bae.js，实际上我也尝试了，可惜未果，对其中原理不甚明了。现阶段还是使用原始的git方式提交代码，等以后bae.js成功了会在此更新分享。</p>
+<p>下面说一下在bae部署hexo博客的步骤。</p>
+	-->
+			  
+			  <p class="summary">我相信很多博主选择使用hexo做为博客程序，一个很重要的原因是可以使用免费、易用的github做为代码托管中心。用过一段时间后我发现，github在国内的速度也不是很理想。于是想到能不能把博客放在百度云BAE上呢，如果成功的话速度应该会有很大的提升。
+和新浪的SAE类似，BAE提供web应用的服务器环境，现在支持Python、Java、PHP。不过，这个我们不用关心，因为我们代码是纯静态的，选择哪个环境都是可以的。SAE目前收费了。而BAE，不仅提供无限量的免费存储空间和1G的免费数据库空间，而且速度好像比SAE要快些，操作也十分方便。
+就像github，我们可以使用git、svn这样的版本控</p>
+			  
+	</div>
+  <a type="button" href="/hexo-on-bae/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-06-27 </div>
+			<div class="article-title"><a href="/media-on-hexo/" >怎样在博文中嵌入图片、音乐、视频？</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>到目前为止，我的博客中几乎清一色的文本，偶尔夹杂图片。今天在<a href="http://sinchang.github.io/2013/06/26/music/">SinChang的博客</a>中看到博客中嵌入了音乐，于是想了解一下怎样在博文中嵌入音乐、视频、flash等多媒体文件。</p>
+<p>实际上，在hexo中，markdown支持html标签，md文件解析为html时原有的html部分会保留。有基于此，我们只要在文中插入符合html规范的代码即可。下面举例说明。</p>
+<p>###图片</p>
+<p>代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](http://ww2.sinaimg.cn/large/5e8cb366jw1e62o63tkv3j20dh078q5a.jpg)</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<p><img src="http://ww2.sinaimg.cn/large/5e8cb366jw1e62o63tkv3j20dh078q5a.jpg" alt=""></p>
+	-->
+			  
+			  <p class="summary">到目前为止，我的博客中几乎清一色的文本，偶尔夹杂图片。今天在SinChang的博客中看到博客中嵌入了音乐，于是想了解一下怎样在博文中嵌入音乐、视频、flash等多媒体文件。
+实际上，在hexo中，markdown支持html标签，md文件解析为html时原有的html部分会保留。有基于此，我们只要在文中插入符合html规范的代码即可。下面举例说明。
+###图片
+代码：
+1![](http://ww2.sinaimg.cn/large/5e8cb366jw1e62o63tkv3j20dh078q5a.jpg)
+效果：</p>
+			  
+	</div>
+  <a type="button" href="/media-on-hexo/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-06-26 </div>
+			<div class="article-title"><a href="/hexo-theme-alteration/" >hexo 主题优化</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>下载了几个博主修改过的hexo主题源代码，对照自带默认主题light，尝试进行修改。</p>
+<p><img src="/img/themegai.png" alt=""></p>
+	-->
+			  
+			  <p class="summary">下载了几个博主修改过的hexo主题源代码，对照自带默认主题light，尝试进行修改。</p>
+			  
+	</div>
+  <a type="button" href="/hexo-theme-alteration/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-06-25 </div>
+			<div class="article-title"><a href="/qian-duan-zhi-zhe-jiao-xiao-guo/" >前端之『折角』效果</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>昨天访问一位Q友的网站，看到一个很nice的效果。如图，上下两个区域交界线的中央处，有一个白色的倒三角，看起来很像上方区域到下放区域的延伸，视觉效果非常不错。我不知道这个效果的学名叫什么，姑且叫做『折角』吧。<br><img src="/img/zhejiaodemo.png" alt=""></p>
+	-->
+			  
+			  <p class="summary">昨天访问一位Q友的网站，看到一个很nice的效果。如图，上下两个区域交界线的中央处，有一个白色的倒三角，看起来很像上方区域到下放区域的延伸，视觉效果非常不错。我不知道这个效果的学名叫什么，姑且叫做『折角』吧。</p>
+			  
+	</div>
+  <a type="button" href="/qian-duan-zhi-zhe-jiao-xiao-guo/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-06-23 </div>
+			<div class="article-title"><a href="/box-and-shadow-effect/" >前端之drop-shadow效果</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>今天从<a href="https://news.ycombinator.com/">hackernews</a>跳入<a href="https://commando.io/">COMMANDO</a>来看它的『 flatten bootstrap』效果，却被网页简洁、漂亮的UI吸引住了。我对bootstrap已经比较了解，一眼就能看出来这个网站的主页是根据bootstrap主页经过简单修改得到的。一直下拉到网页底部，看到了这个效果：</p>
+<p><img src="/img/ui1.png" alt=""></p>
+<p>这种有点立体感的小框，曾在不少网站见到过，一直很喜欢。这次决定认真研究一下效果是什么做出来的。</p>
+	-->
+			  
+			  <p class="summary">今天从hackernews跳入COMMANDO来看它的『 flatten bootstrap』效果，却被网页简洁、漂亮的UI吸引住了。我对bootstrap已经比较了解，一眼就能看出来这个网站的主页是根据bootstrap主页经过简单修改得到的。一直下拉到网页底部，看到了这个效果：
+
+这种有点立体感的小框，曾在不少网站见到过，一直很喜欢。这次决定认真研究一下效果是什么做出来的。</p>
+			  
+	</div>
+  <a type="button" href="/box-and-shadow-effect/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-06-19 </div>
+			<div class="article-title"><a href="/secondary-dns/" >如何绑定二级域名</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>我曾在<a href="http://zipperary.com/2013/05/27/domain-name-and-dns/">购买域名、设置DNS</a>一文中介绍过『如何在Goddady购买域名，在DNSPod设置域名映射』。本文在此基础上介绍一下怎样绑定二级域名（a.aa.com形式）。</p>
+<p>我在『百度开放平台』新建了一个web应用，百度提供了<code>duapp.com</code>下的二级域名，如<a href="http://1.yiqiansw.duapp.com/">http://1.yiqiansw.duapp.com/</a>。也可以自由绑定其他域名。这里以此为例进行介绍。</p>
+<ol>
+<li><p>在百度开发者中心，查看CNAME记录。</p>
+<p><img src="/img/sdns1.png" alt=""><br>按照上图打开『域名绑定』窗口。我们看到，第一步是『将您的自有域名的CNAME记录指向：yiqiansw.duapp.com』，这里<code>yiqiansw.duapp.com</code>是百度默认提供的域名。（该窗口不要关闭，稍后会回来）</p>
+	-->
+			  
+			  <p class="summary">我曾在购买域名、设置DNS一文中介绍过『如何在Goddady购买域名，在DNSPod设置域名映射』。本文在此基础上介绍一下怎样绑定二级域名（a.aa.com形式）。
+我在『百度开放平台』新建了一个web应用，百度提供了duapp.com下的二级域名，如http://1.yiqiansw.duapp.com/。也可以自由绑定其他域名。这里以此为例进行介绍。
+
+在百度开发者中心，查看CNAME记录。
+按照上图打开『域名绑定』窗口。我们看到，第一步是『将您的自有域名的CNAME记录指向：yiqiansw.duapp.com』，这里yiqiansw.duapp.com是百度默认提供的域名。（该窗口不要</p>
+			  
+	</div>
+  <a type="button" href="/secondary-dns/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-06-16 </div>
+			<div class="article-title"><a href="/large-scale-ml/" >大规模机器学习</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>机器学习在这几年得到快速发展，一个很重要的原因是 Large Dataset（大规模数据），这节课就来介绍用机器学习算法处理大规模数据的问题。</p>
+<p>关于数据的重要性，有一句话是这么说的：</p>
+<blockquote>
+<p>It’s not who has the best <strong>algorithm</strong> that wins.<br>It’s who has the most <strong>data</strong>.</p>
+</blockquote>
+<p>然而，当数据量过大时，计算的复杂度会增加，计算成本也会提高。假如数据量是一百万，使用梯度下降算法来训练参数，每走一步，需要对百万数据进行求和计算，这样的计算量是极大的。但现实问题总是有大量数据，比如全国的车辆、网民等等。那么，我们就有必要研究一下如何更好地处理大规模数据。</p>
+	-->
+			  
+			  <p class="summary">机器学习在这几年得到快速发展，一个很重要的原因是 Large Dataset（大规模数据），这节课就来介绍用机器学习算法处理大规模数据的问题。
+关于数据的重要性，有一句话是这么说的：
+
+It’s not who has the best algorithm that wins.It’s who has the most data.
+
+然而，当数据量过大时，计算的复杂度会增加，计算成本也会提高。假如数据量是一百万，使用梯度下降算法来训练参数，每走一步，需要对百万数据进行求和计算，这样的计算量是极大的。但现实问题总是有大量数据，比如全国的车辆、网民等等。那么，我们就有必要研究一下如何更好地处理大规</p>
+			  
+	</div>
+  <a type="button" href="/large-scale-ml/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-06-15 </div>
+			<div class="article-title"><a href="/recommender-system/" >Recommender System(推荐系统)</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><strong> Recommender System </strong> （推荐系统）是机器学习中一个极为常见且重要的应用，本节就来做一下介绍。</p>
+<p>###为什么要介绍「推荐系统」</p>
+<p>有两个原因：</p>
+<ol>
+<li><p>「推荐系统」在很多公司中被作为一项战略级别的应用，是盈利的重要来源，例如亚马逊、Netflix。这些网站根据用户的使用历史，推荐用户可能喜欢、感兴趣的产品。</p>
+</li>
+<li><p>机器学习中有一个很重要的理念，就是“自动选择特征”，而「推荐系统」就是一个很好的应用实例。</p>
+</li>
+</ol>
+<p>例子：电影推荐系统。新上一部电影或尚未评分的电影，如何自动评分，推荐给用户。需要用到的数据，网站上不同用户对不同电影的评分情况（1-5）。</p>
+	-->
+			  
+			  <p class="summary">Recommender System  （推荐系统）是机器学习中一个极为常见且重要的应用，本节就来做一下介绍。
+###为什么要介绍「推荐系统」
+有两个原因：
+
+「推荐系统」在很多公司中被作为一项战略级别的应用，是盈利的重要来源，例如亚马逊、Netflix。这些网站根据用户的使用历史，推荐用户可能喜欢、感兴趣的产品。
+
+机器学习中有一个很重要的理念，就是“自动选择特征”，而「推荐系统」就是一个很好的应用实例。
+
+
+例子：电影推荐系统。新上一部电影或尚未评分的电影，如何自动评分，推荐给用户。需要用到的数据，网站上不同用户对不同电影的评分情况（1-5）。</p>
+			  
+	</div>
+  <a type="button" href="/recommender-system/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-06-13 </div>
+			<div class="article-title"><a href="/anomaly-detection/" >Anomaly Detection</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>『异常检测』是无监督学习中的又一类算法，其目的是根据训练集中一堆无标记的数据，判断出要测试的数据是否异常。Andrew Ng给出的三个应用例子是plane engine、fraud detection和monitoring computers in a data center.结合下图说明一下什么是『异常检测』。</p>
+<p><img src="/img/add1.png" alt=""></p>
+<p>图中红色标记的是训练集中的飞机引擎，横纵坐标是飞机引擎的两个特征（feature）。对于一个新的飞机引擎（绿色标志），观测其特征，若落在上面那个位置，我们很容易判断这个引擎是正常的，若落在下面的位置，则有足够的理由将其标记为异常。</p>
+<p><strong>『异常检测』的原理</strong>：这一类的数据一般呈正态分布（又叫高斯分布），根据数据的特征向量，容易得出其概率大小，然后跟某个事前约定好的数值进行比较，如果概率比这个值还小，我们就判断这个数据检测出了异常。</p>
+	-->
+			  
+			  <p class="summary">『异常检测』是无监督学习中的又一类算法，其目的是根据训练集中一堆无标记的数据，判断出要测试的数据是否异常。Andrew Ng给出的三个应用例子是plane engine、fraud detection和monitoring computers in a data center.结合下图说明一下什么是『异常检测』。
+
+图中红色标记的是训练集中的飞机引擎，横纵坐标是飞机引擎的两个特征（feature）。对于一个新的飞机引擎（绿色标志），观测其特征，若落在上面那个位置，我们很容易判断这个引擎是正常的，若落在下面的位置，则有足够的理由将其标记为异常。
+『异常检测』的原理：这一类的数据一般呈正态分布（又</p>
+			  
+	</div>
+  <a type="button" href="/anomaly-detection/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-06-12 </div>
+			<div class="article-title"><a href="/pca/" >Principal Componential Algorithm (PCA)</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>今天学习的是<strong>无监督学习</strong>中的第二类算法：<strong>Dimentionality Reduction</strong>，即维度降低。我们所研究的数据集合，每个数据通常都有一个<strong>特征向量</strong>，在真实的问题中，维度往往很高，数量级可以达到上万或者更高。有时候就需要进行降维，<strong>好处</strong>有这几点：</p>
+<ul>
+<li>Data Compression。数据压缩，大量的数据，每个数据都有很高的特征维度，存储所需要的空间就会很大，对硬件的配置要求也会很高。</li>
+<li>Speed up learning。加速学习、提高训练的速度。</li>
+<li>Visualization。视觉化是处理问题一个很好的手段，形成图形后可以直观地观察、更好地理解我们的问题。当特征向量超过三维后，就无法用图形表示了，所以这类降维往往需要降到三维以下。</li>
+</ul>
+<p><strong>数据降维的原理：</strong> 特征向量不同分量之间，往往有一定**的相关性。<br>最简单的例子，我们要表示一根指挥棒，纵坐标为用inch表示其长度，横坐标用cm表示其长度，这样可以形成用二维特征向量表示的特征值。所有的数据都落在一条直线上，事实上也就是一维图形了。<br>假如相关度不如上个例子那么高，我们还是可以找出一条直线进行拟合，然后将所有数据投射到这条直线上，用这些投射点作为降维之后的数据。同理，对于维度为3的特征向量，可以投射到一个平面（plane）上，降为二维。</p>
+	-->
+			  
+			  <p class="summary">今天学习的是无监督学习中的第二类算法：Dimentionality Reduction，即维度降低。我们所研究的数据集合，每个数据通常都有一个特征向量，在真实的问题中，维度往往很高，数量级可以达到上万或者更高。有时候就需要进行降维，好处有这几点：
+
+Data Compression。数据压缩，大量的数据，每个数据都有很高的特征维度，存储所需要的空间就会很大，对硬件的配置要求也会很高。
+Speed up learning。加速学习、提高训练的速度。
+Visualization。视觉化是处理问题一个很好的手段，形成图形后可以直观地观察、更好地理解我们的问题。当特征向量超过三维后，就无法用图形表示了</p>
+			  
+	</div>
+  <a type="button" href="/pca/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-06-10 </div>
+			<div class="article-title"><a href="/k-means-algorithm/" >k-means algorithm</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>最近在学习『机器学习』这门课，使用的斯坦福大学Andrew Ng在<strong>Coursera</strong>的在线课程。机器学习主要包括<strong>有监督学习</strong>和<strong>无监督学习</strong>。我的学习进度到了后者。今天学习的是无监督学习中最常见、最普遍、最基础的一类问题——<strong>clustering</strong>。</p>
+<p><strong>首先说说什么是有监督学习和无监督学习。</strong>  </p>
+<p>给出一个数据集合，如果对于集合中的每个数据，不仅有该数据的特征值向量，而且每个数据都进行了类型标记，我们把这个集合叫做训练集（training set）。然后我们通过一些算法进行学习。学习的目的是，找到一个判别函数，给定一个新的数据，这个判别函数能输出这个数据的所属分类。找到这样的判别函数的过程，就叫做有监督学习。这里的监督，指的是训练集中的每个数据都进行了类别标记。  </p>
+<p>与此相反，对于无监督学习，每个数据并没有进行类别标记，我们只知道它的特征向量，并不知道所属类别。</p>
+<p>所谓<strong>clustering（聚类）</strong>，就是给定一个数据集合，集合大小为m，每个数据都有特征向量x，我们通过某种算法，将这批数据瓜分成k组，每个数据分别属于某一组。</p>
+<p>下面直观地说明一下什么是聚类问题，以及聚类的流程。</p>
+<p><img src="/img/kmeans.png" alt=""></p>
+<p>左上角的图中，绿点表示我们的数据集合，横、纵坐标分别是数据的特征值向量分量。例如，数据表示衬衫的尺寸（L/M/S），横、纵坐标分别表示height和weight。我们的目的是将这批数据分为k组（比如3组，L/M/S）。</p>
+<p><strong>聚类的过程</strong>如下：</p>
+<ol>
+<li>随机选择两个location，作为<strong>class centroid</strong>(种子)。如左上图中蓝色和红色x。</li>
+<li>对于数据集合中的每个数据点，分别计算到两个种子的距离，并互相比较，如果距离蓝色种子近则标记为蓝色，否则标记为红色。如右上图。这个过程叫class assignment。</li>
+<li>计算每一临时组的中心点（average），并作为这一组新的种子。如左下图，种子移动到了中心点。</li>
+<li>重复2、3，直到种子不再变动。</li>
+</ol>
+<p>在<strong>有监督学习</strong>中，有个<strong>cost function</strong>，用J表示。学习的过程，就是不断调整参数，使得J最小。在<strong>无监督学习</strong>中，也有类似的cost function，在k-means中，我们把它叫做<strong>distortion cost function</strong>。如图：</p>
+<p><img src="/img/opob.png" alt=""></p>
+<p>式子右边，表示的是每个点到它所属分组的种子的距离平均值，也就是要最小化这个距离。这里的参数，就是种子的位置和每个数据所属分组。</p>
+<p><strong>k-means算法的几个问题</strong></p>
+<ol>
+<li><p>如何选择k的大小？</p>
+<p>Andrew Ng说并没有最好的办法。但有以下3个方法可以考虑：</p>
+<ul>
+<li>观察数据分布大致情况，manually set the number k.</li>
+<li><p>Elbow method。如图：<br><img src="/img/elbow.png" alt=""><br>我们对k取不用的值，分别计算相应的J（cost function），绘制图像，转弯最急的那点就是elbow（类似人的胳膊肘）。缺点是，有些根本找不到明确的elbow点，如第二个图。</p>
+</li>
+<li><p>purpose。我们进行聚类，一般都是要服务于某个目的或用途。因此，可以根据具体的用途确定k的大小。比如对于衬衫，是分为3类好还是分为5类好，要看哪一个能更好地服务于我们的应用。</p>
+</li>
+</ul>
+</li>
+<li><p>如何确定k个种子的初始位置？</p>
+<p>Ng教授给出以下建议：</p>
+<ol>
+<li>K &lt; m，组数要比数据集合的大小小。</li>
+<li>从数据集合中，随机选取k个。</li>
+<li>这k个数据就是初始的k个种子。</li>
+</ol>
+<p>由于种子的初始位置对于聚类结果影响很大，不同的初试位置聚类的效果好坏也不同。我们可以进行多次聚类，每次选择不同的初始种子，然后选择J最小的那次聚类。</p>
+</li>
+</ol>
+<p>k-means算法的演示地址：<a href="http://home.deib.polimi.it/matteucc/Clustering/tutorial_html/AppletKM.html" target="_blank" rel="external">K-means - Interactive demo</a></p>
+
+	-->
+			  
+			  <p class="summary">最近在学习『机器学习』这门课，使用的斯坦福大学Andrew Ng在Coursera的在线课程。机器学习主要包括有监督学习和无监督学习。我的学习进度到了后者。今天学习的是无监督学习中最常见、最普遍、最基础的一类问题——clustering。
+首先说说什么是有监督学习和无监督学习。  
+给出一个数据集合，如果对于集合中的每个数据，不仅有该数据的特征值向量，而且每个数据都进行了类型标记，我们把这个集合叫做训练集（training set）。然后我们通过一些算法进行学习。学习的目的是，找到一个判别函数，给定一个新的数据，这个判别函数能输出这个数据的所属分类。找到这样的判别函数的过程，就叫做有监督学习。</p>
+			  
+	</div>
+  <a type="button" href="/k-means-algorithm/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-06-06 </div>
+			<div class="article-title"><a href="/markdown-extras/" >markdown 番外篇</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>开博后写过一篇<a href="http://zipperary.com/2013/05/22/introduction-to-markdown/" target="_blank" rel="external">Introduction to markdown</a>，给出了几个介绍markdown的教程。这几个教程或是简明易懂，或是全面规范，可以作为很好的入门教材或查阅手册。</p>
+<p>在实际的使用当中，我发现有些用法不是这些教程里能够找到的，或者教程里没有进行应有的强调导致使用时容易出错。本文就对这样的问题进行汇总，并会不定期更新。</p>
+<ol>
+<li><p>删除线。</p>
+<p>方法：在要划删除线的文本前后添加<code>~~</code></p>
+<p>示例：<code>~~看《冰与火之歌》~~</code></p>
+<p>解析为： <del>看冰与火之歌</del></p>
+</li>
+<li><p>代码块中html代码显示不正常，<code>&lt;、&gt;</code>被解析为<code>&amp;gt; &amp;lt;</code></p>
+<p>原因：markdown是一个语法规范，具体的解析可以使用不同的程序，而不同程序对规范的完成度也未必相同。hexo 所用的 marked 解析程序，无法对代码块中<code>&lt;、&gt;</code>做正确解析，需要人工矫正。</p>
+<p>方法：标明语言类型html</p>
+<p>示例： </p>
+<p><img src="/img/kk.png" alt=""></p>
+<p>解析为：</p>
+<p><img src="/img/kkk.png" alt=""></p>
+</li>
+<li><p>有序列表。</p>
+<p>问题：有序列表每项中包含若干段落时，这几个列表项得不到正确解析。</p>
+<p>方法：在每个列表项中各段落之前加一个空格。</p>
+<p>示例：</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. foo</span><br><span class="line"></span><br><span class="line"> foo</span><br><span class="line"> </span><br><span class="line">2. bar</span><br><span class="line"></span><br><span class="line"> bar</span><br></pre></td></tr></table></figure>
+<p> 解析为：</p>
+<ol>
+<li><p>foo</p>
+<p>foo</p>
+</li>
+<li><p>bar</p>
+<p>bar</p>
+</li>
+</ol>
+
+	-->
+			  
+			  <p class="summary">开博后写过一篇Introduction to markdown，给出了几个介绍markdown的教程。这几个教程或是简明易懂，或是全面规范，可以作为很好的入门教材或查阅手册。
+在实际的使用当中，我发现有些用法不是这些教程里能够找到的，或者教程里没有进行应有的强调导致使用时容易出错。本文就对这样的问题进行汇总，并会不定期更新。
+
+删除线。
+方法：在要划删除线的文本前后添加~~
+示例：~~看《冰与火之歌》~~
+解析为： 看冰与火之歌
+
+代码块中html代码显示不正常，&amp;lt;、&amp;gt;被解析为&amp;amp;gt; &amp;amp;lt;
+原因：markdown是一个语法规范，具体的解析可以使用不同的程序，而</p>
+			  
+	</div>
+  <a type="button" href="/markdown-extras/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-06-05 </div>
+			<div class="article-title"><a href="/learn-nodejs/" >初识node.js</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>这几天在V2EX看到很多<em>node.js</em>相关的招聘贴，有招后端的，有招前端的，多是初创公司，可以看出<em>node.js</em>的火热程度。正好我所用的博客框架<em>hexo</em>是基于<em>node.js</em>的，本就想了解下<em>hexo</em>的工作原理，再加上众多招聘贴金光闪闪的刺激，学习<em>node.js</em>的兴致就上来了。</p>
+<p>原来跟过<a href="http://www.nodebeginner.org/index-zh-cn.html" target="_blank" rel="external">《Node入门》</a>这个教程，学习时也做了些笔记。这次找到另外一个教程<a href="http://www.infoq.com/cn/master-nodejs" target="_blank" rel="external">《深入浅出Node.js》</a>，更加侧重背景技术的介绍。现在根据我的学习，对<em>node.js</em>做个简单介绍。</p>
+<p><em>node.js</em>这个词，后缀是<em>.js</em>，是不是一种javascript程序呢？非也。javascript是使用最多的前端技术，由浏览器解析后呈现在用户面前。而<em>node.js</em>是一项后端技术，准确的说，它既提供了后端的运行时环境，又是一个库。</p>
+<p>那与javascript有关系没有？有。首先，<em>node.js</em>的语法同javascript。其次，<em>node.js</em>用的引擎是Chrome浏览器用于解析javascript的V8引擎。正因为与javascript关系紧密，很多前端可以更为轻松地转为<em>node.js</em>后端开发。</p>
+<p><em>node.js</em>于2009年诞生，创始人是 Ryan Dahl。它采用C++语言编写而成，是一个Javascript的运行环境。<em>node.js</em>采用了Google Chrome浏览器的V8引擎，性能很好，同时还提供了很多系统级的API，如文件操作、网络编程等。</p>
+<p><em>node.js</em>的特点是：事件驱动、异步编程，为网络服务而设计。回调函数注册后，等待事件的触发，而无需阻塞等待，这样充分利用了服务器的资源。</p>
+<p><em>node.js</em>的安装很简单，在 Windows 环境下安装 Node.js，仅须<a href="http://nodejs.org/" target="_blank" rel="external">下载</a>安装文件并执行即可完成安装。</p>
+<p>安装完成后，通过<code>node -v</code>命令可以查看是否安装成功，成功则显示<em>node.js</em>的版本。</p>
+<p>使用：创建一个example.js。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&apos;http&apos;); </span><br><span class="line">http.createServer(function (req, res) &#123; </span><br><span class="line">    res.writeHead(200, &#123;&apos;Content-Type&apos;: &apos;text/plain&apos;&#125;); </span><br><span class="line">    res.end(&apos;Hello World\n&apos;); </span><br><span class="line">&#125;).listen(1337, &quot;127.0.0.1&quot;); </span><br><span class="line">console.log(&apos;Server running at http://127.0.0.1:1337/&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>运行<code>node example.js</code> 执行文件，然后打开浏览器，访问<code>http://127.0.0.1:1337/</code>，<em>node.js</em>服务器和example.js就运行起来了。</p>
+<p>上述安装好<em>node.js</em>后，会把一些核心包安装到本地。我们需要使用别人的模块怎么办？神器：NPM。</p>
+<p>NPM的全称是Node Package Manager，如果你熟悉ruby的gem，Python的PyPL、setuptools，PHP的pear，那么你就知道NPM的作用是什么了。没错，它就是Nodejs的包管理器。我们使用上述方法安装<em>node.js</em>时，默认附带安装好了NPM，不需要另行安装。</p>
+<p>使用NPM安装扩展包的方法很简单，<code>npm install -g 包名</code>。<br>其中的<code>-g</code>参数指明我们使用全局路径。这个命令会把模块安装在 <code>$PREFIX/lib/node_modules</code> 下，可通过命令 <code>npm root -g</code> 查看全局模块的安装目录。<br>例如，我想使用hexo搭建博客，需要安装hexo包，应该使用命令<code>npm install -g hexo</code>进行安装，安装目录在<code>C:\Users\zippera\AppData\Roaming\npm\node_modules</code>，hexo使用的所有包都可以在该目录下找到。</p>
+<p>如何创建自己的模块，并在适当的地方使用呢？通过下面的例子就能看出来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var PI = Math.PI;</span><br><span class="line">exports.area = function (r) &#123;</span><br><span class="line">    return PI * r * r;</span><br><span class="line">&#125;;</span><br><span class="line">exports.circumference = function (r) &#123;</span><br><span class="line">    return 2 * PI * r;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>将这个文件存为circle.js，并新建一个app.js文件，并写入以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var circle = require(&apos;./circle.js&apos;);</span><br><span class="line">console.log( &apos;The area of a circle of radius 4 is &apos; + circle.area(4));</span><br></pre></td></tr></table></figure></p>
+<p>在require了这个文件之后，定义在exports对象上的方法便可以随意调用。</p>
+<p>好了，既然是初识，就讲到这里、点到为止吧。</p>
+<p>现在比较知名的<em>node.js</em>用户有LinkedIn、淘宝，<em>node.js</em>的优势正在得到越来越多的认可，以后有必要的话会做深入学习。</p>
+
+	-->
+			  
+			  <p class="summary">这几天在V2EX看到很多node.js相关的招聘贴，有招后端的，有招前端的，多是初创公司，可以看出node.js的火热程度。正好我所用的博客框架hexo是基于node.js的，本就想了解下hexo的工作原理，再加上众多招聘贴金光闪闪的刺激，学习node.js的兴致就上来了。
+原来跟过《Node入门》这个教程，学习时也做了些笔记。这次找到另外一个教程《深入浅出Node.js》，更加侧重背景技术的介绍。现在根据我的学习，对node.js做个简单介绍。
+node.js这个词，后缀是.js，是不是一种javascript程序呢？非也。javascript是使用最多的前端技术，由浏览器解析后呈现在用户面</p>
+			  
+	</div>
+  <a type="button" href="/learn-nodejs/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-06-02 </div>
+			<div class="article-title"><a href="/hexo-guide-5/" >hexo系列教程：（五）hexo博客的优化技巧续</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>继续介绍hexo博客的优化和使用。</p>
+<p>###添加RSS</p>
+<p>hexo提供了RSS的生成插件，需要手动安装和设置。步骤如下：</p>
+<ol>
+<li>安装RSS插件到本地：<code>npm install hexo-generator-feed</code></li>
+<li><p>开启RSS功能：编辑<code>hexo/_config.yml</code>，添加如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plugins:</span><br><span class="line">- hexo-generator-feed</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在站点添加链接：<br>在<code>themes/light/_config.yml</code>中，编辑 <code>rss: /atom.xml</code><br>在<code>themes/light/layout/_partial/header.ejs</code>中，<code>&lt;ul&gt;&lt;/ul&gt;</code>之间，添加一样代码<code>&lt;li&gt; &lt;a href=&quot;/atom.xml&quot;&gt;RSS&lt;/a&gt; &lt;/li&gt;</code></p>
+</li>
+</ol>
+<p>###添加sitemap</p>
+<p>同样的，我们使用hexo提供的插件，方法与添加RSS类似。</p>
+<ol>
+<li>安装sitemap到本地：<code>npm install hexo-generator-sitemap</code></li>
+<li><p>开启sitemap功能：编辑<code>hexo/_config.yml</code>，添加如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plugins:</span><br><span class="line">- hexo-generator-sitemap</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>访问<code>zipperary/sitemap.xml</code>即可看到站点地图。不过，sitemap的初衷是给搜索引擎看的，为了提高搜索引擎对自己站点的收录效果，我们最好手动到google和百度等搜索引擎提交sitemap.xml。</p>
+</li>
+</ol>
+<p>###设置百度统计、Google Analytics<br>
+	-->
+			  
+			  <p class="summary">继续介绍hexo博客的优化和使用。
+###添加RSS
+hexo提供了RSS的生成插件，需要手动安装和设置。步骤如下：
+
+安装RSS插件到本地：npm install hexo-generator-feed
+开启RSS功能：编辑hexo/_config.yml，添加如下代码：
+12plugins:- hexo-generator-feed
+
+在站点添加链接：在themes/light/_config.yml中，编辑 rss: /atom.xml在themes/light/layout/_partial/header.ejs中，&amp;lt;ul&amp;gt;&amp;lt;/ul&amp;gt;之间，添加一样代码&amp;lt;l</p>
+			  
+	</div>
+  <a type="button" href="/hexo-guide-5/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-05-30 </div>
+			<div class="article-title"><a href="/hexo-guide-4/" >hexo系列教程：（四）hexo博客的优化技巧</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><a href="http://zipperary.com/2013/05/28/hexo-guide-3/">上一节</a>中我们已经学会了用hexo发布博客，这里再介绍一些小技巧对博客站点进行优化，实现更加丰富的功能。</p>
+<p>###添加“多说”评论</p>
+<p>hexo默认使用国外比较流行的disqus，不过，按照“因地制宜”的原则，我们修改为国内用的多又好用的“多说”评论系统。步骤非常简单：</p>
+<ol>
+<li>在<a href="http://duoshuo.com/">多说</a>进行注册，获得通用代码。</li>
+<li>将通用代码粘贴到<code>themes\light\layout\_partial\comment.ejs</code>里面，如下：<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> ( <span class="attr">page.comments</span>)&#123; %&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">id</span>=<span class="string">"comment"</span>&gt;</span></span><br><span class="line">通用代码</span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><em>很多网友反映自己使用的非 light 主题中找不到相应的文件。我的这些修改都是在 light主题中，其他主题没有了解过，各位只好自己探索了。</em></p>
+<p>###添加『页面导航』</p>
+<p>在刚才添加「多说」评论的文件中，加入一段代码，如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> ( <span class="attr">page.comments</span>)&#123; %&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="tag">&lt;<span class="name">nav</span> <span class="attr">id</span>=<span class="string">"pagination"</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">page.prev</span>) &#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%- config.root %&gt;&lt;%- page.prev.path %&gt;"</span> <span class="attr">class</span>=<span class="string">"alignleft prev"</span> &gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">__</span>('<span class="attr">prev</span>') %&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">page.next</span>) &#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%- config.root %&gt;&lt;%- page.next.path %&gt;"</span> <span class="attr">class</span>=<span class="string">"alignright next"</span> &gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">__</span>('<span class="attr">next</span>') %&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"clearfix"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">id</span>=<span class="string">"comment"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>###添加“百度分享”</p>
+<p>到<a href="http://share.baidu.com/code">百度分享</a>获得代码，在<code>themes/light/layout/_partial/article.ejs</code>中，将<code>&lt;%-partial(&#39;post/share&#39;)%&gt;</code>删掉，替换为百度分享的代码。<br>
+	-->
+			  
+			  <p class="summary">上一节中我们已经学会了用hexo发布博客，这里再介绍一些小技巧对博客站点进行优化，实现更加丰富的功能。
+###添加“多说”评论
+hexo默认使用国外比较流行的disqus，不过，按照“因地制宜”的原则，我们修改为国内用的多又好用的“多说”评论系统。步骤非常简单：
+
+在多说进行注册，获得通用代码。
+将通用代码粘贴到themes\light\layout\_partial\comment.ejs里面，如下：12345&amp;lt;% if ( page.comments)&amp;#123; %&amp;gt;&amp;lt;section id=&quot;comment&quot;&amp;gt;通用代码&amp;lt;/section&amp;gt;&amp;lt;% &amp;</p>
+			  
+	</div>
+  <a type="button" href="/hexo-guide-4/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-05-29 </div>
+			<div class="article-title"><a href="/hexo-guide-3/" >hexo系列教程：（三）hexo博客的配置、使用</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>在<a href="http://zipperary.com/2013/05/28/hexo-guide-2/">上一节</a>中，我们在本地和github搭建起了自己的hexo博客站点，但是还未发表过文章，站点的配置还是原来的默认值。在本节，我们来进行个性化的设置，将站点打造成自己的，同时介绍下怎么撰文和发表。</p>
+<p>站点配置用到两个文件，一个是对整站的配置<code>H:\hexo\_config.yml</code>，另一个是对主题的配置<code>H:\hexo\themes\light_config.yml</code>，我们来分别介绍。</p>
+<p><em>H:\hexo\ _config.yml</em><br>
+	-->
+			  
+			  <p class="summary">在上一节中，我们在本地和github搭建起了自己的hexo博客站点，但是还未发表过文章，站点的配置还是原来的默认值。在本节，我们来进行个性化的设置，将站点打造成自己的，同时介绍下怎么撰文和发表。
+站点配置用到两个文件，一个是对整站的配置H:\hexo\_config.yml，另一个是对主题的配置H:\hexo\themes\light_config.yml，我们来分别介绍。
+H:\hexo\ _config.yml</p>
+			  
+	</div>
+  <a type="button" href="/hexo-guide-3/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-05-28 </div>
+			<div class="article-title"><a href="/hexo-guide-2/" >hexo系列教程：（二）搭建hexo博客</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><a href="http://zipperary.com/2013/05/28/hexo-guide-1/#more">上一节</a>对hexo进行了简单介绍，本节来讲讲怎么搭建hexo博客。</p>
+<p><strong>注意</strong>：本节教程只针对Windows用户，Linux和Mac用户请移步<a href="http://zespia.tw/hexo/zh-CN/docs/install.html">hexo安装</a>。</p>
+<p>###安装Git<br>下载 <a href="http://code.google.com/p/msysgit/">msysgit</a> 并执行即可完成安装。</p>
+<p>###安装Node.js<br>在 Windows 环境下安装 Node.js 非常简单，仅须<a href="http://nodejs.org/">下载</a>安装文件并执行即可完成安装。</p>
+<p>###安装hexo<br>利用 npm 命令即可安装。（在任意位置点击鼠标右键，选择<em>Git bash</em>）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure></p>
+<p>###创建hexo文件夹<br>安装完成后，在你喜爱的文件夹下（如<code>H:\hexo</code>），执行以下指令(在<code>H:\hexo</code>内点击鼠标右键，选择<em>Git bash</em>)，Hexo 即会自动在目标文件夹建立网站所需要的所有文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></p>
+<p>###本地查看<br>
+	-->
+			  
+			  <p class="summary">上一节对hexo进行了简单介绍，本节来讲讲怎么搭建hexo博客。
+注意：本节教程只针对Windows用户，Linux和Mac用户请移步hexo安装。
+###安装Git下载 msysgit 并执行即可完成安装。
+###安装Node.js在 Windows 环境下安装 Node.js 非常简单，仅须下载安装文件并执行即可完成安装。
+###安装hexo利用 npm 命令即可安装。（在任意位置点击鼠标右键，选择Git bash）1npm install -g hexo
+###创建hexo文件夹安装完成后，在你喜爱的文件夹下（如H:\hexo），执行以下指令(在H:\hexo内点击鼠标右键，选择Git </p>
+			  
+	</div>
+  <a type="button" href="/hexo-guide-2/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-05-28 </div>
+			<div class="article-title"><a href="/hexo-guide-1/" >hexo系列教程：（一）hexo介绍</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="/img/blogshot.png" alt=""></p>
+<p>###什么是hexo</p>
+<p><a href="http://zespia.tw/hexo/zh-CN/">hexo</a>是一个基于Node.js的静态博客程序，可以方便的生成静态网页托管在github和Heroku上。作者是来自台湾的<a href="https://github.com/tommy351/hexo">@tommy351</a>。引用<a href="https://github.com/tommy351/hexo">@tommy351</a>的话，<a href="http://zespia.tw/hexo/zh-CN/">hexo</a>：</p>
+<blockquote>
+<p>快速、简单且功能强大的 Node.js 博客框架。<br>A fast, simple &amp; powerful blog framework, powered by Node.js.</p>
+</blockquote>
+<p>类似于jekyll、Octopress、Wordpress，我们可以用<a href="http://zespia.tw/hexo/zh-CN/">hexo</a>创建自己的博客，托管到github或Heroku上，绑定自己的域名，用markdown写文章。<a href="http://zipperary.com">本博客</a>即使用hexo创建并托管在github上。</p>
+<p>###为什么要用hexo<br>
+	-->
+			  
+			  <p class="summary">###什么是hexo
+hexo是一个基于Node.js的静态博客程序，可以方便的生成静态网页托管在github和Heroku上。作者是来自台湾的@tommy351。引用@tommy351的话，hexo：
+
+快速、简单且功能强大的 Node.js 博客框架。A fast, simple &amp;amp; powerful blog framework, powered by Node.js.
+
+类似于jekyll、Octopress、Wordpress，我们可以用hexo创建自己的博客，托管到github或Heroku上，绑定自己的域名，用markdown写文章。本博客即使用hexo创建并托管在git</p>
+			  
+	</div>
+  <a type="button" href="/hexo-guide-1/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-05-26 </div>
+			<div class="article-title"><a href="/ssh-errors-with-github/" >Git push时重复输入用户名密码的问题</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>在windows上使用git来push到github服务器的时候，每次都需要填写用户名/邮箱、密码，很麻烦。最近用hexo写博客，需要频繁地进行博客配置和预览，而每次预览执行<code>hexo deploy</code>都需要输入用户名、密码验证，不胜其烦，今天下决心解决。</p>
+<p>尽管github提供了<code>SSH</code>方式进行本地和服务端的链接，可是按照网站说明设置好之后，这个问题仍然得不到解决。尝试了好几次，最终用下面这个方法解决了。<br>
+	-->
+			  
+			  <p class="summary">在windows上使用git来push到github服务器的时候，每次都需要填写用户名/邮箱、密码，很麻烦。最近用hexo写博客，需要频繁地进行博客配置和预览，而每次预览执行hexo deploy都需要输入用户名、密码验证，不胜其烦，今天下决心解决。
+尽管github提供了SSH方式进行本地和服务端的链接，可是按照网站说明设置好之后，这个问题仍然得不到解决。尝试了好几次，最终用下面这个方法解决了。</p>
+			  
+	</div>
+  <a type="button" href="/ssh-errors-with-github/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-05-25 </div>
+			<div class="article-title"><a href="/install-win7-on-xp/" >在XP上安装WIN7</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>从购入笔记本到现在已经装机无数了，无论是<em>Linux</em>系还是<em>Windows</em>系。昨天远程指导同学在XP上安装win7的时候还是遇到了一些问题，折腾一番才最终装机成功。在此记录一下装机过程及遇到的问题。</p>
+<p>总的步骤如下：  </p>
+<ol>
+<li>下载win7操作系统（后缀为<code>.iso</code>）。  </li>
+<li>做好文件备份，因为装机会改变C盘，有格式化的风险，存在C盘的用户文件需要保存到其他硬盘。重要文件如：<strong>收藏夹（可以用浏览器登陆账号同步到云端），”我的文档”里面的资料，桌面文件，C盘其他用户文件</strong>。  </li>
+<li>下载UltraISO.exe文件，使用方法见网络。  </li>
+<li>用U盘制作启动文件。  </li>
+<li>重启电脑，设置启动顺序，选择<strong>USB</strong>为第一个。  </li>
+<li>插入U盘开始全自动无人值守安装。  </li>
+<li>装好系统后进行个性化设置，把系统自带软件插件卸载掉，用杀毒软件进行木马、风险插件、病毒的扫描。
+	-->
+			  
+			  <p class="summary">从购入笔记本到现在已经装机无数了，无论是Linux系还是Windows系。昨天远程指导同学在XP上安装win7的时候还是遇到了一些问题，折腾一番才最终装机成功。在此记录一下装机过程及遇到的问题。
+总的步骤如下：  
+
+下载win7操作系统（后缀为.iso）。  
+做好文件备份，因为装机会改变C盘，有格式化的风险，存在C盘的用户文件需要保存到其他硬盘。重要文件如：收藏夹（可以用浏览器登陆账号同步到云端），”我的文档”里面的资料，桌面文件，C盘其他用户文件。  
+下载UltraISO.exe文件，使用方法见网络。  
+用U盘制作启动文件。  
+重启电脑，设置启动顺序，选择USB为第一个。  
+插入</p>
+			  
+	</div>
+  <a type="button" href="/install-win7-on-xp/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+
+		</div>
+
+		<!-- pagination -->
+		<div>
+  		<center>
+		<div class="pagination">
+<ul class="pagination">
+	 
+		
+    	<li class="prev"><a href="/page/16/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i> Prev</a></li>
+  		
+
+        <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+
+		
+		   <li class="next"> <a href="/page/18/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a> </li>          
+        
+	
+</ul>
+</div>
+
+  		</center>
+		</div>
+
+		
+		
+	</div> <!-- col-md-9 -->
+
+	
+		<div class="col-md-3">
+	<div id="sidebar">
+	
+			
+  <div id="site_search">
+   <div class="form-group">
+    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search" class="st-search-input st-default-search-input form-control"/>
+   </div>  
+  <div id="local-search-result"></div>
+  </div>
+
+
+		
+			
+	<div class="widget">
+		<h4>Categories</h4>
+		<ul class="tag_box inline list-unstyled">
+		
+			<li><a href="/categories/Angular-js/">Angular.js<span>1</span></a></li>
+		
+			<li><a href="/categories/Database/">Database<span>1</span></a></li>
+		
+			<li><a href="/categories/IT杂谈/">IT杂谈<span>20</span></a></li>
+		
+			<li><a href="/categories/Mac/">Mac<span>4</span></a></li>
+		
+			<li><a href="/categories/Ruby/">Ruby<span>2</span></a></li>
+		
+			<li><a href="/categories/System-Design/">System Design<span>1</span></a></li>
+		
+			<li><a href="/categories/algorithm/">algorithm<span>197</span></a></li>
+		
+			<li><a href="/categories/hexo/">hexo<span>18</span></a></li>
+		
+			<li><a href="/categories/linux/">linux<span>3</span></a></li>
+		
+			<li><a href="/categories/markdown/">markdown<span>1</span></a></li>
+		
+			<li><a href="/categories/node-js/">node.js<span>1</span></a></li>
+		
+			<li><a href="/categories/nodejs/">nodejs<span>1</span></a></li>
+		
+			<li><a href="/categories/project/">project<span>50</span></a></li>
+		
+			<li><a href="/categories/python/">python<span>11</span></a></li>
+		
+			<li><a href="/categories/前端/">前端<span>4</span></a></li>
+		
+			<li><a href="/categories/推荐/">推荐<span>1</span></a></li>
+		
+			<li><a href="/categories/机器学习/">机器学习<span>23</span></a></li>
+		
+			<li><a href="/categories/生活/">生活<span>1</span></a></li>
+		
+			<li><a href="/categories/读书笔记/">读书笔记<span>1</span></a></li>
+		
+		</ul>
+	</div>
+
+		
+			
+	<div class="widget">
+		<h4>Tag Cloud</h4>
+		<ul class="tag_box inline list-unstyled">		
+		
+			<li><a href="/tags/xiami/">xiami<span>1</span></a></li>
+		
+			<li><a href="/tags/博客/">博客<span>6</span></a></li>
+		
+			<li><a href="/tags/LaTeX/">LaTeX<span>1</span></a></li>
+		
+			<li><a href="/tags/运维/">运维<span>1</span></a></li>
+		
+			<li><a href="/tags/Graph/">Graph<span>3</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>13</span></a></li>
+		
+			<li><a href="/tags/leetcode/">leetcode<span>197</span></a></li>
+		
+			<li><a href="/tags/node-js/">node.js<span>2</span></a></li>
+		
+			<li><a href="/tags/Hadoop/">Hadoop<span>17</span></a></li>
+		
+			<li><a href="/tags/Array/">Array<span>55</span></a></li>
+		
+			<li><a href="/tags/正则表达式/">正则表达式<span>1</span></a></li>
+		
+			<li><a href="/tags/String/">String<span>32</span></a></li>
+		
+			<li><a href="/tags/Heap/">Heap<span>3</span></a></li>
+		
+			<li><a href="/tags/IDEA/">IDEA<span>1</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>1</span></a></li>
+		
+			<li><a href="/tags/Docker/">Docker<span>6</span></a></li>
+		
+			<li><a href="/tags/rails/">rails<span>1</span></a></li>
+		
+			<li><a href="/tags/Topological-Sort/">Topological Sort<span>2</span></a></li>
+		
+			<li><a href="/tags/Algorithm/">Algorithm<span>1</span></a></li>
+		
+			<li><a href="/tags/Tree/">Tree<span>22</span></a></li>
+		
+		
+		   <li><a href="/tags">...<span>92</span></a></li>
+		 
+		</ul>
+	</div>
+
+
+		
+			
+<div class="widget">
+  <h4>Recent Posts</h4>
+  <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/python系统性能信息模块-pstuil/"  title="python系统性能信息模块-psutil" ><i class="fa fa-file-o"></i>python系统性能信息模块-psutil</a>
+      </li>
+    
+      <li>
+        <a href="/System Design Preparation/"  title="系统设计准备" ><i class="fa fa-file-o"></i>System Design Preparation</a>
+      </li>
+    
+      <li>
+        <a href="/Resevior Sampling/"  title="Resevior Sampling 蓄水池算法java实现" ><i class="fa fa-file-o"></i>Resevior Sampling蓄水池算法java实现</a>
+      </li>
+    
+      <li>
+        <a href="/Top 25 Angular.js Interview Questions/"  title="Top 25 Angular.js Interview Questions" ><i class="fa fa-file-o"></i>Top 25 Angular.js Interview...</a>
+      </li>
+    
+      <li>
+        <a href="/NodeJS-Learning/"  title="NodeJS 学习资料汇总" ><i class="fa fa-file-o"></i>NodeJS 学习资料</a>
+      </li>
+    
+      <li>
+        <a href="/Rotate-List/"  title="Rotate List" ><i class="fa fa-file-o"></i>LeetCode-Rotate List</a>
+      </li>
+    
+      <li>
+        <a href="/Best-Time-to-Buy-and-Sell-Stock-II/"  title="Best Time to Buy and Sell Stock II" ><i class="fa fa-file-o"></i>LeetCode-Best Time to Buy a...</a>
+      </li>
+    
+      <li>
+        <a href="/Best-Time-to-Buy-and-Sell-Stock-IV/"  title="Best Time to Buy and Sell Stock IV" ><i class="fa fa-file-o"></i>LeetCode-Best Time to Buy a...</a>
+      </li>
+    
+      <li>
+        <a href="/Best-Time-to-Buy-and-Sell-Stock/"  title="Best Time to Buy and Sell Stock" ><i class="fa fa-file-o"></i>LeetCode-Best Time to Buy a...</a>
+      </li>
+    
+      <li>
+        <a href="/Binary-Search-Tree-Iterator /"  title="Binary Search Tree Iterator" ><i class="fa fa-file-o"></i>LeetCode-Binary Search Tree...</a>
+      </li>
+    
+  </ul>
+</div>
+
+		
+			
+<div class="widget">
+	<h4>Links</h4>
+	<ul class="blogroll list-unstyled">
+	
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
+	
+	</ul>
+</div>
+
+
+		
+	</div> <!-- sidebar -->
+</div> <!-- col-md-3 -->
+
+	
+	
+</div> <!-- row-fluid -->
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2016 CodeInterviews
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
 </script>
 
 
-</body>
-</html>
 
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

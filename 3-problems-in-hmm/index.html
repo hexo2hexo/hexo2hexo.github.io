@@ -1,0 +1,377 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>隐马尔可夫模型三个问题的求解(一) | CodeInterviews</title>
+  <meta name="author" content="CodeInterviews">
+  
+  <meta name="description" content="程序员的世界,编程,技术,程序员,java,.Net,c++,c语言,python,ruby">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="隐马尔可夫模型三个问题的求解(一)"/>
+  <meta property="og:site_name" content="CodeInterviews"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/bootstrap.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-80198899-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?9a9d27181903a355a8d95344f23682b0";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">CodeInterviews</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>所有文章
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the articles.">
+			  <i class="fa fa-archive"></i>分类
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Java/" title="All about java.">
+			  <i class="fa fa-codepen"></i>Java
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Javascript/" title="All about javascript.">
+			  <i class="fa fa-empire"></i>Javascript
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/python/" title="All about Python.">
+			  <i class="fa fa-cog"></i>Python
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Leetcode/" title="All about leetcode.">
+			  <i class="fa fa-thumbs-o-up"></i>Leetcode
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-info-circle"></i>关于本站
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header page-header-inverse ">		
+			<h1 class="title title-inverse "> 隐马尔可夫模型三个问题的求解(一)</h1>
+		</div>		
+	
+
+
+
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p>上一篇<a href="http://zipperary.com/2013/10/15/an-introduction-to-hmm/" target="_blank" rel="external">《隐马尔可夫模型介绍》</a>中讲解了马尔可夫假设和隐马尔可夫模型 HMM，并提到了 HMM 中的三个基本问题，但没有展开讨论其求解。本篇就此做出解答。</p>
+<p>本文主要参考<a href="http://www.52nlp.cn/category/hidden-markov-model/page/4" target="_blank" rel="external">《HMM 学习最佳范例》</a>。</p>
+<p>先回顾一下，上节我们就硬币的例子提出了三个问题：</p>
+<ol>
+<li>给定上述模型，观察到的结果（硬币的正反面）为O={H，T，H}的概率是多少？</li>
+<li>若给定上述的观察结果，那么最可能的状态序列（硬币序号）是什么？</li>
+<li>A、B、π未知的情况下，如何根据 O 得到它们？</li>
+</ol>
+<p>问题一是个估算问题，P（O|λ），可用向前算法和向后算法解决；</p>
+<p>问题二是根据观察序列反向找出最可能的状态序列，是个解码问题，P（O,q|λ），q 是某状态，最常用的是 Viterbi算法；</p>
+<p>问题三实际上是个参数估计或求解的问题，或者说是个学习问题，通过训练一步步优化参数，找到使得P（O|λ）最大的那个参数，最常用的是 Baum-Welch算法。</p>
+<hr>
+<p>###例子</p>
+<p>这里，我们提出一个更加恰当的例子：</p>
+<p>有一个宅男，不爱出门，也不愿看看窗户外面的世界。但他有个特殊的习惯，通过观察海藻来推测外面的天气情况。天气一共有3种情况 S：（晴天、多云、雨天）；海藻一共有4种情况V：（干、稍干、潮湿、湿润）。海藻的情况是宅男直接观察到的，而天气的情况并没有直接观察到，而是隐藏状态，是他推测出来的。其关系如图所示：</p>
+<p><img src="http://ww3.sinaimg.cn/large/5e8cb366jw1e9nxfm6fm5j20bu07dq3k.jpg" alt=""></p>
+<a id="more"></a>
+<p>另外，我们给出其他三个条件：</p>
+<p>天气的状态转移矩阵A：</p>
+<p><img src="http://ww1.sinaimg.cn/large/5e8cb366jw1e9nxie43xtj20bw046gls.jpg" alt=""></p>
+<p>天气的初始概率向量π：</p>
+<p><img src="http://ww1.sinaimg.cn/large/5e8cb366jw1e9nxjfricdj205d01swea.jpg" alt=""></p>
+<p>天气状态和海藻观察情况的混淆矩阵 B：</p>
+<p><img src="http://ww2.sinaimg.cn/large/5e8cb366jw1e9nxk60arrj20af03o3yj.jpg" alt=""></p>
+<p>现在，这个 HMM 已经构建好了，如上一节所说，是一个五元组λ=（S，V，A，B，π）。</p>
+<p>我们使用一个隐马尔科夫模型（HMM）对这个例子建模。这个模型包含两组状态集合和三组概率集合：</p>
+<ul>
+<li>隐藏状态：一个系统的（真实）状态，可以由一个马尔科夫过程进行描述（例如，天气）。</li>
+<li>观察状态：在这个过程中‘可视’的状态（例如，海藻的湿度）。</li>
+<li>pi向量：包含了（隐）模型在时间t=1时一个特殊的隐藏状态的概率（初始概率）。</li>
+<li>状态转移矩阵：包含了一个隐藏状态到另一个隐藏状态的概率</li>
+<li>混淆矩阵：包含了给定隐马尔科夫模型的某一个特殊的隐藏状态，观察到的某个观察状态的概率。</li>
+</ul>
+<p>###评估问题：前向算法</p>
+<p>给定λ，要计算某个观察序列 O的概率，最不费脑子的办法就是<strong>穷举法</strong>。</p>
+<p><img src="http://ww4.sinaimg.cn/large/5e8cb366jw1e9nxtk7wpkj20be05cjro.jpg" alt=""></p>
+<p>如图，若求序列（dry,damp,soggy）的概率，只要把每种可能的状态序列都算一下概率，最后相加即可。一共有3**3=27种。</p>
+<p>总的概率是：Pr(dry,damp,soggy | HMM) = Pr(dry,damp,soggy | sunny,sunny,sunny) + Pr(dry,damp,soggy | sunny,sunny ,cloudy) + Pr(dry,damp,soggy | sunny,sunny ,rainy) + . . . . Pr(dry,damp,soggy | rainy,rainy ,rainy)</p>
+<p>其中每项的求解很简单，利用初始状态向量π、状态转移矩阵 A 和混淆矩阵 B，通过相乘就能得到。</p>
+<p>可以看到，这种做法的代价是比较昂贵的，省了脑力就会相应的耗费体力，上帝是公平的。</p>
+<p>下面提出一种颇费脑细胞，但代价比较小的算法：<strong>前向算法</strong>。</p>
+<p>首先，定义<strong>局部概率</strong>这个概念：它是到达上图网格中间某个状态的概率，它是所有到达这个状态的可能路径的概率求和的结果。</p>
+<p>例如，对于 t=2时Cloudy的局部概率：</p>
+<p><img src="http://ww4.sinaimg.cn/large/5e8cb366jw1e9ny3n70dyj2098053glq.jpg" alt=""></p>
+<p>有三个路径，分别计算每条路径的概率，再求和即可。相信聪明的你已经想到，我们正是利用<strong>递推</strong>的方式来求解最后结果：</p>
+<p>首先计算 t=1的情况，然后就算 t=i 的情况（利用 t=i-1），最后得出最末时刻的概率。</p>
+<p><img src="http://ww2.sinaimg.cn/large/5e8cb366jw1e9ny8rzqfkj204x00x743.jpg" alt=""></p>
+<p>其中，j 表示三个天气状态中的某一种；α1(j)表示 t=1时，天气状态为 j 时，得到观察为 k1的概率；等式的右边，表示初始状态下某天气的概率乘以该天气下得到 k1观察的概率。</p>
+<p><img src="http://ww4.sinaimg.cn/large/5e8cb366jw1e9ny9fibxsj207d01g745.jpg" alt=""></p>
+<p>这个式子中加入了状态转移矩阵的元素，就是 aij，用来递推计算，总的形式和上式一致。</p>
+<p><img src="http://ww2.sinaimg.cn/large/5e8cb366jw1e9nyb4eyafj205p01jglg.jpg" alt=""></p>
+<p>最后所求概率，是一个加和，由于递推结束，不需要状态转移矩阵了。</p>
+<p><a href="http://www.52nlp.cn/hmm-learn-best-practices-five-forward-algorithm-5" target="_blank" rel="external">这里</a>有一个实际的计算过程可供参考。</p>
+<p>为什么叫「前向算法」呢？从上面可以看出，这个算法的本质，是根据前t时的情况计算t+1时的情况，是一个逐渐向前推进的过程。</p>
+<p>时间有限，今天先写这些，预告：</p>
+<p>解码问题：Viterbi 算法</p>
+<p>学习问题：Baum-Welch 算法</p>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+<ul class="pagination">
+	 
+				
+    	<li class="prev"><a href="/latex-for-math/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+  		
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
+
+		
+		   <li class="next"><a href="/osx-update-and-ipv6-configure/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+        
+	
+</ul>
+</div>
+
+    </center>
+	</div>
+
+    <!-- share -->
+    
+        
+    <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+        <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+        <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+    </div>
+    <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+
+
+        
+
+    
+	
+	<!-- comment -->
+	
+<section id="comment">
+  <h2 class="title">Comments</h2>
+
+  
+  	 <div class="ds-thread" data-thread-key="3-problems-in-hmm/" data-title="隐马尔可夫模型三个问题的求解(一)" data-url="http://codeinterviews.com/3-problems-in-hmm/"></div>  
+  
+</section>
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2013-10-17 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/机器学习/">机器学习<span>23</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/机器学习/">机器学习<span>24</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'codeinterviews' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2016 CodeInterviews
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

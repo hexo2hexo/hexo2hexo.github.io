@@ -1,642 +1,1021 @@
-
-
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!DOCTYPE HTML>
+<html>
 <head>
-    
-    <meta name="author" content="CodeInterviews">
-    
-    
-
-    
-    <link rel="alternative" href="atom.xml" title="CodeInterviews" type="application/atom+xml">
-    
-    
-    
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CodeInterviews</title>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Javascript -->
-    <script src="/js/jquery-2.1.0.min.js"></script>
-    <script src="/js/jquery.backstretch.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/js/headroom.min.js"></script>
-    <script src="/js/jquery.headroom.min.js"></script>
-    <script src="/js/common.js"></script>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <meta name="baidu-site-verification" content="Jvgfj1O0oP" />
-    <meta name="360-site-verification" content="902348aeb40d156fb32b748c4071c4bd" />
-</head>
-<body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="http://codeinterviews.com" title="CodeInterviews">CodeInterviews</a>
-            </div>
-
-            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
-                
-
-                <ul class="nav navbar-nav">
-                    
-                    <li id="nav-index"><a href="/">首页</a></li>
-                    
-                    <li id="nav-categories"><a href="/categories">分类</a></li>
-                    
-                    <li id="nav-tags"><a href="/tags">标签</a></li>
-                    
-                    <li id="nav-reading"><a href="/tags/#LeetCode">LeetCode</a></li>
-                    
-                    <li id="nav-labs"><a href="/tags/#Java">Java</a></li>
-                    
-                    <li id="nav-about"><a href="/tags/#Javascript">Javascript</a></li>
-                    
-
-                    <!--<li id="nav-github"><a href="https://github.com/hexo2hexo" target="_blank">GitHub</a></li>-->
-                    <li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>
-                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <script>
-    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
-    var bgLength = "74";
-    var bgRandom = false;
-    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
-
-    $(function() {
-        // page-id...
-        var pageId = "page/16/index.html";
-        pageId = pageId.substr(0, pageId.indexOf("/"));
-        if(pageId === "") pageId = "index";
-
-        $("#nav-" + pageId).addClass("active");
-    });
-    </script>
-
-    
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/hadoop介绍/" title="Hadoop介绍">Hadoop介绍</a></h1>
-
-        
-        <p class="summary">Hadoop介绍</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/apue/">apue</a>&nbsp;<a href="/tags/Hadoop/">Hadoop</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/project/">project</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/hive安装配置/" title="Hive 安装配置">Hive 安装配置</a></h1>
-
-        
-        <p class="summary"> Hive 安装配置</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/Hadoop/">Hadoop</a>&nbsp;<a href="/tags/Hive/">Hive</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/project/">project</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/hive ql介绍 /" title="Hive QL 介绍">Hive QL 介绍</a></h1>
-
-        
-        <p class="summary"> Hive QL 介绍</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/Hadoop/">Hadoop</a>&nbsp;<a href="/tags/Hive/">Hive</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/project/">project</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/hive简介/" title="Hive 简介">Hive 简介</a></h1>
-
-        
-        <p class="summary">Hive 简介</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/Hadoop/">Hadoop</a>&nbsp;<a href="/tags/Hive/">Hive</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/project/">project</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/idea-快捷键/" title="IntelliJ IDEA 常用快捷键">IntelliJ IDEA 常用快捷键</a></h1>
-
-        
-        <p class="summary">IntelliJ IDEA 常用快捷键</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/Java/">Java</a>&nbsp;<a href="/tags/IDEA/">IDEA</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/project/">project</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/insert-xiami-to-blog/" title="如何在博客中插入虾米播放器">如何在博客中插入虾米播放器</a></h1>
-
-        
-        <p class="summary">在博客中插入虾米播放器</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/blog/">blog</a>&nbsp;<a href="/tags/xiami/">xiami</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/project/">project</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/leetcode-Add-Two-Numbers/" title="LeetCode-Add Two Numbers">LeetCode-Add Two Numbers</a></h1>
-
-        
-        <p class="summary">Add Two Numbers</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Linked-List/">Linked List</a>&nbsp;<a href="/tags/Math/">Math</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/install-git-in-CentOS6.5/" title="CentOS6.5 安装git">CentOS6.5 安装git</a></h1>
-
-        
-        <p class="summary">CentOS6.5 安装git</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/Linux/">Linux</a>&nbsp;<a href="/tags/CentOS/">CentOS</a>&nbsp;<a href="/tags/Git/">Git</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/project/">project</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/leetcode-Container-With-Most-Water/" title="LeetCode-Container With Most Water">LeetCode-Container With Most Water</a></h1>
-
-        
-        <p class="summary">Container With Most Water</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;<a href="/tags/Two-Pointers/">Two Pointers</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/leetcode-Integer-to-Roman/" title="LeetCode-Integer to Roman">LeetCode-Integer to Roman</a></h1>
-
-        
-        <p class="summary">Integer to Roman</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/String/">String</a>&nbsp;<a href="/tags/Math/">Math</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/leetcode-Longest-Common-Prefix /" title="LeetCode-Longest Common Prefix">LeetCode-Longest Common Prefix</a></h1>
-
-        
-        <p class="summary">Longest Common Prefix</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/String/">String</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/leetcode-Longest-Palindromic-Substring/" title="LeetCode-Longest Palindromic Substring">LeetCode-Longest Palindromic Substring</a></h1>
-
-        
-        <p class="summary">Longest Palindromic Substring</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/String/">String</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/leetcode-Longest-Substring-Without-Repeating-Characters/" title="LeetCode-Longest Substring Without Repeating Characters">LeetCode-Longest Substring Without Repeating Characters</a></h1>
-
-        
-        <p class="summary">Longest Substring Without Repeating Characters</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Hash-Table/">Hash Table</a>&nbsp;<a href="/tags/Two-Pointers/">Two Pointers</a>&nbsp;<a href="/tags/String/">String</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/leetcode-Median-of-Two-Sorted-Arrays/" title="LeetCode-Median of Two Sorted Arrays">LeetCode-Median of Two Sorted Arrays</a></h1>
-
-        
-        <p class="summary">Median of Two Sorted Arrays</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Array/">Array</a>&nbsp;<a href="/tags/Divide-and-Conquer/">Divide and Conquer</a>&nbsp;<a href="/tags/Binary-Search/">Binary Search</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/leetcode-Reverse-Integer/" title="LeetCode-Reverse Integer">LeetCode-Reverse Integer</a></h1>
-
-        
-        <p class="summary">Reverse Integer</p>
-        
-
-        <p class="say-title">
-            
-<span class="article-tags">
-    
-    Tags: <a href="/tags/leetcode/">leetcode</a>&nbsp;<a href="/tags/Math/">Math</a>&nbsp;
-</span>
-
-
-
-<span class="article-categories">
-    Category:
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</span>
-
-
-        </p>
-
-        <p class="say-title">
-            —— <img src="/images/avatar.png" class="img-circle index-post-avatar"/>
-            <a href="http://codeinterviews.com" target="_blank" title="CodeInterviews">CodeInterviews</a>
-            于2016-06-29创作
-        </p>
-    </div>
-</article>
-
-
-<div class="container pagination-div">
-    <div class="well">
-        <a class="extend prev" rel="prev" href="/page/15/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/17/">Next &raquo;</a>
-    </div>
-</div>
-
-
+  <meta charset="utf-8">
+  
+  <title>Page 16 | CodeInterviews</title>
+  <meta name="author" content="CodeInterviews">
+  
+  <meta name="description" content="程序员的世界,编程,技术,程序员,java,.Net,c++,c语言,python,ruby">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="CodeInterviews"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/bootstrap.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
 <script>
-    $(function () {
-        $("article:first").addClass("first-post");
-    });
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-80198899-1', 'auto');
+  ga('send', 'pageview');
 </script>
 
-    <footer id="footer">
-        <div id="bottom-tip">
-            CodeInterviews
-        </div>
-        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
-        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
-        <small>&copy; 2016 <a href="http://codeinterviews.com" target="_blank">CodeInterviews</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
-    </footer>
-    
+
+
 <script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
-  var s = document.getElementsByTagName("script")[0];
+  hm.src = "//hm.baidu.com/hm.js?9a9d27181903a355a8d95344f23682b0";
+  var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
 
 
+</head>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-51347904-1', 'auto');
-  ga('send', 'pageview');
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">CodeInterviews</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>所有文章
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the articles.">
+			  <i class="fa fa-archive"></i>分类
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Java/" title="All about java.">
+			  <i class="fa fa-codepen"></i>Java
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Javascript/" title="All about javascript.">
+			  <i class="fa fa-empire"></i>Javascript
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/python/" title="All about Python.">
+			  <i class="fa fa-cog"></i>Python
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Leetcode/" title="All about leetcode.">
+			  <i class="fa fa-thumbs-o-up"></i>Leetcode
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-info-circle"></i>关于本站
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 <div class="page-header page-header-inverse ">
+  <h1 class="title title-inverse ">Programming interview questions, tips and knowledge, system design, big data.</h1>
+</div>
+
+<div class="row page">
+
+	
+	<div class="col-md-9">
+	
+
+		<div class="slogan">
+      <i class="fa fa-heart"></i>
+      程序员的世界, 为程序员服务
+</div>    
+		<div id="top_search"></div>
+		<div class="mypage">
+		
+		<!-- title and entry -->
+        <!-- render top articles firstly -->
+        
+        <!-- render other articles -->
+        
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-08-18 </div>
+			<div class="article-title"><a href="/downloading-mlook/" >批量下载mlook电子书</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="http://webbies.dk/assets/templates/SudoSlider/images/download_box.png" alt=""></p>
+<p>这几天断断续续完成了这个爬虫程序，功能是批量下载<a href="http://mlook.mobi/">http://mlook.mobi/</a>中mobi和epub格式的电子书。</p>
+<p>中间遇到了几个困难，个个耗费了我不少心神。目前这个程序已经可以正常使用，但还有许多值得改进的地方。我把脚本放在gist，日后更新版本后会直接在本篇博客中显示。</p>
+	-->
+			  
+			  <p class="summary">这几天断断续续完成了这个爬虫程序，功能是批量下载http://mlook.mobi/中mobi和epub格式的电子书。
+中间遇到了几个困难，个个耗费了我不少心神。目前这个程序已经可以正常使用，但还有许多值得改进的地方。我把脚本放在gist，日后更新版本后会直接在本篇博客中显示。</p>
+			  
+	</div>
+  <a type="button" href="/downloading-mlook/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-08-17 </div>
+			<div class="article-title"><a href="/css-notes/" >CSS学习笔记</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="http://images.51cto.com/files/uploadimg/20120913/0953270.png" alt=""></p>
+<p>之前做网站自己搞前端，在<strong>w3cschool</strong>杂乱地把html，css，jquery，ajax的教程学习了一遍，然后用刚刚诞生不久的Bootstrap作为前端框架，算来我属于BS最早的一批用户了:)</p>
+<p> 最近学python之外，很想把CSS、jquery学的更好一点。把原来做过的笔记复习了一下，然后打开Bootstrap的<strong>Bootstrap.css</strong>，一行一行地看，不会的一一Google，在旁边做注释。不过这个工程量太大了，其实很多是重复的，不必要全部都看。</p>
+<p> 看过一些后我就去改博客的样式。Hexo用的是stylus，而不是直接用CSS，所以先简单学了下stylus的语法，很简单，只是把CSS语法简化了，<a href="http://learnboost.github.io/stylus/">官网首页</a>写的很明白。在学习Bootstrap的CSS文件时，主要用到了w3cschool的<a href="http://www.w3school.com.cn/css/css_reference.asp">CSS参考手册</a>，「Ctrl + F」找到后点进去会有详实的解释和生动的例子，很好用。</p>
+<p>废话少说，这篇博客主要是把目前的笔记贴上来。</p>
+	-->
+			  
+			  <p class="summary">之前做网站自己搞前端，在w3cschool杂乱地把html，css，jquery，ajax的教程学习了一遍，然后用刚刚诞生不久的Bootstrap作为前端框架，算来我属于BS最早的一批用户了:)
+ 最近学python之外，很想把CSS、jquery学的更好一点。把原来做过的笔记复习了一下，然后打开Bootstrap的Bootstrap.css，一行一行地看，不会的一一Google，在旁边做注释。不过这个工程量太大了，其实很多是重复的，不必要全部都看。
+ 看过一些后我就去改博客的样式。Hexo用的是stylus，而不是直接用CSS，所以先简单学了下stylus的语法，很简单，只是把CSS语法简化</p>
+			  
+	</div>
+  <a type="button" href="/css-notes/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-08-16 </div>
+			<div class="article-title"><a href="/python-login/" >用Python模拟浏览器登录</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2012/03/index-18.jpg" alt=""></p>
+<p>我的博客中曾经贴过几个爬虫程序的<a href="http://zipperary.com/categories/python/">代码</a>，用来批量下载图片非常方便。这样的爬虫实现起来比较简单。而有些网站需要用户登录之后才可以下载文件，之前的方法就办不到了。今天就说说用Python模拟浏览器的登录过程，为之后的登录下载做好准备。</p>
+<p>登录的情况，需要额外用到的一个模块是<strong>cookielib</strong>，用来记住登录成功之后保存到本地的cookie，方便在网站的各个页面之间穿越。</p>
+	-->
+			  
+			  <p class="summary">我的博客中曾经贴过几个爬虫程序的代码，用来批量下载图片非常方便。这样的爬虫实现起来比较简单。而有些网站需要用户登录之后才可以下载文件，之前的方法就办不到了。今天就说说用Python模拟浏览器的登录过程，为之后的登录下载做好准备。
+登录的情况，需要额外用到的一个模块是cookielib，用来记住登录成功之后保存到本地的cookie，方便在网站的各个页面之间穿越。</p>
+			  
+	</div>
+  <a type="button" href="/python-login/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-08-14 </div>
+			<div class="article-title"><a href="/python-upgrade/" >python安装、升级和包管理</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="http://ww4.sinaimg.cn/large/5e8cb366jw1e7m0eyh2i1j20m80go0tk.jpg" alt=""></p>
+	-->
+			  
+			  <p class="summary"></p>
+			  
+	</div>
+  <a type="button" href="/python-upgrade/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-08-13 </div>
+			<div class="article-title"><a href="/annoying-linux/" >恼人的Linux</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="http://ww1.sinaimg.cn/large/5e8cb366jw1e7lacvg6zcj21hc0xcqc6.jpg" alt=""></p>
+	-->
+			  
+			  <p class="summary"></p>
+			  
+	</div>
+  <a type="button" href="/annoying-linux/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-08-12 </div>
+			<div class="article-title"><a href="/traverse-in-python/" >python中文件遍历的几种方法</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>今天写一个在windows下批量修改文件名的python脚本，用到文件的遍历。用python进行文件遍历有多种方法，这里列举并说明一下。</p>
+<p>###os.path.walk()</p>
+<p>这是一个传统的用法。</p>
+<p>walk(root,callable,args)方法有三个参数：要遍历的目录，回调函数，回调函数的参数（元组形式）。</p>
+<p>调用的过程是遍历目录下的文件或目录，每遍历一个目录，调用回调函数，并把args作为参数传递给回调函数。</p>
+<p>回调函数定义时也有三个参数，比如示例中的func中的三个参数，分别为walk传来的参数、目录的路径、目录下的文件列表（只有文件名，不是完整路径）。请看示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">s = os.sep	<span class="comment">#根据unix或win，s为\或/</span></span><br><span class="line">root = <span class="string">"d:"</span> + s + <span class="string">"ll"</span> + s	<span class="comment">#要遍历的目录</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(args,dire,fis)</span>:</span>	<span class="comment">#回调函数的定义</span></span><br><span class="line">    <span class="keyword">for</span> f <span class="keyword">in</span> fis:</span><br><span class="line">        fname = os.path.splitext(f)		<span class="comment">#分割文件名为名字和扩展名的二元组</span></span><br><span class="line">        new = fname[<span class="number">0</span>] + <span class="string">'b'</span> + fname[<span class="number">1</span>]		<span class="comment">#改名字</span></span><br><span class="line">        os.rename(os.path.join(dire,f),os.path.join(dire,new))	<span class="comment">#重命名</span></span><br><span class="line"></span><br><span class="line">os.path.walk(root,func,())	<span class="comment">#遍历</span></span><br></pre></td></tr></table></figure>
+<p>这种方法在使用时有个问题，不能递归遍历下一层（这点我还不确定，欢迎指正）。</p>
+<p>python的高级版本中加入了os.walk()，比这个好用。</p>
+	-->
+			  
+			  <p class="summary">今天写一个在windows下批量修改文件名的python脚本，用到文件的遍历。用python进行文件遍历有多种方法，这里列举并说明一下。
+###os.path.walk()
+这是一个传统的用法。
+walk(root,callable,args)方法有三个参数：要遍历的目录，回调函数，回调函数的参数（元组形式）。
+调用的过程是遍历目录下的文件或目录，每遍历一个目录，调用回调函数，并把args作为参数传递给回调函数。
+回调函数定义时也有三个参数，比如示例中的func中的三个参数，分别为walk传来的参数、目录的路径、目录下的文件列表（只有文件名，不是完整路径）。请看示例：
+123456789101</p>
+			  
+	</div>
+  <a type="button" href="/traverse-in-python/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-08-10 </div>
+			<div class="article-title"><a href="/python-error/" >python中的异常处理</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>从几年前开始学习编程直到现在，一直对程序中的异常处理怀有恐惧和排斥心理。之所以这样，是因为不了解。这次攻python，首先把自己最畏惧和最不熟悉的几块内容列出来，里面就有「异常处理」这一项。</p>
+<p>《Dive into Python》并没有专门介绍异常处理，只是例子中用到的时候略微说明了一下。今天下载《Learn Python》，直接进异常处理这块。这一部分有四章，第一章讲解异常处理的一般使用方法，后面的章节深入地讨论其机制。我目前只看了第一章，先学会用，以后有必要的时候再扩展阅读。</p>
+<p>python主要支持五种异常机制，一一列举。</p>
+	-->
+			  
+			  <p class="summary">从几年前开始学习编程直到现在，一直对程序中的异常处理怀有恐惧和排斥心理。之所以这样，是因为不了解。这次攻python，首先把自己最畏惧和最不熟悉的几块内容列出来，里面就有「异常处理」这一项。
+《Dive into Python》并没有专门介绍异常处理，只是例子中用到的时候略微说明了一下。今天下载《Learn Python》，直接进异常处理这块。这一部分有四章，第一章讲解异常处理的一般使用方法，后面的章节深入地讨论其机制。我目前只看了第一章，先学会用，以后有必要的时候再扩展阅读。
+python主要支持五种异常机制，一一列举。</p>
+			  
+	</div>
+  <a type="button" href="/python-error/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-08-07 </div>
+			<div class="article-title"><a href="/vim-start/" >开启vim模式</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>Notepad++用了两年了，作为一般的使用非常轻便，而且支持丰富的插件，但想要在编写速度上再提升就很难了。这几天SN上总有人推荐vim的介绍和设置文章，池建强也开始写vim系列文章，在需求和刺激的双重驱动下，我重新燃起了对vim的热情。于是下载安装了Gvim。win版的vim是最丑的，跟mac和linux下的没法比，但是我一没mac，二不爱来回重启切换系统，所以只能凑合用这个了。把工具栏隐藏掉，把配色方案改一下，发现还有美容的希望。</p>
+<p>装好gvim后，第一步就是找几个成熟的配置文件写进.vimrc，这样便能直接上手使用好用的vim了。</p>
+<p>然后设置文件关联。这个我还没找到像NPP那样的一键关联设定，只能见招拆招，看到一种类型的文件后把vim设置为默认的打开程序。</p>
+<p>vim命令学过一些，但长时间不用基本忘光了。昨天用vim写博客，配合鼠标，跟普通编辑器的使用没有什么区别。</p>
+	-->
+			  
+			  <p class="summary">Notepad++用了两年了，作为一般的使用非常轻便，而且支持丰富的插件，但想要在编写速度上再提升就很难了。这几天SN上总有人推荐vim的介绍和设置文章，池建强也开始写vim系列文章，在需求和刺激的双重驱动下，我重新燃起了对vim的热情。于是下载安装了Gvim。win版的vim是最丑的，跟mac和linux下的没法比，但是我一没mac，二不爱来回重启切换系统，所以只能凑合用这个了。把工具栏隐藏掉，把配色方案改一下，发现还有美容的希望。
+装好gvim后，第一步就是找几个成熟的配置文件写进.vimrc，这样便能直接上手使用好用的vim了。
+然后设置文件关联。这个我还没找到像NPP那样的一键关联设定</p>
+			  
+	</div>
+  <a type="button" href="/vim-start/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-08-06 </div>
+			<div class="article-title"><a href="/goagent-gui/" >科学上网之goagent gui</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>作为IT从业者，经常需要去国外的一些网站看技术文档，需要去<em>youtube、udacity</em>等网站看一些技术相关的视频，但由于国内政策限制，很多类似的网站被GFW墙掉。正所谓魔高一尺，道高一丈，在伟大的程序员手里，一件件的fq软件诞生。本人有点小工具收藏癖，到现在为止已经收藏了不少的科学上网方法，有时间汇总一下。今天又发现一个好东西，特拿来分享。</p>
+<p>软件名：Goagent GUI</p>
+<p>操作系统：Win8，Win7，xp</p>
+<p>主页：<a href="https://goagent.codeplex.com/">https://goagent.codeplex.com/</a>（无需fq）</p>
+<p>简介：基于Goagent，在此基础上制作了图形化的软件界面，配置和使用更加方便。</p>
+	-->
+			  
+			  <p class="summary">作为IT从业者，经常需要去国外的一些网站看技术文档，需要去youtube、udacity等网站看一些技术相关的视频，但由于国内政策限制，很多类似的网站被GFW墙掉。正所谓魔高一尺，道高一丈，在伟大的程序员手里，一件件的fq软件诞生。本人有点小工具收藏癖，到现在为止已经收藏了不少的科学上网方法，有时间汇总一下。今天又发现一个好东西，特拿来分享。
+软件名：Goagent GUI
+操作系统：Win8，Win7，xp
+主页：https://goagent.codeplex.com/（无需fq）
+简介：基于Goagent，在此基础上制作了图形化的软件界面，配置和使用更加方便。</p>
+			  
+	</div>
+  <a type="button" href="/goagent-gui/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-08-03 </div>
+			<div class="article-title"><a href="/jquery-post/" >jQuery之$.post()</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>在提交表单时我们可以使用.submit()方法自定义提交表单的动作。提交的方式可以选择get、post、getJSON、getJSONP等等。这里说一下post方式。</p>
+<p><code>jQuery.post( url [, data ] [, success(data, textStatus, jqXHR) ] [, dataType ] )</code></p>
+<p>url：要提交的地址，相当于html中的action值。</p>
+<p>data：要发送给服务器的数据。</p>
+<p>success：这是一个回调函数，如果post成功，会执行该函数。</p>
+<p>dataType：这个参数可以设置从服务器返回的数据的格式，可以为xml, json, script, text, html。</p>
+	-->
+			  
+			  <p class="summary">在提交表单时我们可以使用.submit()方法自定义提交表单的动作。提交的方式可以选择get、post、getJSON、getJSONP等等。这里说一下post方式。
+jQuery.post( url [, data ] [, success(data, textStatus, jqXHR) ] [, dataType ] )
+url：要提交的地址，相当于html中的action值。
+data：要发送给服务器的数据。
+success：这是一个回调函数，如果post成功，会执行该函数。
+dataType：这个参数可以设置从服务器返回的数据的格式，可以为xml, json, script, tex</p>
+			  
+	</div>
+  <a type="button" href="/jquery-post/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-07-30 </div>
+			<div class="article-title"><a href="/python-yield/" >python学习之yield</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>python中有一个略微奇怪的表达式叫yield expression，本文就来探究一下这是个什么东西。一步一步来。</p>
+<p>####iterable</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mylist = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> mylist:</span><br><span class="line">    <span class="keyword">print</span> str(item)</span><br></pre></td></tr></table></figure>
+<p>mylist是一个列表（list），我们可以逐条取出每一个item，这个过程叫做iteration。像list这样可以用”for…in…”依次遍历的对象被称为iterable，其他的iterable还有string、tuple、dict等。iterable的一个特点是所有的item会存储到内存中，这样会产生一些不便和不利的地方，于是催生了generator（后面讲到）。</p>
+	-->
+			  
+			  <p class="summary">python中有一个略微奇怪的表达式叫yield expression，本文就来探究一下这是个什么东西。一步一步来。
+####iterable
+123mylist = [1,2,3]for item in mylist:    print str(item)
+mylist是一个列表（list），我们可以逐条取出每一个item，这个过程叫做iteration。像list这样可以用”for…in…”依次遍历的对象被称为iterable，其他的iterable还有string、tuple、dict等。iterable的一个特点是所有的item会存储到内存中，这样会产生一些不便和不利的地方，于是催生了</p>
+			  
+	</div>
+  <a type="button" href="/python-yield/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-07-29 </div>
+			<div class="article-title"><a href="/python-re/" >python学习之re模块</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>这几天玩爬虫已经使用了很多次的re模块，算是比较熟悉了，这里梳理一下。</p>
+<p>首先，关于正则表达式的概念，<a href="http://blog.csdn.net/wxg694175346/article/details/8929576">这里</a>有最好的教程。</p>
+<p>对于正则表达式，我们可以先用compile方法编译为pattern对象，再调用相关的方法进行模式匹配，也可以直接进行匹配。</p>
+	-->
+			  
+			  <p class="summary">这几天玩爬虫已经使用了很多次的re模块，算是比较熟悉了，这里梳理一下。
+首先，关于正则表达式的概念，这里有最好的教程。
+对于正则表达式，我们可以先用compile方法编译为pattern对象，再调用相关的方法进行模式匹配，也可以直接进行匹配。</p>
+			  
+	</div>
+  <a type="button" href="/python-re/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-07-29 </div>
+			<div class="article-title"><a href="/python-hashlib-base64/" >python学习之hashlib和base64模块</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>看到好几位博主通过对模块的各个击破学习python，我也效法一下，本篇说一下python中加密涉及到的模块。</p>
+<p>###hashlib</p>
+<p>hashlib模块支持的加密算法有md5 sha1 sha224 sha256 sha384 sha512(加密原理请参考<a href="http://msdn.microsoft.com/zh-cn/library/92f9ye3s.aspx">此处</a>)，使用起来也很简单。</p>
+	-->
+			  
+			  <p class="summary">看到好几位博主通过对模块的各个击破学习python，我也效法一下，本篇说一下python中加密涉及到的模块。
+###hashlib
+hashlib模块支持的加密算法有md5 sha1 sha224 sha256 sha384 sha512(加密原理请参考此处)，使用起来也很简单。</p>
+			  
+	</div>
+  <a type="button" href="/python-hashlib-base64/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-07-28 </div>
+			<div class="article-title"><a href="/python-thread-join/" >python多线程编程中join函数的使用</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<a id="more"></a>
+<p>测试用的代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试多线程中join的功能</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> threading, time  </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">doWaiting</span><span class="params">()</span>:</span>  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'start waiting1: '</span> + time.strftime(<span class="string">'%H:%M:%S'</span>) + <span class="string">"\n"</span>  </span><br><span class="line">    time.sleep(<span class="number">3</span>)  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'stop waiting1: '</span> + time.strftime(<span class="string">'%H:%M:%S'</span>) + <span class="string">"\n"</span> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">doWaiting1</span><span class="params">()</span>:</span>  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'start waiting2: '</span> + time.strftime(<span class="string">'%H:%M:%S'</span>) + <span class="string">"\n"</span>   </span><br><span class="line">    time.sleep(<span class="number">8</span>)  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'stop waiting2: '</span>, time.strftime(<span class="string">'%H:%M:%S'</span>) + <span class="string">"\n"</span>  </span><br><span class="line">tsk = []    </span><br><span class="line">thread1 = threading.Thread(target = doWaiting)  </span><br><span class="line">thread1.start()  </span><br><span class="line">tsk.append(thread1)</span><br><span class="line">thread2 = threading.Thread(target = doWaiting1)  </span><br><span class="line">thread2.start()  </span><br><span class="line">tsk.append(thread2)</span><br><span class="line"><span class="keyword">print</span> <span class="string">'start join: '</span> + time.strftime(<span class="string">'%H:%M:%S'</span>) + <span class="string">"\n"</span>   </span><br><span class="line"><span class="keyword">for</span> tt <span class="keyword">in</span> tsk:</span><br><span class="line">    tt.join()</span><br><span class="line"><span class="keyword">print</span> <span class="string">'end join: '</span> + time.strftime(<span class="string">'%H:%M:%S'</span>) + <span class="string">"\n"</span></span><br></pre></td></tr></table></figure>
+<p>这个小程序使用了两个线程thread1和thread2，线程执行的动作分别是doWaiting()和doWaiting1()，函数体就是打印「开始」+休眠3秒+打印「结束」，分别附加上时间用来查看程序执行的过程。后面用start()方法同步开始执行两个线程。然后开始循环调用两个线程的join()方法，在此之前和之后都会用print函数做好开始结束的标记。我们主要观察<code>for tt in tsk: tt.join()</code>。</p>
+<p>join()不带参数的情况下，执行如下：</p>
+<p><img src="http://ww4.sinaimg.cn/large/5e8cb366jw1e72rsxgr8gj20it06i74w.jpg" alt=""></p>
+<p>可以看到，两个线程并行执行，进程1在3s后结束，进程2在8s后结束，然后回到主进程，执行打印「end join」。</p>
+<p>下面把参数设置成超时2s，即<code>tt.join(2)</code>，执行如下：</p>
+<p><img src="http://ww1.sinaimg.cn/large/5e8cb366jw1e72rtihfr6j20it06iwf3.jpg" alt=""></p>
+<p>两个线程开始并发执行，然后执行线程1的<code>join(2)</code>，等线程1执行2s后就不管它了，执行线程2的<code>join(2)</code>，等线程2执行2s后也不管它了（在此过程中线程1执行结束，打印线程1的结束信息），开始执行主进程，打印「end join」。4s之后线程2执行结束。</p>
+<p>总结一下：</p>
+<ol>
+<li>join方法的作用是阻塞主进程（挡住，无法执行join以后的语句），专注执行多线程。</li>
+<li>多线程多join的情况下，依次执行各线程的join方法，前头一个结束了才能执行后面一个。</li>
+<li>无参数，则等待到该线程结束，才开始执行下一个线程的join。</li>
+<li>设置参数后，则等待该线程这么长时间就不管它了（而该线程并没有结束）。不管的意思就是可以执行后面的主进程了。</li>
+</ol>
+<p>最后附上参数为2时的程序执行流程表，自己画的orz，这样看起来更好理解。</p>
+<p><img src="http://ww2.sinaimg.cn/large/5e8cb366jw1e72rwxky2oj21kw16owza.jpg" alt=""></p>
+
+	-->
+			  
+			  <p class="summary">测试用的代码如下：
+123456789101112131415161718192021222324# coding: utf-8# 测试多线程中join的功能import threading, time  def doWaiting():      print &#39;start waiting1: &#39; + time.strftime(&#39;%H:%M:%S&#39;) + &quot;\n&quot;      time.sleep(3)      print &#39;stop waiting1: &#39; + time.strftime(&#39;%H:%M:%S&#39;) + &quot;\n&quot; def doWaiting1():      print &#39;st</p>
+			  
+	</div>
+  <a type="button" href="/python-thread-join/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-07-27 </div>
+			<div class="article-title"><a href="/python-pachong-dian-dian-tu-pian/" >python爬虫：点点美女图片</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>继续鼓捣爬虫，今天贴出一个代码，爬取点点网「美女」标签下的图片，原图。</p>
+	-->
+			  
+			  <p class="summary">继续鼓捣爬虫，今天贴出一个代码，爬取点点网「美女」标签下的图片，原图。</p>
+			  
+	</div>
+  <a type="button" href="/python-pachong-dian-dian-tu-pian/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-07-26 </div>
+			<div class="article-title"><a href="/python-pachong-qiu-bai/" >python爬虫：糗百图片</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p>学习python少不了写爬虫，不仅能以点带面地学习、练习使用python，爬虫本身也是有用且有趣的，大量重复性的下载、统计工作完全可以写一个爬虫程序完成。</p>
+<p>用python写爬虫需要python的基础知识、涉及网络的几个模块、正则表达式、文件操作等知识。昨天在网上学习了一下，写了一个爬虫自动下载「糗事百科」里面的图片。源代码如下：</p>
+	-->
+			  
+			  <p class="summary">学习python少不了写爬虫，不仅能以点带面地学习、练习使用python，爬虫本身也是有用且有趣的，大量重复性的下载、统计工作完全可以写一个爬虫程序完成。
+用python写爬虫需要python的基础知识、涉及网络的几个模块、正则表达式、文件操作等知识。昨天在网上学习了一下，写了一个爬虫自动下载「糗事百科」里面的图片。源代码如下：</p>
+			  
+	</div>
+  <a type="button" href="/python-pachong-qiu-bai/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-07-20 </div>
+			<div class="article-title"><a href="/recommendations/" >推荐一些资源</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="/img/tuijian.jpg" alt=""></p>
+<p>今天给大家推荐一些不错的资源，藏着掖着怕臭掉，全民共享才超值。</p>
+	-->
+			  
+			  <p class="summary">今天给大家推荐一些不错的资源，藏着掖着怕臭掉，全民共享才超值。</p>
+			  
+	</div>
+  <a type="button" href="/recommendations/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-07-11 </div>
+			<div class="article-title"><a href="/google-form/" >Google表单</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="/img/biaodan1.png" alt="Google表单示例"></p>
+<p>介绍一个小工具：Google表单。这是google drive下面的一个实用小工具，用户可以用此创建留言表单或者问卷调查表单，提交的数据会保存到表单制作者的google drive，格式为Excel，可以轻松导出，还会有趋势图直观显示用户提交的频度。<a href="https://docs.google.com/forms/d/10V0l91dCDnyfpeicX4RclsHQ_xOihI61tvGuVCzB80g/viewform">点此</a>查看效果（留言表单）。</p>
+	-->
+			  
+			  <p class="summary">介绍一个小工具：Google表单。这是google drive下面的一个实用小工具，用户可以用此创建留言表单或者问卷调查表单，提交的数据会保存到表单制作者的google drive，格式为Excel，可以轻松导出，还会有趋势图直观显示用户提交的频度。点此查看效果（留言表单）。</p>
+			  
+	</div>
+  <a type="button" href="/google-form/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-07-09 </div>
+			<div class="article-title"><a href="/flickr-on-page/" >把flickr相册嵌入网页</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="/img/flickr.png" alt=""></p>
+<p>flickr是雅虎旗下的图片存储与分享服务，注册即赠送1T的免费存储空间，足够这辈子用了。flickr会无损保存我们的照片，提供各种滤镜渲染效果。同时，flickr的图片展示方式也非常的方便和舒适，幻灯片效果尤为漂亮。本文介绍一种方法，把自己的图集在博客页面上进行展示。效果如上图所示。</p>
+	-->
+			  
+			  <p class="summary">flickr是雅虎旗下的图片存储与分享服务，注册即赠送1T的免费存储空间，足够这辈子用了。flickr会无损保存我们的照片，提供各种滤镜渲染效果。同时，flickr的图片展示方式也非常的方便和舒适，幻灯片效果尤为漂亮。本文介绍一种方法，把自己的图集在博客页面上进行展示。效果如上图所示。</p>
+			  
+	</div>
+  <a type="button" href="/flickr-on-page/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2013-07-02 </div>
+			<div class="article-title"><a href="/ke-xue-shang-wang/" >科学上网新招</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	<!--
+		<p><img src="/img/breakwall2.png" alt=""></p>
+<p>用了一年多的Goagent，除了首次安装配置的时候有些麻烦，后续使用还是挺方便的，速度和稳定性都可以，尽管偶尔会撒个娇。</p>
+<p>近日混V2EX，多次不经意间看到shadowsocks这个词，还有ss-server之类的词语，不甚了了。昨天终于点进去瞧了瞧，哦，原来是一个用来科学上网的东东。</p>
+<p>shadowsocks是由<a href="http://www.v2ex.com/member/clowwindy">@clowwindy</a>发明的轻量级服务器中转包传输工具。有<a href="https://github.com/clowwindy/shadowsocks/wiki/Ports-and-Clients">各平台的各种客户端</a>，五花八门，总有一款适合你。</p>
+	-->
+			  
+			  <p class="summary">用了一年多的Goagent，除了首次安装配置的时候有些麻烦，后续使用还是挺方便的，速度和稳定性都可以，尽管偶尔会撒个娇。
+近日混V2EX，多次不经意间看到shadowsocks这个词，还有ss-server之类的词语，不甚了了。昨天终于点进去瞧了瞧，哦，原来是一个用来科学上网的东东。
+shadowsocks是由@clowwindy发明的轻量级服务器中转包传输工具。有各平台的各种客户端，五花八门，总有一款适合你。</p>
+			  
+	</div>
+  <a type="button" href="/ke-xue-shang-wang/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
+
+		</div>
+
+		<!-- pagination -->
+		<div>
+  		<center>
+		<div class="pagination">
+<ul class="pagination">
+	 
+		
+    	<li class="prev"><a href="/page/15/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i> Prev</a></li>
+  		
+
+        <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+
+		
+		   <li class="next"> <a href="/page/17/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a> </li>          
+        
+	
+</ul>
+</div>
+
+  		</center>
+		</div>
+
+		
+		
+	</div> <!-- col-md-9 -->
+
+	
+		<div class="col-md-3">
+	<div id="sidebar">
+	
+			
+  <div id="site_search">
+   <div class="form-group">
+    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search" class="st-search-input st-default-search-input form-control"/>
+   </div>  
+  <div id="local-search-result"></div>
+  </div>
+
+
+		
+			
+	<div class="widget">
+		<h4>Categories</h4>
+		<ul class="tag_box inline list-unstyled">
+		
+			<li><a href="/categories/Angular-js/">Angular.js<span>1</span></a></li>
+		
+			<li><a href="/categories/Database/">Database<span>1</span></a></li>
+		
+			<li><a href="/categories/IT杂谈/">IT杂谈<span>20</span></a></li>
+		
+			<li><a href="/categories/Mac/">Mac<span>4</span></a></li>
+		
+			<li><a href="/categories/Ruby/">Ruby<span>2</span></a></li>
+		
+			<li><a href="/categories/System-Design/">System Design<span>1</span></a></li>
+		
+			<li><a href="/categories/algorithm/">algorithm<span>197</span></a></li>
+		
+			<li><a href="/categories/hexo/">hexo<span>18</span></a></li>
+		
+			<li><a href="/categories/linux/">linux<span>3</span></a></li>
+		
+			<li><a href="/categories/markdown/">markdown<span>1</span></a></li>
+		
+			<li><a href="/categories/node-js/">node.js<span>1</span></a></li>
+		
+			<li><a href="/categories/nodejs/">nodejs<span>1</span></a></li>
+		
+			<li><a href="/categories/project/">project<span>50</span></a></li>
+		
+			<li><a href="/categories/python/">python<span>11</span></a></li>
+		
+			<li><a href="/categories/前端/">前端<span>4</span></a></li>
+		
+			<li><a href="/categories/推荐/">推荐<span>1</span></a></li>
+		
+			<li><a href="/categories/机器学习/">机器学习<span>23</span></a></li>
+		
+			<li><a href="/categories/生活/">生活<span>1</span></a></li>
+		
+			<li><a href="/categories/读书笔记/">读书笔记<span>1</span></a></li>
+		
+		</ul>
+	</div>
+
+		
+			
+	<div class="widget">
+		<h4>Tag Cloud</h4>
+		<ul class="tag_box inline list-unstyled">		
+		
+			<li><a href="/tags/Two-Pointers/">Two Pointers<span>19</span></a></li>
+		
+			<li><a href="/tags/CSS/">CSS<span>1</span></a></li>
+		
+			<li><a href="/tags/Array/">Array<span>55</span></a></li>
+		
+			<li><a href="/tags/Angular-js/">Angular.js<span>1</span></a></li>
+		
+			<li><a href="/tags/IDEA/">IDEA<span>1</span></a></li>
+		
+			<li><a href="/tags/System-Design/">System Design<span>1</span></a></li>
+		
+			<li><a href="/tags/NoSql/">NoSql<span>5</span></a></li>
+		
+			<li><a href="/tags/google/">google<span>1</span></a></li>
+		
+			<li><a href="/tags/String/">String<span>32</span></a></li>
+		
+			<li><a href="/tags/Docker/">Docker<span>6</span></a></li>
+		
+			<li><a href="/tags/CentOS/">CentOS<span>5</span></a></li>
+		
+			<li><a href="/tags/Divide-and-Conquer/">Divide and Conquer<span>6</span></a></li>
+		
+			<li><a href="/tags/运维/">运维<span>1</span></a></li>
+		
+			<li><a href="/tags/jQuery/">jQuery<span>1</span></a></li>
+		
+			<li><a href="/tags/加密/">加密<span>1</span></a></li>
+		
+			<li><a href="/tags/Bit-Manipulation/">Bit Manipulation<span>8</span></a></li>
+		
+			<li><a href="/tags/Spring/">Spring<span>1</span></a></li>
+		
+			<li><a href="/tags/Android/">Android<span>2</span></a></li>
+		
+			<li><a href="/tags/Topological-Sort/">Topological Sort<span>2</span></a></li>
+		
+			<li><a href="/tags/Stack/">Stack<span>11</span></a></li>
+		
+		
+		   <li><a href="/tags">...<span>92</span></a></li>
+		 
+		</ul>
+	</div>
+
+
+		
+			
+<div class="widget">
+  <h4>Recent Posts</h4>
+  <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/python系统性能信息模块-pstuil/"  title="python系统性能信息模块-psutil" ><i class="fa fa-file-o"></i>python系统性能信息模块-psutil</a>
+      </li>
+    
+      <li>
+        <a href="/System Design Preparation/"  title="系统设计准备" ><i class="fa fa-file-o"></i>System Design Preparation</a>
+      </li>
+    
+      <li>
+        <a href="/Resevior Sampling/"  title="Resevior Sampling 蓄水池算法java实现" ><i class="fa fa-file-o"></i>Resevior Sampling蓄水池算法java实现</a>
+      </li>
+    
+      <li>
+        <a href="/Top 25 Angular.js Interview Questions/"  title="Top 25 Angular.js Interview Questions" ><i class="fa fa-file-o"></i>Top 25 Angular.js Interview...</a>
+      </li>
+    
+      <li>
+        <a href="/NodeJS-Learning/"  title="NodeJS 学习资料汇总" ><i class="fa fa-file-o"></i>NodeJS 学习资料</a>
+      </li>
+    
+      <li>
+        <a href="/Rotate-List/"  title="Rotate List" ><i class="fa fa-file-o"></i>LeetCode-Rotate List</a>
+      </li>
+    
+      <li>
+        <a href="/Best-Time-to-Buy-and-Sell-Stock-II/"  title="Best Time to Buy and Sell Stock II" ><i class="fa fa-file-o"></i>LeetCode-Best Time to Buy a...</a>
+      </li>
+    
+      <li>
+        <a href="/Best-Time-to-Buy-and-Sell-Stock-IV/"  title="Best Time to Buy and Sell Stock IV" ><i class="fa fa-file-o"></i>LeetCode-Best Time to Buy a...</a>
+      </li>
+    
+      <li>
+        <a href="/Best-Time-to-Buy-and-Sell-Stock/"  title="Best Time to Buy and Sell Stock" ><i class="fa fa-file-o"></i>LeetCode-Best Time to Buy a...</a>
+      </li>
+    
+      <li>
+        <a href="/Binary-Search-Tree-Iterator /"  title="Binary Search Tree Iterator" ><i class="fa fa-file-o"></i>LeetCode-Binary Search Tree...</a>
+      </li>
+    
+  </ul>
+</div>
+
+		
+			
+<div class="widget">
+	<h4>Links</h4>
+	<ul class="blogroll list-unstyled">
+	
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
+	
+	</ul>
+</div>
+
+
+		
+	</div> <!-- sidebar -->
+</div> <!-- col-md-3 -->
+
+	
+	
+</div> <!-- row-fluid -->
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2016 CodeInterviews
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
 </script>
 
 
-</body>
-</html>
 
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

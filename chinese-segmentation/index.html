@@ -1,0 +1,388 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>中文分词（一） | CodeInterviews</title>
+  <meta name="author" content="CodeInterviews">
+  
+  <meta name="description" content="程序员的世界,编程,技术,程序员,java,.Net,c++,c语言,python,ruby">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="中文分词（一）"/>
+  <meta property="og:site_name" content="CodeInterviews"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/bootstrap.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-80198899-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?9a9d27181903a355a8d95344f23682b0";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">CodeInterviews</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>所有文章
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the articles.">
+			  <i class="fa fa-archive"></i>分类
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Java/" title="All about java.">
+			  <i class="fa fa-codepen"></i>Java
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Javascript/" title="All about javascript.">
+			  <i class="fa fa-empire"></i>Javascript
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/python/" title="All about Python.">
+			  <i class="fa fa-cog"></i>Python
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Leetcode/" title="All about leetcode.">
+			  <i class="fa fa-thumbs-o-up"></i>Leetcode
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-info-circle"></i>关于本站
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header page-header-inverse ">		
+			<h1 class="title title-inverse "> 中文分词（一）</h1>
+		</div>		
+	
+
+
+
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <ul>
+<li><a href="http://zipperary.com/2013/12/25/chinese-segmentation/" target="_blank" rel="external">《中文分词（一）》</a></li>
+<li><a href="http://zipperary.com/2013/12/27/chinese-segmentation-2/" target="_blank" rel="external">《中文分词（二）》</a></li>
+<li><a href="http://zipperary.com/2013/12/27/chinese-segmentation-3/" target="_blank" rel="external">《中文分词（三）》</a></li>
+</ul>
+<p>「中文分词」，要求是可以使用任何现有的资料，我们采用的是@TeapDB 的<strong>结巴分词</strong>，项目主页是：<a href="https://github.com/fxsjy/jieba" target="_blank" rel="external">https://github.com/fxsjy/jieba</a> 。</p>
+<p>今晚刚刚做完 presentation，不知不觉在台上扯了四十分钟，在空调吹暖气烤的屋里出了一身的汗。汗还没干，把内容整理一下：</p>
+<p>###为什么要进行中文分词？</p>
+<ul>
+<li><p>词是最小的能够独立活动的有意义的语言成分。</p>
+</li>
+<li><p>汉语是以字为基本的书写单位，词语之间没有明显的区分标记。</p>
+</li>
+<li><p>正确分词是中文信息处理的基础与关键。</p>
+</li>
+</ul>
+<p>###中文分词的难点</p>
+<ol>
+<li><p>交集型歧义：<br>结婚的和尚未结婚的   =&gt;<br>结婚／的／和／尚未／结婚／的<br>结婚／的／和尚／未／结婚／的  </p>
+</li>
+<li><p>OOV(Out of Vocabulary)识别：<br>云计算、创新办、好用</p>
+</li>
+</ol>
+<a id="more"></a>
+<p>###基于规则的分词：最大匹配</p>
+<p>e.g. “南京市长江大桥”</p>
+<p>词典的最大词长是5</p>
+<p><strong>正向最大匹配：</strong>从左向右，依次扫描。比如”南”，扫描前5个，”南京市长江”，词典中并没有这个词；扫描前4个，”南京市长”，词典中有这个词，Okay。然后从”江”开始，后面一共就剩3个了，但词典中木有，那么缩短，”江大”，也木有，只能是”江”了。依次继续，可以得到”大桥”。最后我们就得到了按照正向最大匹配得到的词序：</p>
+<p>南京市长/江/大桥</p>
+<p><strong>逆向最大匹配：</strong>我们都知道，中文的重心一般在后面，所以按照从右向左的扫描方式，取得的效果会更好一些。分词的方式跟上面是一样的，除了扫描顺序。最后得到的词序是：</p>
+<p>南京市/长江大桥</p>
+<p>###基于统计的分词</p>
+<ol>
+<li>基于 DAG(有向无环图)和 Dict(词典)的中文分词。</li>
+<li>基于HMM的 Viterbi 算法</li>
+</ol>
+<p>结巴分词正是使用这种思想。该分词程序的<strong>主要功能</strong>有：</p>
+<ul>
+<li><strong>分词</strong></li>
+<li>关键词提取：TF/IDF</li>
+<li>词性标注（pos）</li>
+<li>Tokenize：返回词语在原文的起始位置</li>
+</ul>
+<p><strong>代码</strong>有：</p>
+<ul>
+<li>Python 版，作者所写</li>
+<li>C++</li>
+<li>Java</li>
+</ul>
+<p>后两种为其他人做的 commit。</p>
+<p>程序的<strong>性能</strong>：</p>
+<ul>
+<li>1.5 MB / Second in Full Mode</li>
+<li>400 KB / Second in Default Mode</li>
+<li>Test Env: Intel(R) Core(TM) i7-2600 CPU @ 3.4GHz；《围城》.txt</li>
+</ul>
+<p>###演示</p>
+<p>输入文本： “这是一个伸手不见五指的黑夜。我叫孙悟空，我爱北京，我爱Python和C++。”</p>
+<p>程序执行结果：</p>
+<p><img src="http://ww4.sinaimg.cn/large/5e8cb366jw1ebw9jdi6mjj20k00egwg1.jpg" alt=""></p>
+<p>###基于 DAG 和 Dict 的中文分词</p>
+<p>分词步骤：</p>
+<ol>
+<li>根据 dict 生成 trie，提高词典查询速度</li>
+<li>文本预处理，生成中文短语</li>
+<li>生成词图（DAG），并求最大概率路径</li>
+</ol>
+<p><em>附我 Presentation 的 ppt： <a href="http://pan.baidu.com/s/1jG1DcFk" target="_blank" rel="external">点我下载</a></em></p>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+<ul class="pagination">
+	 
+				
+    	<li class="prev"><a href="/chinese-segmentation-2/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+  		
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
+
+		
+		   <li class="next"><a href="/bow/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+        
+	
+</ul>
+</div>
+
+    </center>
+	</div>
+
+    <!-- share -->
+    
+        
+    <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+        <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+        <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+    </div>
+    <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+
+
+        
+
+    
+	
+	<!-- comment -->
+	
+<section id="comment">
+  <h2 class="title">Comments</h2>
+
+  
+  	 <div class="ds-thread" data-thread-key="chinese-segmentation/" data-title="中文分词（一）" data-url="http://codeinterviews.com/chinese-segmentation/"></div>  
+  
+</section>
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2013-12-25 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/机器学习/">机器学习<span>23</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/机器学习/">机器学习<span>24</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'codeinterviews' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2016 CodeInterviews
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

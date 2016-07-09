@@ -1,0 +1,357 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Learn Git | CodeInterviews</title>
+  <meta name="author" content="CodeInterviews">
+  
+  <meta name="description" content="程序员的世界,编程,技术,程序员,java,.Net,c++,c语言,python,ruby">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Learn Git"/>
+  <meta property="og:site_name" content="CodeInterviews"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/bootstrap.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-80198899-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?9a9d27181903a355a8d95344f23682b0";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">CodeInterviews</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>所有文章
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the articles.">
+			  <i class="fa fa-archive"></i>分类
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Java/" title="All about java.">
+			  <i class="fa fa-codepen"></i>Java
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Javascript/" title="All about javascript.">
+			  <i class="fa fa-empire"></i>Javascript
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/python/" title="All about Python.">
+			  <i class="fa fa-cog"></i>Python
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Leetcode/" title="All about leetcode.">
+			  <i class="fa fa-thumbs-o-up"></i>Leetcode
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-info-circle"></i>关于本站
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header page-header-inverse ">		
+			<h1 class="title title-inverse "> Learn Git</h1>
+		</div>		
+	
+
+
+
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p><img src="http://ww2.sinaimg.cn/large/5e8cb366jw1eazklpf90uj20l80fbgoc.jpg" alt=""></p>
+<p>Git 几乎是程序员的标配和必备技能，但繁复的命令让人头疼，也吓跑了不少希望学习的小孩。今天看到一个很不错的教程，来自于鼎鼎有名的 CodeSchool，让用户在线跟着教程一步一步边学习边练习。</p>
+<p>教程的地址在<a href="http://try.github.io/levels/1/challenges/1" target="_blank" rel="external">这里</a>。虽然是全英文的，但几乎可以无障碍理解。</p>
+<a id="more"></a>
+<p>下面是我的学习总结：</p>
+<p>一、基本流程</p>
+<ol>
+<li><code>git init</code>在本地文件夹建立一个 repo，并做一些初始化配置。</li>
+<li><p><code>git add [file1]</code>or<code>git add .</code>or<code>git rm [file2]</code>在本地文件夹加入或删除文件后，需要用这些命令更新 staged area。后者临时保存用户所提交的更改（如 add/rm），以备下一步的 commit。  </p>
+<p>Advice:</p>
+<p><code>git reset [file1]</code>可以把 staged area 中所保存的 file1的更新信息删除，恢复之前的样子。</p>
+</li>
+<li><p><code>git commit -m &#39;added file1&#39;</code>把上一步 staged area 中所保存的更改进行整理，更新本地的 repo（准确的说，是本地 repo 的 master 分支），以备后面的 push。</p>
+<p>Advice:</p>
+<p><code>git checkout --[file1]</code>可以把本地 repo 中 file1的更新还原到之前的状态。</p>
+</li>
+<li><p><code>git remote add origin https://[服务器端 repo 地址]</code>添加服务器端的 repo 地址，取名为 origin（可以随便起名），以备稍后提交本地的 repo 到这个服务器端的 repo。</p>
+</li>
+<li><code>git push -u origin master</code>把本地 repo 的 master 分支提交到刚才添加的那个服务器端分支 origin。<code>-u</code>表示记住后面的参数，以后 push 的时候直接用<code>git push</code>命令即可。</li>
+</ol>
+<p>至此，本地的 repo 已提交到服务器端。</p>
+<p>二、分支</p>
+<ol>
+<li><code>git branch [newbranch]</code>上面说过，repo 里面默认的是 master 分支，这个命令可以创建其他分支。 <code>-d</code>可以用来删除某个分支。 这个分支可以用来修复 master 分支中代码的 bug，然后在 merge 到 master。</li>
+<li><code>git checkout [newbranch]</code>切换到这个新的分支，然后就可以在这个分支下写代码改代码了。</li>
+<li><code>git checkout master</code><br><code>git merge [newbranch]</code>切换回 master 分支，然后把刚才新分支对代码所做的更改 merge 进来。</li>
+</ol>
+<p>上述操作流程是多人合作写代码要使用的。各自先在小分支中修改，然后 merge 到主分支。 </p>
+<p>三、 状态跟踪</p>
+<ol>
+<li><code>git status</code> 查看当前状态。</li>
+<li><code>git log</code>查看更改记录。</li>
+<li><code>git diff</code>查看更改前后的对比。</li>
+</ol>
+<p>上述三个可以随时用来查看状态，三个的区别，我还不是太懂。</p>
+<p>四、资料推荐</p>
+<ol>
+<li><code>git</code>在命令行中使用这个命令可以获取相关的说明和帮助。</li>
+<li><a href="http://git-scm.com/docs" target="_blank" rel="external">Git - Reference</a>参考手册性质的，可以随时用来查阅；还有CheatSheet可供下载，福利啊。</li>
+<li><a href="http://git-scm.com/book" target="_blank" rel="external">Pro Git</a> 教程，全英文。想阅读中文版本，Come <a href="http://git-scm.com/book/zh" target="_blank" rel="external">here</a>。</li>
+<li><a href="https://help.github.com/" target="_blank" rel="external">GitHub Help</a>Github提供，相当于一个 FAQs。</li>
+<li><a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html" target="_blank" rel="external">图解Git</a>帮助你深刻理解这些命令，有图有真相。</li>
+<li><a href="http://blog.xdite.net/posts/2013/11/22/opensource-cheatsheets?utm_campaign=Manong_Weekly_Issue_11&amp;utm_medium=EDM&amp;utm_source=Manong_Weekly" target="_blank" rel="external">寫給大學生的程式技能</a>今天看到的，一步步指导学习使用 github，非常 practical，via this, you can learn git &amp;&amp; github together.</li>
+<li>If you are eager to learn more,click <a href="https://www.google.com/cse/publicurl?cx=014607101523563003145:y4ccw7deyqg" target="_blank" rel="external">here</a>.Besides,you can google other topics such as <code>Python</code> in my customized Google.</li>
+</ol>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+<ul class="pagination">
+	 
+				
+    	<li class="prev"><a href="/bow/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+  		
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
+
+		
+		   <li class="next"><a href="/hexo-to-gitcafe/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+        
+	
+</ul>
+</div>
+
+    </center>
+	</div>
+
+    <!-- share -->
+    
+        
+    <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+        <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+        <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+    </div>
+    <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+
+
+        
+
+    
+	
+	<!-- comment -->
+	
+<section id="comment">
+  <h2 class="title">Comments</h2>
+
+  
+  	 <div class="ds-thread" data-thread-key="learn-git/" data-title="Learn Git" data-url="http://codeinterviews.com/learn-git/"></div>  
+  
+</section>
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2013-11-27 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/IT杂谈/">IT杂谈<span>20</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'codeinterviews' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2016 CodeInterviews
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

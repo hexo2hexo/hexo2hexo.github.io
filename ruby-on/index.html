@@ -1,0 +1,369 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Ruby走起！ | CodeInterviews</title>
+  <meta name="author" content="CodeInterviews">
+  
+  <meta name="description" content="程序员的世界,编程,技术,程序员,java,.Net,c++,c语言,python,ruby">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Ruby走起！"/>
+  <meta property="og:site_name" content="CodeInterviews"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/bootstrap.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-80198899-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?9a9d27181903a355a8d95344f23682b0";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">CodeInterviews</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>所有文章
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the articles.">
+			  <i class="fa fa-archive"></i>分类
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Java/" title="All about java.">
+			  <i class="fa fa-codepen"></i>Java
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Javascript/" title="All about javascript.">
+			  <i class="fa fa-empire"></i>Javascript
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/python/" title="All about Python.">
+			  <i class="fa fa-cog"></i>Python
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Leetcode/" title="All about leetcode.">
+			  <i class="fa fa-thumbs-o-up"></i>Leetcode
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-info-circle"></i>关于本站
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header page-header-inverse ">		
+			<h1 class="title title-inverse "> Ruby走起！</h1>
+		</div>		
+	
+
+
+
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p><img src="http://ww2.sinaimg.cn/large/5e8cb366jw1e82h1gxsy6j20jf0e8js2.jpg" alt=""></p>
+<p>为了在他们NB闪闪地聊Ruby时我能不跟个傻子似的呆若木鸡，为了回报那条「一月30K」的招聘启事对我的激励，为了不糟蹋收藏夹里面好些个Ruby相关的文章，也为了见识一下ROR（Ruby on Rails）的伟大，我决定以身犯难，拨开迷雾，学习ROR。</p>
+<p>BTW，虽然Ruby的伟大之处十分得益于ROR，但Ruby毕竟是基础，ROR毕竟是框架，所以新开的这个分类叫做Ruby，向<strong>松本行弘</strong>致敬。同时遵循Ruby的命名规范，首字母大写。</p>
+<p>Ruby中文社区的很多前辈在指导我们这些后生学习ROR时都说，没有Ruby基础的也可以直接上手Rails，不过最好稍微了解一点，不必太多，然后在rails中慢慢学习和体会ruby的闪光点。我很听话，照办。</p>
+<p>关于Ruby和Rails的教程，数不胜数，文字和视频都有。我已经在为知笔记造过一次轮子了，不想在这里重复，而且我造出的轮子自用可以，拿出来就略献丑了。因此本文不再写Ruby教程之类的东西（也许以后把轮子打磨的漂亮之后会分享），而是列举一下目前发现的不错的文章、视频资料。</p>
+<a id="more"></a>
+<p>###站点</p>
+<ul>
+<li><p><a href="http://ruby-china.org/" target="_blank" rel="external">Ruby China</a>Ruby中文社区，注册一个账号，去里面发现好东西，必看</p>
+</li>
+<li><p><a href="http://railscasts-china.com/" target="_blank" rel="external">Railscasts China</a>Ruby视频教程，五花八门，琳琅满目，必看</p>
+</li>
+<li><p><a href="http://tryruby.org/levels/1/challenges/0" target="_blank" rel="external">Code School - TryRuby</a> 可以在线书写和执行Ruby代码</p>
+</li>
+</ul>
+<p>###方法论、路线图</p>
+<ul>
+<li><p><a href="http://ruby-china.org/wiki" target="_blank" rel="external">Ruby China | Wiki</a>这里面的每篇文章都要看。入门的话，只要看<a href="http://ruby-china.org/wiki/start_leaning_rails" target="_blank" rel="external">Ruby China | 如何从零开始学会 Rails - Wiki</a></p>
+</li>
+<li><p><a href="http://yedingding.com/2013/04/22/rails-for-beginners.html" target="_blank" rel="external">Rails 初学者指南 | The Voice of Dingding Ye</a></p>
+</li>
+</ul>
+<p>###教程</p>
+<ul>
+<li><p><a href="https://www.ruby-lang.org/zh_cn/documentation/quickstart/" target="_blank" rel="external">20分钟体验 Ruby</a>强烈推荐，快速对Ruby有个认识</p>
+</li>
+<li><p><a href="http://221.173.127.35:82/1Q2W3E4R5T6Y7U8I9O0P1Z2X3C4V5B/read.pudn.com/downloads74/ebook/268092/Ruby%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8Bv1.0.pdf" target="_blank" rel="external">Ruby语言入门教程v1.0.pdf</a>虽然有点久远，但是整理的很好，我从这里面收获很多</p>
+</li>
+<li><p><a href="http://saito.im/slide/ruby-new.html" target="_blank" rel="external">Ruby.new</a>一个Slide，简洁、漂亮、实用，收获很多</p>
+</li>
+<li><p><a href="http://railstutorial-china.org/" target="_blank" rel="external">Ruby on Rails 教程</a>中文版可以在线阅读，多人推荐</p>
+</li>
+<li><p><a href="http://guides.ruby-china.org/" target="_blank" rel="external">Ruby on Rails Guides 中文</a>中文版，版本是3.2.8，英文好的直接读官方的版本4<a href="http://guides.rubyonrails.org/" target="_blank" rel="external">Ruby on Rails Guides</a></p>
+</li>
+<li><p><a href="http://edu.51cto.com/course/course_id-418.html" target="_blank" rel="external">诱人的Ruby-入门篇（共18个课时）_51CTO视频课程</a></p>
+</li>
+<li><p><a href="http://www.codeschool.com/paths/ruby" target="_blank" rel="external">Ruby - Code School</a></p>
+</li>
+</ul>
+<p>###其他</p>
+<ul>
+<li><p><a href="http://railsapps.github.io/" target="_blank" rel="external">Rails Examples and Tutorials · RailsApps</a> </p>
+</li>
+<li><p><a href="http://www.diguage.com/archives/tag/ruby" target="_blank" rel="external">Ruby | “地瓜哥”博客网</a></p>
+</li>
+<li><p>wiki里面说的所有参考书目，都可以在<a href="http://so.baiduyun.me/" target="_blank" rel="external">这里</a>搜索下载</p>
+</li>
+</ul>
+<p>具体某个技术细节相关的文章就不列举了。这些是从我的为知笔记转移过来的，虽然五花八门，但我自己的话还是会跟着wiki里面的路线图走，这些权当参考吧。</p>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+<ul class="pagination">
+	 
+				
+    	<li class="prev"><a href="/qiang-da-de-rails/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+  		
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
+
+		
+		   <li class="next"><a href="/gai-shi-san-shua-ji-shou-ji/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+        
+	
+</ul>
+</div>
+
+    </center>
+	</div>
+
+    <!-- share -->
+    
+        
+    <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+        <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+        <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+    </div>
+    <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+
+
+        
+
+    
+	
+	<!-- comment -->
+	
+<section id="comment">
+  <h2 class="title">Comments</h2>
+
+  
+  	 <div class="ds-thread" data-thread-key="ruby-on/" data-title="Ruby走起！" data-url="http://codeinterviews.com/ruby-on/"></div>  
+  
+</section>
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2013-08-28 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/Ruby/">Ruby<span>2</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/Ruby/">Ruby<span>1</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'codeinterviews' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2016 CodeInterviews
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

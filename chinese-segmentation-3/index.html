@@ -1,0 +1,364 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>中文分词（三） | CodeInterviews</title>
+  <meta name="author" content="CodeInterviews">
+  
+  <meta name="description" content="程序员的世界,编程,技术,程序员,java,.Net,c++,c语言,python,ruby">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="中文分词（三）"/>
+  <meta property="og:site_name" content="CodeInterviews"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/bootstrap.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-80198899-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?9a9d27181903a355a8d95344f23682b0";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">CodeInterviews</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>所有文章
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the articles.">
+			  <i class="fa fa-archive"></i>分类
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Java/" title="All about java.">
+			  <i class="fa fa-codepen"></i>Java
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Javascript/" title="All about javascript.">
+			  <i class="fa fa-empire"></i>Javascript
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/python/" title="All about Python.">
+			  <i class="fa fa-cog"></i>Python
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags/Leetcode/" title="All about leetcode.">
+			  <i class="fa fa-thumbs-o-up"></i>Leetcode
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-info-circle"></i>关于本站
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header page-header-inverse ">		
+			<h1 class="title title-inverse "> 中文分词（三）</h1>
+		</div>		
+	
+
+
+
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <ul>
+<li><a href="http://zipperary.com/2013/12/25/chinese-segmentation/" target="_blank" rel="external">《中文分词（一）》</a></li>
+<li><a href="http://zipperary.com/2013/12/27/chinese-segmentation-2/" target="_blank" rel="external">《中文分词（二）》</a></li>
+<li><a href="http://zipperary.com/2013/12/27/chinese-segmentation-3/" target="_blank" rel="external">《中文分词（三）》</a></li>
+</ul>
+<p>承接上文<a href="http://zipperary.com/2013/12/27/chinese-segmentation-2/" target="_blank" rel="external">《中文分词（二）》</a>，本篇是最后一篇，介绍使用基于 HMM 的 Viterbi 算法做中文分词。</p>
+<p>###Viterbi 算法</p>
+<p>了解 HMM（隐马尔可夫模型）的朋友都知道 HMM 这个模型可以用五元组表示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">（states，//状态空间</span><br><span class="line">observations，//观察空间</span><br><span class="line">start_probability，//状态的初始分布</span><br><span class="line">transition_probability，//状态的转移概率矩阵</span><br><span class="line">emission_probability）//状态产生观察的概率</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>举个例子：</p>
+<p>『想象一个乡村诊所。村民有着非常理想化的特性，要么健康要么发烧。他们只有问诊所的医生的才能知道是否发烧。 聪明的医生通过询问病人的感觉诊断他们是否发烧。村民只回答他们感觉正常、头晕或冷。</p>
+<p>假设一个病人每天来到诊所并告诉医生他的感觉。医生相信病人的健康状况如同一个离散马尔可夫链。病人的状态有两种“健康”和“发烧”，但医生不能直接观察到，这意味着状态对他是“隐含”的。每天病人会告诉医生自己有以下几种由他的健康状态决定的感觉的一种：正常、冷或头晕。这些是观察结果。 整个系统为一个隐马尔可夫模型(HMM)。</p>
+<p>医生知道村民的总体健康状况，还知道发烧和没发烧的病人通常会抱怨什么症状。 换句话说，医生知道隐马尔可夫模型的参数。 』</p>
+<p>这里给出该 HMM 的五元组值：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">states = (<span class="string">'Healthy'</span>, <span class="string">'Fever'</span>)</span><br><span class="line"> </span><br><span class="line">observations = (<span class="string">'normal'</span>, <span class="string">'cold'</span>, <span class="string">'dizzy'</span>)</span><br><span class="line"> </span><br><span class="line">start_probability = &#123;<span class="string">'Healthy'</span>: <span class="number">0.6</span>, <span class="string">'Fever'</span>: <span class="number">0.4</span>&#125;</span><br><span class="line"> </span><br><span class="line">transition_probability = &#123;</span><br><span class="line">   <span class="string">'Healthy'</span> : &#123;<span class="string">'Healthy'</span>: <span class="number">0.7</span>, <span class="string">'Fever'</span>: <span class="number">0.3</span>&#125;,</span><br><span class="line">   <span class="string">'Fever'</span> : &#123;<span class="string">'Healthy'</span>: <span class="number">0.4</span>, <span class="string">'Fever'</span>: <span class="number">0.6</span>&#125;,</span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">emission_probability = &#123;</span><br><span class="line">   <span class="string">'Healthy'</span> : &#123;<span class="string">'normal'</span>: <span class="number">0.5</span>, <span class="string">'cold'</span>: <span class="number">0.4</span>, <span class="string">'dizzy'</span>: <span class="number">0.1</span>&#125;,</span><br><span class="line">   <span class="string">'Fever'</span> : &#123;<span class="string">'normal'</span>: <span class="number">0.1</span>, <span class="string">'cold'</span>: <span class="number">0.3</span>, <span class="string">'dizzy'</span>: <span class="number">0.6</span>&#125;,</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>上述五元组及其含义，可以用下图形象表示：</p>
+<p><img src="http://ww1.sinaimg.cn/large/5e8cb366jw1ebynhgilr0j20de0e5js4.jpg" alt=""></p>
+<p>模型已经建立，那么问题来了：『病人连续三天看医生，医生发现第一天他感觉正常，第二天感觉冷，第三天感觉头晕。 于是医生产生了一个问题：怎样的健康状态序列最能够解释这些观察结果？』</p>
+<p>实际上，在我之前的文章<a href="http://zipperary.com/2013/10/17/3-problems-in-hmm/" target="_blank" rel="external">《隐马尔可夫模型三个问题的求解(一)》</a>中就做过介绍，刚才提出的那个问题，正是 HMM 三大基本问题之一：根据观察序列，求隐藏状态序列。</p>
+<p><strong>我们总结一下目前的已知条件和待求解问题：</strong></p>
+<p>已知：观察结果 [‘normal’, ‘cold’, ‘dizzy’]  + 如图三个参数。</p>
+<p><img src="http://ww4.sinaimg.cn/large/5e8cb366jw1ebynmdilkcj20cn04lgm1.jpg" alt=""></p>
+<p>求：最有可能由状态序列？ （如[‘Healthy’, ‘Healthy’, ‘Fever’]）</p>
+<p>求解就用到了 Viterbi 算法，具体的过程请参考52NLP 的<a href="http://www.52nlp.cn/hmm-learn-best-practices-six-viterbi-algorithm-2" target="_blank" rel="external">文章</a>，讲的非常好。另外，刚才上面的例子，我借用的是<a href="http://zh.wikipedia.org/wiki/%E7%BB%B4%E7%89%B9%E6%AF%94%E7%AE%97%E6%B3%95" target="_blank" rel="external">维基百科</a>。</p>
+<p>到此，Viterbi 算法就能把隐藏状态序列求解出来了。</p>
+<p>那么，怎样把这厮应用到中文分词呢？</p>
+<p>###用 Viterbi 算法做中文分词</p>
+<p>一切的算法应用问题，都是把现实问题抽象化，并向算法要解决的问题模型靠拢。</p>
+<p>问题模型是什么？HMM。HMM有上面讲过的五个参数，我们要一一对应。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">（states，//状态空间：&#123;B,E,M,S&#125;，稍后介绍</span><br><span class="line">observations，//观察空间：所有汉字组成的集合。</span><br><span class="line">start_probability，//状态的初始分布</span><br><span class="line">transition_probability，//状态的转移概率矩阵</span><br><span class="line">emission_probability）//状态产生观察的概率</span><br></pre></td></tr></table></figure>
+<p><strong>介绍下{B,E,M,S}：</strong></p>
+<p>汉字按照BEMS四个状态来标记，分别代表 Begin End Middle 和 Single，比如：</p>
+<p>北京（BE），中华民族（BMME），有意见分歧（SBEBE）</p>
+<p>用这四个状态符号依次标记输入句子中的字，便可轻松得到分词方案。 如：</p>
+<p>观察序列：我是一个中国人<br>状态序列：SSBEBME</p>
+<p>对于上面的状态序列，根据简单的固定的规则进行组合划分，得到 S/S/BE/BEM/</p>
+<p>对应于观察序列：我/是/一个/中国人/</p>
+<p>分词任务就完成了。</p>
+<p>而后面的三个参数，也可以通过对语料库的统计得到，比如结巴分词中给出的是：</p>
+<p><img src="http://ww2.sinaimg.cn/large/5e8cb366jw1ebyo4y4cv1j20jo06nq3t.jpg" alt=""></p>
+<p>已知：观察序列S，初始状态概率prob_start，状态观察发射概率prob_emit，状态转换概率prob_trans。 求状态序列W。</p>
+<p>用上面提到的 Viterbi 算法，可以求出 W，也就得到分词方案了。</p>
+<p>至此，关于中文分词就介绍完了。有兴趣的同学欢迎交流。</p>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+<ul class="pagination">
+	 
+				
+    	<li class="prev"><a href="/dsv-notes/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+  		
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
+
+		
+		   <li class="next"><a href="/chinese-segmentation-2/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+        
+	
+</ul>
+</div>
+
+    </center>
+	</div>
+
+    <!-- share -->
+    
+        
+    <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+        <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+        <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+    </div>
+    <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+
+
+        
+
+    
+	
+	<!-- comment -->
+	
+<section id="comment">
+  <h2 class="title">Comments</h2>
+
+  
+  	 <div class="ds-thread" data-thread-key="chinese-segmentation-3/" data-title="中文分词（三）" data-url="http://codeinterviews.com/chinese-segmentation-3/"></div>  
+  
+</section>
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2013-12-27 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/机器学习/">机器学习<span>23</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/机器学习/">机器学习<span>24</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'codeinterviews' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2016 CodeInterviews
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>
